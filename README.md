@@ -15,6 +15,9 @@ El diseño de formularios ha permitido que ... (hablar de los beneficios que ha 
 
 ### Guía de usuario
 ---
+Una vez instalado la herramienta puedes acceder a la Wiki haciendo clic en XXX
+
+Si aún no has instalado la herramienta, también puedes acceder a los contenidos básicos de la guía de usuario en la wiki de este repositorio.
 *Explica los pasos básicos sobre cómo usar la herramienta digital. Es una buena sección para mostrar capturas de pantalla o gifs que ayuden a entender la herramienta digital.*
  	
 ### Guía de instalación
