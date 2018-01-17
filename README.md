@@ -17,7 +17,7 @@ El diseño de formularios ha permitido que ... (hablar de los beneficios que ha 
 ---
 Una vez instalado la herramienta puedes acceder a la Wiki haciendo clic en XXX
 
-Si aún no has instalado la herramienta, también puedes acceder a los contenidos básicos de la guía de usuario en la wiki de este repositorio.
+Si aún no has instalado la herramienta, también puedes acceder a los contenidos básicos de la guía de usuario en la [wiki](https://github.com/EL-BID/Sistematizacion-de-formularios-ARCA/wiki) de este repositorio.
 *Explica los pasos básicos sobre cómo usar la herramienta digital. Es una buena sección para mostrar capturas de pantalla o gifs que ayuden a entender la herramienta digital.*
  	
 ### Guía de instalación
@@ -44,7 +44,7 @@ Si aún no has instalado la herramienta, también puedes acceder a los contenido
 ---
 *El código de conducta establece las normas sociales, reglas y responsabilidades que los individuos y organizaciones deben seguir al interactuar de alguna manera con la herramienta digital o su comunidad. Es una buena práctica para crear un ambiente de respeto e inclusión en las contribuciones al proyecto. La plataforma Github premia y ayuda a los repositorios dispongan de este archivo. Al crear CODE_OF_CONDUCT.md puedes empezar desde una plantilla sugerida por ellos. *
 
-### Autor/es
+### Autor/es 
 ---
 *Nombra a el/los autor/es original/es. Consulta con ellos antes de publicar un email o un nombre personal. Una manera muy común es   dirigirlos a sus cuentas de redes sociales.*
 
