@@ -1,7 +1,5 @@
 
 ## Diseño de formularios - ARCA
-
-### Descripción y contexto
 ---
 Esta herramienta permite sistematizar el diseño y alojamiento de formularios de una forma sencilla a través de hojas excel. El sistema se compone de tres módulos principales:
 
