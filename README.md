@@ -6,7 +6,9 @@
 Esta herramienta permite sistematizar el diseño y alojamiento de formularios de una forma sencilla a través de hojas excel. El sistema se compone de tres módulos principales:
 
 **1. Parametrización**: Transformación de un archivo excel a formulario y base de datos SQL Server.
+
 **2. Alojamiento y configuración de formulario**: Servicio para alojar el formulario web, módulos de control, módulo de notificaciones y XXX
+
 **3. Generación de reportes**: Módulo de generación de reportes con información de ... XXX
 
 Esta herramienta ha sido desarrollada como parte del proceso para transparentar y agilizar la recolección de información de la Agencia Reguladora y Controladora de Aguas (ARCA) en Ecuador. (Código de la operación: RG-T2744 de las operaciones del BID)
