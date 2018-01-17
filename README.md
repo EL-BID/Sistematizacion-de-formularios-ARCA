@@ -42,7 +42,7 @@ El código de conducta establece las normas sociales, reglas y responsabilidades
 
 ### Autor/es
 ---
-'''Nombra a el/los autor/es original/es. Consulta con ellos antes de publicar un email o un nombre personal. Una manera muy común es dirigirlos a sus cuentas de redes sociales.'''
+    Nombra a el/los autor/es original/es. Consulta con ellos antes de publicar un email o un nombre personal. Una manera muy común es   dirigirlos a sus cuentas de redes sociales.
 
 ### Información adicional
 ---
