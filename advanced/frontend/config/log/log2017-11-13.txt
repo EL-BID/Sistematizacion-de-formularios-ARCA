@@ -1,0 +1,443 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: provincia",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "provincia",
+    "ip": "127.0.0.1",
+    "user": "dbautista"
+}
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: provincia",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "provincia",
+    "ip": "127.0.0.1",
+    "user": "dbautista",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'detcapitulo\/genvistaformato'",
+            "    'capitulo' => '1'",
+            "    'id_conj_prta' => '1'",
+            "    'id_conj_rpta' => '1'",
+            "    'id_fmt' => '1'",
+            "    'last' => '1'",
+            "    'antvista' => 'listcapitulos\/index'",
+            "    'estado' => '1'",
+            "    'provincia' => ''",
+            "    'cantones' => ''",
+            "    'parroquias' => ''",
+            "    'periodos' => ''"
+        ],
+        "COOKIE ": [
+            "    '_csrf-frontend' => 'c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o\\\";}'",
+            "    'advanced-frontend' => 'aemmtsus65tddnsevp4gh934o1'",
+            "    '_identity-frontend' => 'cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca:2:{i:0;s:18:\\\"_identity-frontend\\\";i:1;s:48:\\\"[\\\"1\\\",\\\"ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k\\\",2592000]\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []",
+            "    '__id' => '1'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1:8085'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/62.0.3202.89 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1:8085\/Poc_e\/frontend\/web\/index.php?r=listcapitulos%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1&provincia=4&cantones=&parroquias=&periodos=&antvista=gestorformatos%2Findex'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'",
+            "    'HTTP_COOKIE' => '_csrf-frontend=c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o%22%3B%7D; advanced-frontend=aemmtsus65tddnsevp4gh934o1; _identity-frontend=cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A48%3A%22%5B%221%22%2C%22ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k%22%2C2592000%5D%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Program Files\\\\Microsoft MPI\\\\Bin\\\\;C:\\\\ProgramData\\\\Oracle\\\\Java\\\\javapath;c:\\\\Program Files (x86)\\\\Intel\\\\iCLS Client\\\\;c:\\\\Program Files\\\\Intel\\\\iCLS Client\\\\;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x86;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x64;C:\\\\Program Files (x86)\\\\Windows Live\\\\Shared;C:\\\\Program Files (x86)\\\\nodejs\\\\;C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Windows Performance Toolkit\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\TortoiseSVN\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\PuTTY\\\\;C:\\\\Program Files\\\\Java\\\\jdk1.8.0_121\\\\bin;C:\\\\Program Files (x86)\\\\QuickTime\\\\QTSystem\\\\;C:\\\\Program Files\\\\Microsoft\\\\Web Platform Installer\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\ManagementStudio\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\120\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Users\\\\Diana Bautista\\\\.dnx\\\\bin;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\npm;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin;C:\\\\xampp\\\\htdocs\\\\proy_base\\\\vendor\\\\bin;C:\\\\Program Files\\\\Microsoft VS Code\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\WINDOWS'",
+            "    'COMSPEC' => 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\WINDOWS'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 8085<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '8085'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Poc_e\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50211'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=detcapitulo%2Fgenvistaformato&capitulo=1&id_conj_prta=1&id_conj_rpta=1&id_fmt=1&last=1&antvista=listcapitulos%2Findex&estado=1&provincia=&cantones=&parroquias=&periodos='",
+            "    'REQUEST_URI' => '\/Poc_e\/frontend\/web\/index.php?r=detcapitulo%2Fgenvistaformato&capitulo=1&id_conj_prta=1&id_conj_rpta=1&id_fmt=1&last=1&antvista=listcapitulos%2Findex&estado=1&provincia=&cantones=&parroquias=&periodos='",
+            "    'SCRIPT_NAME' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1510527802.566",
+            "    'REQUEST_TIME' => 1510527802"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: provincia",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "provincia",
+    "ip": "127.0.0.1",
+    "user": "dbautista"
+}
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: provincia",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "provincia",
+    "ip": "127.0.0.1",
+    "user": "dbautista",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'detcapitulo\/genvistaformato'",
+            "    'capitulo' => '2'",
+            "    'id_conj_prta' => '1'",
+            "    'id_conj_rpta' => '1'",
+            "    'id_fmt' => '1'",
+            "    'last' => '1'",
+            "    'antvista' => 'listcapitulos\/index'",
+            "    'estado' => '1'",
+            "    'provincia' => ''",
+            "    'cantones' => ''",
+            "    'parroquias' => ''",
+            "    'periodos' => ''"
+        ],
+        "COOKIE ": [
+            "    '_csrf-frontend' => 'c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o\\\";}'",
+            "    'advanced-frontend' => 'aemmtsus65tddnsevp4gh934o1'",
+            "    '_identity-frontend' => 'cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca:2:{i:0;s:18:\\\"_identity-frontend\\\";i:1;s:48:\\\"[\\\"1\\\",\\\"ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k\\\",2592000]\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []",
+            "    '__id' => '1'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1:8085'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/62.0.3202.89 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1:8085\/Poc_e\/frontend\/web\/index.php?r=listcapitulos%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1&provincia=4&cantones=&parroquias=&periodos=&antvista=gestorformatos%2Findex'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'",
+            "    'HTTP_COOKIE' => '_csrf-frontend=c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o%22%3B%7D; advanced-frontend=aemmtsus65tddnsevp4gh934o1; _identity-frontend=cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A48%3A%22%5B%221%22%2C%22ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k%22%2C2592000%5D%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Program Files\\\\Microsoft MPI\\\\Bin\\\\;C:\\\\ProgramData\\\\Oracle\\\\Java\\\\javapath;c:\\\\Program Files (x86)\\\\Intel\\\\iCLS Client\\\\;c:\\\\Program Files\\\\Intel\\\\iCLS Client\\\\;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x86;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x64;C:\\\\Program Files (x86)\\\\Windows Live\\\\Shared;C:\\\\Program Files (x86)\\\\nodejs\\\\;C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Windows Performance Toolkit\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\TortoiseSVN\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\PuTTY\\\\;C:\\\\Program Files\\\\Java\\\\jdk1.8.0_121\\\\bin;C:\\\\Program Files (x86)\\\\QuickTime\\\\QTSystem\\\\;C:\\\\Program Files\\\\Microsoft\\\\Web Platform Installer\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\ManagementStudio\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\120\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Users\\\\Diana Bautista\\\\.dnx\\\\bin;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\npm;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin;C:\\\\xampp\\\\htdocs\\\\proy_base\\\\vendor\\\\bin;C:\\\\Program Files\\\\Microsoft VS Code\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\WINDOWS'",
+            "    'COMSPEC' => 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\WINDOWS'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 8085<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '8085'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Poc_e\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50240'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=detcapitulo%2Fgenvistaformato&capitulo=2&id_conj_prta=1&id_conj_rpta=1&id_fmt=1&last=1&antvista=listcapitulos%2Findex&estado=1&provincia=&cantones=&parroquias=&periodos='",
+            "    'REQUEST_URI' => '\/Poc_e\/frontend\/web\/index.php?r=detcapitulo%2Fgenvistaformato&capitulo=2&id_conj_prta=1&id_conj_rpta=1&id_fmt=1&last=1&antvista=listcapitulos%2Findex&estado=1&provincia=&cantones=&parroquias=&periodos='",
+            "    'SCRIPT_NAME' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1510527823.767",
+            "    'REQUEST_TIME' => 1510527823"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: provincia",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "provincia",
+    "ip": "127.0.0.1",
+    "user": "dbautista"
+}
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: provincia",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "provincia",
+    "ip": "127.0.0.1",
+    "user": "dbautista",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'detcapitulo\/genvistaformato'",
+            "    'capitulo' => '1'",
+            "    'id_conj_prta' => '1'",
+            "    'id_conj_rpta' => '1'",
+            "    'id_fmt' => '1'",
+            "    'last' => '1'",
+            "    'antvista' => 'listcapitulos\/index'",
+            "    'estado' => '1'",
+            "    'provincia' => ''",
+            "    'cantones' => ''",
+            "    'parroquias' => ''",
+            "    'periodos' => ''"
+        ],
+        "COOKIE ": [
+            "    '_csrf-frontend' => 'c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o\\\";}'",
+            "    'advanced-frontend' => 'aemmtsus65tddnsevp4gh934o1'",
+            "    '_identity-frontend' => 'cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca:2:{i:0;s:18:\\\"_identity-frontend\\\";i:1;s:48:\\\"[\\\"1\\\",\\\"ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k\\\",2592000]\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []",
+            "    '__id' => '1'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1:8085'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/62.0.3202.89 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1:8085\/Poc_e\/frontend\/web\/index.php?r=listcapitulos%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1&provincia=4&cantones=&parroquias=&periodos=&antvista=gestorformatos%2Findex'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'",
+            "    'HTTP_COOKIE' => '_csrf-frontend=c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o%22%3B%7D; advanced-frontend=aemmtsus65tddnsevp4gh934o1; _identity-frontend=cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A48%3A%22%5B%221%22%2C%22ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k%22%2C2592000%5D%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Program Files\\\\Microsoft MPI\\\\Bin\\\\;C:\\\\ProgramData\\\\Oracle\\\\Java\\\\javapath;c:\\\\Program Files (x86)\\\\Intel\\\\iCLS Client\\\\;c:\\\\Program Files\\\\Intel\\\\iCLS Client\\\\;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x86;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x64;C:\\\\Program Files (x86)\\\\Windows Live\\\\Shared;C:\\\\Program Files (x86)\\\\nodejs\\\\;C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Windows Performance Toolkit\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\TortoiseSVN\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\PuTTY\\\\;C:\\\\Program Files\\\\Java\\\\jdk1.8.0_121\\\\bin;C:\\\\Program Files (x86)\\\\QuickTime\\\\QTSystem\\\\;C:\\\\Program Files\\\\Microsoft\\\\Web Platform Installer\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\ManagementStudio\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\120\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Users\\\\Diana Bautista\\\\.dnx\\\\bin;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\npm;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin;C:\\\\xampp\\\\htdocs\\\\proy_base\\\\vendor\\\\bin;C:\\\\Program Files\\\\Microsoft VS Code\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\WINDOWS'",
+            "    'COMSPEC' => 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\WINDOWS'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 8085<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '8085'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Poc_e\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '57573'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=detcapitulo%2Fgenvistaformato&capitulo=1&id_conj_prta=1&id_conj_rpta=1&id_fmt=1&last=1&antvista=listcapitulos%2Findex&estado=1&provincia=&cantones=&parroquias=&periodos='",
+            "    'REQUEST_URI' => '\/Poc_e\/frontend\/web\/index.php?r=detcapitulo%2Fgenvistaformato&capitulo=1&id_conj_prta=1&id_conj_rpta=1&id_fmt=1&last=1&antvista=listcapitulos%2Findex&estado=1&provincia=&cantones=&parroquias=&periodos='",
+            "    'SCRIPT_NAME' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1510534933.915",
+            "    'REQUEST_TIME' => 1510534933"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: provincia, cantones, parroquias, periodos",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "provincia, cantones, parroquias, periodos",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbautista"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: provincia, cantones, parroquias, periodos",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "provincia, cantones, parroquias, periodos",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbautista",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'listcapitulos\/index'",
+            "    'id_conj_rpta' => '1'",
+            "    'id_conj_prta' => '1'",
+            "    'id_fmt' => '1'",
+            "    'last' => '1'",
+            "    'estado' => '1'"
+        ],
+        "COOKIE ": [
+            "    '_csrf-frontend' => 'c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o\\\";}'",
+            "    'advanced-frontend' => 'aemmtsus65tddnsevp4gh934o1'",
+            "    '_identity-frontend' => 'cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca:2:{i:0;s:18:\\\"_identity-frontend\\\";i:1;s:48:\\\"[\\\"1\\\",\\\"ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k\\\",2592000]\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []",
+            "    '__id' => '1'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1:8085'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/62.0.3202.89 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1:8085\/Poc_e\/frontend\/web\/index.php?r=detcapitulo%2Fgenvistaformato&capitulo=1&id_conj_prta=1&id_conj_rpta=1&id_fmt=1&last=1&antvista=listcapitulos%2Findex&estado=1&provincia=&cantones=&parroquias=&periodos='",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'",
+            "    'HTTP_COOKIE' => '_csrf-frontend=c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o%22%3B%7D; advanced-frontend=aemmtsus65tddnsevp4gh934o1; _identity-frontend=cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A48%3A%22%5B%221%22%2C%22ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k%22%2C2592000%5D%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Program Files\\\\Microsoft MPI\\\\Bin\\\\;C:\\\\ProgramData\\\\Oracle\\\\Java\\\\javapath;c:\\\\Program Files (x86)\\\\Intel\\\\iCLS Client\\\\;c:\\\\Program Files\\\\Intel\\\\iCLS Client\\\\;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x86;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x64;C:\\\\Program Files (x86)\\\\Windows Live\\\\Shared;C:\\\\Program Files (x86)\\\\nodejs\\\\;C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Windows Performance Toolkit\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\TortoiseSVN\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\PuTTY\\\\;C:\\\\Program Files\\\\Java\\\\jdk1.8.0_121\\\\bin;C:\\\\Program Files (x86)\\\\QuickTime\\\\QTSystem\\\\;C:\\\\Program Files\\\\Microsoft\\\\Web Platform Installer\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\ManagementStudio\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\120\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Users\\\\Diana Bautista\\\\.dnx\\\\bin;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\npm;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin;C:\\\\xampp\\\\htdocs\\\\proy_base\\\\vendor\\\\bin;C:\\\\Program Files\\\\Microsoft VS Code\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\WINDOWS'",
+            "    'COMSPEC' => 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\WINDOWS'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 8085<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '8085'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Poc_e\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '57986'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=listcapitulos%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1'",
+            "    'REQUEST_URI' => '\/Poc_e\/frontend\/web\/index.php?r=listcapitulos%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1'",
+            "    'SCRIPT_NAME' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1510535210.738",
+            "    'REQUEST_TIME' => 1510535210"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: provincia, cantones, parroquias, periodos",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "provincia, cantones, parroquias, periodos",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbautista"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: provincia, cantones, parroquias, periodos",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "provincia, cantones, parroquias, periodos",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbautista",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'listcapitulos\/index'",
+            "    'id_conj_rpta' => '1'",
+            "    'id_conj_prta' => '1'",
+            "    'id_fmt' => '1'",
+            "    'last' => '1'",
+            "    'estado' => '1'"
+        ],
+        "COOKIE ": [
+            "    '_csrf-frontend' => 'c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o\\\";}'",
+            "    'advanced-frontend' => 'aemmtsus65tddnsevp4gh934o1'",
+            "    '_identity-frontend' => 'cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca:2:{i:0;s:18:\\\"_identity-frontend\\\";i:1;s:48:\\\"[\\\"1\\\",\\\"ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k\\\",2592000]\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []",
+            "    '__id' => '1'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1:8085'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_CACHE_CONTROL' => 'max-age=0'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/62.0.3202.89 Safari\/537.36'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1:8085\/Poc_e\/frontend\/web\/index.php?r=detcapitulo%2Fgenvistaformato&capitulo=1&id_conj_prta=1&id_conj_rpta=1&id_fmt=1&last=1&antvista=listcapitulos%2Findex&estado=1&provincia=&cantones=&parroquias=&periodos='",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'",
+            "    'HTTP_COOKIE' => '_csrf-frontend=c226684e0e33ce3b736e8904971cf086b0154f5f409063db7c197d644fe4fb70a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22vC0B7pmq03rsUUjvy-sG1HvLNDiskI1o%22%3B%7D; advanced-frontend=aemmtsus65tddnsevp4gh934o1; _identity-frontend=cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A48%3A%22%5B%221%22%2C%22ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k%22%2C2592000%5D%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Program Files\\\\Microsoft MPI\\\\Bin\\\\;C:\\\\ProgramData\\\\Oracle\\\\Java\\\\javapath;c:\\\\Program Files (x86)\\\\Intel\\\\iCLS Client\\\\;c:\\\\Program Files\\\\Intel\\\\iCLS Client\\\\;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x86;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x64;C:\\\\Program Files (x86)\\\\Windows Live\\\\Shared;C:\\\\Program Files (x86)\\\\nodejs\\\\;C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Windows Performance Toolkit\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\TortoiseSVN\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\PuTTY\\\\;C:\\\\Program Files\\\\Java\\\\jdk1.8.0_121\\\\bin;C:\\\\Program Files (x86)\\\\QuickTime\\\\QTSystem\\\\;C:\\\\Program Files\\\\Microsoft\\\\Web Platform Installer\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\ManagementStudio\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\120\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Users\\\\Diana Bautista\\\\.dnx\\\\bin;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\npm;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin;C:\\\\xampp\\\\htdocs\\\\proy_base\\\\vendor\\\\bin;C:\\\\Program Files\\\\Microsoft VS Code\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\WINDOWS'",
+            "    'COMSPEC' => 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\WINDOWS'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 8085<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '8085'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Poc_e\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '58000'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=listcapitulos%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1'",
+            "    'REQUEST_URI' => '\/Poc_e\/frontend\/web\/index.php?r=listcapitulos%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1'",
+            "    'SCRIPT_NAME' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Poc_e\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1510535217.051",
+            "    'REQUEST_TIME' => 1510535217"
+        ]
+    }
+}
+===================

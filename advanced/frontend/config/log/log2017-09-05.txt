@@ -1,0 +1,286 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _vdata",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_vdata",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _vdata",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_vdata",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _preguntasagrupadas",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_preguntasagrupadas",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22001]: String data, right truncated: 7 ERROR:  el valor es demasiado largo para el tipo character varying(1)",
+    "code": "22001",
+    "status": "yii\\db\\Exception",
+    "pagina": "String data, right truncated: 7 ERROR:  el valor es demasiado largo para el tipo character varying(1)",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22001]: String data, right truncated: 7 ERROR:  el valor es demasiado largo para el tipo character varying(1)",
+    "code": "22001",
+    "status": "yii\\db\\Exception",
+    "pagina": "String data, right truncated: 7 ERROR:  el valor es demasiado largo para el tipo character varying(1)",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _valor",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_valor",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _valor",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_valor",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _valor",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_valor",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _valor",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_valor",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _valor",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_valor",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _valor",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_valor",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: rpta1",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "rpta1",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: rpta1",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "rpta1",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined offset: 79",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "79",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: estado",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "estado",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: ra_check",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "ra_check",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[HY093]: Invalid parameter number: :_prta",
+    "code": "HY093",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid parameter number: :_prta",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "datatext": [
+        [
+            "le to send log via yii\\log\\DbTarget: PHP Warning 'yii\\base\\ErrorException' with message 'Invalid argument supplied for foreach()' ",
+            "",
+            "in C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Target.php:223",
+            "",
+            "Stack trace:",
+            "#0 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Target.php(223): yii\\base\\ErrorHandler->handleError(2, 'Invalid argumen...', 'C:\\\\xampp\\\\htdocs...', 223, Array)",
+            "#1 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Target.php(115): yii\\log\\Target::filterMessages(Array, 11, '*', Array)",
+            "#2 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Dispatcher.php(188): yii\\log\\Target->collect(Array, false)",
+            "#3 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Logger.php(177): yii\\log\\Dispatcher->dispatch(Array, false)",
+            "#4 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Logger.php(162): yii\\log\\Logger->flush()",
+            "#5 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\BaseYii.php(466): yii\\log\\Logger->log('SELECT\\n    d.ns...', 96, 'yii\\\\db\\\\Command:...')",
+            "#6 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\Command.php(927): yii\\BaseYii::endProfile('SELECT\\n    d.ns...', 'yii\\\\db\\\\Command:...')",
+            "#7 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\Command.php(362): yii\\db\\Command->queryInternal('fetchAll', NULL)",
+            "#8 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\pgsql\\Schema.php(417): yii\\db\\Command->queryAll()",
+            "#9 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\pgsql\\Schema.php(164): yii\\db\\pgsql\\Schema->findColumns(Object(yii\\db\\TableSchema))",
+            "#10 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\Schema.php(152): yii\\db\\pgsql\\Schema->loadTableSchema('public.tr_tipo_...')",
+            "#11 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\Schema.php(199): yii\\db\\Schema->getTableSchema('public.tr_tipo_...', false)",
+            "#12 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2-gii\\generators\\modelARCA\\Generator.php(472): yii\\db\\Schema->getTableSchemas('public')",
+            "#13 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2-gii\\generators\\modelARCA\\Generator.php(209): yii\\gii\\generators\\modelARCA\\Generator->generateRelations()",
+            "#14 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2-gii\\controllers\\DefaultController.php(50): yii\\gii\\generators\\modelARCA\\Generator->generate()",
+            "#15 [internal function]: yii\\gii\\controllers\\DefaultController->actionView('model')",
+            "#16 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)",
+            "#17 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\base\\Controller.php(156): yii\\base\\InlineAction->runWithParams(Array)",
+            "#18 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\base\\Module.php(523): yii\\base\\Controller->runAction('view', Array)",
+            "#19 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\web\\Application.php(102): yii\\base\\Module->runAction('gii\/default\/vie...', Array)",
+            "#20 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\base\\Application.php(380): yii\\web\\Application->handleRequest(Object(yii\\web\\Request))",
+            "#21 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\frontend\\web\\index.php(18): yii\\base\\Application->run()",
+            "#22 {mai"
+        ]
+    ],
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "datatext": [
+        [
+            "le to send log via yii\\log\\DbTarget: PHP Warning 'yii\\base\\ErrorException' with message 'Invalid argument supplied for foreach()' ",
+            "",
+            "in C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Target.php:223",
+            "",
+            "Stack trace:",
+            "#0 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Target.php(223): yii\\base\\ErrorHandler->handleError(2, 'Invalid argumen...', 'C:\\\\xampp\\\\htdocs...', 223, Array)",
+            "#1 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Target.php(115): yii\\log\\Target::filterMessages(Array, 11, '*', Array)",
+            "#2 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Dispatcher.php(188): yii\\log\\Target->collect(Array, false)",
+            "#3 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Logger.php(177): yii\\log\\Dispatcher->dispatch(Array, false)",
+            "#4 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\log\\Logger.php(162): yii\\log\\Logger->flush()",
+            "#5 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\BaseYii.php(466): yii\\log\\Logger->log('SELECT\\n    d.ns...', 96, 'yii\\\\db\\\\Command:...')",
+            "#6 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\Command.php(927): yii\\BaseYii::endProfile('SELECT\\n    d.ns...', 'yii\\\\db\\\\Command:...')",
+            "#7 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\Command.php(362): yii\\db\\Command->queryInternal('fetchAll', NULL)",
+            "#8 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\pgsql\\Schema.php(417): yii\\db\\Command->queryAll()",
+            "#9 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\pgsql\\Schema.php(164): yii\\db\\pgsql\\Schema->findColumns(Object(yii\\db\\TableSchema))",
+            "#10 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\Schema.php(152): yii\\db\\pgsql\\Schema->loadTableSchema('public.tr_tipo_...')",
+            "#11 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\db\\Schema.php(199): yii\\db\\Schema->getTableSchema('public.tr_tipo_...', false)",
+            "#12 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2-gii\\generators\\modelARCA\\Generator.php(472): yii\\db\\Schema->getTableSchemas('public')",
+            "#13 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2-gii\\generators\\modelARCA\\Generator.php(209): yii\\gii\\generators\\modelARCA\\Generator->generateRelations()",
+            "#14 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2-gii\\controllers\\DefaultController.php(50): yii\\gii\\generators\\modelARCA\\Generator->generate()",
+            "#15 [internal function]: yii\\gii\\controllers\\DefaultController->actionView('model')",
+            "#16 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)",
+            "#17 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\base\\Controller.php(156): yii\\base\\InlineAction->runWithParams(Array)",
+            "#18 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\base\\Module.php(523): yii\\base\\Controller->runAction('view', Array)",
+            "#19 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\web\\Application.php(102): yii\\base\\Module->runAction('gii\/default\/vie...', Array)",
+            "#20 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\vendor\\yiisoft\\yii2\\base\\Application.php(380): yii\\web\\Application->handleRequest(Object(yii\\web\\Request))",
+            "#21 C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\frontend\\web\\index.php(18): yii\\base\\Application->run()",
+            "#22 {mai"
+        ]
+    ],
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

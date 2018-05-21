@@ -1,0 +1,160 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-may-2018, 19:01:47
+    Author     : andres villamizar
+*/
+
+excelpqrs{
+    border:solid;
+}
+
+
+datosbasicos1{
+   background-color:#6495ED; 
+    border-bottom: solid 1px #000;
+}
+
+datosbasicos2{
+   color:#000;
+   border: solid 1px #000;
+}
+
+pqrstitulo{
+    text-align: center;
+    font-weight: bolder;
+    background-color:#6495ED;
+    border: solid 1px #000;
+}
+
+
+/*=======================================PDF=============================================*/
+table.pdfpqrs{
+    border: solid 0.2px #000;
+    font-size: 12px;
+}
+
+table td.titulopqr{
+    text-align: center;
+    font-weight: bold;
+    background-color:#6495ED;
+    border: solid 1px #000;
+}
+
+table td.legalpqr{
+    text-align: center;
+    font-size: 8px;
+    border: solid 1px #000;
+    height:50px;
+    font-weight: normal !important;
+    
+}
+table td.datospdf1{
+    width:30%;
+    font-weight: bold;
+    border: solid 1px #000;
+}
+table td.datospdf2{
+    width:30%;
+    border: solid 1px #000;
+}
+table td.datospdf3{
+    width:10%;
+     border: solid 1px #000;
+}
+table td.datospdf4{
+    width:70%;
+    border: solid 1px #000;
+}
+
+table td.datospdf5{
+    width:20%;
+     border: solid 1px #000;
+}
+table td.datospdf6{
+     font-weight: bold;
+    width:10%;
+    border: solid 1px #000;
+}
+
+table td.datospdf7{
+    width:40%;
+    border: solid 1px #000;
+}
+
+table td.datospdf8{
+    width:28%;
+     font-weight: bold;
+    border: solid 1px #000;
+}
+table td.datospdf9{
+    width:72%;
+    border: solid 1px #000;
+}
+table td.datospdf10{
+     font-weight: bold;
+    width:28%;
+    border: solid 1px #000;
+}
+table td.datospdf11{
+    width:22%;
+    border: solid 1px #000;
+}
+
+
+span.legalpqrspan{
+      font-size: 8px;
+      
+}
+
+
+table td.pdf25{
+    width:25%;
+    border: solid 1px #000;
+}
+table td.pdf8{
+    width:8%;
+    border: solid 1px #000;
+}
+table td.pdf9{
+    width:9%;
+    border: solid 1px #000;
+}
+
+table td.pdf33{
+    width:33%;
+    border: solid 1px #000;
+}
+table td.pdf33t{
+    width:225px;
+    height:80px;
+    border: solid 1px #000;
+}
+table td.pdf66{
+    width:66%;
+    border: solid 1px #000;
+}
+table td.pdf20{
+    width:20%;
+    border: solid 1px #000;
+}
+table td.pdf21{
+    width:21%;
+    border: solid 1px #000;
+}
+table td.pdf34{
+    width:34%;
+    border: solid 1px #000;
+}
+table td.pdf{
+    border: solid 1px #000;
+}
+table td.pdft{
+    border: solid 1px #000;
+    font-weight: bold;
+}
+
+

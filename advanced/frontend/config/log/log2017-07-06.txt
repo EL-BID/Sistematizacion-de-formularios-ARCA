@@ -1,0 +1,710 @@
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/#",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/#",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/#",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/#",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'site\/#'"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => '6o0gens39p7mu0dn6usbk51gi5'",
+            "    '_csrf-frontend' => '90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.115 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=6o0gens39p7mu0dn6usbk51gi5; _csrf-frontend=90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50128'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=site%2F%23'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=site%2F%23'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499296032.728",
+            "    'REQUEST_TIME' => 1499296032"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/home",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/home",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/home",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/home",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'site\/home'"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => '6o0gens39p7mu0dn6usbk51gi5'",
+            "    '_csrf-frontend' => '90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.115 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=lview\/list'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=6o0gens39p7mu0dn6usbk51gi5; _csrf-frontend=90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50126'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=site%2Fhome'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=site%2Fhome'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499296046.059",
+            "    'REQUEST_TIME' => 1499296046"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/home",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/home",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/home",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/home",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'site\/home'"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => '6o0gens39p7mu0dn6usbk51gi5'",
+            "    '_csrf-frontend' => '90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.115 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=lview\/list'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=6o0gens39p7mu0dn6usbk51gi5; _csrf-frontend=90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50126'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=site%2Fhome'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=site%2Fhome'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499296050.592",
+            "    'REQUEST_TIME' => 1499296050"
+        ]
+    }
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'clientesprueba\/create'"
+        ],
+        "POST ": [
+            "    '_csrf-frontend' => 'MmJPOUR0Zy1VNhkOMjgNQWotCn0tNRJ3cCN5FBAiKhxgVSl9LgQ2XQ=='",
+            "    'Clientesprueba' => [",
+            "        'name' => 'dSD'",
+            "        'lastname' => 'DSDSAD'",
+            "        'birthdate' => '2017-07-05'",
+            "        'createdate' => '2017-07-05'",
+            "        'type' => ''",
+            "    ]"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => '6o0gens39p7mu0dn6usbk51gi5'",
+            "    '_csrf-frontend' => '90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'CONTENT_LENGTH' => '249'",
+            "    'HTTP_CACHE_CONTROL' => 'max-age=0'",
+            "    'HTTP_ORIGIN' => 'http:\/\/127.0.0.1'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.115 Safari\/537.36'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=6o0gens39p7mu0dn6usbk51gi5; _csrf-frontend=90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50227'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=clientesprueba\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499296451.114",
+            "    'REQUEST_TIME' => 1499296451"
+        ]
+    }
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'clientesprueba\/create'"
+        ],
+        "POST ": [
+            "    '_csrf-frontend' => 'MmJPOUR0Zy1VNhkOMjgNQWotCn0tNRJ3cCN5FBAiKhxgVSl9LgQ2XQ=='",
+            "    'Clientesprueba' => [",
+            "        'name' => 'dSD'",
+            "        'lastname' => 'DSDSAD'",
+            "        'birthdate' => '2017-07-05'",
+            "        'createdate' => '2017-07-05'",
+            "        'type' => ''",
+            "    ]"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => '6o0gens39p7mu0dn6usbk51gi5'",
+            "    '_csrf-frontend' => '90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'CONTENT_LENGTH' => '249'",
+            "    'HTTP_CACHE_CONTROL' => 'max-age=0'",
+            "    'HTTP_ORIGIN' => 'http:\/\/127.0.0.1'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.115 Safari\/537.36'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=6o0gens39p7mu0dn6usbk51gi5; _csrf-frontend=90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50239'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=clientesprueba\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499296485.662",
+            "    'REQUEST_TIME' => 1499296485"
+        ]
+    }
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'clientesprueba\/create'"
+        ],
+        "POST ": [
+            "    '_csrf-frontend' => 'MmJPOUR0Zy1VNhkOMjgNQWotCn0tNRJ3cCN5FBAiKhxgVSl9LgQ2XQ=='",
+            "    'Clientesprueba' => [",
+            "        'name' => 'dSD'",
+            "        'lastname' => 'DSDSAD'",
+            "        'birthdate' => '2017-07-05'",
+            "        'createdate' => '2017-07-05'",
+            "        'type' => ''",
+            "    ]"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => '6o0gens39p7mu0dn6usbk51gi5'",
+            "    '_csrf-frontend' => '90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'CONTENT_LENGTH' => '249'",
+            "    'HTTP_CACHE_CONTROL' => 'max-age=0'",
+            "    'HTTP_ORIGIN' => 'http:\/\/127.0.0.1'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.115 Safari\/537.36'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=6o0gens39p7mu0dn6usbk51gi5; _csrf-frontend=90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50250'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=clientesprueba\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499296515.017",
+            "    'REQUEST_TIME' => 1499296515"
+        ]
+    }
+}
+===================
+SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es válida para el enum estado: «»
+===================
+SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es válida para el enum estado: «»
+===================
+
+===================
+1
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'clientesprueba\/create'"
+        ],
+        "POST ": [
+            "    '_csrf-frontend' => 'clVsb1hGTVEVATpYLgonPSoaKSsxBzgLMBRaQgwQAGAgYgorMjYcIQ=='",
+            "    'Clientesprueba' => [",
+            "        'name' => 'FDFS'",
+            "        'lastname' => 'FDSFS'",
+            "        'birthdate' => '2017-07-05'",
+            "        'createdate' => '2017-07-05'",
+            "        'type' => ''",
+            "    ]"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => '6o0gens39p7mu0dn6usbk51gi5'",
+            "    '_csrf-frontend' => '90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'CONTENT_LENGTH' => '249'",
+            "    'HTTP_CACHE_CONTROL' => 'max-age=0'",
+            "    'HTTP_ORIGIN' => 'http:\/\/127.0.0.1'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.115 Safari\/537.36'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=6o0gens39p7mu0dn6usbk51gi5; _csrf-frontend=90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50327'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=clientesprueba\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499296955.318",
+            "    'REQUEST_TIME' => 1499296955"
+        ]
+    }
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'clientesprueba\/create'"
+        ],
+        "POST ": [
+            "    '_csrf-frontend' => 'clVsb1hGTVEVATpYLgonPSoaKSsxBzgLMBRaQgwQAGAgYgorMjYcIQ=='",
+            "    'Clientesprueba' => [",
+            "        'name' => 'FDFS'",
+            "        'lastname' => 'FDSFS'",
+            "        'birthdate' => '2017-07-05'",
+            "        'createdate' => '2017-07-05'",
+            "        'type' => ''",
+            "    ]"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => '6o0gens39p7mu0dn6usbk51gi5'",
+            "    '_csrf-frontend' => '90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'CONTENT_LENGTH' => '249'",
+            "    'HTTP_CACHE_CONTROL' => 'max-age=0'",
+            "    'HTTP_ORIGIN' => 'http:\/\/127.0.0.1'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.115 Safari\/537.36'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=6o0gens39p7mu0dn6usbk51gi5; _csrf-frontend=90e5cb9131e48d500ed6a96747d2dbb935cbfe034bae5563221506533df26bc9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22gTV7vLjlXOEDiAuZBA6-TVM1R7fDjpQp%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50340'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=clientesprueba\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesprueba\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499297056.61",
+            "    'REQUEST_TIME' => 1499297056"
+        ]
+    }
+}
+===================

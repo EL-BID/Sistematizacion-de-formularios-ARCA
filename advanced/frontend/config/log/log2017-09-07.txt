@@ -1,0 +1,62 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _valor",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_valor",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _clavepns",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_clavepns",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: fdpregunta\/deletem",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "fdpregunta\/deletem",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _urldm",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_urldm",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: id",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "id",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================

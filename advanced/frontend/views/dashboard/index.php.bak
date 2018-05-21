@@ -1,0 +1,97 @@
+<style>
+    
+    .caja{
+        /*border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;*/
+        -webkit-box-shadow: 10px 10px 32px -12px rgba(0,0,0,0.68);
+        -moz-box-shadow: 10px 10px 32px -12px rgba(0,0,0,0.68);
+        box-shadow: 10px 10px 32px -12px rgba(0,0,0,0.68);
+        
+        float:left;
+        
+        height:200px;
+            
+    }
+    
+    .linea1{
+        display: block;
+        height: 20%;
+        width: 100%;
+    }
+    
+    
+    .title{
+        
+        color: #81BEF7;
+        float:left;
+    }
+    
+    .funciones{
+        text-align: right;
+        vertical-align: top;
+        width:30%;
+        height:20%;
+        float:right;
+    }
+    
+    .linea2{
+        display: block;
+        height: 70%;
+        width: 100%;
+        padding: 5px 10px;
+        vertical-align: bottom;
+    }
+    
+    .icono{
+        text-align: left;
+        vertical-align: bottom;
+        width:50%;
+        height:auto;
+        float:left;
+        overflow: auto;
+    }
+    
+    .icono img{
+        width:120px;
+        height:120px;
+    }
+    
+    .valores{
+        text-align: right;
+        padding-top:20%;
+        padding-right:3%;
+        width:50%;
+        height:30px;
+        float:right;
+        color: #81BEF7;
+    }
+    
+</style>    
+
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+use yii\helpers\Url;	
+use yii\helpers\Html;
+
+$this->title = 'Dashboard';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="headSection">
+<h1 class="titSection"><?= Html::encode($this->title) ?></h1>
+</div>
+<!---------------IMPRIMIENDO FORMULAIO------------------------------------->
+    <?php
+    foreach($_stringhtml as $_clave){
+       eval('?>'.$_clave);
+    }
+    ?>
+    
+  
+
+

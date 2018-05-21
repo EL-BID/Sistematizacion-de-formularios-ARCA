@@ -1,0 +1,37 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _clavepns",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_clavepns",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _numcoltitle",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_numcoltitle",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request \"poc\/detallemensual\".",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

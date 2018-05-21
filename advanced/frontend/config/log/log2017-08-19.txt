@@ -1,0 +1,97 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Use of undefined constant poc - assumed ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Use of undefined constant poc - assumed ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request \"poc\/detallemensual\".",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _tcolumnas",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_tcolumnas",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _clavepns",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_clavepns",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _larray",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_larray",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Array to string conversion",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _tcolumnas",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_tcolumnas",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

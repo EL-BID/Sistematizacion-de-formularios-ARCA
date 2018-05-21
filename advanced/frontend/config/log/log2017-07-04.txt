@@ -1,0 +1,2797 @@
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando2\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"logauditoria\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '266'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51207'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499173830.146",
+            "    'REQUEST_TIME' => 1499173830"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando4\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"clientesprueba\/create\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '275'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51248'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174039.535",
+            "    'REQUEST_TIME' => 1499174039"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando4\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"clientesprueba\/create\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '275'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51263'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174085.701",
+            "    'REQUEST_TIME' => 1499174085"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando4\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"clientesprueba\/create\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '275'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51271'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174087.435",
+            "    'REQUEST_TIME' => 1499174087"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando4\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"clientesprueba\/create\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '275'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51281'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174104.203",
+            "    'REQUEST_TIME' => 1499174104"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando4\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"clientesprueba\/create\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '275'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51307'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174195.591",
+            "    'REQUEST_TIME' => 1499174195"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando4\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"clientesprueba\/create\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '275'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51313'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174224.158",
+            "    'REQUEST_TIME' => 1499174224"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando4\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"clientesprueba\/create\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '275'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51319'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174228.696",
+            "    'REQUEST_TIME' => 1499174228"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando4\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"clientesprueba\/create\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '275'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51328'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174261.697",
+            "    'REQUEST_TIME' => 1499174261"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: rest\/create?",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "rest\/create?",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create?'"
+        ],
+        "POST ": [
+            "    '{_",
+            "____\\\"usuario\\\":_\\\"dcarrillo\\\",",
+            "____\\\"ip_origen\\\":_\\\"127_0_0_1\\\",",
+            "____\\\"texto\\\"_:_\\\"probando4\\\",",
+            "____\\\"json\\\"_:_\\\"json\\\",",
+            "____\\\"id_tevento\\\"_:_\\\"2\\\",",
+            "____\\\"id_tmensaje\\\"_:_\\\"10\\\",",
+            "____\\\"fecha_hora\\\"_:_\\\"2017-05-15_05:00:00\\\",",
+            "____\\\"accion\\\"_:_\\\"ERROR_NO_EXISTE\\\",",
+            "____\\\"pagina\\\"_:_\\\"clientesprueba\/create\\\"",
+            "}' => ''"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'CONTENT_LENGTH' => '275'",
+            "    'CONTENT_TYPE' => 'application\/x-www-form-urlencoded'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51330'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create?'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create?'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174263.284",
+            "    'REQUEST_TIME' => 1499174263"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\MethodNotAllowedHttpException",
+    "message": "Method Not Allowed. This url can only handle the following request methods: POST.",
+    "code": 0,
+    "status": "yii\\web\\HttpException:405",
+    "pagina": "POST.",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\MethodNotAllowedHttpException",
+    "message": "Method Not Allowed. This url can only handle the following request methods: POST.",
+    "code": 0,
+    "status": "yii\\web\\HttpException:405",
+    "pagina": "POST.",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'HTTP_PRAGMA' => 'no-cache'",
+            "    'HTTP_USER_AGENT' => 'Java\/1.8.0_101'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => 'text\/html, image\/gif, image\/jpeg, *; q=.2, *\/*; q=.2'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '51365'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=rest%2Fcreate'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest%2Fcreate'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499174573.18",
+            "    'REQUEST_TIME' => 1499174573"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '720'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52433'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499180651.077",
+            "    'REQUEST_TIME' => 1499180651"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '720'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52439'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499180685.892",
+            "    'REQUEST_TIME' => 1499180685"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '694'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52460'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499180819.001",
+            "    'REQUEST_TIME' => 1499180819"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '694'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52462'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499180821.64",
+            "    'REQUEST_TIME' => 1499180821"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '736'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52483'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499180913.699",
+            "    'REQUEST_TIME' => 1499180913"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '736'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52500'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499180975.587",
+            "    'REQUEST_TIME' => 1499180975"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '740'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52506'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499181000.88",
+            "    'REQUEST_TIME' => 1499181000"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '734'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52513'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499181015.679",
+            "    'REQUEST_TIME' => 1499181015"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '635'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52527'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499181116.894",
+            "    'REQUEST_TIME' => 1499181116"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '635'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52529'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499181119.403",
+            "    'REQUEST_TIME' => 1499181119"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '735'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52547'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499181195.777",
+            "    'REQUEST_TIME' => 1499181195"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '736'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52554'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499181225.824",
+            "    'REQUEST_TIME' => 1499181225"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '734'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52559'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499181237.401",
+            "    'REQUEST_TIME' => 1499181237"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '734'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52568'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499181278.263",
+            "    'REQUEST_TIME' => 1499181278"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '757'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '52677'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499181829.301",
+            "    'REQUEST_TIME' => 1499181829"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '780'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53395'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184091.332",
+            "    'REQUEST_TIME' => 1499184091"
+        ]
+    }
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '795'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53431'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184132.297",
+            "    'REQUEST_TIME' => 1499184132"
+        ]
+    }
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '795'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53484'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184152.945",
+            "    'REQUEST_TIME' => 1499184152"
+        ]
+    }
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00abErro HTTP del server\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '795'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53515'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184180.849",
+            "    'REQUEST_TIME' => 1499184180"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '894'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53543'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184202.689",
+            "    'REQUEST_TIME' => 1499184202"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '894'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53564'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184235.23",
+            "    'REQUEST_TIME' => 1499184235"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '894'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53585'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184257.36",
+            "    'REQUEST_TIME' => 1499184257"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '894'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53614'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184301.941",
+            "    'REQUEST_TIME' => 1499184301"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '886'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53637'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184342.538",
+            "    'REQUEST_TIME' => 1499184342"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '886'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53661'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184365.726",
+            "    'REQUEST_TIME' => 1499184365"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Invalid JSON data",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'rest\/create'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_ACCEPT' => '*\/*'",
+            "    'HTTP_ACCEPT_ENCODING' => 'deflate, gzip'",
+            "    'HTTP_CACHE_CONTROL' => 'no-cache'",
+            "    'CONTENT_TYPE' => 'application\/json'",
+            "    'HTTP_POSTMAN_TOKEN' => 'a415a1ea-b9be-373f-e392-15d3b19fc649'",
+            "    'CONTENT_LENGTH' => '886'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '53692'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'POST'",
+            "    'QUERY_STRING' => 'r=rest\/create'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=rest\/create'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499184431.697",
+            "    'REQUEST_TIME' => 1499184431"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request \"clientesdropdownlist\".",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request \"clientesdropdownlist\".",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'clientesdropdownlist'"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => '3a64rl9o0uorl66rp5j5r5ho84'",
+            "    '_csrf-frontend' => '09ff98ccac227729d8b0745ffb0e99884d0548f3f396a721eb41db7772d91e06a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"iZ2QKHOwf9bTEbLvsiniEb6FJIoClNaP\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/59.0.3071.115 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=3a64rl9o0uorl66rp5j5r5ho84; _csrf-frontend=09ff98ccac227729d8b0745ffb0e99884d0548f3f396a721eb41db7772d91e06a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22iZ2QKHOwf9bTEbLvsiniEb6FJIoClNaP%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\ATI Technologies\\\\ATI.ACE\\\\Core-Static;C:\\\\Program Files\\\\WinMerge;C:\\\\Program Files\\\\Skype\\\\Phone\\\\;C:\\\\Users\\\\ANAID\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '55641'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=clientesdropdownlist'",
+            "    'REQUEST_URI' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php?r=clientesdropdownlist'",
+            "    'SCRIPT_NAME' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/ECUADOR\/proy_ecuador\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1499192750.486",
+            "    'REQUEST_TIME' => 1499192750"
+        ]
+    }
+}
+===================

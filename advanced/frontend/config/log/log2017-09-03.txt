@@ -1,0 +1,352 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "preg_match(): No ending delimiter ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": "No ending delimiter ",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Getting unknown property: frontend\\models\\Detcapitulo::imageFiles",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::imageFiles",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Setting unknown property: frontend\\models\\Detcapitulo::filename",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::filename",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Setting unknown property: frontend\\models\\Detcapitulo::filename",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::filename",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Setting unknown property: frontend\\models\\Detcapitulo::filename",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::filename",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[HY093]: Invalid parameter number: :idpregunta",
+    "code": "HY093",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid parameter number: :idpregunta",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Array to string conversion",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Array to string conversion",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined offset: 0",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "0",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: tableRpta",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "tableRpta",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[42703]: Undefined column: 7 ERROR:  no existe la columna \u00abtamanio_soporte\u00bb en la relaci\u00f3n \u00absop_soportes\u00bb\nLINE 1: ...NTO sop_soportes (\"ruta_soporte\",\"titulo_soporte\",\"tamanio_s...\n                                                             ^",
+    "code": "42703",
+    "status": "yii\\db\\Exception",
+    "pagina": "Undefined column: 7 ERROR:  no existe la columna \u00abtamanio_soporte\u00bb en la relaci\u00f3n \u00absop_soportes\u00bb\nLINE 1: ...NTO sop_soportes (\"ruta_soporte\",\"titulo_soporte\",\"tamanio_s...\n                                                             ^",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: rpta2",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "rpta2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[42601]: Syntax error: 7 ERROR:  error de sintaxis al final de la entrada\nLINE 1: ...soporte,titulo_soporte FROM sop_soportes WHERE id_respuesta=\n                                                                       ^",
+    "code": "42601",
+    "status": "yii\\db\\Exception",
+    "pagina": "Syntax error: 7 ERROR:  error de sintaxis al final de la entrada\nLINE 1: ...soporte,titulo_soporte FROM sop_soportes WHERE id_respuesta=\n                                                                       ^",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Array to string conversion",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: id_conj_rpta, id_conj_prta, id_fmt, last, estado, id_capitulo",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "id_conj_rpta, id_conj_prta, id_fmt, last, estado, id_capitulo",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: formanumber",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "formanumber",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: message",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "message",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: pattern",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "pattern",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: var3",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "var3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: var3",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "var3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: var3",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "var3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: var3",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "var3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: var3",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "var3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: var3",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "var3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: var3",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "var3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: var3",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "var3",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _findpermisos",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_findpermisos",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _findpermisos",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_findpermisos",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ViewNotFoundException",
+    "message": "The view file does not exist: C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\frontend\\views\\detcapitulo\\site\/index.php",
+    "code": 0,
+    "status": "yii\\base\\ViewNotFoundException",
+    "pagina": "C:\\xampp\\htdocs\\ecuador\\proy_bandejaentrada\\frontend\\views\\detcapitulo\\site\/index.php",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

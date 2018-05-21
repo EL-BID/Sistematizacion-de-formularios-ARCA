@@ -1,0 +1,49 @@
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: detcapitulo\/generadorvista",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "detcapitulo\/generadorvista",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: id_opcion_select",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_opcion_select",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: id_opcion_select",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_opcion_select",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: id_opcion_select",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_opcion_select",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================

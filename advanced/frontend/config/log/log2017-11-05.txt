@@ -1,0 +1,288 @@
+{
+    "name": "yii\\web\\HttpException",
+    "message": "Error en la configuracion de la condicion 1.",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "::1",
+    "user": "dbautista"
+}
+===================
+{
+    "name": "yii\\web\\HttpException",
+    "message": "Error en la configuracion de la condicion 1.",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "::1",
+    "user": "dbautista",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'dashboard\/index'",
+            "    'id_conj_rpta' => '1'",
+            "    'id_conj_prta' => '1'",
+            "    'id_fmt' => '1'",
+            "    'last' => '1'",
+            "    'estado' => '1'"
+        ],
+        "COOKIE ": [
+            "    '_csrf-backend' => '8bdc12558a43f65bdde65f20126efa047280e526ad95485fefacddc0c416c910a:2:{i:0;s:13:\\\"_csrf-backend\\\";i:1;s:32:\\\"pVUr1hXRGjI0xuzqi6mTCkH4eVYklMxT\\\";}'",
+            "    'advanced-frontend' => 'scdah3qugg4cb28ikdvgvmjm01'",
+            "    '_csrf-frontend' => '2dab0e22affa80c41847c0c26916032c722e94f9523891b8f200e8acdc71f4a9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"KriE6G8Tg98dYm5modzpsbqzN6zkacKg\\\";}'",
+            "    '_identity-frontend' => 'cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca:2:{i:0;s:18:\\\"_identity-frontend\\\";i:1;s:48:\\\"[\\\"1\\\",\\\"ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k\\\",2592000]\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []",
+            "    '__id' => '1'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_ACCEPT' => 'text\/html, application\/xhtml+xml, *\/*'",
+            "    'HTTP_REFERER' => 'http:\/\/localhost\/Poc\/frontend\/web\/index.php?r=gestorformatos%2Findex&provincia=&cantones=&parroquias=&periodos=&id_fmt=&estado='",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'en-US'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; WOW64; Trident\/7.0; rv:11.0) like Gecko'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'",
+            "    'HTTP_HOST' => 'localhost'",
+            "    'HTTP_CONNECTION' => 'Keep-Alive'",
+            "    'HTTP_COOKIE' => '_csrf-backend=8bdc12558a43f65bdde65f20126efa047280e526ad95485fefacddc0c416c910a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22pVUr1hXRGjI0xuzqi6mTCkH4eVYklMxT%22%3B%7D; advanced-frontend=scdah3qugg4cb28ikdvgvmjm01; _csrf-frontend=2dab0e22affa80c41847c0c26916032c722e94f9523891b8f200e8acdc71f4a9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22KriE6G8Tg98dYm5modzpsbqzN6zkacKg%22%3B%7D; _identity-frontend=cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A48%3A%22%5B%221%22%2C%22ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k%22%2C2592000%5D%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Users\\\\WindowsArca\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.26 (Win32) OpenSSL\/1.0.2l PHP\/5.6.31 Server at localhost Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.26 (Win32) OpenSSL\/1.0.2l PHP\/5.6.31'",
+            "    'SERVER_NAME' => 'localhost'",
+            "    'SERVER_ADDR' => '::1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '::1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Poc\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '62319'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=dashboard%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1'",
+            "    'REQUEST_URI' => '\/Poc\/frontend\/web\/index.php?r=dashboard%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1'",
+            "    'SCRIPT_NAME' => '\/Poc\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Poc\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1509844722.247",
+            "    'REQUEST_TIME' => 1509844722"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\web\\HttpException",
+    "message": "Error en la configuracion de la condicion 1.",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "::1",
+    "user": "dbautista"
+}
+===================
+{
+    "name": "yii\\web\\HttpException",
+    "message": "Error en la configuracion de la condicion 1.",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "::1",
+    "user": "dbautista",
+    "datatext": {
+        "$_GET ": [
+            "    'r' => 'dashboard\/index'",
+            "    'id_conj_rpta' => '1'",
+            "    'id_conj_prta' => '1'",
+            "    'id_fmt' => '1'",
+            "    'last' => '1'",
+            "    'estado' => '1'"
+        ],
+        "COOKIE ": [
+            "    '_csrf-backend' => '8bdc12558a43f65bdde65f20126efa047280e526ad95485fefacddc0c416c910a:2:{i:0;s:13:\\\"_csrf-backend\\\";i:1;s:32:\\\"pVUr1hXRGjI0xuzqi6mTCkH4eVYklMxT\\\";}'",
+            "    'advanced-frontend' => '4mt2vh13ie41f9ntto6em78c43'",
+            "    '_csrf-frontend' => '2dab0e22affa80c41847c0c26916032c722e94f9523891b8f200e8acdc71f4a9a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"KriE6G8Tg98dYm5modzpsbqzN6zkacKg\\\";}'",
+            "    '_identity-frontend' => 'cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca:2:{i:0;s:18:\\\"_identity-frontend\\\";i:1;s:48:\\\"[\\\"1\\\",\\\"ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k\\\",2592000]\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []",
+            "    '__id' => '1'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_ACCEPT' => 'text\/html, application\/xhtml+xml, *\/*'",
+            "    'HTTP_REFERER' => 'http:\/\/localhost\/Poc\/frontend\/web\/index.php?r=gestorformatos%2Findex&provincia=&cantones=&parroquias=&periodos=&id_fmt=&estado='",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'en-US'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; WOW64; Trident\/7.0; rv:11.0) like Gecko'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'",
+            "    'HTTP_HOST' => 'localhost'",
+            "    'HTTP_CONNECTION' => 'Keep-Alive'",
+            "    'HTTP_COOKIE' => '_csrf-backend=8bdc12558a43f65bdde65f20126efa047280e526ad95485fefacddc0c416c910a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22pVUr1hXRGjI0xuzqi6mTCkH4eVYklMxT%22%3B%7D; advanced-frontend=4mt2vh13ie41f9ntto6em78c43; _csrf-frontend=2dab0e22affa80c41847c0c26916032c722e94f9523891b8f200e8acdc71f4a9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22KriE6G8Tg98dYm5modzpsbqzN6zkacKg%22%3B%7D; _identity-frontend=cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A48%3A%22%5B%221%22%2C%22ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k%22%2C2592000%5D%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Users\\\\WindowsArca\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.26 (Win32) OpenSSL\/1.0.2l PHP\/5.6.31 Server at localhost Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.26 (Win32) OpenSSL\/1.0.2l PHP\/5.6.31'",
+            "    'SERVER_NAME' => 'localhost'",
+            "    'SERVER_ADDR' => '::1'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '::1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Poc\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '64114'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=dashboard%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1'",
+            "    'REQUEST_URI' => '\/Poc\/frontend\/web\/index.php?r=dashboard%2Findex&id_conj_rpta=1&id_conj_prta=1&id_fmt=1&last=1&estado=1'",
+            "    'SCRIPT_NAME' => '\/Poc\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Poc\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1509845313.467",
+            "    'REQUEST_TIME' => 1509845313"
+        ]
+    }
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request \"poc\/fd-tipo-agrupacion\".",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "181.60.134.60",
+    "user": "dbautista"
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request \"poc\/fd-tipo-agrupacion\".",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "181.60.134.60",
+    "user": "dbautista",
+    "datatext": [
+        [
+            "ss to debugger is denied due to IP address restriction. The requesting IP address is 181.60.134."
+        ]
+    ]
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request \"poc\/fd-tipo-agrupacion\".",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "181.60.134.60",
+    "user": "dbautista",
+    "datatext": [
+        [
+            "ss to debugger is denied due to IP address restriction. The requesting IP address is 181.60.134."
+        ]
+    ]
+}
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request \"poc\/fd-tipo-agrupacion\".",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "181.60.134.60",
+    "user": "dbautista",
+    "datatext": {
+        "0": [
+            "ss to debugger is denied due to IP address restriction. The requesting IP address is 181.60.134."
+        ],
+        "$_GET ": [
+            "    'r' => 'poc\/fd-tipo-agrupacion'"
+        ],
+        "COOKIE ": [
+            "    '_csrf-frontend' => 'ef8299bcf9816445133c28d6cf542c117b73ffd61381efed33ea098031001dcfa:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"8_wHN7zruqsvEjq27Fl9zuUVid9coXVq\\\";}'",
+            "    'advanced-frontend' => 'ul9tru8hqr3fru6pv1bhmqrlr7'",
+            "    '_identity-frontend' => 'cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca:2:{i:0;s:18:\\\"_identity-frontend\\\";i:1;s:48:\\\"[\\\"1\\\",\\\"ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k\\\",2592000]\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []",
+            "    '__id' => '1'"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => 'arcaecuador.eastus.cloudapp.azure.com'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/61.0.3163.100 Safari\/537.36'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_DNT' => '1'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'",
+            "    'HTTP_COOKIE' => '_csrf-frontend=ef8299bcf9816445133c28d6cf542c117b73ffd61381efed33ea098031001dcfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228_wHN7zruqsvEjq27Fl9zuUVid9coXVq%22%3B%7D; advanced-frontend=ul9tru8hqr3fru6pv1bhmqrlr7; _identity-frontend=cba583be6ad413cc55430364d5090b2be3c60c102a2b8788132af4841042065ca%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A48%3A%22%5B%221%22%2C%22ZsiK20Ml3Ws43zY8kCXGFjcp96viMX9k%22%2C2592000%5D%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Windows\\\\system32;C:\\\\Windows;C:\\\\Windows\\\\System32\\\\Wbem;C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Users\\\\WindowsArca\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\Windows'",
+            "    'COMSPEC' => 'C:\\\\Windows\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\Windows'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.26 (Win32) OpenSSL\/1.0.2l PHP\/5.6.31 Server at arcaecuador.eastus.cloudapp.azure.com Port 80<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.26 (Win32) OpenSSL\/1.0.2l PHP\/5.6.31'",
+            "    'SERVER_NAME' => 'arcaecuador.eastus.cloudapp.azure.com'",
+            "    'SERVER_ADDR' => '10.0.0.4'",
+            "    'SERVER_PORT' => '80'",
+            "    'REMOTE_ADDR' => '181.60.134.60'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Poc\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '63111'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=poc%2Ffd-tipo-agrupacion'",
+            "    'REQUEST_URI' => '\/Poc\/frontend\/web\/index.php?r=poc%2Ffd-tipo-agrupacion'",
+            "    'SCRIPT_NAME' => '\/Poc\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Poc\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1509915717.317",
+            "    'REQUEST_TIME' => 1509915717"
+        ]
+    }
+}
+===================

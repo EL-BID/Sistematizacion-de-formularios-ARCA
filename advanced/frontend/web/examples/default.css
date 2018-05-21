@@ -1,0 +1,291 @@
+
+/*
+	Design by TEMPLATED
+	http://templated.co
+	Released for free under the Creative Commons Attribution License
+*/
+
+/* Basic */
+
+*
+{
+	margin: 0em;
+	padding: 0em;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	color: #002E90;
+}
+
+body
+{
+	font-family: 'Libre Franklin', sans-serif!important;
+	color: #000;
+	font-size: 13px;
+}
+
+a
+{
+	color: #002E90;
+	text-decoration: underline;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+.colora{
+	color:blue;
+	padding-left:15px;
+}
+
+/* Outer */
+
+#outer
+{
+	margin:0px; overflow-x:hidden; background:url("images/bg_contentWiki.png") no-repeat 110% 130%; background-attachment: fixed;
+}
+
+/*LANDING PAGE*/
+.landingFooter{ background:url("images/bg_bodyWiki.jpg") no-repeat; background-size:100%}
+.bigLink{ background-color:rgba(0, 109, 217, 0.8); text-align:center; padding:25px; min-height:200px; padding-top:70px ;margin-bottom:20px }
+.bigLink a{ display:block; color:#fff; font-size:20px; font-weight:700}
+.borderLink{ border:1px solid #CCCCCC; padding:25px; text-align:center; margin-bottom:25px}
+.borderLink a{ color:#207FDE; font-weight:700; }
+.mainLogo{ text-align:center}
+.mainLogo span{text-transform:uppercase; color:#00228C; display:block; font-size:11px}
+.landingFooter .well{ background-color:transparent!important}
+.well{ background:#f3f3f3; border:1px solid #f9f9f9; padding:15px; margin-bottom:25px}
+
+/* Header */
+
+#header
+{
+	padding: 0em 1.5em 1em 1.5em;
+	height: 15em;
+	width: 15em;
+	float: left;
+	position: relative;
+	background: #002E90 url('images/bg_headWiki.png') top left no-repeat;
+}
+#secondaryContent, #header{ position: fixed}
+#secondaryContent { margin-top:5em; background-color:#002E90}
+
+#header h1
+{
+	position: absolute;
+	bottom: 0.5em;
+	font-size: 1.5em;
+	letter-spacing: 0.1em;
+}
+
+#header h1 a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#header h2
+{
+	position: absolute;
+	bottom: 2.7em;
+	color: #EFE0E0;
+	font-size: 0.8em;
+}
+
+/* Menu */
+
+#menu
+{
+	height: 70px;
+	background: #fafafa url('images/a2.gif') top left repeat-x;
+	margin-left: 18em;
+	position: relative;
+padding:25px 15px;
+}
+
+#menu ul
+{
+	list-style: none;
+margin-top:15px;
+	/*position: absolute;
+	top: 3.3em;
+	margin-left: 1.5em;*/
+}
+
+#menu li
+{
+	display: inline; float:left;
+	border-left: solid 1px #848484;
+	padding-left: 0.8em;
+}
+
+#menu li.first
+{
+	border-left: 0px;
+	padding-left: 0em;
+}
+
+#menu li a
+{
+	text-decoration: none;
+	color: #6a6a6a;
+	font-weight: bold;
+	padding: 0.8em;
+	margin-right: 0.8em;
+	font-size: 0.9em;
+}
+
+#menu li a:hover
+{
+	background: #087DFB;
+	color: #fff;
+}
+
+/* Content */
+
+#content
+{
+	/*background: #fff url('images/a3.gif') top left repeat-x;*/
+	margin-top: 1px;
+	padding-top: 1.5em;
+}
+
+#content p
+{
+	margin-bottom: 1.5em;
+	line-height: 1.6em;
+}
+
+#content h2
+{
+	font-size: 1.5em;
+}
+
+#content h3
+{
+	font-size: 1.1em;
+}
+
+#content h2,h3,h4,h5,h6
+{
+	padding-bottom: 0.2em;
+	margin-bottom: 1.2em;
+	border-bottom: dotted 1px #cacaca;
+}
+
+#content ul
+{
+	margin-bottom: 1.5em;
+	padding-left: 1em;
+	line-height: 1.6em;
+}
+
+#content blockquote
+{
+	border-left: solid 0.8em #cacaca;
+	padding: 0.5em 0em 0.5em 1.0em;
+	margin-bottom: 1.5em;
+	line-height: 1.6em;
+}
+
+#content blockquote p
+{
+	display: inline;
+}
+
+#content table
+{
+	border: dotted 1px #cacaca;
+	padding: 0.5em;
+	margin-bottom: 1.5em;
+}
+
+#content table th
+{
+	text-align: left;
+	font-weight: bold;
+	padding: 0.5em;
+}
+
+#content table td
+{
+	padding: 0.5em;
+}
+
+#content table tr.rowA
+{
+	background-color: #f5f5f5;
+	color: inherit;
+}
+
+#content table tr.rowB
+{
+	background-color: #fdfdfd;
+	color: inherit;
+}
+
+/* Primary Content */
+
+#primaryContentContainer
+{
+	float: right;
+	margin-left: -19em;
+	width: 100%;
+}
+
+#primaryContent
+{
+	margin: 0em 0em 0em 18em;
+	padding: 1.5em;
+	border-left: dotted 1px #cacaca;
+
+}
+
+#primaryContent ol li{
+	color:black;
+}
+
+/* Secondary Content */
+
+#secondaryContent
+{
+	float: left;
+	width: 15em;
+	padding: 0.5em 1.5em; height:100%
+}
+
+#secondaryContent ul{ padding-left:0px}
+#secondaryContent li{ list-style:none; padding:5px 0px; border-bottom:1px solid #087DFB; background:url("images/arrowWiki.png") no-repeat center right; padding-right:25px}
+#secondaryContent a{ color:#fff; text-decoration:none; display:block}
+#secondaryContent a:hover{ color:#087DFB}
+
+/* Footer */
+
+#footer
+{
+	margin-top: 1.0em;
+	border-top: dotted 1px #cacaca;
+	padding: 1.5em;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.clear
+{
+	clear: both;
+}
+#secondaryContent button a{
+ border: 2px;
+ background:#002E90;
+ /*background: #087DFB;
+ color: #f2f2f2;*/
+ padding: 10px;
+ font-size: 15px;
+ border-radius: 5px;
+ /*position: relative;*/
+ box-sizing: border-box;
+ transition: all 500ms ease;
+}

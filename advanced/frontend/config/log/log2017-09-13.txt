@@ -1,0 +1,620 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _clavepns",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_clavepns",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _urlmiga",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_urlmiga",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _urlmiga",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_urlmiga",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Unable to verify your data submission.",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_version",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_version",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Getting unknown property: yii\\web\\Application::db3",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "yii\\web\\Application::db3",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_version",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_version",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined offset: 1",
+    "code": 0,
+    "status": "yii\\db\\Exception",
+    "pagina": "1",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _valor",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_valor",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Array to string conversion",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: parroquias",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "parroquias",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: parroquias",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "parroquias",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: parroquias",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "parroquias",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: parroquias",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "parroquias",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para integer: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: capitulo",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "capitulo",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: capitulo",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "capitulo",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: capitulo",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "capitulo",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _tipo",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_tipo",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_version",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_version",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: fdpregunta\/createm",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "fdpregunta\/createm",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: fdpregunta\/createm",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "fdpregunta\/createm",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: fdpregunta\/createm",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "fdpregunta\/createm",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidConfigException",
+    "message": "Unknown component ID: db3",
+    "code": 0,
+    "status": "yii\\base\\InvalidConfigException",
+    "pagina": "db3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidConfigException",
+    "message": "Unknown component ID: db3",
+    "code": 0,
+    "status": "yii\\base\\InvalidConfigException",
+    "pagina": "db3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidConfigException",
+    "message": "Unknown component ID: db3",
+    "code": 0,
+    "status": "yii\\base\\InvalidConfigException",
+    "pagina": "db3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidConfigException",
+    "message": "Unknown component ID: db3",
+    "code": 0,
+    "status": "yii\\base\\InvalidConfigException",
+    "pagina": "db3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidConfigException",
+    "message": "Unknown component ID: db3",
+    "code": 0,
+    "status": "yii\\base\\InvalidConfigException",
+    "pagina": "db3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidConfigException",
+    "message": "Unknown component ID: db3",
+    "code": 0,
+    "status": "yii\\base\\InvalidConfigException",
+    "pagina": "db3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: last, provincia, cantones, parroquias, periodos",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "last, provincia, cantones, parroquias, periodos",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: id_version, provincia, cantones, parroquias, periodos",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "id_version, provincia, cantones, parroquias, periodos",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: id_version, provincia, cantones, parroquias, periodos",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "id_version, provincia, cantones, parroquias, periodos",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: id_version, provincia, cantones, parroquias, periodos",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "id_version, provincia, cantones, parroquias, periodos",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _clavepns",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_clavepns",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: provincia, periodos",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "provincia, periodos",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: id_opcion_select",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_opcion_select",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: detcapitulo\/generadorvista",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "detcapitulo\/generadorvista",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================

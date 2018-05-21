@@ -1,0 +1,45 @@
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[08006] [7] FATAL:  database \"Integrada\" does not exist",
+    "code": "08006",
+    "status": "yii\\db\\Exception",
+    "pagina": " database \"Integrada\" does not exist",
+    "tevento": "3",
+    "ip": "167.0.45.18",
+    "user": "-"
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[08006] [7] FATAL:  database \"Integrada\" does not exist",
+    "code": "08006",
+    "status": "yii\\db\\Exception",
+    "pagina": " database \"Integrada\" does not exist",
+    "tevento": "3",
+    "ip": "167.0.45.18",
+    "user": "-",
+    "datatext": [
+        [
+            "ss to debugger is denied due to IP address restriction. The requesting IP address is 167.0.45."
+        ]
+    ]
+}
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[08006] [7] FATAL:  database \"Integrada\" does not exist",
+    "code": "08006",
+    "status": "yii\\db\\Exception",
+    "pagina": " database \"Integrada\" does not exist",
+    "tevento": "3",
+    "ip": "167.0.45.18",
+    "user": "-",
+    "datatext": [
+        [
+            "ss to debugger is denied due to IP address restriction. The requesting IP address is 167.0.45."
+        ]
+    ]
+}
+===================
+
+===================

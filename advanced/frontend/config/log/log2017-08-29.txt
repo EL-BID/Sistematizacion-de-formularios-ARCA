@@ -1,0 +1,73 @@
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[42601]: Syntax error: 7 ERROR:  error de sintaxis en o cerca de \u00ab)\u00bb\nLINE 1: ...= $6,\"id_conjunto_pregunta\" = $7,\"id_version\" = $8) WHERE \"i...\n                                                             ^",
+    "code": "42601",
+    "status": "yii\\db\\Exception",
+    "pagina": "Syntax error: 7 ERROR:  error de sintaxis en o cerca de \u00ab)\u00bb\nLINE 1: ...= $6,\"id_conjunto_pregunta\" = $7,\"id_version\" = $8) WHERE \"i...\n                                                             ^",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Setting unknown property: frontend\\models\\Detcapitulo::rpta50",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::rpta50",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Setting unknown property: frontend\\models\\Detcapitulo::rpta50",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::rpta50",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Setting unknown property: frontend\\models\\Detcapitulo::rpta50",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::rpta50",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: last",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "last",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined property: frontend\\helpers\\savecapitulo::$_idconjrpt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "frontend\\helpers\\savecapitulo::$_idconjrpt",
+    "ip": "127.0.0.1",
+    "user": "dcarrillo"
+}
+===================
+
+===================

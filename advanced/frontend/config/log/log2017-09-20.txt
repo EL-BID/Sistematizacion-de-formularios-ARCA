@@ -1,0 +1,113 @@
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Getting unknown property: common\\models\\User::codrol",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "common\\models\\User::codrol",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: p_crear",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "p_crear",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: p_ejecutar",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "p_ejecutar",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[42703]: Undefined column: 7 ERROR:  no existe la columna \u00abid_capitulo\u00bb\nLINE 1: SELECT * FROM \"fd_elemento_condicion\" WHERE \"id_capitulo\"=$1\n                                                    ^",
+    "code": "42703",
+    "status": "yii\\db\\Exception",
+    "pagina": "Undefined column: 7 ERROR:  no existe la columna \u00abid_capitulo\u00bb\nLINE 1: SELECT * FROM \"fd_elemento_condicion\" WHERE \"id_capitulo\"=$1\n                                                    ^",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[42703]: Undefined column: 7 ERROR:  no existe la columna \u00abid_conjunto_respuesta\u00bb\nLINE 1: ... FROM \"fd_pregunta\" WHERE (\"id_pregunta\"=$1) AND (\"id_conjun...\n                                                             ^",
+    "code": "42703",
+    "status": "yii\\db\\Exception",
+    "pagina": "Undefined column: 7 ERROR:  no existe la columna \u00abid_conjunto_respuesta\u00bb\nLINE 1: ... FROM \"fd_pregunta\" WHERE (\"id_pregunta\"=$1) AND (\"id_conjun...\n                                                             ^",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Trying to get property of non-object",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\HttpException",
+    "message": "Error en la configuracion de las condicion1.",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\HttpException",
+    "message": "Error en la configuracion de las condicion 1.",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: detcapitulo\/=",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "detcapitulo\/=",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================

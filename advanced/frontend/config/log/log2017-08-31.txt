@@ -1,0 +1,12 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: clave",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "clave",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

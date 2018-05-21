@@ -1,0 +1,45 @@
+<?php
+
+use yii\helpers\Html;
+use yii\helpers\Url;
+
+
+/* @var $this yii\web\View */
+/* @var $model frontend\models\Clientesprueba */
+
+$this->title = 'Detalle Capitulo';
+
+/*Construyendo Miga de Pan*/
+if(!empty($migadepan)){
+  
+   if($migadepan['url'] == 'dashboard/index'){
+       $_labelmiga = "Dashboard";
+       $_urlmiga = array($migadepan['url'],'id_conj_rpta' => $migadepan['id_conj_rpta'],'id_conj_prta' => $migadepan['id_conj_prta'],'id_fmt' => $migadepan['id_fmt'], 'last' => $migadepan['id_version'], 'estado' => $migadepan['estado']) ;
+       $this->title = 'Detalle Capitulo';
+   }else if($migadepan['url'] == 'listcapitulos/index'){
+       $_labelmiga = "Listado";
+       $_urlmiga = array($migadepan['url'],'id_conj_rpta' => $migadepan['id_conj_rpta'],'id_conj_prta' => $migadepan['id_conj_prta'],'id_fmt' => $migadepan['id_fmt'], 'last' => $migadepan['id_version'], 'estado' => $migadepan['estado'],'provincia' => $migadepan['provincia'],'cantones' => $migadepan['cantones'],'parroquias' => $migadepan['parroquias'], 'periodos' => $migadepan['periodos']) ;
+       $this->title = 'Detalle Capitulo';
+   }else{
+       $_labelmiga = "Gestor Formatos";
+       $_urlmiga = array($migadepan['url'],'provincia' => $migadepan['provincia'],'cantones' => $migadepan['cantones'],'parroquias' => $migadepan['parroquias'], 'periodos' => $migadepan['periodos'], 'estado' => $migadepan['estado'],'id_fmt' => $migadepan['id_fmt']) ;
+       $this->title = 'Detalle Formato';
+   }
+    
+}
+
+$this->params['breadcrumbs'][] = ['label' => $_labelmiga, 'url' => $_urlmiga];
+$this->params['breadcrumbs'][] = $this->title;
+
+/*Final Consturccion miga de PAN*/
+?>
+<div class="headSection"><h1 class="titSection"><?= Html::encode($this->title) ?></h1></div>
+
+<div class="clientesprueba-create">
+
+    <?= $this->render('_form', [
+        'model' => $model,'vista'=>$vista,'tipo'=>'Create','permisos'=>$permisos,'_urlmiga'=>$_urlmiga,'modelgenerales'=>$modelgenerales,
+        'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'id_version'=>$last,'estado'=>$estado,'id_capitulo'=>$id_capitulo,'_modelbasicos'=>$_modelbasicos,'_modelbasicos_coordenadas'=>$_modelbasicos_coordenadas,'_modelbasicos_ubicacion'=>$_modelbasicos_ubicacion,'cantonesPost'=>$cantonesPost,'demarcacionespost'=>$DemarcacionPost,'focus'=>$focus,'dinamicjavascript'=>$dinamicjavascript
+    ]) ?>
+
+</div>

@@ -1,60 +1,65 @@
 
 ## Diseño de formularios - ARCA
 ---
-Esta herramienta permite sistematizar el diseño y alojamiento de formularios de una forma sencilla a través de hojas excel. El sistema se compone de tres módulos principales:
+Esta herramienta permite sistematizar el diseño y alojamiento de formularios de una forma sencilla a través de hojas Excel. El sistema se compone de tres elementos principales:
 
-**1. Parametrización**: Transformación de un archivo excel a formulario y base de datos SQL Server.
+**1. Parametrización**: Transformación de un archivo Excel a formulario y base de datos SQL Server.
 
-**2. Alojamiento y configuración de formulario**: Servicio para alojar el formulario web, módulos de control, módulo de notificaciones y XXX
+**2. Módulos de control de formulario y sistema de notificaciones automáticas**: Posee los módulos necesarios para que los formularios creados en la parametrización sean accedidos por usuarios debidamente identificados y autorizados. Adicionalmente posee un módulo de notificaciones que puede ser parametrizado para enviar correos de acuerdo a tareas programadas.
 
-**3. Generación de reportes**: Módulo de generación de reportes con información de ... XXX
+**3. Generación de usuarios**: Posee un módulo para crear los usuarios que pueden acceder a los formularios creados y que nivel de acceso tienen sobre ellos.
+
+**4. Generación de reportes**: Cada formulario parametrizado va acompañado de un módulo que permite generar el contenido de los mismos en formato PDF, Excel y Word
 
 Esta herramienta ha sido desarrollada como parte del proceso para transparentar y agilizar la recolección de información de la Agencia Reguladora y Controladora de Aguas (ARCA) en Ecuador. (Código de la operación: RG-T2744 de las operaciones del BID)
 
-El diseño de formularios ha permitido que ... (hablar de los beneficios que ha traído).
+El diseño de formularios ha permitido que, mediante una parametrización sencilla, realizada en una hoja de Excel, obtener un formato listo para diligenciar. Con esto es posible realizar un desarrollo de una manera más ágil; adicionalmente la información se guarda de una forma estructurada y uniforme, lo cual permite realizar procesos de análisis sobre esta sin necesidad de preocuparse porqué estructura de datos va a tener cada formato de recolección de datos.
 
 ### Guía de usuario
 ---
-Una vez instalado la herramienta puedes acceder a la Wiki haciendo clic en XXX
-
+Una vez instalado la herramienta puedes acceder a la Wiki, para esto se puede ingresar a la instalación en la siguiente ruta:
+				```r
+				http://ip_o_url_instalacion/advanced/frontend/web/manual.php
+				```
+En el link Instalación de librerias.
 Si aún no has instalado la herramienta, también puedes acceder a los contenidos básicos de la guía de usuario en la [wiki](https://github.com/EL-BID/Sistematizacion-de-formularios-ARCA/wiki) de este repositorio.
-*Explica los pasos básicos sobre cómo usar la herramienta digital. Es una buena sección para mostrar capturas de pantalla o gifs que ayuden a entender la herramienta digital.*
- 	
+
+También es posible encontrar información en la carpeta https://github.com/EL-BID/Sistematizacion-de-formularios-ARCA/master/advanced/documentos 	
+
 ### Guía de instalación
 ---
-*Paso a paso de cómo instalar la herramienta digital. En esta sección es recomendable explicar la arquitectura de carpetas y módulos que componen el sistema.*
+Este proyecto se ha trabajado sobre la instalación advanced de Yii (https://github.com/yiisoft/yii2-app-advanced), por consiguiente, lo primero que se debe realizar es la instalación de Yii2.
 
-*Según el tipo de herramienta digital, el nivel de complejidad puede variar. En algunas ocasiones puede ser necesario instalar componentes que tienen dependencia con la herramienta digital. Si este es el caso, añade también la siguiente sección.*
+Para instalar Yii se debe tener un servidor con un sistema operativo Windows o Linux que tenga instalado Apache, PHP 5.4 o superior Y composer para la instalación de dependencias.	
 
-*La guía de instalación debe contener de manera específica:
-- Los requisitos del sistema operativo para la compilación (versiones específicas de librerías, software de gestión de paquetes y dependencias, SDKs y compiladores, etc.).
-- Las dependencias propias del proyecto, tanto externas como internas (orden de compilación de sub-módulos, configuración de ubicación de librerías dinámicas, etc.).
-- Pasos específicos para la compilación del código fuente y ejecución de tests unitarios en caso de que el proyecto disponga de ellos.*
+La base de datos funciona sobre PosgreSQL, para el correcto funcionamiento de la wiki y de la aplicación se debe restaurar las bases de datos que se encuentran en https://github.com/EL-BID/Sistematizacion-de-formularios-ARCA/master/advanced/frontend/web/examples/sql
+
+Para un ejemplo detallado de la instalación puede dirigirse a la carpeta https://github.com/EL-BID/Sistematizacion-de-formularios-ARCA/master/advanced/documentos en el documento Instalacion.pdf 	
 
 #### Dependencias
-*Descripción de los recursos externos que generan una dependencia para la reutilización de la herramienta digital (librerías, frameworks, acceso a bases de datos y licencias de cada recurso). Es una buena práctica describir las últimas versiones en las que ha sido probada la herramienta digital.*
+El proyecto ha sido trabajado y evaluado utilizando Xampp con PHP 5.4 en ambientes de desarrollo Windows y Linux.
 
-    Puedes usar este estilo de letra diferenciar los comandos de instalación.
+Puede ser descargada desde https://www.apachefriends.org
 
-### Cómo contribuir
----
-*Esta sección explica a desarrolladores cuáles son las maneras habituales de enviar una solicitud de adhesión de nuevo código (“pull requests”), cómo declarar fallos en la herramienta y qué guías de estilo se deben usar al escribir más líneas de código.*
+La aplicación contiene dentro de la carpeta https://github.com/EL-BID/Sistematizacion-de-formularios-ARCA/master/advanced/vendor los módulos necesarios para su funcionamiento, en caso de necesitar actualizar alguno de ellos se debe realizar mediante el comando de composer:
 
-### Código de conducta 
----
-*El código de conducta establece las normas sociales, reglas y responsabilidades que los individuos y organizaciones deben seguir al interactuar de alguna manera con la herramienta digital o su comunidad. Es una buena práctica para crear un ambiente de respeto e inclusión en las contribuciones al proyecto. La plataforma Github premia y ayuda a los repositorios dispongan de este archivo. Al crear CODE_OF_CONDUCT.md puedes empezar desde una plantilla sugerida por ellos. *
+```r
+Linux
+	php composer.phar update modulo_a_actualizar
+
+Windows
+	composer update modulo_a_actualizar
+```
 
 ### Autor/es 
 ---
-*Nombra a el/los autor/es original/es. Consulta con ellos antes de publicar un email o un nombre personal. Una manera muy común es   dirigirlos a sus cuentas de redes sociales.*
-
-### Información adicional
----
-*Esta es la sección que permite agregar más información de contexto al proyecto como alguna web de relevancia, proyectos similares o que hayan usado la misma tecnología.*
+- Andrés Villamizar
+- William García
+- Diego Torrado
 
 ### Licencia 
 ---
-Licencia BID (link al archivo)
+Licencia BID [LICENSE](https://github.com/EL-BID/Sistematizacion-de-formularios-ARCA/master/Licencia.md)
 
 ## Limitación de responsabilidades
 

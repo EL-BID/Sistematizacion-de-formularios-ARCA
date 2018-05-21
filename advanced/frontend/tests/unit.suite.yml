@@ -1,0 +1,15 @@
+class_name: UnitTester
+modules:
+    enabled:
+        - Yii2:
+            part: [orm, email, fixtures]
+        - Asserts
+        - Db:
+            dsn: 'pgsql:host=127.0.0.1;port=5432;dbname=yii2advanced_test'
+            user: 'postgres'
+            password: '123456'
+            dump: 'tests/_data/dump.sql'
+            populate: true
+            cleanup: true
+            reconnect: true
+

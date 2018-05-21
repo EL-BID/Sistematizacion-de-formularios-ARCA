@@ -1,0 +1,51 @@
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22003]: Numeric value out of range: 7 ERROR:  el valor \u00ab3174790829\u00bb est\u00e1 fuera de rango para el tipo integer",
+    "code": "22003",
+    "status": "yii\\db\\Exception",
+    "pagina": "Numeric value out of range: 7 ERROR:  el valor \u00ab3174790829\u00bb est\u00e1 fuera de rango para el tipo integer",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\db\\Exception",
+    "message": "Failed to commit transaction: transaction was inactive.",
+    "code": 0,
+    "status": "yii\\db\\Exception",
+    "pagina": "transaction was inactive.",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\db\\Exception",
+    "message": "Failed to commit transaction: transaction was inactive.",
+    "code": 0,
+    "status": "yii\\db\\Exception",
+    "pagina": "transaction was inactive.",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: ra_porcentaje",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "ra_porcentaje",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

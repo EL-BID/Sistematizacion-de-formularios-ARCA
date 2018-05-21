@@ -1,0 +1,74 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _url5",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_url5",
+    "ip": "127.0.0.1",
+    "user": "dbautista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _url5",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_url5",
+    "ip": "127.0.0.1",
+    "user": "dbautista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _url5",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_url5",
+    "ip": "127.0.0.1",
+    "user": "dbautista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _url5",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_url5",
+    "ip": "127.0.0.1",
+    "user": "dbautista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: fdrespuestaxmes\/updatedetcapitulo",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "fdrespuestaxmes\/updatedetcapitulo",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: fdrespuestaxmes\/updatedetcapitulo",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "fdrespuestaxmes\/updatedetcapitulo",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

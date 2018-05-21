@@ -1,0 +1,134 @@
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[42703]: Undefined column: 7 ERROR:  no existe la columna \u00abid_conjunto_respuestas\u00bb\nLINE 1: SELECT * FROM \"fd_datos_generales\" WHERE \"id_conjunto_respue...\n                                                 ^\nHINT:  Perhaps you meant to reference the column \"fd_datos_generales.id_conjunto_respuesta\".",
+    "code": "42703",
+    "status": "yii\\db\\Exception",
+    "pagina": "Undefined column: 7 ERROR:  no existe la columna \u00abid_conjunto_respuestas\u00bb\nLINE 1: SELECT * FROM \"fd_datos_generales\" WHERE \"id_conjunto_respue...\n                                                 ^\nHINT:  Perhaps you meant to reference the column \"fd_datos_generales.id_conjunto_respuesta\".",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: modelgenerales",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "modelgenerales",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: modelgenerales",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "modelgenerales",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: modelgenerales",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "modelgenerales",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Exception (Unknown Property) ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:256",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: nombres_apellidos",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "nombres_apellidos",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\HttpException",
+    "message": "No existen capitulos asociadas al formato",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: r_secciones",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "r_secciones",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: model",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "model",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Trying to get property of non-object",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: nom_capitulo",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "nom_capitulo",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================

@@ -1,0 +1,145 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Use of undefined constant height - assumed ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Use of undefined constant heigth - assumed ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Use of undefined constant heigth - assumed ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "code": "22P02",
+    "status": "yii\\db\\Exception",
+    "pagina": "Invalid text representation: 7 ERROR:  la sintaxis de entrada no es v\u00e1lida para el enum estado: \u00ab\u00bb",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Object of class frontend\\helpers\\savecapitulo could not be converted to string",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:4096",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: tipo0",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "tipo0",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Setting unknown property: frontend\\models\\Detcapitulo::tipo0",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::tipo0",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Getting unknown property: frontend\\models\\Detcapitulo::data_pass",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::data_pass",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Array to string conversion",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Array to string conversion",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined offset: 0",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "0",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

@@ -1,0 +1,332 @@
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Setting unknown property: common\\models\\poc\\FdRespuesta::id_versions",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "common\\models\\poc\\FdRespuesta::id_versions",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\HttpException",
+    "message": "No existen capitulos asociadas al formato",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\HttpException",
+    "message": "No se pudo crear la respuesta asociada.s",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": false,
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: fdubicacion\/listadopd",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "fdubicacion\/listadopd",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: fdubicacion\/listadopd",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "fdubicacion\/listadopd",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: nom_prta, numerar",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "nom_prta, numerar",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: nom_prta, numerar",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "nom_prta, numerar",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\web\\BadRequestHttpException",
+    "message": "Missing required parameters: nom_prta, numerar",
+    "code": 0,
+    "status": "yii\\web\\HttpException:400",
+    "pagina": "nom_prta, numerar",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: numerar",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "numerar",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: numerar",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "numerar",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: id_fmt",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_fmt",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[23503]: Foreign key violation: 7 ERROR:  inserci\u00f3n o actualizaci\u00f3n en la tabla \u00abfd_ubicacion\u00bb viola la llave for\u00e1nea \u00abfd_ubicacion_cod_parroquia_fkey\u00bb\nDETAIL:  La llave (cod_parroquia, cod_canton, cod_provincia)=(1, 10, 11) no est\u00e1 presente en la tabla \u00abparroquias\u00bb.",
+    "code": "23503",
+    "status": "yii\\db\\IntegrityException",
+    "pagina": "Foreign key violation: 7 ERROR:  inserci\u00f3n o actualizaci\u00f3n en la tabla \u00abfd_ubicacion\u00bb viola la llave for\u00e1nea \u00abfd_ubicacion_cod_parroquia_fkey\u00bb\nDETAIL:  La llave (cod_parroquia, cod_canton, cod_provincia)=(1, 10, 11) no est\u00e1 presente en la tabla \u00abparroquias\u00bb.",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[42703]: Undefined column: 7 ERROR:  no existe la columna fd_respuesta.$id_conjunto_respuesta\nLINE 1: ...a\" WHERE (\"fd_respuesta\".\"id_pregunta\" = $1) AND (\"fd_respue...\n                                                             ^\nHINT:  Perhaps you meant to reference the column \"fd_respuesta.id_conjunto_respuesta\".",
+    "code": "42703",
+    "status": "yii\\db\\Exception",
+    "pagina": "Undefined column: 7 ERROR:  no existe la columna fd_respuesta.$id_conjunto_respuesta\nLINE 1: ...a\" WHERE (\"fd_respuesta\".\"id_pregunta\" = $1) AND (\"fd_respue...\n                                                             ^\nHINT:  Perhaps you meant to reference the column \"fd_respuesta.id_conjunto_respuesta\".",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _textotooltip",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_textotooltip",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _textotooltip",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_textotooltip",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _textotooltip",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_textotooltip",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

@@ -1,0 +1,451 @@
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _clave",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_clave",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: id",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: nomcapitulo",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "nomcapitulo",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _stringhtml",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_stringhtml",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Use of undefined constant _stringhtml - assumed ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _idpregunta",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_idpregunta",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _textotooltip",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_textotooltip",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: id_seccion",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "id_seccion",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: $cols_i",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "$cols_i",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined index: cols_i",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "cols_i",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Missing argument 6 for frontend\\helpers\\helperHTML::gen_celdaspos(), called",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": "gen_celdaspos(), called",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Missing argument 7 for frontend\\helpers\\helperHTML::gen_celdaspos(), called",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": "gen_celdaspos(), called",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: vista",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "vista",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: vista",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "vista",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _acces",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_acces",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Getting unknown property: frontend\\models\\Detcapitulo::rpta0",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "frontend\\models\\Detcapitulo::rpta0",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: _u",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "_u",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Undefined variable: vista",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": "vista",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Getting unknown property: common\\models\\poc\\FdPregunta::Id",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "common\\models\\poc\\FdPregunta::Id",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Getting unknown property: common\\models\\poc\\FdPregunta::create",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "common\\models\\poc\\FdPregunta::create",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Getting unknown property: common\\models\\poc\\FdPregunta::create",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "common\\models\\poc\\FdPregunta::create",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownPropertyException",
+    "message": "Getting unknown property: common\\models\\poc\\FdPregunta::create",
+    "code": 0,
+    "status": "yii\\base\\UnknownPropertyException",
+    "pagina": "common\\models\\poc\\FdPregunta::create",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Trying to get property of non-object",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: detcapitulo\/ejec_comand",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "detcapitulo\/ejec_comand",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: detcapitulo\/ejec_comand",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "detcapitulo\/ejec_comand",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: detcapitulo\/ejec_comand",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "detcapitulo\/ejec_comand",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: detcapitulo\/ejec_comand",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "detcapitulo\/ejec_comand",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: detcapitulo\/Fejec_comand",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "detcapitulo\/Fejec_comand",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: detcapitulo\/ejec_comand",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "detcapitulo\/ejec_comand",
+    "tevento": "2",
+    "ip": "127.0.0.1",
+    "user": "dbaustista"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownMethodException",
+    "message": "Calling unknown method: common\\models\\poc\\TrComandoSearch::getfd_comando_pregunta()",
+    "code": 0,
+    "status": "yii\\base\\InvalidParamException",
+    "pagina": "common\\models\\poc\\TrComandoSearch::getfd_comando_pregunta()",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownMethodException",
+    "message": "Calling unknown method: common\\models\\poc\\TrComandoSearch::getfd_comando_pregunta()",
+    "code": 0,
+    "status": "yii\\base\\InvalidParamException",
+    "pagina": "common\\models\\poc\\TrComandoSearch::getfd_comando_pregunta()",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\UnknownMethodException",
+    "message": "Calling unknown method: common\\models\\poc\\TrComando::getFdComandoPregunta()",
+    "code": 0,
+    "status": "yii\\base\\InvalidParamException",
+    "pagina": "common\\models\\poc\\TrComando::getFdComandoPregunta()",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\InvalidParamException",
+    "message": "Relation names are case sensitive. common\\models\\poc\\TrComando has a relation named \"idPreguntas\" instead of \"IdPreguntas\".",
+    "code": 0,
+    "status": "yii\\base\\InvalidParamException",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "PDOException",
+    "message": "SQLSTATE[42P01]: Undefined table: 7 ERROR:  falta una entrada para la tabla \u00abidPreguntas\u00bb en la cl\u00e1usula FROM\nLINE 1: ...\"id_pregunta\" = \"fd_pregunta\".\"id_pregunta\" WHERE \"idPregunt...\n                                                             ^",
+    "code": "42P01",
+    "status": "yii\\db\\Exception",
+    "pagina": "Undefined table: 7 ERROR:  falta una entrada para la tabla \u00abidPreguntas\u00bb en la cl\u00e1usula FROM\nLINE 1: ...\"id_pregunta\" = \"fd_pregunta\".\"id_pregunta\" WHERE \"idPregunt...\n                                                             ^",
+    "tevento": "3",
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Trying to get property of non-object",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:8",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================
+{
+    "name": "yii\\base\\ErrorException",
+    "message": "Illegal string offset ",
+    "code": 0,
+    "status": "yii\\base\\ErrorException:2",
+    "pagina": false,
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+
+===================

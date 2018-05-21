@@ -1,0 +1,292 @@
+{
+    "datatext": [
+        [
+            "ion start"
+        ]
+    ],
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "datatext": [
+        [
+            "ion start"
+        ]
+    ],
+    "ip": "127.0.0.1",
+    "user": "-",
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/#",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/#",
+    "tevento": "2"
+}
+===================
+{
+    "datatext": {
+        "0": [
+            "ion start"
+        ],
+        "$_GET ": [
+            "    'r' => 'site\/#'"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => 'o7opvbni3fopap2dj3j1nn4o51'",
+            "    '_csrf-frontend' => '476f6b3b74801e8b0a5a1aaba11d280e7dee3707ebf60db3d3f3b4663598c4f1a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"g8n6ZOlE47jwEEuaJ6bnxDtiJYuugUxX\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1:78'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/66.0.3359.181 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1:78\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=o7opvbni3fopap2dj3j1nn4o51; _csrf-frontend=476f6b3b74801e8b0a5a1aaba11d280e7dee3707ebf60db3d3f3b4663598c4f1a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22g8n6ZOlE47jwEEuaJ6bnxDtiJYuugUxX%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Program Files\\\\Microsoft MPI\\\\Bin\\\\;C:\\\\ProgramData\\\\Oracle\\\\Java\\\\javapath;c:\\\\Program Files (x86)\\\\Intel\\\\iCLS Client\\\\;c:\\\\Program Files\\\\Intel\\\\iCLS Client\\\\;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x86;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x64;C:\\\\Program Files (x86)\\\\Windows Live\\\\Shared;C:\\\\Program Files (x86)\\\\nodejs\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\TortoiseSVN\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\PuTTY\\\\;C:\\\\Program Files\\\\Java\\\\jdk1.8.0_121\\\\bin;C:\\\\Program Files (x86)\\\\QuickTime\\\\QTSystem\\\\;C:\\\\Program Files\\\\Microsoft\\\\Web Platform Installer\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\ManagementStudio\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\120\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\110\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\120\\\\DTS\\\\Binn\\\\;C:\\\\Users\\\\Diana Bautista\\\\.dnx\\\\bin;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\npm;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin;C:\\\\xampp\\\\htdocs\\\\proy_base\\\\vendor\\\\bin;C:\\\\Program Files\\\\Microsoft VS Code\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\WINDOWS'",
+            "    'COMSPEC' => 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\WINDOWS'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 78<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '78'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50733'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=site%2F%23'",
+            "    'REQUEST_URI' => '\/Prueba\/advanced\/frontend\/web\/index.php?r=site%2F%23'",
+            "    'SCRIPT_NAME' => '\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1526672450.851",
+            "    'REQUEST_TIME' => 1526672450"
+        ]
+    },
+    "ip": "127.0.0.1",
+    "user": "-",
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/#",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/#",
+    "tevento": "2"
+}
+===================
+{
+    "datatext": [
+        [
+            "ion start"
+        ]
+    ],
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "datatext": [
+        [
+            "ion start"
+        ]
+    ],
+    "ip": "127.0.0.1",
+    "user": "-",
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/#",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/#",
+    "tevento": "2"
+}
+===================
+{
+    "datatext": {
+        "0": [
+            "ion start"
+        ],
+        "$_GET ": [
+            "    'r' => 'site\/#'"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => 'o7opvbni3fopap2dj3j1nn4o51'",
+            "    '_csrf-frontend' => '476f6b3b74801e8b0a5a1aaba11d280e7dee3707ebf60db3d3f3b4663598c4f1a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"g8n6ZOlE47jwEEuaJ6bnxDtiJYuugUxX\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1:78'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/66.0.3359.181 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1:78\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=o7opvbni3fopap2dj3j1nn4o51; _csrf-frontend=476f6b3b74801e8b0a5a1aaba11d280e7dee3707ebf60db3d3f3b4663598c4f1a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22g8n6ZOlE47jwEEuaJ6bnxDtiJYuugUxX%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Program Files\\\\Microsoft MPI\\\\Bin\\\\;C:\\\\ProgramData\\\\Oracle\\\\Java\\\\javapath;c:\\\\Program Files (x86)\\\\Intel\\\\iCLS Client\\\\;c:\\\\Program Files\\\\Intel\\\\iCLS Client\\\\;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x86;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x64;C:\\\\Program Files (x86)\\\\Windows Live\\\\Shared;C:\\\\Program Files (x86)\\\\nodejs\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\TortoiseSVN\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\PuTTY\\\\;C:\\\\Program Files\\\\Java\\\\jdk1.8.0_121\\\\bin;C:\\\\Program Files (x86)\\\\QuickTime\\\\QTSystem\\\\;C:\\\\Program Files\\\\Microsoft\\\\Web Platform Installer\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\ManagementStudio\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\120\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\110\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\120\\\\DTS\\\\Binn\\\\;C:\\\\Users\\\\Diana Bautista\\\\.dnx\\\\bin;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\npm;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin;C:\\\\xampp\\\\htdocs\\\\proy_base\\\\vendor\\\\bin;C:\\\\Program Files\\\\Microsoft VS Code\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\WINDOWS'",
+            "    'COMSPEC' => 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\WINDOWS'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 78<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '78'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50751'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=site%2F%23'",
+            "    'REQUEST_URI' => '\/Prueba\/advanced\/frontend\/web\/index.php?r=site%2F%23'",
+            "    'SCRIPT_NAME' => '\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1526672462.45",
+            "    'REQUEST_TIME' => 1526672462"
+        ]
+    },
+    "ip": "127.0.0.1",
+    "user": "-",
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/#",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/#",
+    "tevento": "2"
+}
+===================
+{
+    "datatext": [
+        [
+            "ion start"
+        ]
+    ],
+    "ip": "127.0.0.1",
+    "user": "-"
+}
+===================
+{
+    "datatext": [
+        [
+            "ion start"
+        ]
+    ],
+    "ip": "127.0.0.1",
+    "user": "-",
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/#",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/#",
+    "tevento": "2"
+}
+===================
+{
+    "datatext": {
+        "0": [
+            "ion start"
+        ],
+        "$_GET ": [
+            "    'r' => 'site\/#'"
+        ],
+        "COOKIE ": [
+            "    'advanced-frontend' => 'o7opvbni3fopap2dj3j1nn4o51'",
+            "    '_csrf-frontend' => '476f6b3b74801e8b0a5a1aaba11d280e7dee3707ebf60db3d3f3b4663598c4f1a:2:{i:0;s:14:\\\"_csrf-frontend\\\";i:1;s:32:\\\"g8n6ZOlE47jwEEuaJ6bnxDtiJYuugUxX\\\";}'"
+        ],
+        "SESSION ": [
+            "    '__flash' => []"
+        ],
+        "SERVER ": [
+            "    'MIBDIRS' => 'C:\/xampp\/php\/extras\/mibs'",
+            "    'MYSQL_HOME' => '\\\\xampp\\\\mysql\\\\bin'",
+            "    'OPENSSL_CONF' => 'C:\/xampp\/apache\/bin\/openssl.cnf'",
+            "    'PHP_PEAR_SYSCONF_DIR' => '\\\\xampp\\\\php'",
+            "    'PHPRC' => '\\\\xampp\\\\php'",
+            "    'TMP' => '\\\\xampp\\\\tmp'",
+            "    'HTTP_HOST' => '127.0.0.1:78'",
+            "    'HTTP_CONNECTION' => 'keep-alive'",
+            "    'HTTP_CACHE_CONTROL' => 'max-age=0'",
+            "    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'",
+            "    'HTTP_USER_AGENT' => 'Mozilla\/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/66.0.3359.181 Safari\/537.36'",
+            "    'HTTP_ACCEPT' => 'text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8'",
+            "    'HTTP_REFERER' => 'http:\/\/127.0.0.1:78\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'",
+            "    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'",
+            "    'HTTP_COOKIE' => 'advanced-frontend=o7opvbni3fopap2dj3j1nn4o51; _csrf-frontend=476f6b3b74801e8b0a5a1aaba11d280e7dee3707ebf60db3d3f3b4663598c4f1a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22g8n6ZOlE47jwEEuaJ6bnxDtiJYuugUxX%22%3B%7D'",
+            "    'PATH' => 'C:\\\\Program Files\\\\Microsoft MPI\\\\Bin\\\\;C:\\\\ProgramData\\\\Oracle\\\\Java\\\\javapath;c:\\\\Program Files (x86)\\\\Intel\\\\iCLS Client\\\\;c:\\\\Program Files\\\\Intel\\\\iCLS Client\\\\;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\DAL;C:\\\\Program Files (x86)\\\\Intel\\\\Intel(R) Management Engine Components\\\\IPT;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x86;C:\\\\Program Files (x86)\\\\Intel\\\\OpenCL SDK\\\\3.0\\\\bin\\\\x64;C:\\\\Program Files (x86)\\\\Windows Live\\\\Shared;C:\\\\Program Files (x86)\\\\nodejs\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\TortoiseSVN\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\PuTTY\\\\;C:\\\\Program Files\\\\Java\\\\jdk1.8.0_121\\\\bin;C:\\\\Program Files (x86)\\\\QuickTime\\\\QTSystem\\\\;C:\\\\Program Files\\\\Microsoft\\\\Web Platform Installer\\\\;C:\\\\xampp\\\\php;C:\\\\ProgramData\\\\ComposerSetup\\\\bin;C:\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\130\\\\DTS\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\130\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\140\\\\Tools\\\\Binn\\\\ManagementStudio\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\110\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\120\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\110\\\\DTS\\\\Binn\\\\;C:\\\\Program Files (x86)\\\\Microsoft SQL Server\\\\120\\\\DTS\\\\Binn\\\\;C:\\\\Users\\\\Diana Bautista\\\\.dnx\\\\bin;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\npm;C:\\\\Users\\\\Diana Bautista\\\\AppData\\\\Roaming\\\\Composer\\\\vendor\\\\bin;C:\\\\xampp\\\\htdocs\\\\proy_base\\\\vendor\\\\bin;C:\\\\Program Files\\\\Microsoft VS Code\\\\bin'",
+            "    'SystemRoot' => 'C:\\\\WINDOWS'",
+            "    'COMSPEC' => 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe'",
+            "    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'",
+            "    'WINDIR' => 'C:\\\\WINDOWS'",
+            "    'SERVER_SIGNATURE' => '<address>Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30 Server at 127.0.0.1 Port 78<\/address>",
+            "'",
+            "    'SERVER_SOFTWARE' => 'Apache\/2.4.25 (Win32) OpenSSL\/1.0.2j PHP\/5.6.30'",
+            "    'SERVER_NAME' => '127.0.0.1'",
+            "    'SERVER_ADDR' => '127.0.0.1'",
+            "    'SERVER_PORT' => '78'",
+            "    'REMOTE_ADDR' => '127.0.0.1'",
+            "    'DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'REQUEST_SCHEME' => 'http'",
+            "    'CONTEXT_PREFIX' => ''",
+            "    'CONTEXT_DOCUMENT_ROOT' => 'C:\/xampp\/htdocs'",
+            "    'SERVER_ADMIN' => 'postmaster@localhost'",
+            "    'SCRIPT_FILENAME' => 'C:\/xampp\/htdocs\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'REMOTE_PORT' => '50751'",
+            "    'GATEWAY_INTERFACE' => 'CGI\/1.1'",
+            "    'SERVER_PROTOCOL' => 'HTTP\/1.1'",
+            "    'REQUEST_METHOD' => 'GET'",
+            "    'QUERY_STRING' => 'r=site%2F%23'",
+            "    'REQUEST_URI' => '\/Prueba\/advanced\/frontend\/web\/index.php?r=site%2F%23'",
+            "    'SCRIPT_NAME' => '\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'PHP_SELF' => '\/Prueba\/advanced\/frontend\/web\/index.php'",
+            "    'REQUEST_TIME_FLOAT' => 1526672466.368",
+            "    'REQUEST_TIME' => 1526672466"
+        ]
+    },
+    "ip": "127.0.0.1",
+    "user": "-",
+    "name": "yii\\base\\InvalidRouteException",
+    "message": "Unable to resolve the request: site\/#",
+    "code": 0,
+    "status": "yii\\web\\HttpException:404",
+    "pagina": "site\/#",
+    "tevento": "2"
+}
+===================

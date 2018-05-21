@@ -1,0 +1,58 @@
+    .tbcapitulo{
+        margin: 0 auto;
+        width: 90%;
+        border: 1px #000000 solid;
+    }
+    
+    .nomcapitulo{
+        font-size: 14pt;
+        color:#4169E1;
+        font-weight: bolder;
+        text-align: center;
+    }
+    
+    .tbseccion{
+       width: 100%; 
+    }
+   
+    .titleseccion{
+       font-size: 12pt;
+       font-weight: bolder;
+       background-color: #ccc;
+    }
+    
+    .labelpregunta{
+        border: solid 1px #000;
+        padding: 2px 2px;
+        font-size:10pt;
+        width: 25%;
+        color:#00a;
+        background-color:#F0FFF0;
+    }
+    
+     .inputpregunta{
+        padding: 2px 2px;
+    }
+    
+    .labelpregunta2{
+        padding: 2px 2px;
+        font-size:10pt;
+        color:#00a;
+        background-color:#F0FFF0;
+    }
+    
+    .tdtable_tipo{
+        padding: 2px 2px;
+        font-size:1em;
+        color:#000;
+        background-color:#F5F5DC;
+        text-align: center;
+    }
+ 
+    .tbespeciales{
+        margin: 0 auto;
+        border: 1px #000000 solid;
+         width: 90%;
+    }
+
+    
