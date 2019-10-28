@@ -1,0 +1,31 @@
+language: php
+env:
+  global:
+    - TASK_TESTS_PHP=1
+    - DEFAULT_COMPOSER_FLAGS="--prefer-dist --no-interaction --no-progress --optimize-autoloader"
+php:
+- 5.6
+services: postgresql
+cache:
+directories: 
+  - vendor
+  - $HOME/.composer/cache
+  - $HOME/.npm
+install:
+  - export PATH="$HOME/.composer/vendor/bin:$TRAVIS_BUILD_DIR/vendor/bin:$PATH"
+  - travis_retry composer global require "fxp/composer-asset-plugin:1.*"
+  - travis_retry composer update $DEFAULT_COMPOSER_FLAGS
+before_script:
+- |
+    if [ $TASK_TESTS_PHP == 1 ]; then
+      phpunit --version
+      php --version
+      psql --version
+    fi
+- psql -c 'CREATE DATABASE integrada_test;' -U postgres
+- pg_restore -h localhost -p 5432 -U postgres -d integrada_test -v "common/db_test/Integrada.backup"
+script:
+- travis_wait composer validate
+- travis_wait composer outdated --direct
+- sudo chmod 777 vendor/bin/codecept
+- travis_wait codecept run -c backend
