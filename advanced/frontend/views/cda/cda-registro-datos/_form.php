@@ -46,25 +46,18 @@ SweetSubmitAsset::register($this)
                                     'data-toggle' => 'tooltip',
                                     'placeholder'=>'Indique Sector Solicitado'        
                                      ]) ?>
+
+
+    <?= $form->field($modelCoordenada,  "x")->widget(\yii\widgets\MaskedInput::className(), [
+                "mask" => "######.##",]); ?>
     
-    <?= $form->field($modelCoordenada, 'longitud')->textInput([
-                                    'maxlength' => true,
-                                    'title' => 'Indique Longitud',
-                                    'data-toggle' => 'tooltip',
-                                    'placeholder'=>'Indique Longitud'        
-                                     ]) ?>
-    <?= $form->field($modelCoordenada, 'latitud')->textInput([
-                                    'maxlength' => true,
-                                    'title' => 'Indique Latitud',
-                                    'data-toggle' => 'tooltip',
-                                    'placeholder'=>'Indique Latitud'        
-                                     ]) ?>
-    <?= $form->field($modelCoordenada, 'altura')->textInput([
-                                    'maxlength' => true,
-                                    'title' => 'Indique Altura',
-                                    'data-toggle' => 'tooltip',
-                                    'placeholder'=>'Indique Altura'        
-                                     ]) ?>
+    <?= $form->field($modelCoordenada,  "y")->widget(\yii\widgets\MaskedInput::className(), [
+                "mask" => "########.##",]); ?>
+    
+    <?= $form->field($modelCoordenada,  "altura")->widget(\yii\widgets\MaskedInput::className(), [
+                "mask" => "####.##",]); ?>
+                
+    
     
     <?= $form->field($model, 'abscisa')->textInput([
                                     'maxlength' => true,

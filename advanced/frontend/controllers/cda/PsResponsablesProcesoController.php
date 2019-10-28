@@ -117,7 +117,7 @@ class PsResponsablesProcesoController extends ControllerPry
       * del requerimiento Detalle Proceso
      * @return mixed
      */
-    public function actionCreatedetproceso($id_cproceso,$id_cda)
+    public function actionCreatedetproceso($id_cproceso,$id_cda,$_labelmiga)
     {
        $facade =  new  PsResponsablesProcesoControllerFachada;
        $modelE= $facade->actionCreatedetproceso(Yii::$app->request->post(),Yii::$app->request->isAjax,$id_cproceso,$id_cda);
@@ -126,7 +126,7 @@ class PsResponsablesProcesoController extends ControllerPry
         if ($modelE['create'] == 'True') {
 			
             Yii::$app->session->setFlash('FormSubmitted','2');
-            return  $this->redirect(['cda/detalleproceso/index', 'id_cda' => $id_cda]);		
+            return  $this->redirect(['cda/detalleproceso/index', 'id_cda' => $id_cda, '_labelmiga'=>$_labelmiga]);		
 			
         }elseif($modelE['create']=='Ajax'){
              return $this->renderAjax('createdetproceso', [

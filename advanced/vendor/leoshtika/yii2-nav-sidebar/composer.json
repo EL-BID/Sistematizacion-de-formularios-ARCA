@@ -1,0 +1,22 @@
+{
+    "name": "leoshtika/yii2-nav-sidebar",
+    "description": "A bootstrap sidebar nav for Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "nav", "sidebar", "bootstrap"],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "leoshtika\\bootstrap\\": ""
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leonard Shtika",
+            "email": "leonard@shtika.info",
+            "homepage": "http://leonard.shtika.info"
+        }
+    ]
+}

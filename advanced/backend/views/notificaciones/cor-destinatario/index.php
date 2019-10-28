@@ -31,8 +31,24 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_destinatario',
             'val_defecto',
             'consulta_sql:ntext',
-            'id_correo',
-            'id_tdestinatario',
+             [
+                'attribute' => 'id_correo',
+                'value' => function($model){
+                    $correo = common\models\notificaciones\CorCorreo::findOne($model->id_correo);
+                    return $correo->nom_correo;
+                },
+                'filter' => yii\helpers\ArrayHelper::map(common\models\notificaciones\CorCorreo::find()->all(), 'id_correo', 'nom_correo'),
+            ],
+                         [
+                'attribute' => 'id_tdestinatario',
+                'value' => function($model){
+                    $correo = common\models\notificaciones\CorTipoDestinatario::findOne($model->id_tdestinatario);
+                    return $correo->nom_tdestinatario;
+                },
+                'filter' => yii\helpers\ArrayHelper::map(common\models\notificaciones\CorTipoDestinatario::find()->all(), 'id_tdestinatario', 'nom_tdestinatario'),
+            ],
+            //'id_correo',
+            //'id_tdestinatario',
 
             [
 			

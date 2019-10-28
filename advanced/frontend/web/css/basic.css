@@ -56,3 +56,9 @@ label {
 #hourtime{
     color:white;  
 }
+
+/* ## ZINDEX PARA FECHA ##*/
+
+.redactor-toolbar{
+    z-index: 0 !important;
+}

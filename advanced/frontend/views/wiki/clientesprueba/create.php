@@ -12,7 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="clientesprueba-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="headSection">
+    <h1 class="titSection"><?= Html::encode($this->title) ?></h1>
+    </div>
 
     <?= $this->render('_form', [
         'model' => $model,

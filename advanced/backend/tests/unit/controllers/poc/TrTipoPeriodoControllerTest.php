@@ -79,8 +79,8 @@ class TrTipoPeriodoControllerTest extends \Codeception\Test\Unit
         
             // Se declaran los $queryParams a enviar los filtros
             $queryParams = ['TrTipoPeriodoSearch' => [
-                                             'id_tperiodo' => "Ingresar valor de pruebas para el campo id_tperiodo de tipo int4",       
-                                              'nom_tperiodo' => "Ingresar valor de pruebas para el campo nom_tperiodo de tipo varchar",       
+                                             'id_tperiodo' => "1",       
+                                              'nom_tperiodo' => "Periodo 1",       
                               ]];
              
        
@@ -105,12 +105,12 @@ class TrTipoPeriodoControllerTest extends \Codeception\Test\Unit
         
         // se deben declarar los valores de $id para enviar la llave
         
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
                                      // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
             $actionView=Yii::$app->runAction('TrTipoPeriodoController/view',['id' => $id]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -128,8 +128,8 @@ class TrTipoPeriodoControllerTest extends \Codeception\Test\Unit
           
             // Se declaran los $queryParams a enviar los datos a crear
             $queryParams = ['TrTipoPeriodoController' => [
-                                             'id_tperiodo' => "Ingresar valor de pruebas para el campo id_tperiodo de tipo int4",       
-                                              'nom_tperiodo' => "Ingresar valor de pruebas para el campo nom_tperiodo de tipo varchar",       
+                                             'id_tperiodo' => "4",       
+                                              'nom_tperiodo' => "Periodo 4",       
                               ]];
                             
        //       Se declaran el post1
@@ -157,13 +157,13 @@ class TrTipoPeriodoControllerTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar los datos a actualizar
           $queryParams = ['TrTipoPeriodoController' => [
-                                         'id_tperiodo' => "Ingresar valor de pruebas para el campo id_tperiodo de tipo int4",       
-                                          'nom_tperiodo' => "Ingresar valor de pruebas para el campo nom_tperiodo de tipo varchar",       
+                                         'id_tperiodo' => "4",       
+                                              'nom_tperiodo' => "Periodo 4 actualizado",     
                           ]];
         
         
          // se deben declarar los valores de $id para enviar la llave
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '4';
                                 
         
          // se valida que se pueda realizar el update del registro
@@ -190,10 +190,10 @@ class TrTipoPeriodoControllerTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores para indicar el registro a borrar
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '4';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(TrTipoPeriodoController/update',['id' => $id]);
+         $actionDelete=Yii::$app->runAction('TrTipoPeriodoController/update',['id' => $id]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

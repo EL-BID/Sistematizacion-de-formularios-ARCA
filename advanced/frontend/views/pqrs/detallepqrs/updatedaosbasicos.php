@@ -23,12 +23,13 @@ $this->params['breadcrumbs'][] = 'Actualizar';
         ?>
    
         <h1 class="titSection">Tipo de PQRS: <?= $tipopqr; ?> </h1>
-        <?php echo Html::button("Regresar",
+        
+        <?php if(empty($_ajax)){ echo Html::button("Regresar",
                 ['class'=>'btn btn-default btn-xs',
                     'onclick'=>"window.location.href = '" . \Yii::$app->urlManager->createUrl(['pqrs/detallepqrs/index','numero'=>$numero,'id_pqr'=>$pqr]) . "';",
                     'data-toggle'=>'Regresar'
                 ]
-            ); ?>
+        ); } ?>
 
     </div>       
     <div class="aplicativo table-responsive">    

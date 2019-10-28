@@ -7,7 +7,7 @@ use yii\bootstrap\Alert;
 /* @var $this yii\web\View */
 /* @var $model common\models\Accesos */
 
-$this->title = $model->id__acceso;
+$this->title = $model->id_acceso;
 $this->params['breadcrumbs'][] = ['label' => 'Accesos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id__acceso], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id__acceso], [
+        <?= Html::a('Update', ['update', 'id' => $model->id_acceso], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->id_acceso], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id__acceso',
+            'id_acceso',
             'nombre_acceso',
             'id_pagina',
             'id_tipo_acceso',

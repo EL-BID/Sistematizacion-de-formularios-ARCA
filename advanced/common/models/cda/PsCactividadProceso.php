@@ -33,6 +33,9 @@ use common\models\modelpry\ModelPry;
  */
 class PsCactividadProceso extends ModelPry
 {
+    
+    public $nombreactividad;
+    public $causas;
     /**
      * @inheritdoc
      */
@@ -47,15 +50,13 @@ class PsCactividadProceso extends ModelPry
     public function rules()
     {
         return [
-            //[['observacion', 'id_clasif_actividad'], 'required'],
-            [['observacion','fecha_prevista','numero_quipux'],'default', 'value' => null],
-            [['id_cactividad_proceso', 'id_cproceso', 'id_actividad', 'dias_pausa', 'id_opc_tselect', 'id_clasif_actividad'], 'integer'],
-            [['fecha_realizacion', 'fecha_prevista', 'fecha_creacion'], 'string'],
-            [['id_usuario'], 'number'],
-            [['observacion', 'otro_cuales'], 'string', 'max' => 1000],
-            [['numero_quipux'], 'string', 'max' => 50],
-            [['diligenciado'], 'string', 'max' => 1],
-            [['otro_cuales'], 'string', 'max' => 100],
+            [['id_cproceso','id_actividad', 'dias_pausa', 'id_opc_tselect', 'id_clasif_actividad'], 'integer','skipOnEmpty'=>true],
+            [['fecha_realizacion', 'fecha_prevista', 'fecha_creacion'], 'string','skipOnEmpty'=>true],
+            [['id_usuario','tipo'], 'number','skipOnEmpty'=>true],
+            [['observacion', 'otro_cuales','puntos'], 'string', 'max' => 1000,'skipOnEmpty'=>true],
+            [['numero_quipux'], 'string', 'max' => 50,'skipOnEmpty'=>true],
+            [['diligenciado'], 'string', 'max' => 1,'skipOnEmpty'=>true],
+            [['otro_cuales'], 'string', 'max' => 100,'skipOnEmpty'=>true],
             [['id_actividad'], 'exist', 'skipOnError' => true, 'targetClass' => PsActividad::className(), 'targetAttribute' => ['id_actividad' => 'id_actividad']],
             [['id_cproceso'], 'exist', 'skipOnError' => true, 'targetClass' => PsCproceso::className(), 'targetAttribute' => ['id_cproceso' => 'id_cproceso']],
             [['id_opc_tselect'], 'exist', 'skipOnError' => true, 'targetClass' => PsOpcTipoSelect::className(), 'targetAttribute' => ['id_opc_tselect' => 'id_opc_tselect']],
@@ -70,19 +71,20 @@ class PsCactividadProceso extends ModelPry
     {
         return [
             'id_cactividad_proceso' => 'Id Cactividad Proceso',
-            'observacion' => 'Observacion',
-            'fecha_realizacion' => 'Fecha Realizacion',
+            'observacion' => 'Observación',
+            'fecha_realizacion' => 'Fecha Realización',
             'fecha_prevista' => 'Fecha Prevista',
-            'numero_quipux' => 'Numero Quipux',
+            'numero_quipux' => 'Número Quipux',
             'id_cproceso' => 'Id Cproceso',
-            'id_usuario' => 'Id Usuario',
-            'id_actividad' => 'Id Actividad',
-            'fecha_creacion' => 'Fecha Creacion',
+            'id_usuario' => 'Usuario',
+            'id_actividad' => 'Actividad',
+            'fecha_creacion' => 'Fecha Creación',
             'diligenciado' => 'Diligenciado',
-            'dias_pausa' => 'Dias Pausa',
-            'id_opc_tselect' => 'Id Opc Tselect',
-            'otro_cuales' => 'Otro Cuales',
+            'dias_pausa' => 'Días Pausa',
+            'id_opc_tselect' => 'Causal de Pausa',
+            'otro_cuales' => 'Especifique',
             'id_clasif_actividad' => 'Id Clasif Actividad',
+            'puntos'=>'Puntos Solicitados',
         ];
     }
 
@@ -140,5 +142,17 @@ class PsCactividadProceso extends ModelPry
     public function getIdUsuario()
     {
         return $this->hasOne(\common\models\autenticacion\UsuariosAp::className(), ['id_usuario' => 'id_usuario']);
+    }
+    
+    public function getCda0(){
+        return $this->hasOne(\common\models\cda\Cda::className(), ['id_cproceso_arca' => 'id_cproceso'])->via('idCproceso');
+    }
+    
+    public function getUltIdActividad(){
+        return $this->hasOne(\common\models\cda\PsActividad::className(), ['id_actividad' => 'ult_id_actividad'])->via('idCproceso');
+    }
+    
+     public function getPqrs(){
+        return $this->hasOne(\common\models\pqrs\Pqrs::className(), ['id_cproceso' => 'id_cproceso'])->via('idCproceso');
     }
 }

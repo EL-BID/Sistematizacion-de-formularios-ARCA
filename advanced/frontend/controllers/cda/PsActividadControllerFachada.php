@@ -192,4 +192,23 @@ class PsActividadControllerFachada extends FachadaPry
      public function cargaPsActividad($params){
         return $this->findModelByParams($params);
     }
+    
+     /**
+     * Funcion visible para los objetos que necesiten una consulta al modelo PsActividad     
+     * @param type $params contiene array con valores de query a columnas de la tabla
+     * @return type PsActividad     */
+     public function cargaPsActividadAlerta(){
+         $query = new \yii\db\Query;
+         $query  ->select(['ps_actividad.id_actividad', 'ps_actividad.nom_actividad','ps_actividad.plazo_alerta','ps_actividad.campo_fecha_alerta', 
+                            'ps_alerta.id_talerta', 'ps_alerta.seg_ejecucion', 'ps_alerta.mensaje', 
+                            'ps_cactividad_proceso.fecha_creacion', 'ps_cactividad_proceso.fecha_prevista','ps_cactividad_proceso.id_cproceso'
+             , 'ps_cactividad_proceso.id_cactividad_proceso'])
+                 ->from('ps_actividad')
+                 ->innerJoin('ps_alerta', 'ps_actividad.id_actividad=ps_alerta.id_actividad')
+                ->innerJoin('ps_cactividad_proceso','ps_actividad.id_actividad=ps_cactividad_proceso.id_actividad');
+         $command = $query->createCommand();
+         $data = $command->queryAll();
+         return $data;
+       
+    }
 }

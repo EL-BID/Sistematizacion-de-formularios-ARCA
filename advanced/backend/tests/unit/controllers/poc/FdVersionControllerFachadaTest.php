@@ -83,9 +83,9 @@ class FdVersionControllerFachadaTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar
             $queryParams = ['FdVersionSearch' => [
-                                             'id_version' => "Ingresar valor de pruebas para el campo id_version de tipo int4",       
-                                              'desc_version' => "Ingresar valor de pruebas para el campo desc_version de tipo varchar",       
-                                              'num_version' => "Ingresar valor de pruebas para el campo num_version de tipo varchar",       
+                                             'id_version' => "1",       
+                                              'desc_version' => "Versión 1",       
+                                              'num_version' => "1",       
                               ]];
              
        
@@ -116,7 +116,7 @@ class FdVersionControllerFachadaTest extends \Codeception\Test\Unit
         $this->assertInstanceOf('backend\controllers\poc\FdVersionControllerFachada', $tester);
     
         // se deben declarar los valores de $id        
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
               
         
              // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
@@ -144,9 +144,9 @@ class FdVersionControllerFachadaTest extends \Codeception\Test\Unit
              
             // Se declaran el rquest
               $request =  ['FdVersionControllerFachada' => [
-                                'id_version' => 'Ingresar valor de pruebas para el campo id_version de tipo int4',
-                             'desc_version' => 'Ingresar valor de pruebas para el campo desc_version de tipo varchar',
-                             'num_version' => 'Ingresar valor de pruebas para el campo num_version de tipo varchar',
+                                'id_version' => '2',
+                             'desc_version' => 'Versión 2',
+                             'num_version' => '1',
                           ]];
             
                 $actionCreate = $tester->actionCreate($request,false);
@@ -181,9 +181,9 @@ class FdVersionControllerFachadaTest extends \Codeception\Test\Unit
         
          // Se declaran el rquest
               $request =  ['FdVersionControllerFachada' => [
-                                'id_version' => 'Ingresar valor de pruebas para el campo id_version de tipo int4',
-                             'desc_version' => 'Ingresar valor de pruebas para el campo desc_version de tipo varchar',
-                             'num_version' => 'Ingresar valor de pruebas para el campo num_version de tipo varchar',
+                                'id_version' => '2',
+                             'desc_version' => 'Versión número 2',
+                             'num_version' => '2',
                           ]];
         
         
@@ -220,7 +220,7 @@ class FdVersionControllerFachadaTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '2';
                 
         // se valida que se pueda realizar el borrado del registro
         expect($tester->actionDeletep($id));

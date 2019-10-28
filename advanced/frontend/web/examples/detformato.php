@@ -124,7 +124,7 @@
                                         $r_pseccion: array con la informacion de las preguntas que tienen seccion asociada y las respuestas asignadas si exiten.
                                         $_numeracionpreg: 'S' si el formato tiene numeracion, 'N' sino se saca de la tabla fd_formato.
                                         $_permisos: array con la informacion de los permisos de la tabla fd_adm_estado del cliente que se encuentra en session.
-                                        $_modelgenerales: informacion del modelo asociado a la tabla FdDatosGenerales con el id conjunto respuesta asociado al capitulo.
+                                        $_modelgenerales: informacion del modelo asociado a la tabla FdDatosGenerales con el id conjunto respuesta asociado al capitulo.                                                                                
                                         
                                     </ol>
                                     

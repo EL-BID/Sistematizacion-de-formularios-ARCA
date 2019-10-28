@@ -25,7 +25,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id__acceso',
             'nombre_acceso',
             'id_pagina',
             'id_tipo_acceso',
@@ -43,8 +42,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         ]);
                     },
 					'delete' => function($url, $model){
-						$url2 = Url::toRoute(['accesoscontroller/deletep','id' => $model->Id],true);
-						return Html::a('<span class="btn-xs btn-primary">Borrar</span>',$url,[
+						$url2 = Url::toRoute(['accesos/deletep','id' => $model->id_acceso],true);
+						return Html::a('<span class="btn-xs btn-primary">Borrar</span>',$url2,[
 							'title' => Yii::t('app', 'Delete'),
 							'data-confirm' => Yii::t('yii', 'Desea Eliminar el Regitro?::'.$url2),
                             'data-method' => 'post',

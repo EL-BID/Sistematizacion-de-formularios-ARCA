@@ -49,7 +49,10 @@ a.asc:after, a.desc:after {
     line-height: 1;
     padding-left: 5px;
 }
-
+.incompleto
+{
+    background-color: #e27676!important;
+}
 a.asc:after {
     content: "\e151";
 }
@@ -150,7 +153,7 @@ h1, h2, h3, h4{  }
 .site-login .col-lg-5, .site-signup .col-lg-5{width:100%}
 .site-login label, .site-signup label{/*color:#fff*/}
 #login-form{ border: 1px solid #0059B2; padding:15px}
-.labelpregunta{ color:#000!important}
+.labelpregunta,.labelpreguntapequeno{ color:#000!important}
 .help-block{ font-size:11px}
 .btn-primary{/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff8000+1,ffa900+100 */
 background: #ff8000; /* Old browsers */
@@ -197,7 +200,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8000', end
 
 /*FORMS*/
 .form-control{ border-radius:0px!important}
-.nomcapitulo{ color:#00397F!important; padding:7px; border:1px solid #ccc!important; border-bottom:2px solid #00397F!important}
+.nomcapitulo{color:#00397F!important; padding:7px; border:1px solid #ccc!important; border-bottom:2px solid #00397F!important}
+.nomcapitulooculto{font-size: 0px;}
+.nomcapitulopequeno{ color:#00397F!important; padding:7px; border:1px solid #ccc!important; border-bottom:2px solid #00397F!important}
+
 .tbcapitulo{width:100%; border:0px; background-color:#fff}
 .table-striped {color:#000}
 .table-striped thead{ background-color:#ccc; color:#000}
@@ -315,8 +321,19 @@ table.listado .title{border:none}
         font-weight: bolder;
         border: solid 2px #ccc;
 }
+.nomcapitulopequeno{
+        font-size: 1.3em;
+        color:#8CD4F5;
+        font-weight: bolder;
+        border: solid 2px #ccc;
+}
+
     
-    
+     .inputpreguntabloqueo
+    {
+        background-color:#dedede;
+        border: solid 2px #ccc;
+    }
 .tbseccion{
        width: 100%; 
     }
@@ -326,33 +343,167 @@ table.listado .title{border:none}
        font-weight: bolder;
        background-color: #f3f3f3;
        border-bottom: solid 1px #ccc;
+        padding:10px;
+       color:#004444;
+}.titleseccionoculto {font-size: 0px;}
+.titleseccionpequeno{
+       font-size: 1.0em;
+       font-weight: bolder;
+       background-color: #f3f3f3;
+       border-bottom: solid 1px #ccc;
 	   padding:10px
-}
-    
- 
-.labelpregunta, .labelpreguntainputpregunta{
+    }   
+
+.labelpregunta, .labelpregunta,.inputpregunta,.labelpreguntapequeno{
         border: solid 1px #ccc;
         padding: 10px;
         font-size:0.9em;
         width: 25%;
-        color:#0044cc; }
-		
-.labelpregunta, .labelpreguntainputpregunta, .labelpregunta2{ font-weight:600;}
+        color:#161616; 
+}
+.inputpreguntacaudal
+{
+    font-family: Arial; 
+    font-size:0.3em;        
+    padding: 0px;
+    width: 7%;    
+}
 
-.inputpregunta{
-        /*border-right: solid 1px #000;*/
+.labelpreguntacaudal
+{
+    border: solid 1px #ccc;
+    padding: 10px;
+    font-size:0.9em;        
+    color:#FFF; 
+    background-color: steelblue;
+    width: 7%;   
+    
+}
+
+.labelpreguntaevaluacion
+{
+    border: solid 1px #ccc;
+    padding: 10px;
+    font-size:0.9em;        
+    color:#FFF; 
+    background-color: #063e88;
+    width: 7%;    
+    text-align: center;
+}
+.inputpreguntaevaluacion
+{
+    font-family: Arial; 
+    font-size:1.0em;        
+    padding: 0px;
+    width: 7%;  
+    border: 1px solid #dddddd;    
+}
+
+.inputpreguntaevaluaciontot
+{
+    font-family: Arial; 
+    font-size:1.0em;        
+    padding: 0px;
+    width: 7%;  
+    border: 1px solid #dddddd;  
+    text-align: right;
+}
+.inputpreguntaevaluacionres
+{
+    font-family: Arial; 
+    font-size:1.0em;        
+    padding: 0px;
+    width: 7%;  
+    border: 1px solid #dddddd;  
+    background-color: #a8c1d7;
+    color:#0B4C83;
+    font-weight: 100px;
+}
+
+.inputpreguntaevaluacionres_rojo
+{
+    font-family: Arial; 
+    font-size:1.0em;        
+    padding: 0px;
+    width: 7%;  
+    border: 1px solid #dddddd;  
+    background-color: red;
+    color:white;
+    text-align: center;
+}
+.inputpreguntaevaluacionres_naranja
+{
+    font-family: Arial; 
+    font-size:1.0em;        
+    padding: 0px;
+    width: 7%;  
+    border: 1px solid #dddddd;  
+    background-color: orange;
+    color:white;
+    text-align: center;
+}
+.inputpreguntaevaluacionres_amarillo
+{
+    font-family: Arial; 
+    font-size:1.0em;        
+    padding: 0px;
+    width: 7%;  
+    border: 1px solid #dddddd;  
+    background-color: yellow;
+    color:black;
+    text-align: center;
+}
+.inputpreguntaevaluacionres_verde
+{
+    font-family: Arial; 
+    font-size:1.0em;        
+    padding: 0px;
+    width: 7%;  
+    border: 1px solid #dddddd;  
+    background-color: green;
+    color:white;
+    text-align: center;
+}
+.labelpregunta_hidden{
+        border: solid 1px #ccc;
+        padding: 10px;
+        font-size:0.9em;
+        width: 25%;
+        color:#004444;
+        font-weight:600;
+         display: none;
+}
+		
+.labelpregunta, .labelpreguntainputpregunta, .labelpregunta2,.labelpreguntapequeno{ font-weight:600;}
+.labelpregunta3{font-weight:500;}
+  
+.labelpregunta3{
+    border: solid 1px #ccc;
+    padding: 10px;
+    font-size: 0.9em;
+    width: 5%;
+    font-weight: 600;
+    color: #000;
+    }
+.inputpregunta,.inputpreguntapequeno{        
         border-bottom: solid 1px #ccc;
         padding: 10px;
     }
+.inputpregunta_hidden{        
+        border-bottom: solid 1px #ccc;
+        padding: 10px;
+         display: none;
+    }    
  .tdtable_tipo, .labelpregunta2, .inputpregunta{
-		border: solid 1px #ccc;
-        padding: 10px;}   
-    
+        border: solid 1px #ccc;
+        padding: 10px;  
+        color: #000;
+        width: auto;
+    }
 
 /*ESTILOS PARA EL DETALLE PROCESO*/
 
-table td.datosbasicos1{
-   /*background-color:#6495ED; */
+table td.datosbasicos1{   
    background-color:#C7CCD1;
    font-size: 1em;
    font-weight: bolder;
@@ -560,12 +711,50 @@ table.actividades tr{
 
     /*PROGRESS BAR*/
     .textProgress{
-		text-align:center;  
+
     }
     .imgProgress{
-        text-align:center;
-		margin-top:45%; 
+        
     }
-    
-    
-    
+
+ .table_style {
+  background: white;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 2%;
+  border-collapse: collapse;
+}
+
+.table_style th {
+  background-color:#96b4dc;
+  height: 35px;
+  border-bottom: 1px solid rgb(210, 220, 250);
+  color: #494c50;
+}
+
+.table_style td {
+  color: rgba(100, 100, 100, 60);
+  height: 30px;
+  border: 0.5px solid rgba(240, 240, 240, 10);
+}
+
+.table_style tfoot {
+  font-weight: bold;
+}
+
+/*Pseudo-clases*/
+.table_style th:hover {
+  background-color: #a4a8ad;
+}
+
+.table_style tr:hover {
+  background-color: #b8bbbfa1;
+}
+.sin_registros{
+    background-color: #fdf7e3;
+    color: #bb9e80;
+    height: 70px; 
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;    
+}

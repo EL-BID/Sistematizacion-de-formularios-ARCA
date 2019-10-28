@@ -115,7 +115,7 @@ class TarTareaProgramadaControllerTest extends \Codeception\Test\Unit
             $actionView=Yii::$app->runAction('TarTareaProgramadaController/view',['id' => $id]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -208,7 +208,7 @@ class TarTareaProgramadaControllerTest extends \Codeception\Test\Unit
                          $id = 'valor adecuado para el tipo de dato del paramtero $id';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(TarTareaProgramadaController/update',['id' => $id]);
+         $actionDelete=Yii::$app->runAction('TarTareaProgramadaController/update',['id' => $id]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

@@ -83,6 +83,7 @@ class FdSeccionSearch extends FdSeccion
                             fd_seccion.orden,
                             fd_seccion.num_columnas,
                             fd_seccion.num_col,
+                            fd_seccion.stylecss,
                             fd_pregunta.nom_pregunta as comparar
                             FROM fd_seccion
                             LEFT JOIN fd_capitulo ON fd_capitulo.id_capitulo=fd_seccion.id_capitulo

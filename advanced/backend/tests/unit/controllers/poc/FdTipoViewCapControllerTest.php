@@ -79,8 +79,8 @@ class FdTipoViewCapControllerTest extends \Codeception\Test\Unit
         
             // Se declaran los $queryParams a enviar los filtros
             $queryParams = ['FdTipoViewCapSearch' => [
-                                             'id_tview_cap' => "Ingresar valor de pruebas para el campo id_tview_cap de tipo int4",       
-                                              'nom_tview_cap' => "Ingresar valor de pruebas para el campo nom_tview_cap de tipo varchar",       
+                                             'id_tview_cap' => "1",       
+                                              'nom_tview_cap' => "Una columna",       
                               ]];
              
        
@@ -105,12 +105,12 @@ class FdTipoViewCapControllerTest extends \Codeception\Test\Unit
         
         // se deben declarar los valores de $id para enviar la llave
         
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
                                      // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
             $actionView=Yii::$app->runAction('FdTipoViewCapController/view',['id' => $id]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -128,9 +128,9 @@ class FdTipoViewCapControllerTest extends \Codeception\Test\Unit
           
             // Se declaran los $queryParams a enviar los datos a crear
             $queryParams = ['FdTipoViewCapController' => [
-                                             'id_tview_cap' => "Ingresar valor de pruebas para el campo id_tview_cap de tipo int4",       
-                                              'nom_tview_cap' => "Ingresar valor de pruebas para el campo nom_tview_cap de tipo varchar",       
-                              ]];
+															'id_tview_cap' => '5',
+															'nom_tview_cap' => 'Columna prueba',      
+														]];
                             
        //       Se declaran el post1
             Yii::$app->request->queryParams =  $queryParams;
@@ -157,13 +157,13 @@ class FdTipoViewCapControllerTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar los datos a actualizar
           $queryParams = ['FdTipoViewCapController' => [
-                                         'id_tview_cap' => "Ingresar valor de pruebas para el campo id_tview_cap de tipo int4",       
-                                          'nom_tview_cap' => "Ingresar valor de pruebas para el campo nom_tview_cap de tipo varchar",       
-                          ]];
+														'id_tview_cap' => '5',
+														'nom_tview_cap' => 'Columna de prueba',      
+														]];
         
         
          // se deben declarar los valores de $id para enviar la llave
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '5';
                                 
         
          // se valida que se pueda realizar el update del registro
@@ -190,10 +190,10 @@ class FdTipoViewCapControllerTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores para indicar el registro a borrar
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '5';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(FdTipoViewCapController/update',['id' => $id]);
+         $actionDelete=Yii::$app->runAction('FdTipoViewCapController/update',['id' => $id]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

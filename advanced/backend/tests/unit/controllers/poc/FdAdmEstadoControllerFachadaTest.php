@@ -83,14 +83,14 @@ class FdAdmEstadoControllerFachadaTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar
             $queryParams = ['FdAdmEstadoSearch' => [
-                                             'id_adm_estado' => "Ingresar valor de pruebas para el campo id_adm_estado de tipo int4",       
-                                              'nom_adm_estado' => "Ingresar valor de pruebas para el campo nom_adm_estado de tipo varchar",       
-                                              'cod_rol' => "Ingresar valor de pruebas para el campo cod_rol de tipo varchar",       
-                                              'id_modulo' => "Ingresar valor de pruebas para el campo id_modulo de tipo int4",       
-                                              'p_actualizar' => "Ingresar valor de pruebas para el campo p_actualizar de tipo varchar",       
-                                              'p_crear' => "Ingresar valor de pruebas para el campo p_crear de tipo varchar",       
-                                              'p_borrar' => "Ingresar valor de pruebas para el campo p_borrar de tipo varchar",       
-                                              'p_ejecutar' => "Ingresar valor de pruebas para el campo p_ejecutar de tipo varchar",       
+                                             'id_adm_estado' => "1",       
+                                              'nom_adm_estado' => "Edición",       
+                                              'cod_rol' => "22",       
+                                              'id_modulo' => "2",       
+                                              'p_actualizar' => "S",       
+                                              'p_crear' => "S",       
+                                              'p_borrar' => "S",       
+                                              'p_ejecutar' => "S",       
                               ]];
              
        
@@ -121,7 +121,7 @@ class FdAdmEstadoControllerFachadaTest extends \Codeception\Test\Unit
         $this->assertInstanceOf('backend\controllers\poc\FdAdmEstadoControllerFachada', $tester);
     
         // se deben declarar los valores de $id        
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
               
         
              // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
@@ -149,14 +149,14 @@ class FdAdmEstadoControllerFachadaTest extends \Codeception\Test\Unit
              
             // Se declaran el rquest
               $request =  ['FdAdmEstadoControllerFachada' => [
-                                'id_adm_estado' => 'Ingresar valor de pruebas para el campo id_adm_estado de tipo int4',
-                             'nom_adm_estado' => 'Ingresar valor de pruebas para el campo nom_adm_estado de tipo varchar',
-                             'cod_rol' => 'Ingresar valor de pruebas para el campo cod_rol de tipo varchar',
-                             'id_modulo' => 'Ingresar valor de pruebas para el campo id_modulo de tipo int4',
-                             'p_actualizar' => 'Ingresar valor de pruebas para el campo p_actualizar de tipo varchar',
-                             'p_crear' => 'Ingresar valor de pruebas para el campo p_crear de tipo varchar',
-                             'p_borrar' => 'Ingresar valor de pruebas para el campo p_borrar de tipo varchar',
-                             'p_ejecutar' => 'Ingresar valor de pruebas para el campo p_ejecutar de tipo varchar',
+                                'id_adm_estado' => '9',
+                             'nom_adm_estado' => 'Prueba',
+                             'cod_rol' => '22',
+                             'id_modulo' => '1',
+                             'p_actualizar' => 'S',
+                             'p_crear' => 'S',
+                             'p_borrar' => 'N',
+                             'p_ejecutar' => 'N',
                           ]];
             
                 $actionCreate = $tester->actionCreate($request,false);
@@ -191,14 +191,14 @@ class FdAdmEstadoControllerFachadaTest extends \Codeception\Test\Unit
         
          // Se declaran el rquest
               $request =  ['FdAdmEstadoControllerFachada' => [
-                                'id_adm_estado' => 'Ingresar valor de pruebas para el campo id_adm_estado de tipo int4',
-                             'nom_adm_estado' => 'Ingresar valor de pruebas para el campo nom_adm_estado de tipo varchar',
-                             'cod_rol' => 'Ingresar valor de pruebas para el campo cod_rol de tipo varchar',
-                             'id_modulo' => 'Ingresar valor de pruebas para el campo id_modulo de tipo int4',
-                             'p_actualizar' => 'Ingresar valor de pruebas para el campo p_actualizar de tipo varchar',
-                             'p_crear' => 'Ingresar valor de pruebas para el campo p_crear de tipo varchar',
-                             'p_borrar' => 'Ingresar valor de pruebas para el campo p_borrar de tipo varchar',
-                             'p_ejecutar' => 'Ingresar valor de pruebas para el campo p_ejecutar de tipo varchar',
+                             'id_adm_estado' => '9',
+                             'nom_adm_estado' => 'Prueba',
+                             'cod_rol' => '22',
+                             'id_modulo' => '1',
+                             'p_actualizar' => 'N',
+                             'p_crear' => 'N',
+                             'p_borrar' => 'S',
+                             'p_ejecutar' => 'S',
                           ]];
         
         
@@ -235,7 +235,7 @@ class FdAdmEstadoControllerFachadaTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '9';
                 
         // se valida que se pueda realizar el borrado del registro
         expect($tester->actionDeletep($id));

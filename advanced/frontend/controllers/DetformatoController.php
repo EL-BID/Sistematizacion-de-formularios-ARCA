@@ -30,6 +30,10 @@ use common\general\documents\genExcel;
 //use common\general\documents\genWord;
 use common\general\documents\genExcelsimple;
 use common\general\documents\wordgenerator\genWord_ex;
+use common\models\poc\FdDatosGeneralesRiego;
+use common\models\poc\FdDatosGeneralesPublicos;
+use common\models\autenticacion\Parroquias;
+use common\models\poc\FdDatosGeneralesComunitarioAp;
 
 
 //Llamado directo al Widget del PDF========================================================//
@@ -93,10 +97,10 @@ class DetformatoController extends Controller
      * $tipoarchivo = excel
      *                pdf
      *                word
-     */
-    
-    public function actionGenhtml($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$vista=null,$capitulo=null,$tipoarchivo=null){
+    */                            
+    public function actionGenhtml($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$vista=null,$capitulo=null,$tipoarchivo=null,$idjunta="",$provincia="",$cantones="",$boton="",$url_actual=""){
         
+         
         /*Declarando variables*/
         $r_secciones=array();
         
@@ -138,6 +142,9 @@ class DetformatoController extends Controller
         $_positions=array();
         $inc_datos_generales = FALSE;       //Bandera para saber si se incluye el capitulo datos generales...
         $inc_basicos_coorubicacion = FALSE;
+        $inc_datos_generales_riego = FALSE;
+        $inc_datos_generales_comunitario_ap=FALSE;
+        $inc_datos_generales_publicos=FALSE;
         
         foreach($_capitulos as $clave){
                 
@@ -156,7 +163,27 @@ class DetformatoController extends Controller
                     $inc_basicos_coorubicacion = TRUE;
                     $_capitulobasico= $clave["id_capitulo"];
                     continue;
+              }                            
+               if($clave["id_tcapitulo"] == "2" and  $clave["url"] == "poc/datosgeneralesriego.php"){
+                    $_positions[] = $_conteo;
+                    $inc_datos_generales_riego = TRUE;
+                    $_capitulobasico= $clave["id_capitulo"];
+                    continue;
               }
+              
+              if($clave["id_tcapitulo"] == "2" and  $clave["url"] == "poc/datosgeneralescomunitarioap.php"){
+                    $_positions[] = $_conteo;
+                    $inc_datos_generales_comunitario_ap = TRUE;
+                    $_capitulobasico= $clave["id_capitulo"];
+                    continue;
+              } 
+              if($clave["id_tcapitulo"] == "2" and  $clave["url"] == "poc/datosgeneralespublicos.php"){
+                    $_positions[] = $_conteo;
+                    $inc_datos_generales_publicos = TRUE;
+                    $_capitulobasico= $clave["id_capitulo"];
+                    continue;
+              } 
+              
 
              /*Se verifica si el capitulo esta condicionado*/
              if($clave['condiciones'] > 0){
@@ -178,7 +205,7 @@ class DetformatoController extends Controller
 
                      /*3)Consultando Preguntas================================================/*/
                      $m_preguntas=new FdPreguntaSearch();
-                     $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta);
+                     $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta,$idjunta);
 
                  }
              }else{
@@ -192,7 +219,7 @@ class DetformatoController extends Controller
 
                  /*3)Consultando Preguntas================================================/*/
                  $m_preguntas=new FdPreguntaSearch();
-                 $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta);
+                 $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta,$idjunta);
 
 
              }
@@ -250,9 +277,11 @@ class DetformatoController extends Controller
             }
             
         }
-        
+        /*mceron 2018-11-14
+		Se colocó la validación para que se pueda visualizar por listado de capítulos
+		*/
         //Si no existen capitulos se envia un excepcion =======================================================================================
-        if(count($_arraycap)==0 and $inc_datos_generales == FALSE and $inc_basicos_coorubicacion == FALSE){
+        if(count($_arraycap)==0 and $inc_datos_generales == FALSE and $inc_basicos_coorubicacion == FALSE and $inc_datos_generales_riego == FALSE and $inc_datos_generales_comunitario_ap==FALSE and $inc_datos_generales_publicos==FALSE){
              throw new \yii\web\HttpException(404, 'No existen capitulos asociadas al formato');
         }
         
@@ -299,6 +328,8 @@ class DetformatoController extends Controller
                    $_modelbasicos_coordenadas = new FdCoordenada_var();
                }
                
+               
+               
                //Datos sacados de ubicacion//
                if(!empty($_findsearch= FdUbicacion_var::find()->where(['id_conjunto_respuesta' => $id_conj_rpta,'id_capitulo' =>$_capitulobasico ])->one())){
                    $_modelbasicos_ubicacion  = $_findsearch;
@@ -333,11 +364,145 @@ class DetformatoController extends Controller
            }
            
            
+           if($inc_datos_generales_riego == TRUE){
+               
+               if(!empty($_findsearch= FdDatosGeneralesRiego::find()->where(['id_conjunto_respuesta' => $id_conj_rpta])->one())){
+                   $_modelgeneralesriego  = $_findsearch;
+               }else{
+                   $_modelgeneralesriego = new FdDatosGeneralesRiego();
+               }
+               
+               
+               
+                 //Datos sacados de ubicacion//
+               if(!empty($_findsearch= FdUbicacion_var::find()->where(['id_conjunto_respuesta' => $id_conj_rpta,'id_capitulo' =>$_capitulobasico ])->one())){
+                   $_modelriego_ubicacion   = $_findsearch;
+                   
+                   if(!empty($_modelriego_ubicacion->cod_canton)){
+                       $cantonesPost=Cantones::find()
+                        ->where(['=', 'cantones.cod_provincia', $_modelriego_ubicacion->cod_provincia])
+                        ->all(); 
+                   }else{
+                       $cantonesPost="";
+                   }
+                   
+                    if(!empty($_modelriego_ubicacion->cod_parroquia)){
+                       $parroquiasPost=Parroquias::find()
+                        ->where(['=', 'parroquias.cod_provincia', $_modelriego_ubicacion->cod_provincia])
+                        ->andwhere(['=','parroquias.cod_canton', $_modelriego_ubicacion->cod_canton])
+                        ->all(); 
+                   }else{
+                       $parroquiasPost="";
+                   }
+                   
+                   if(!empty($_modelriego_ubicacion->id_demarcacion)){
+                        $DemarcacionPost= Demarcaciones::find()
+                                        ->leftJoin('cantones', 'cantones.id_demarcacion=demarcaciones.id_demarcacion')
+                                        ->where(['=', 'cantones.cod_canton', $_modelriego_ubicacion->cod_canton])
+                                        ->all();
+                   }else{
+                       $DemarcacionPost="";
+                   }
+                   
+               }else{
+                   $_modelriego_ubicacion = new FdUbicacion_var();
+               }
+           }else{
+               $_modelgeneralesriego="";
+               $_modelriego_ubicacion="";
+               $cantonesPost="";
+               $parroquiasPost="";
+           }
+      //----------------     
+            if($inc_datos_generales_comunitario_ap == TRUE){
+               
+               if(!empty($_findsearch= FdDatosGeneralesComunitarioAp::find()->where(['id_conjunto_respuesta' => $id_conj_rpta, 'id_junta' =>$idjunta])->one())){
+                   $_modelgeneralescomunitarioap  = $_findsearch;
+               }else{
+                   $_modelgeneralescomunitarioap = new FdDatosGeneralesComunitarioAp();
+               }
+               
+               
+               
+                 //Datos sacados de ubicacion//
+               if(!empty($_findsearch= \common\models\poc\FdUbicacion_var_ap::find()->where(['id_conjunto_respuesta' => $id_conj_rpta,'id_capitulo' =>$_capitulobasico, 'id_junta' =>$idjunta ])->one())){
+                   $_modelcomunitarioap_ubicacion   = $_findsearch;
+                   
+                   if(!empty($_modelcomunitarioap_ubicacion->cod_canton)){
+                       $cantonesPost=Cantones::find()
+                        ->where(['=', 'cantones.cod_provincia', $_modelcomunitarioap_ubicacion->cod_provincia])
+                        ->all(); 
+                   }else{
+                       $cantonesPost="";
+                   }
+                   
+                    if(!empty($_modelcomunitarioap_ubicacion->cod_parroquia)){
+                       $parroquiasPost=Parroquias::find()
+                        ->where(['=', 'parroquias.cod_provincia', $_modelcomunitarioap_ubicacion->cod_provincia])
+                        ->andwhere(['=','parroquias.cod_canton', $_modelcomunitarioap_ubicacion->cod_canton])
+                        ->all(); 
+                   }else{
+                       $parroquiasPost="";
+                   }                  
+                   
+                   
+               }else{
+                   $_modelcomunitarioap_ubicacion = new FdUbicacion_var();
+               }
+           }else{
+               $_modelgeneralescomunitarioap="";
+               $_modelcomunitarioap_ubicacion="";
+               $cantonesPost="";
+               $parroquiasPost="";
+           }
+           
+           if($inc_datos_generales_publicos == TRUE){
+               
+               if(!empty($_findsearch= FdDatosGeneralesPublicos::find()->where(['id_conjunto_respuesta' => $id_conj_rpta])->one())){
+                   $_modelgeneralespublicos  = $_findsearch;
+               }else{
+                   $_modelgeneralespublicos = new FdDatosGeneralesPublicos();
+               }
+               
+               
+               
+                 //Datos sacados de ubicacion//
+               if(!empty($_findsearch= FdUbicacion_var::find()->where(['id_conjunto_respuesta' => $id_conj_rpta,'id_capitulo' =>$_capitulobasico ])->one())){
+                   $_modelpublicos_ubicacion   = $_findsearch;
+                   
+                   if(!empty($_modelpublicos_ubicacion->cod_canton)){
+                       $cantonesPost=Cantones::find()
+                        ->where(['=', 'cantones.cod_provincia', $_modelpublicos_ubicacion->cod_provincia])
+                        ->all(); 
+                   }else{
+                       $cantonesPost="";
+                   }
+                   
+                   if(!empty($_modelpublicos_ubicacion->id_demarcacion)){
+                        $DemarcacionPost= Demarcaciones::find()
+                                        ->leftJoin('cantones', 'cantones.id_demarcacion=demarcaciones.id_demarcacion')
+                                        ->where(['=', 'cantones.cod_canton', $_modelpublicos_ubicacion->cod_canton])
+                                        ->all();
+                   }else{
+                       $DemarcacionPost="";
+                   }                
+                   
+                   
+               }else{
+                   $_modelpublicos_ubicacion = new FdUbicacion_var();
+               }
+           }else{
+               $_modelgeneralespublicos="";
+               $_modelpublicos_ubicacion="";
+               $cantonesPost="";               
+           }
+           
+         //-----------------------------------------------------  
            /**Organizando vista puro HTML**/
             $_helperHTML= new helperHTML();
             $_helperHTML->id_conj_rpta = $id_conj_rpta;
             $_helperHTML->tipo_archivo=$tipoarchivo;
-            $_helperHTML->gen_formatoHTML($_capitulos,$r_pnoseccion,$r_secciones,$r_pseccion,$_numeracionpreg,$_permisos,$_modelgenerales,$model,$_modelbasicos,$_modelbasicos_coordenadas,$_modelbasicos_ubicacion);
+            $_helperHTML->gen_formatoHTML($_capitulos,$r_pnoseccion,$r_secciones,$r_pseccion,$_numeracionpreg,$_permisos,$_modelgenerales,$model,$_modelbasicos,$_modelbasicos_coordenadas,$_modelbasicos_ubicacion,$_modelgeneralesriego,$_modelriego_ubicacion,$_modelgeneralescomunitarioap,$_modelcomunitarioap_ubicacion,$_modelgeneralespublicos,$_modelpublicos_ubicacion,$idjunta);
             $_vista = $_helperHTML->htmlvista;
             
             
@@ -347,13 +512,11 @@ class DetformatoController extends Controller
             
             if($vista==null){
                 return $this->render('formatoHTML', [
-                        '_stringhtml'=>$_vista,'nombre_formato'=>$_nombreformato,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado
+                        '_stringhtml'=>$_vista,'nombre_formato'=>$_nombreformato,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'idjunta'=>$idjunta,'provincia'=>$provincia,'cantones'=>$cantones,'boton'=>$boton,'url_actual'=>$url_actual
                 ]);
             }else{
                 return $_vista;
-            }
-           
-        
+            }          
     }
     
     
@@ -549,10 +712,10 @@ class DetformatoController extends Controller
     
     //No funciona no se cual sea el error que hay por que no me genera cuando se asigna PDF
     //Se usara lo mismo directamente con el widget de YII
-    public function actionGenpdf($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$nombre_formato=null,$id_capitulo=null){
+    public function actionGenpdf($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$nombre_formato=null,$id_capitulo=null,$idjunta=null){
         
-        //Generando contenido HTML
-        $_stringprint = $this->actionGenhtml($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,'retorno',$id_capitulo);
+        //Generando contenido HTML          
+        $_stringprint = $this->actionGenhtml($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,'retorno',$id_capitulo,'pdf',$idjunta);
         
         //Probando CSS en Linea
         //$_css=".nomcapitulo{ font-size: 1.8em; font-family:arial; color:#4169E1; font-weight: bolder; border: solid 2px #000; }";
@@ -629,11 +792,9 @@ class DetformatoController extends Controller
     
     
     /*Funcion para genera el formato en EXCEL*/    
-    public function actionGenexcel($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$nombre_formato=null,$id_capitulo=null){
-        
-        
-        /*Generando contenido HTML*/
-        $_stringprint = $this->actionGenhtml($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,'retorno',$id_capitulo,'excel');
+    public function actionGenexcel($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$nombre_formato=null,$id_capitulo=null,$idjunta=""){                
+        /*Generando contenido HTML*/       
+        $_stringprint = utf8_decode($this->actionGenhtml($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,'retorno',$id_capitulo,'excel',$idjunta));
        
         /*Se modifica la siguiente secuencia de codigo teniendo en cuetna que la libreria no reconoce table dentro de table*/
         
@@ -643,22 +804,19 @@ class DetformatoController extends Controller
         if($nombre_formato==null){
             $m_formato= FdFormato::findOne($id_fmt);
             $nombre_formato = $m_formato->nom_formato;
-        }
-        
+        }        
         $GeneraExcel = new genExcel();
         $GeneraExcel->generadorExcelHTML2($_stringprint,$nombre_formato,'css/formato.css');
         
     }
-    
-    
-    
+
     
     /*Funcion para general el formato en Word*/
-    public function actionGenword($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$nombre_formato=null,$id_capitulo=null){
+    public function actionGenword($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$nombre_formato=null,$id_capitulo=null,$idjunta){
         
         
         /*Generando contenido HTML*/
-        $_stringprint = $this->actionGenhtml($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,'retorno',$id_capitulo);
+        $_stringprint = $this->actionGenhtml($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,'retorno',$id_capitulo,'word',$idjunta);
         
         if($nombre_formato==null){
             $m_formato= FdFormato::findOne($id_fmt);

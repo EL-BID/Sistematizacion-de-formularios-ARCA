@@ -12,7 +12,7 @@ use common\models\modelpry\ModelPry;
  * @property string $nom_eproceso
  * @property integer $id_proceso
  *
- * @property PsActvidadRuta[] $psActvidadRutas
+ * @property PsActividadRuta[] $psActividadRutas
  * @property PsCproceso[] $psCprocesos
  * @property PsProceso $idProceso
  * @property PsHistoricoEstados[] $psHistoricoEstados
@@ -55,9 +55,9 @@ class PsEstadoProceso extends ModelPry
     /**
      * @return \yii\db\ActiveQuery -> Relaciones que presenta la tabla
      */
-    public function getPsActvidadRutas()
+    public function getPsActividadRutas()
     {
-        return $this->hasMany(PsActvidadRuta::className(), ['id_eproceso' => 'id_eproceso']);
+        return $this->hasMany(PsActividadRuta::className(), ['id_eproceso' => 'id_eproceso']);
     }
 
     /**

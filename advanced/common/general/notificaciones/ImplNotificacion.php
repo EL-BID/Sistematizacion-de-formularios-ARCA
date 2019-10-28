@@ -20,29 +20,38 @@ class ImplNotificacion {
 
         $c=0;
         if ( \yii\helpers\ArrayHelper::keyExists("DE", $destinatarios, false)){
+            $deFinal=array();
             foreach($destinatarios["DE"] as $de){
                 $c=$c+1;
-                $message->setFrom($de);
+                $deFinal[]=$de;
+               
             }
+             $message->setFrom($deFinal);
         }
-        if($c=0){$message->setFrom(\Yii::$app->params['adminEmail']);}
+        if($c==0){$message->setFrom(\Yii::$app->params['adminEmail']);}
         
         if ( \yii\helpers\ArrayHelper::keyExists("PARA", $destinatarios, false)){
+            $paraFinal=array();
             foreach($destinatarios["PARA"] as $para){
-                $message->setTo($para);
+                $paraFinal[]=$para;
             }
+            $message->setTo($paraFinal);
         }
         
         if ( \yii\helpers\ArrayHelper::keyExists("CON COPIA", $destinatarios, false)){
+            $paraFinal=array();
             foreach($destinatarios["CON COPIA"] as $para){
-                $message->setCc($para);
+                $paraFinal[]=$para;
             }
+             $message->setCc($para);
         }
         
         if ( \yii\helpers\ArrayHelper::keyExists("CON COPIA OCULTA", $destinatarios, false)){
+            $paraFinal=array();
             foreach($destinatarios["CON COPIA OCULTA"] as $para){
-                $message->setBcc($para);
+                 $paraFinal[]=$para;
             }
+            $message->setBcc($para);
         }
         
         $patternImg ='/src\s*=\s*\"(.+?)\"/'; 

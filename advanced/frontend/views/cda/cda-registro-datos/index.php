@@ -1,102 +1,116 @@
 <?php
 
 use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\grid\GridView;
-use yii\widgets\Pjax;
-
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\cda\CdaReporteInformacionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+$this->params['breadcrumbs'][] = ['label' => 'Cda', 'url' => ['cda/cda/pantallaprincipal']];
 
-$this->title = 'Datos Técnicos de la Solicitud';
+if ($_labelmiga == 'cda/detalleproceso/index' or $_labelmiga == 'cda/cda/pantallaprincipal') {
+    $_urlregresar = \Yii::$app->urlManager->createUrl(['cda/detalleproceso/index', 'id_cda' => $id_cda, '_labelmiga' => $_labelmiga]);
+    $this->params['breadcrumbs'][] = ['label' => 'Detalle Proceso', 'url' => ['cda/detalleproceso/index', 'id_cda' => $id_cda, '_labelmiga' => $_labelmiga]];
+} else {
+    $this->params['breadcrumbs'][] = ['label' => 'Gestor de Actividades', 'url' => ['cda/ps-cproceso/index_gestor', 'tipo' => '1']];
+    $_urlregresar = \Yii::$app->urlManager->createUrl(['cda/ps-cproceso/index_gestor', 'tipo' => '1']);
+}
+$this->title = 'Registro datos CDA';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
+
 <div class="cda-reporte-informacion-index">
 
-    <?php Pjax::begin(['id' => 'datos']); ?>
-    <h1 style="color:white;"><?= Html::encode($this->title) ?>
-        <p style="display: inline-block;">
-        <?php if($validaciones['editar'] == TRUE){ echo
-        Html::button('Agregar', 
-        ['value' =>Url::to(['cda/cda-datos-tecnicos/create','id_cda'=>$id_cda,'id_cactividad_proceso'=>$id_cactividad_proceso]), 'title' => 'Nuevo Datos Técnicos de la Solicitud',
-        'class' => 'showModalButton btn btn-success']);
-        } ?>
-    </p>
-    </h1>
+    <div class="headSection"> <h1 class="titSection"><?= Html::encode($this->title); ?></h1></div>
    
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProviderReporteInformacion,
-        'filterModel' => $searchModelReporteInformacion,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'longitud',
-            'latitud',
-            'altura',
-            'nomprovincia',
-            'nomcanton',
-            'nomparroquia',
-            'sector_solicitado',
-            'fuente_solicitada',
-            [
-            'attribute' =>'nomtfuente',
-                'filter'=> yii\helpers\ArrayHelper::map(\common\models\cda\CdaTipoFuente::find()->asArray()->all(), 'id_tfuente', 'nom_tfuente'),
-            ],
-            [
-                'attribute' =>'nomsubtfuente',
-                'filter'=> yii\helpers\ArrayHelper::map(\common\models\cda\CdaSubtipoFuente::find()->asArray()->all(), 'id_subtfuente', 'nom_subtfuente'),
-            ],
-            [
-                'attribute' =>'caracteristica',
-                'filter'=> yii\helpers\ArrayHelper::map(\common\models\cda\CdaCaracteristica::find()->asArray()->all(), 'id_caracteristica', 'nom_caracteristica'),
-            ],
-            'q_solicitado',
-             [
-                'attribute' =>'nomusosolicitado',
-                'filter'=> yii\helpers\ArrayHelper::map(\common\models\cda\CdaUsoSolicitado::find()->asArray()->all(), 'id_uso_solicitado', 'nom_uso_solicitado'),
-            ],
-            [
-                'attribute' =>'nomdestino',
-                'filter'=> yii\helpers\ArrayHelper::map(\common\models\cda\CdaDestino::find()->asArray()->all(), 'id_destino', 'nom_destino'),
-            ],
-
-            'tiempo_years',
-            
-            [
-			
-                'class' => 'yii\grid\ActionColumn',
-                'header' => 'Acción',
-                'template' => '  {update} {decision} ',
-                'visibleButtons' => [
-                    'update' => $validaciones['editar'], // or whatever condition
-                    
-                ],
-                'buttons' => [
-                  
-                    'update' => function ($url, $model) {
-
-                            return Html::button('<span class="glyphicon glyphicon-pencil">Editar</span>',  ['value'=>Url::toRoute(['cda/cda-registro-datos/update','id' => $model->id_reporte_informacion]),
-                                         'class' => 'btn btn-default btn-xs showModalButton',
-                            ]);
-                    }, //Primera columna encontrada sector_solicitado                                          
-                      
-                            
-                    'decision' => function ($url, $model) {
-
-                            return Html::button('<span class="glyphicon glyphicon-pencil">Decisión</span>',  ['value'=>Url::toRoute(['cda/cda-registro-datos/updatedecision','id' => $model->id_reporte_informacion]),
-                                         'class' => 'btn btn-default btn-xs showModalButton',
-                            ]);
-                    }, //Primera columna encontrada sector_solicitado          
-                ],
-			
-			
-            ],
-        ],
-    ]); ?>
+    <div class="aplicativo table-responsive">
+        
     
-    <?php Pjax::end(); ?>
+        <p style="display: inline-block;">
+         
+        <?php 
 
-  
+            if ($_labelmiga == 'cda/cda/pantallaprincipal') {
+                echo Html::button('Regresar',
+                        ['class' => 'btn btn-default btn-xs',
+                            'onclick' => "window.location.href = '".\Yii::$app->urlManager->createUrl(['cda/detalleproceso/index', 'id_cda' => $id_cda, '_labelmiga' => $_labelmiga])."';",
+                            'data-toggle' => 'Regresar',
+                        ]
+                    );
+            } else {
+                echo Html::button('Regresar',
+                        ['class' => 'btn btn-default btn-xs',
+                            'onclick' => "window.location.href = '".\Yii::$app->urlManager->createUrl(['cda/ps-cproceso/index_gestor', 'tipo' => '1'])."';",
+                            'data-toggle' => 'Regresar',
+                        ]
+                    );
+            }
+
+        ?>
+        </p>
+ <table class="table table-bordered">
+            <tr>
+                <td class="datosbasicos1"> Número <?= $nom_proceso; ?> </td>
+                <td class="datosbasicos2">
+                    <table width="100%">
+                        <tr>
+                            <td width="50%"><?= $encabezado[0]['numero']; ?></td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="datosbasicos1"> Fecha Ingreso </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['fecha_ingreso']; ?></td>
+            </tr>
+            <tr>
+                <td class="datosbasicos1"> Número de Quipux Arca </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['arca']; ?></td>
+                <td class="datosbasicos1"> Enviado por: </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['enviadopor']; ?></td>
+            </tr>
+            <tr>
+                <td class="datosbasicos1"> Número de Quipux Senagua </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['senagua']; ?></td>
+                <td class="datosbasicos1"> Rol: </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['nom_cda_rol']; ?></td>
+            </tr>
+            
+            <tr>
+                <td class="datosbasicos1"> Responsable </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['usuario_accion']; ?></td>
+                <td class="datosbasicos1"> Fecha de Solicitud </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['fecha_solicitud']; ?></td>
+            </tr>
+            <tr>
+                <td class="datosbasicos1"> Fecha Última Actividad </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['ult_fecha_actividad']; ?></td>
+                <td class="datosbasicos1"> Fecha Último Estado </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['ult_fecha_estado']; ?></td>
+            </tr>
+        </table>
+
+        <table class='table table-bordered'>
+            <tr>
+                <td class="datosbasicos1">Número puntos solicitados tramite</td>
+                <td class="datosbasicos2"><?= $_puntos[0]; ?></td>
+            </tr>
+            <tr>
+                <td class="datosbasicos1">Número puntos visita tecnica</td>
+                <td class="datosbasicos2"><?= $_puntos[1]; ?></td>
+            </tr>    
+            <tr>    
+                <td class="datosbasicos1">Número puntos verificados SENAGAUA</td>
+                <td class="datosbasicos2"><?= $_puntos[2]; ?></td>
+            </tr>
+            <tr>
+                <td class="datosbasicos1">Número puntos certificados</td>
+                <td class="datosbasicos2"><?= $_puntos[3]; ?></td>
+            </tr>
+             <tr>
+                <td class="datosbasicos1">Número puntos devueltos</td>
+                <td class="datosbasicos2"><?= $_puntos[4]; ?></td>
+            </tr>
+
+        </table>
+    </div>    
 </div>

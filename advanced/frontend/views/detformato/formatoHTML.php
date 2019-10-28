@@ -67,14 +67,24 @@ use light\widgets\SweetSubmitAsset;			/* Para la confirmacion, ver archivo web/j
 use yii\jui\DatePicker;					/*Libreria para el modulo de fechas*/
 SweetSubmitAsset::register($this);
 
+if($boton)
+  $url2 = Url::toRoute([$url_actual.'/index','id_cnj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'idjunta'=>$idjunta,'hashbutton'=>'submit','provincia'=>$provincia,'cantones'=>$cantones],true);
+
 //Declarando Menu Vertical 
 $this->params['itemsmn']=[ 
-    ['label' => 'Excel', 'icon' => '', 'url' => Url::to(['/detformato/genexcel','nombre_formato'=>$nombre_formato,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado])], 
-    ['label' => 'Word', 'icon' => '', 'url' => Url::to(['/detformato/genword','nombre_formato'=>$nombre_formato,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado])], 
-    ['label' => 'PDF', 'icon' => '', 'url' => Url::to(['/detformato/genpdf','nombre_formato'=>$nombre_formato,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado])], 
+    ['label' => 'Excel', 'icon' => '', 'url' => Url::to(['/detformato/genexcel','nombre_formato'=>$nombre_formato,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'idjunta'=>$idjunta])], 
+    ['label' => 'Word', 'icon' => '', 'url' => Url::to(['/detformato/genword','nombre_formato'=>$nombre_formato,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'idjunta'=>$idjunta])], 
+    ['label' => 'PDF', 'icon' => '', 'url' => Url::to(['/detformato/genpdf','nombre_formato'=>$nombre_formato,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'idjunta'=>$idjunta])], 
 ]; 
 ?>
 <div class="clientesprueba-create">    
+ <?php
+ if($boton){
+ ?>
+<?= Html::a('Regresar', $url2, ['class' => 'btn btn-default'])?> 
+  <?php
+ }
+ ?>   
 <?=  $_stringhtml; ?>
 </div>
 

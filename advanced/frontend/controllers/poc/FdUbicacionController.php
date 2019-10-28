@@ -456,6 +456,12 @@ class FdUbicacionController extends ControllerPry
                         ->andwhere(['=', 'parroquias.cod_provincia', $model->cod_provincia])
                         ->all();
         
+        //4)Centros de atención ciudadano
+        $centrosPost = \common\models\poc\CentroAtencionCiudadano::find()
+                        ->where(['=', 'id_demarcaciones',  $model->id_demarcacion])
+                        ->all();
+        
+        
         
         if ($modelE['update'] == 'True') {
             
@@ -516,6 +522,7 @@ class FdUbicacionController extends ControllerPry
                         'demarcacionespost' => $DemarcacionPost,
                         'cantonesPost' => $cantonesPost,
                         'parroquiasPost' => $parroquiasPost,
+                        'centrosPost'=>$centrosPost,
                         'focus'=>$focus
             ]);
             
@@ -546,6 +553,7 @@ class FdUbicacionController extends ControllerPry
                 'demarcacionespost' => $DemarcacionPost,
                 'cantonesPost' => $cantonesPost,
                 'parroquiasPost' => $parroquiasPost,
+                'centrosPost'=>$centrosPost,
                 'focus'=>$focus
             ]);
            
@@ -694,6 +702,33 @@ class FdUbicacionController extends ControllerPry
             
         }
         
+    }
+    
+    
+    
+    /*
+     * Listado de centros de atencion al ciudadano amarrados a un
+     * 
+     */
+    public function actionCentrociudadano($id){
+
+       $html="";    
+       
+       $centrosPOST= \common\models\poc\CentroAtencionCiudadano::find()
+                     ->where(['=', 'id_demarcaciones', $id])
+                     ->all();
+       
+       $html.="<option value=''>Seleccione un Centro</option>"; 
+       
+       if(count($centrosPOST)>0){
+        foreach($centrosPOST AS $clave){
+            $html .= "<option value='".$clave->cod_centro_atencion_ciudadano."'>".$clave->nom_centro_atencion_ciudadano."</option>";
+        }
+       }else{
+             $html .="<option value=''></option>";
+       }  
+       
+       echo $html;
     }
     
 }

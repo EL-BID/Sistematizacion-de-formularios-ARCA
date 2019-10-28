@@ -88,12 +88,13 @@ class FdCapituloSearch extends FdCapitulo
                     where conteoresp.id_formato= :formato 
                     and conteoresp.id_conjunto_respuesta=:id_conj_rpta 
                     and conteoresp.id_conjunto_pregunta= :conj_pregunta
-                    and conteoresp.id_capitulo=fd_capitulo.id_capitulo
+                    and conteoresp.id_capitulo=fd_capitulo.id_capitulo                    
             ) as respuestas,
             (
                     select count(contepreg.id_pregunta) from fd_pregunta as contepreg
                     where contepreg.id_conjunto_pregunta= :conj_pregunta
                     and contepreg.id_capitulo=fd_capitulo.id_capitulo
+                    and contepreg.visible =:visible
             ) as preguntas
             FROM fd_capitulo 
             LEFT JOIN fd_conjunto_pregunta ON fd_conjunto_pregunta.id_conjunto_pregunta=fd_capitulo.id_conjunto_pregunta 
@@ -115,6 +116,7 @@ class FdCapituloSearch extends FdCapitulo
                         ->bindValue(':conj_pregunta', $id_conj_prta)
                         ->bindValue(':id_conj_rpta', $id_conj_rpta)
                         ->bindValue(':estado', $estado)  
+                        ->bindValue(':visible', 'S')  
                         ->queryAll();
         }else{
             
@@ -157,5 +159,39 @@ class FdCapituloSearch extends FdCapitulo
         }    
         
         return $_capitulos;
+    }
+    
+    
+    /*
+     * Averiguando que preguntas de un capitulo no son obligatorias y si tienen respuesta
+     */
+    
+    public function noObligatoria($id_conj_rpta,$id_conj_prta,$capitulo){
+    
+        $sql="SELECT fd_respuesta.id_respuesta
+                FROM fd_pregunta as contepreg
+                LEFT JOIN fd_respuesta ON fd_respuesta.id_pregunta = contepreg.id_pregunta
+                WHERE contepreg.id_conjunto_pregunta = :id_conj_prta 
+                AND fd_respuesta.id_conjunto_respuesta = :id_conj_rpta
+                AND contepreg.id_capitulo = :capitulo
+                AND contepreg.obligatorio='S' AND 
+                ra_check is null AND 
+                ra_descripcion is null AND
+                ra_entero is null AND
+                ra_porcentaje is null AND
+                ra_moneda is null AND
+                ra_decimal is null AND
+                (cantidad_registros is null or cantidad_registros=0) AND
+                ra_otros is null AND
+                ra_fecha is null";
+        
+        $_capitulos = Yii::$app->db->createCommand($sql)                        
+                        ->bindValue(':id_conj_prta', $id_conj_prta)
+                        ->bindValue(':id_conj_rpta', $id_conj_rpta)
+                        ->bindValue(':capitulo', $capitulo) 
+                        ->queryAll();
+
+        return count($_capitulos);
+        
     }
 }

@@ -12,7 +12,7 @@ use yii\jui\DatePicker;					/*Libreria para el modulo de fechas*/
 
 SweetSubmitAsset::register($this)
 ?>
-
+<div class="aplicativo">
 <div class="clientesprueba-form">
 
     <?php $form = ActiveForm::begin(['options' => 			[
@@ -87,4 +87,5 @@ SweetSubmitAsset::register($this)
 
     <?php ActiveForm::end(); ?>
 
+</div>
 </div>

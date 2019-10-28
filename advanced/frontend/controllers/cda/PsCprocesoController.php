@@ -44,7 +44,7 @@ class PsCprocesoController extends ControllerPry
      */
     public function actionIndex()
     {
-         $facade =  new  PsCprocesoControllerFachada;
+        $facade =  new  PsCprocesoControllerFachada;
         $dataAndModel= $facade->actionIndex(Yii::$app->request->queryParams);
         
         return $this->render('index', [
@@ -53,7 +53,21 @@ class PsCprocesoController extends ControllerPry
         ]);
     }
     
-    
+    /*
+     * Modificado Diana B.
+     * Modulo: CDA
+     * 2019-02-25
+     */
+    public function actionGestor(){
+        
+        $facade =  new  PscprocesoControllerFachada;
+        $dataAndModel= $facade->actionIndex_gestor();
+        
+        return $this->render('index_gestor', [
+            'dataProvider' => $dataAndModel['dataProvider'],
+        ]);
+    }
+        
      /**
      * Listado todos los datos del modelo PsCproceso que se encuentran en el tablename.
      * @return mixed
@@ -66,16 +80,10 @@ class PsCprocesoController extends ControllerPry
         $_vectorsearch = Yii::$app->request->queryParams;
         
         //Agregando usuario conectado ==============================================
-        $dataAndModel= $facade->actionIndex_gestor($_vectorsearch,$tipo);
-        
-        if($tipo == 1){
-            $_page = 'index_gestor';
-        }else{
-           $_page = 'index_gestorpqrs'; 
-        }
+        $dataAndModel= $facade->actionIndex_gestorpqrs($_vectorsearch,$tipo);
+        $_page = 'index_gestorpqrs'; 
         
         return $this->render($_page, [
-            'searchModel' => $dataAndModel['searchModel'],
             'dataProvider' => $dataAndModel['dataProvider'],
         ]);
     }
@@ -156,7 +164,7 @@ class PsCprocesoController extends ControllerPry
      * @param integer $id
      * @return mixed
      */
-   public function actionUpdatedetproceso($id,$tipo=null,$id_cda=null)
+   public function actionUpdatedetproceso($id,$tipo=null,$id_cda=null,$_labelmiga)
     {
         $facade =  new  PscprocesoControllerFachada;
         $modelE= $facade->actionUpdatedetproceso($id,Yii::$app->request->post(),Yii::$app->request->isAjax);
@@ -166,7 +174,7 @@ class PsCprocesoController extends ControllerPry
             
             Yii::$app->session->setFlash('FormSubmitted','1');
             if($tipo==1){
-                 return  $this->redirect(['cda/detalleproceso/index', 'id_cda' => $id_cda]);	
+                 return  $this->redirect(['cda/detalleproceso/index', 'id_cda' => $id_cda,'_labelmiga'=>$_labelmiga]);	
             }else{
                 return $this->redirect(['progress', 'urlroute' => 'view', 'id' => $model->id_cproceso]);
             }

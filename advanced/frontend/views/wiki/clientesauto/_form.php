@@ -11,10 +11,10 @@ use yii\web\JsExpression;
 use yii\jui\AutoComplete;
 
 
-/*Habilita la funcion register de la ventan de confirmación*/
+/*Habilita la funcion register de la ventana de confirmación*/
 SweetSubmitAsset::register($this);
 ?>
-
+<div class="aplicativo">
 <div class="clientesauto-form">
 
     <?php $form = ActiveForm::begin(['options' => [
@@ -76,4 +76,5 @@ SweetSubmitAsset::register($this);
 
     <?php ActiveForm::end(); ?>
 
+</div>
 </div>

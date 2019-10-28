@@ -1,0 +1,81 @@
+    /**
+     * @inheritdoc
+     */
+    public function requiredTemplates()
+    {
+        return ['controllerpry.php','entidadcontroller.php','entidadfachada.php','fachadapry.php'];
+    }
+
+  /**
+     * @inheritdoc
+     */
+    public function generate()
+    {
+        
+          $whole_length = strlen($this->controllerClass); 
+            $right_length = (strlen(strrchr($this->controllerClass, '\\')) - 1); 
+            $left_length = ($whole_length - $right_length - 1); 
+            $start = (0 - ($right_length + 1)); 
+            $this->nsa='\frontend\tests\unit\controllers'.substr($this->controllerClass, $start); 
+        
+        
+        $this->baseFachadaPry=  ltrim($this->controllerClass.'FachadaPry', '\\');
+        $FachadaPry=Yii::getAlias('@' . str_replace('\\', '/', ltrim($this->baseFachadaPry, '\\')) . '.php');
+         $files []= 
+           new CodeFile($FachadaPry, $this->render('fachadapry.php'))
+        ;
+        
+         
+        $this->baseEntidadFachada=ltrim($this->controllerClass.'Fachada', '\\');
+        $EntidadFachada= Yii::getAlias('@' . str_replace('\\', '/', ltrim($this->baseEntidadFachada, '\\')) . '.php');
+        $files []=  
+                new CodeFile($EntidadFachada, $this->render('entidadfachada.php'))
+        ;
+        
+        
+        $this->baseEntidadFachadaTest=ltrim($this->nsa.'FachadaTest', '\\');
+        $EntidadFachada= Yii::getAlias('@' . str_replace('\\', '/', ltrim($this->baseEntidadFachadaTest, '\\')) . '.php');
+        $files []=  
+                new CodeFile($EntidadFachada, $this->render('entidadfachadatest.php'))
+        ;
+        
+        
+        
+
+        $this->baseControllerPry =ltrim($this->controllerClass.'Pry', '\\');
+        $controllerPry = Yii::getAlias('@' . str_replace('\\', '/', ltrim( $this->baseControllerPry, '\\')) . '.php');
+          $files []= 
+            new CodeFile($controllerPry, $this->render('controllerpry.php'))
+        ;
+        
+        $controllerFile = Yii::getAlias('@' . str_replace('\\', '/', ltrim($this->controllerClass, '\\')) . '.php');
+          $files []= 
+            new CodeFile($controllerFile, $this->render('entidadcontroller.php'))
+        ;
+          
+         $this->controllerClassTest =ltrim('\frontend\tests\unit\controllers\DestinoControllerTest', '\\'); 
+         $controllerTest = Yii::getAlias('@' . str_replace('\\', '/', ltrim( $this->controllerClassTest, '\\')) . '.php');
+          $files []= 
+            new CodeFile($controllerTest, $this->render('entidadcontrollertest.php'))
+        ;
+                
+    
+        
+        if (!empty($this->searchModelClass)) {
+            $searchModel = Yii::getAlias('@' . str_replace('\\', '/', ltrim($this->searchModelClass, '\\') . '.php'));
+            $files[] = new CodeFile($searchModel, $this->render('search.php'));
+        }
+
+        $viewPath = $this->getViewPath();
+        $templatePath = $this->getTemplatePath() . '/views';
+        foreach (scandir($templatePath) as $file) {
+            if (empty($this->searchModelClass) && $file === '_search.php') {
+                continue;
+            }
+            if (is_file($templatePath . '/' . $file) && pathinfo($file, PATHINFO_EXTENSION) === 'php') {
+                $files[] = new CodeFile("$viewPath/$file", $this->render("views/$file"));
+            }
+        }
+
+        return $files;
+    }

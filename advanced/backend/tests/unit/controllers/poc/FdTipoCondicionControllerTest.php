@@ -79,8 +79,8 @@ class FdTipoCondicionControllerTest extends \Codeception\Test\Unit
         
             // Se declaran los $queryParams a enviar los filtros
             $queryParams = ['FdTipoCondicionSearch' => [
-                                             'id_tcondicion' => "Ingresar valor de pruebas para el campo id_tcondicion de tipo int4",       
-                                              'nom_tcondicion' => "Ingresar valor de pruebas para el campo nom_tcondicion de tipo varchar",       
+                                              'id_tcondicion' => "1",       
+                                              'nom_tcondicion' => "Habilitación",       
                               ]];
              
        
@@ -105,12 +105,12 @@ class FdTipoCondicionControllerTest extends \Codeception\Test\Unit
         
         // se deben declarar los valores de $id para enviar la llave
         
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
                                      // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
             $actionView=Yii::$app->runAction('FdTipoCondicionController/view',['id' => $id]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -128,8 +128,8 @@ class FdTipoCondicionControllerTest extends \Codeception\Test\Unit
           
             // Se declaran los $queryParams a enviar los datos a crear
             $queryParams = ['FdTipoCondicionController' => [
-                                             'id_tcondicion' => "Ingresar valor de pruebas para el campo id_tcondicion de tipo int4",       
-                                              'nom_tcondicion' => "Ingresar valor de pruebas para el campo nom_tcondicion de tipo varchar",       
+                                             'id_tcondicion' => "5",       
+                                              'nom_tcondicion' => "Prueba",       
                               ]];
                             
        //       Se declaran el post1
@@ -157,13 +157,13 @@ class FdTipoCondicionControllerTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar los datos a actualizar
           $queryParams = ['FdTipoCondicionController' => [
-                                         'id_tcondicion' => "Ingresar valor de pruebas para el campo id_tcondicion de tipo int4",       
-                                          'nom_tcondicion' => "Ingresar valor de pruebas para el campo nom_tcondicion de tipo varchar",       
+                                         'id_tcondicion' => "5",       
+                                          'nom_tcondicion' => "Prueba actualizar",       
                           ]];
         
         
          // se deben declarar los valores de $id para enviar la llave
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '5';
                                 
         
          // se valida que se pueda realizar el update del registro
@@ -190,10 +190,10 @@ class FdTipoCondicionControllerTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores para indicar el registro a borrar
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '5';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(FdTipoCondicionController/update',['id' => $id]);
+         $actionDelete=Yii::$app->runAction('FdTipoCondicionController/update',['id' => $id]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

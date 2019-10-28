@@ -44,7 +44,7 @@ class FdDatosGenerales extends ModelPry
     public function rules()
     {
         return [
-            [['num_documento', 'num_convencional', 'num_celular', 'id_tdocumento', 'id_natu_juridica', 'id_conjunto_respuesta'], 'integer','message'=>'El valor debe ser un entero'],
+            [['num_convencional', 'num_celular', 'id_tdocumento', 'id_natu_juridica', 'id_conjunto_respuesta'], 'integer','message'=>'El valor debe ser un entero'],
             [['nombres', 'direccion', 'descripcion_trabajo', 'nombres_apellidos_replegal','nom_sistema'], 'string', 'max' => 1000],
             [['correo_electronico'], 'email','message'=>'Inserte un correo valido'],
             [['id_conjunto_respuesta'], 'exist', 'skipOnError' => true, 'targetClass' => FdConjuntoRespuesta::className(), 'targetAttribute' => ['id_conjunto_respuesta' => 'id_conjunto_respuesta']],
@@ -52,6 +52,7 @@ class FdDatosGenerales extends ModelPry
             [['id_natu_juridica'], 'exist', 'skipOnError' => true, 'targetClass' => TrTipoNatuJuridica::className(), 'targetAttribute' => ['id_natu_juridica' => 'id_natu_juridica']],
             [['nombres', 'num_documento','correo_electronico','captcha'], 'required', 'on' => 'consultaciudadana'],
             [['nombres', 'num_documento','correo_electronico'], 'required', 'on' => 'consultaciudadana_nocaptcha'],
+            [['num_documento'], 'match', 'pattern' => '/^[0-9]{10}$/', 'message' => 'Solo números, 10 caracteres'],
             ['captcha', 'captcha','on' => 'consultaciudadana'],
         ];
     }

@@ -3,7 +3,7 @@
 namespace frontend\controllers\cda;
 
 use Yii;
-use frontend\controllers\cda\CdaAnalisisHidrologicoControllerFachada;
+use frontend\controllers\cda\CdaanalisishidrologicoControllerFachada;
 use common\controllers\controllerspry\ControllerPry;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,17 +12,17 @@ use yii\helpers\Url;	//Para presentar la barra de espera
 use yii\jui\ProgressBar;
 
 /**
- * CdaAnalisisHidrologicoController implementa las acciones a través del sistema CRUD para el modelo CdaAnalisisHidrologico.
+ * CdaanalisishidrologicoController implementa las acciones a través del sistema CRUD para el modelo CdaAnalisisHidrologico.
  */
-class CdaAnalisisHidrologicoController extends ControllerPry
+class CdaanalisishidrologicoController extends ControllerPry
 {
-  //private $facade =    CdaAnalisisHidrologicoControllerFachada;
+  //private $facade =    CdaanalisishidrologicoControllerFachada;
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
-        $facade =  new  CdaAnalisisHidrologicoControllerFachada;
+        $facade =  new  CdaanalisishidrologicoControllerFachada;
         return $facade->behaviors();
     }
 	
@@ -31,9 +31,9 @@ class CdaAnalisisHidrologicoController extends ControllerPry
     /**Accion para la barra de progreso y render de nuevo a la vista
     Ubicación: @web = frontend\web....*/
 
-    public function actionProgress($urlroute=null,$id=null){
-            $facade =  new  CdaAnalisisHidrologicoControllerFachada;
-            echo $facade->actionProgress($urlroute,$id);
+    public function actionProgress($urlroute=null,$id=null,$labelmiga=null,$id_cda_tramite=null,$id_cproceso=null,$actividadactual=null,$tipo=null){
+            $facade =  new  CdaanalisishidrologicoControllerFachada;
+            echo $facade->actionProgress($urlroute,$id,$labelmiga,$id_cda_tramite,$id_cproceso,$actividadactual,$tipo);
     }
 
 	
@@ -42,49 +42,25 @@ class CdaAnalisisHidrologicoController extends ControllerPry
      * Listado todos los datos del modelo CdaAnalisisHidrologico que se encuentran en el tablename.
      * @return mixed
      */
-    public function actionIndex($id_cda,$id_cactividad_proceso)
+    public function actionIndex($labelmiga,$id_cda_tramite,$id_cproceso,$actividadactual,$tipo)
     {
+        $facade =  new  CdaanalisishidrologicoControllerFachada;
+        $dataAndModel= $facade->actionIndex(Yii::$app->request->queryParams,$id_cda_tramite,$actividadactual,$id_cproceso);
         
-        $facade =  new  CdaAnalisisHidrologicoControllerFachada;
-        $dataAndModel= $facade->actionIndex(Yii::$app->request->queryParams,$id_cda);
-        //Encabezado
-        $dataEncabezado = $facade->findEncabezado($id_cda);
-        
-        //Fin encabezado
-        
-        
-        $facadeCact= new PsCactividadProcesoControllerFachada();
-        $dataCact= $facadeCact->cargaPsCactividadProceso(['id_cactividad_proceso'=>$id_cactividad_proceso]);
-        
-         if ($dataCact !== null) {
-              $_validaciones['editar']=$this->findResponsable(['id_cproceso'=>$dataCact['id_cproceso'],'id_usuario'=>Yii::$app->user->identity->id_usuario]);
-         }else{
-              $_validaciones['editar']=true;
-         }
-        
-        return $this->render('index', [
+       return $this->render('index', [
             'searchModel' => $dataAndModel['searchModel'],
             'dataProvider' => $dataAndModel['dataProvider'],
-            'id_cda' =>$id_cda,
-            'id_cactividad_proceso'=>$id_cactividad_proceso,
-            'validaciones'=>$_validaciones,
-            'encabezado'=>$dataEncabezado
+            'id_cda_tramite' =>$id_cda_tramite,
+            'id_cactividad_proceso'=>$dataAndModel['pscactividadproceso']->id_cactividad_proceso,
+            'encabezado'=>$dataAndModel['encabezado'],
+            'labelmiga'=>$labelmiga,
+            'id_cproceso'=>$id_cproceso,
+            'actividadactual'=>$actividadactual,
+            'tipo'=>$tipo,
+            'enableCreate'=>$dataAndModel['enableCreate']
         ]);
     }
 
-        /**
-     * Finds the Cda model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Cda the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public  function findResponsable($params)
-    {
-        $facadeResp= new PsResponsablesProcesoControllerFachada();
-        
-       return $facadeResp->findResponsable($params) ;
-    }
     /**
      * Presenta un dato unico en el modelo CdaAnalisisHidrologico.
      * @param integer $id
@@ -92,7 +68,7 @@ class CdaAnalisisHidrologicoController extends ControllerPry
      */
     public function actionView($id)
     {
-        $facade =  new  CdaAnalisisHidrologicoControllerFachada;
+        $facade =  new  CdaanalisishidrologicoControllerFachada;
         return $this->render('view', [
             'model' => $facade->actionView($id),
         ]);
@@ -103,24 +79,24 @@ class CdaAnalisisHidrologicoController extends ControllerPry
      * Si se crea correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado.
      * @return mixed
      */
-    public function actionCreate($id_cda,$id_cactividad_proceso)
+    public function actionCreate($labelmiga,$id_cda_tramite,$actividadactual,$id_cproceso,$tipo,$pscactividadproceso)
     {
-       $facade =  new  CdaAnalisisHidrologicoControllerFachada;
-       $modelE= $facade->actionCreateCda(Yii::$app->request->post(),Yii::$app->request->isAjax,$id_cda,$id_cactividad_proceso);
+       $facade =  new  CdaanalisishidrologicoControllerFachada;
+       $modelE= $facade->actionCreate(Yii::$app->request->post(),Yii::$app->request->isAjax,$actividadactual,$id_cproceso,$pscactividadproceso,$tipo,$id_cda_tramite);
        $model = $modelE['model'];
         if ($modelE['create'] == 'True') {
 			
             Yii::$app->session->setFlash('FormSubmitted','2');
-            return  $this->redirect(['progress', 'urlroute' => 'index', 'id' => $model->id_analisis_hidrologico, 'id_cda'=> $model->id_cda]);		
-			
+            return  $this->redirect(['progress', 'urlroute' => 'index','labelmiga'=>$labelmiga,'id_cda_tramite'=>$id_cda_tramite,'id_cproceso'=>$id_cproceso,'tipo'=>$tipo,'actividadactual'=>$actividadactual]);		
+
         }elseif($modelE['create']=='Ajax'){
              return $this->renderAjax('create', [
-                        'model' => $model
+                        'model' => $model,'ps_cproceso'=>$id_cproceso,'_ajax'=>true
             ]);
         } 
         else {
             return $this->render('create', [
-                'model' => $model,
+                'model' => $model,'ps_cproceso'=>$id_cproceso
             ]);
         }
     }
@@ -131,25 +107,25 @@ class CdaAnalisisHidrologicoController extends ControllerPry
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate($id,$labelmiga,$id_cda_tramite,$actividadactual,$id_cproceso,$tipo,$pscactividadproceso)
     {
-        $facade =  new  CdaAnalisisHidrologicoControllerFachada;
-        $modelE= $facade->actionUpdate($id,Yii::$app->request->post(),Yii::$app->request->isAjax);
+        $facade =  new  CdaanalisishidrologicoControllerFachada;
+        $modelE= $facade->actionUpdate($id,Yii::$app->request->post(),Yii::$app->request->isAjax,$actividadactual,$id_cproceso,$pscactividadproceso);
         $model = $modelE['model'];
 
         if ($modelE['update'] == 'True') {
             
-            Yii::$app->session->setFlash('FormSubmitted','1');		
-            return $this->redirect(['progress', 'urlroute' => 'view', 'id_cda'=>$model['id_cda'],'id_cactividad_proceso'=>$model['id_cactividad_proceso']]);
+            Yii::$app->session->setFlash('FormSubmitted','2');
+            return  $this->redirect(['progress', 'urlroute' => 'index','labelmiga'=>$labelmiga,'id_cda_tramite'=>$id_cda_tramite,'id_cproceso'=>$id_cproceso,'tipo'=>$tipo,'actividadactual'=>$actividadactual]);		
             
         }elseif($modelE['update']=='Ajax'){
             return $this->renderAjax('update', [
-                        'model' => $model
+                        'model' => $model,'ps_cproceso'=>$id_cproceso,'_ajax'=>true
             ]);
         } 
         else {
             return $this->render('update', [
-                'model' => $model,
+                'model' => $model,'ps_cproceso'=>$id_cproceso
             ]);
         }
     }
@@ -162,10 +138,38 @@ class CdaAnalisisHidrologicoController extends ControllerPry
      */
     public function actionDeletep($id)
     {
-        $facade =  new  CdaAnalisisHidrologicoControllerFachada;
+        $facade =  new  CdaanalisishidrologicoControllerFachada;
         $facade->actionDeletep($id);
 
         return $this->redirect(['index']);
+    }
+    
+    /*
+     * Entrega nombre de id_ehidrografica
+     */
+    
+    public function actionNomhidrografica($idehidrografica){
+        
+        
+        $modelname = \common\models\cda\CdaEstacionHidrologica::findOne($idehidrografica);
+        
+        if(!empty($modelname)){
+            return $modelname->nom_ehidrografica;
+        }
+    }
+    
+    
+    /*
+     * Entrega nombre de emeteorlogica
+     */
+     public function actionNommeteorlogica($id){
+        
+        
+        $modelname = \common\models\cda\CdaEstacionMeteorologica::findOne($id);
+        
+        if(!empty($modelname)){
+            return $modelname->nom_emeteorologica;
+        }
     }
 
     

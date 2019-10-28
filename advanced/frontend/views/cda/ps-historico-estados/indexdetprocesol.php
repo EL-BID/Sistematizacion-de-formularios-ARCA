@@ -24,11 +24,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <!--<?= Html::button('Create Ps Historico Estados', 
-        ['value' =>Url::to(['ps-historico-estados/create']), 'title' => 'Create Ps Historico Estados',
-        'class' => 'showModalButton btn btn-success']); ?>-->
+        <!--<?= Html::button('Create Ps Historico Estados',
+        ['value' => Url::to(['ps-historico-estados/create']), 'title' => 'Create Ps Historico Estados',
+        'class' => 'showModalButton btn btn-success', ]); ?>-->
     </p>
-    
+    <div class="aplicativo" style="overflow:auto;">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
@@ -79,4 +79,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ],*/
         ],
     ]); ?>
+    </div>
 </div>

@@ -8,6 +8,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Html;               //Para presentar la barra de espera
 use yii\helpers\Url;                //Para presentar la barra de espera
+use DateTime;
 use frontend\helpers\savecapitulo;
 use frontend\helpers\helperHTML;
 use common\helpers\general\command\pregunta\EjecutorComando;
@@ -23,6 +24,8 @@ use common\models\Detcapitulo;
 use common\models\poc\TrComando;
 use common\models\poc\FdDatosGenerales;
 use common\models\poc\FdDatosGeneralesSearch;
+use common\models\poc\FdDatosGeneralesRiego;
+use common\models\poc\FdDatosGeneralesPublicos;
 use common\models\poc\FdPregunta;
 use common\models\poc\FdRespuesta;
 use common\models\poc\FdDatosGenerales_var;
@@ -31,6 +34,10 @@ use common\models\poc\FdUbicacion_var;
 use common\models\autenticacion\Cantones;
 use common\models\autenticacion\Demarcaciones;
 use common\models\poc\FdOpcionSelect;
+use common\models\autenticacion\Parroquias;
+use common\models\poc\FdDatosGeneralesComunitarioAp;
+use common\models\poc\FdUbicacion_var_ap;
+
 
 use yii\web\UploadedFile;
 
@@ -73,15 +80,14 @@ class DetcapituloController extends Controller
      * @last => ultima version
      * @estado => id_adm_estado
      * @$_lastvista => vista de donde viene
-    */
-    
-    public function actionIndex($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$id_capitulo,$_lastvista)
+    */    
+    public function actionIndex($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$id_capitulo,$_lastvista,$idjunta="")
     {
         
         if(!empty(Yii::$app->request->post())){
             
-        }else{
-            return $this->redirect(['genvistaformato','capitulo'=>$id_capitulo,'id_conj_prta'=>$id_conj_prta,'id_conj_rpta'=>$id_conj_rpta,'id_fmt'=>$id_fmt,'last'=>$last,'antvista'=>$_lastvista,'estado'=>$estado,'provincia'=>'','cantones'=>'','parroquias'=>'','periodos'=>'']);
+        }else{          
+            return $this->redirect(['genvistaformato','capitulo'=>$id_capitulo,'id_conj_prta'=>$id_conj_prta,'id_conj_rpta'=>$id_conj_rpta,'id_fmt'=>$id_fmt,'last'=>$last,'antvista'=>$_lastvista,'estado'=>$estado,'provincia'=>'','cantones'=>'','parroquias'=>'','periodos'=>'','focus'=>'','idjunta'=>$idjunta]);
         }
         
     }
@@ -91,7 +97,7 @@ class DetcapituloController extends Controller
     /*GENERAR VISTA FORMATO ===========================================================
      * @antvista => en la direccion de la vista por medio de la cual se accedio al detalle capitulo
      */
-    public function actionGenvistaformato($capitulo,$id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$provincia,$cantones,$parroquias,$periodos,$antvista,$focus=0){
+    public function actionGenvistaformato($capitulo,$id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$provincia,$cantones,$parroquias,$periodos,$antvista,$focus=0,$idjunta=""){
         
         $r_secciones=array();
         $r_pseccion=array();
@@ -115,13 +121,18 @@ class DetcapituloController extends Controller
          * Tipo 2 miga de pan para dashboard         */
         $_migadepan['url'] = $antvista;
 
-        if($antvista=='gestorformatos/index'){
+        if($antvista=='gestorformatos/index' or $antvista=='juntasgad/index'){
+            $_migadepan['id_cnj_rpta'] = $id_conj_rpta;
+            $_migadepan['id_conj_prta'] = $id_conj_prta;
+            $_migadepan['id_fmt'] = $id_fmt;
+            $_migadepan['id_capitulo'] = $capitulo;
+            $_migadepan['id_version'] = $last;
+            $_migadepan['estado'] = $estado;
             $_migadepan['provincia'] = $provincia;
             $_migadepan['cantones'] = $cantones;
             $_migadepan['parroquias'] = $parroquias;
-            $_migadepan['id_fmt'] = $id_fmt;
             $_migadepan['periodos'] = $periodos;
-            $_migadepan['estado'] = $estado;
+            $_migadepan['idjunta'] = $idjunta;
          }else if($antvista=='dashboard/index'){
             $_migadepan['id_conj_rpta'] = $id_conj_rpta;
             $_migadepan['id_conj_prta'] = $id_conj_prta;
@@ -133,6 +144,7 @@ class DetcapituloController extends Controller
             $_migadepan['cantones'] = $cantones;
             $_migadepan['parroquias'] = $parroquias;
             $_migadepan['periodos'] = $periodos;
+            $_migadepan['idjunta'] = $idjunta;
         }else if($antvista=='listcapitulos/index'){
             $_migadepan['id_conj_rpta'] = $id_conj_rpta;
             $_migadepan['id_conj_prta'] = $id_conj_prta;
@@ -144,7 +156,9 @@ class DetcapituloController extends Controller
             $_migadepan['cantones'] = $cantones;
             $_migadepan['parroquias'] = $parroquias;
             $_migadepan['periodos'] = $periodos;
+            $_migadepan['idjunta'] = $idjunta;
         }
+
         
         /*-1 Consultando fecha de creacion del conjunto respuesta*/
         $m_conjrespuesta = FdConjuntoRespuesta::findOne($id_conj_rpta);
@@ -154,6 +168,7 @@ class DetcapituloController extends Controller
         $m_formato = FdFormato::findOne($id_fmt);
         $_numeracionpreg = $m_formato -> numeracion;
         $_rutaformato = $m_formato->sop_ruta;
+		$_nameformato = $m_formato->id_formato."_".$m_formato->nom_formato;
                
         
         /*1)Consultando capitulos ==================================================
@@ -174,10 +189,13 @@ class DetcapituloController extends Controller
         $_positions=array();
         $inc_datos_generales = FALSE;       //Bandera para saber si se incluye el capitulo datos generales...
         $inc_basicos_coorubicacion = FALSE; //Bandera para saber si se incluye el capitulo basicos con ubicacion y coordenadas
+        $inc_datos_generales_riego = FALSE;
+        $inc_datos_generales_comunitario_ap=FALSE;
+        $inc_datos_generales_publicos=FALSE;
         
         /*Recorriendo vector o si es del dashboard consultando datos
          @_arraycap => array con los id's de los capitulos*/
-        if($antvista=='gestorformatos/index'){
+        if($antvista=='gestorformatos/index' or $antvista=='juntasgad/index'){
             
             foreach($_capitulos as $clave){
                 
@@ -199,6 +217,26 @@ class DetcapituloController extends Controller
                      continue;
                 }
                 
+                 if($clave["id_tcapitulo"] == "2" and  $clave["url"] == "poc/datosgeneralesriego.php"){
+                     $_positions[] = $_conteo;
+                     $inc_datos_generales_riego = TRUE;
+                     $_capitulobasico= $clave["id_capitulo"];
+                     continue;
+                }
+                
+                if($clave["id_tcapitulo"] == "2" and  $clave["url"] == "poc/datosgeneralescomunitarioap.php"){
+                     $_positions[] = $_conteo;
+                     $inc_datos_generales_comunitario_ap = TRUE;
+                     $_capitulobasico= $clave["id_capitulo"];
+                     continue;
+                }
+                if($clave["id_tcapitulo"] == "2" and  $clave["url"] == "poc/datosgeneralespublicos.php"){
+                     $_positions[] = $_conteo;
+                     $inc_datos_generales_publicos = TRUE;
+                     $_capitulobasico= $clave["id_capitulo"];
+                     continue;
+                } 
+                
                 /*Se verifica si el capitulo esta condicionado*/
                 if($clave['condiciones'] > 0){
                     $_eliminar = $this->evaluarcondiciones($clave['id_capitulo'],$id_fmt,$id_conj_rpta,$last,$id_conj_prta,$_permisos['cod_rol']);
@@ -219,7 +257,7 @@ class DetcapituloController extends Controller
 
                         /*3)Consultando Preguntas================================================/*/
                         $m_preguntas=new FdPreguntaSearch();
-                        $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta);
+                        $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta);       /*sE MODIFICA 2019-02-27*/
                         
                     }
                 }else{
@@ -233,7 +271,7 @@ class DetcapituloController extends Controller
 
                     /*3)Consultando Preguntas================================================/*/
                     $m_preguntas=new FdPreguntaSearch();
-                    $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta);
+                    $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta,$idjunta);
                      
                      
                 }
@@ -247,23 +285,35 @@ class DetcapituloController extends Controller
             $_capitulos = array_values($_capitulos);
             
             
-        }else{
-            
-                
-                
+        }else{                                            
                 /*1) Consultando el nombre del capitulo para saber si pasa por secciones y pregunas o se va directo a 
                  * la tabla FD_DATOS_GENERALES
                  */
                 $id_capitulo= $capitulo;
+                
+                //Yii::trace("aqui entrega capitulo ".$id_capitulo."--".$_capitulos[0]["url"],"DEBUG");
                
                 if($_capitulos[0]["id_tcapitulo"] == "2" and $_capitulos[0]["url"] == "poc/datosbasicos.php"){
                      $inc_datos_generales = TRUE;
-                     $_capitulos=array();                     
+                     $_capitulos=array();    
                 }else if($_capitulos[0]["id_tcapitulo"] == "2" and  $_capitulos[0]["url"] == "poc/basicosubicacioncoordenada.php"){
                      $inc_basicos_coorubicacion = TRUE;
                      $_capitulobasico= $_capitulos[0]["id_capitulo"];
                      $_capitulos=array(); 
-                }else{
+                }else if($_capitulos[0]["id_tcapitulo"] == "2" and $_capitulos[0]["url"] == "poc/datosgeneralesriego.php"){//para formulario
+                     $inc_datos_generales_riego = TRUE;
+                     $_capitulobasico= $_capitulos[0]["id_capitulo"];
+                     $_capitulos=array();    
+                }else if($_capitulos[0]["id_tcapitulo"] == "2" and $_capitulos[0]["url"] == "poc/datosgeneralescomunitarioap.php"){//para formulario
+                     $inc_datos_generales_comunitario_ap = TRUE;
+                     $_capitulobasico= $_capitulos[0]["id_capitulo"];
+                     $_capitulos=array();    
+                }else if($_capitulos[0]["id_tcapitulo"] == "2" and $_capitulos[0]["url"] == "poc/datosgeneralespublicos.php"){//para formulario
+                     $inc_datos_generales_publicos = TRUE;
+                     $_capitulobasico= $_capitulos[0]["id_capitulo"];
+                     $_capitulos=array();    
+                }
+                else{
                    
                     /*2)Consultando secciones===============================================*/
                     $m_secciones=new FdSeccionSearch();
@@ -271,7 +321,8 @@ class DetcapituloController extends Controller
 
                     /*3)Consultando Preguntas================================================/*/
                     $m_preguntas=new FdPreguntaSearch();
-                    $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta);
+
+                    $r_pregunta[$id_capitulo]=$m_preguntas->buscar($id_capitulo,$id_conj_prta,$id_conj_rpta,$idjunta);
 
                     $_arraycap[] = $id_capitulo;
                 }    
@@ -286,7 +337,9 @@ class DetcapituloController extends Controller
         $_rptamodel=array();
         $_rptapreguntas=array();
         $_contadorrpta=0;
+        $_ismultiple=array();
         
+
         for($a=0;$a<count($_arraycap);$a++){
             
             $_indicecap= $_arraycap[$a];
@@ -309,6 +362,12 @@ class DetcapituloController extends Controller
                }
 
 
+               //Guardando si son multiples ==========================================================================================
+               if($_claverecor['caracteristica_preg'] == 'M'){
+                   $_ismultiple[$_claverecor['id_pregunta']] = "1" ;
+               }
+               
+               
                /* Organizando vectores de pregunta 
                 * con seccion y sin seccion`*/
                $_indiceseccion=$_claverecor['id_seccion'];
@@ -344,6 +403,7 @@ class DetcapituloController extends Controller
                                                                 'id_respuesta'=>$_claverecor['id_respuesta'],
                                                                 'ag_descripcion'=>$_claverecor['ag_descripcion'],
                                                                 'respuesta'=>$_claverecor[$_campo],
+                                                                'ra_otros'=>$_claverecor['ra_otros'],    
                                                                 'stylecss'=>$_claverecor['stylecss'],
                                                                 'caracteristica_preg'=>$_claverecor['caracteristica_preg'],
                                                                 'ag_num_col'=>$_claverecor['ag_num_col'],
@@ -358,7 +418,11 @@ class DetcapituloController extends Controller
                                                                 'id_pregunta_condicionada'=>$_claverecor['id_pregunta_condicionada'],
                                                                 'opercond'=>$_claverecor['opercond'],
                                                                 'valorcond'=>$_claverecor['valorcond'],
-                                                                'tcond'=>$_claverecor['tcond']];
+                                                                'tcond'=>$_claverecor['tcond'], 
+                                                                'max_files'=>$_claverecor['max_files'],
+                                                                'idjunta'=>$_claverecor['id_junta'],
+                                                                'max_registros'=>$_claverecor['max_registros'],
+                                                                'id_pregunta_anidada'=>$_claverecor['id_pregunta_anidada']];
                }else{
                    $r_pseccion[$_indicecap][$_indiceseccion][$_indicepregunta]=['id_capitulo'=>$_claverecor['id_capitulo'],
                        'id_conjunto_pregunta'=>$_claverecor['id_conjunto_pregunta'],
@@ -385,6 +449,7 @@ class DetcapituloController extends Controller
                        'id_respuesta'=>$_claverecor['id_respuesta'],
                        'ag_descripcion'=>$_claverecor['ag_descripcion'],
                        'respuesta'=>$_claverecor[$_campo],
+                       'ra_otros'=>$_claverecor['ra_otros'],
                        'stylecss'=>$_claverecor['stylecss'],
                        'caracteristica_preg'=>$_claverecor['caracteristica_preg'],
                        'ag_num_col'=>$_claverecor['ag_num_col'],
@@ -399,15 +464,22 @@ class DetcapituloController extends Controller
                        'id_pregunta_condicionada'=>$_claverecor['id_pregunta_condicionada'],
                        'opercond'=>$_claverecor['opercond'],
                        'valorcond'=>$_claverecor['valorcond'],
-                       'tcond'=>$_claverecor['tcond']];
+                       'tcond'=>$_claverecor['tcond'], 
+                       'max_files'=>$_claverecor['max_files'],                       
+                       'idjunta'=>$_claverecor['id_junta'],
+                        'max_registros'=>$_claverecor['max_registros'],
+                        'id_pregunta_anidada'=>$_claverecor['id_pregunta_anidada']
+                       ];                   
                }
                 
             }
             
         }
-        
-        //Si no existen capitulos se envia un excepcion =======================================================================================
-        if(count($_arraycap)==0 and $inc_datos_generales == FALSE and $inc_basicos_coorubicacion == FALSE){
+        /*mceron 2018-11-14
+		Se colocó la validación para que se pueda visualizar por listado de capítulos
+		*/
+        //Si no existen capitulos se envia un excepcion =======================================================================================        
+        if(count($_arraycap)==0 and $inc_datos_generales == FALSE and $inc_basicos_coorubicacion == FALSE and $inc_datos_generales_riego == FALSE and $inc_datos_generales_comunitario_ap==FALSE and $inc_datos_generales_publicos==FALSE){
              throw new \yii\web\HttpException(404, 'No existen capitulos asociadas al formato');
         }
                
@@ -439,6 +511,11 @@ class DetcapituloController extends Controller
            
         /*  4-1-2) Agregando modelo de datos para basicosubicacioncoordenadas*/
            if($inc_basicos_coorubicacion == TRUE){
+               
+               //deshabilitando focus ========================================================================================
+               if(empty($focus) or $focus==0){
+                    $focus = "null";
+               }     
                
                //Datos sacados de datos generales//
                if(!empty($_findsearch= FdDatosGenerales_var::find()->where(['id_conjunto_respuesta' => $id_conj_rpta])->one())){
@@ -488,8 +565,220 @@ class DetcapituloController extends Controller
                $_modelbasicos_coordenadas="";
                $_modelbasicos_ubicacion="";
                $cantonesPost="";
-               $DemarcacionPost="";
+               $DemarcacionPost="";               
            }
+           
+           if($inc_datos_generales_riego == TRUE){               
+               if(!empty($_findsearch= FdDatosGeneralesRiego::find()->where(['id_conjunto_respuesta' => $id_conj_rpta])->one())){
+                   $_modelgeneralesriego  = $_findsearch;
+               }else{
+                   $_modelgeneralesriego = new FdDatosGeneralesRiego();
+               }     
+               
+               
+               
+                  if(!empty($_findsearch= FdUbicacion_var::find()->where(['id_conjunto_respuesta' => $id_conj_rpta,'id_capitulo' =>$_capitulobasico ])->one())){
+                   $_modelriego_ubicacion  = $_findsearch;
+                    
+                   if(!empty($_modelriego_ubicacion->cod_canton)){
+                       $cantonesPost=Cantones::find()
+                        ->where(['=', 'cantones.cod_provincia', $_modelriego_ubicacion->cod_provincia])
+                        ->all(); 
+                       
+                   }else{
+                       $cantonesPost="";
+                   }
+                   
+                   if(!empty($_modelriego_ubicacion->cod_parroquia)){
+                       $parroquiasPost=Parroquias::find()
+                        ->where(['=', 'parroquias.cod_provincia', $_modelriego_ubicacion->cod_provincia])
+                        ->andwhere(['=','parroquias.cod_canton', $_modelriego_ubicacion->cod_canton])
+                        ->all(); 
+                   }else{
+                       $parroquiasPost="";
+                   }
+                   
+                   if(!empty($_modelriego_ubicacion->id_demarcacion)){
+                        $DemarcacionPost= Demarcaciones::find()
+                                        ->leftJoin('cantones', 'cantones.id_demarcacion=demarcaciones.id_demarcacion')
+                                        ->where(['=', 'cantones.cod_canton', $_modelriego_ubicacion->cod_canton])
+                                        ->all();
+                   }else{
+                       $DemarcacionPost="";
+                   }
+                   
+               }else{
+                   /*$_modelriego_ubicacion = new FdUbicacion_var();
+                   $cantonesPost="";
+                   $parroquiasPost="";
+                   $DemarcacionPost="";*/
+                   $_modelriego_ubicacion=  new FdUbicacion_var;
+                   $_select_cjresp = \common\models\poc\FdConjuntoRespuesta::find()
+                        ->where(['id_conjunto_respuesta'=>$id_conj_rpta])
+                        ->one();
+                    $valor_cjresp= $_select_cjresp->id_entidad;
+
+                    $_select_entidad = \common\models\autenticacion\Entidades::find()
+                                   ->where(['id_entidad'=>$valor_cjresp])
+                        ->one();
+                    $valor_prov= $_select_entidad->cod_provincia_p;           
+                    $valor_canton= $_select_entidad->cod_canton_p;  
+                    
+                    $demarcacion="";
+                    if(empty($_modelriego_ubicacion->cod_canton)){
+                       $cantonesPost=Cantones::find()
+                        ->where(['=', 'cantones.cod_provincia', $valor_prov])
+                        ->all();  
+                       
+                        $cantones_n=Cantones::find()
+                        ->where(['=', 'cantones.cod_provincia', $valor_prov])
+                        ->andWhere(['=', 'cantones.cod_canton', $valor_canton])
+                        ->one();
+                        $demarcacion = $cantones_n->id_demarcacion;
+                       
+                   }
+                   
+                   if(empty($_modelriego_ubicacion->cod_parroquia)){
+                       $parroquiasPost=Parroquias::find()
+                        ->where(['=', 'parroquias.cod_provincia', $valor_prov])
+                        ->andwhere(['=','parroquias.cod_canton', $valor_canton])
+                        ->all(); 
+                   }
+                   
+                   if(empty($_modelriego_ubicacion->id_demarcacion)){
+                        $DemarcacionPost= Demarcaciones::find()                                        
+                                        ->where(['=', 'id_demarcacion', $demarcacion])
+                                        ->all();
+                   }
+               }
+               
+           }else{
+               $_modelgeneralesriego="";
+               $_modelriego_ubicacion="";              
+               $parroquiasPost="";               
+           }
+           //-----------------------------------
+           
+           if($inc_datos_generales_comunitario_ap == TRUE){               
+               if(!empty($_findsearch= FdDatosGeneralesComunitarioAp::find()->where(['id_conjunto_respuesta' => $id_conj_rpta, 'id_junta' =>$idjunta])->one())){
+                   $_modelgeneralescomunitarioap  = $_findsearch;
+               }else{
+                   $_modelgeneralescomunitarioap = new FdDatosGeneralesComunitarioAp();
+               }                              
+                  if(!empty($_findsearch= FdUbicacion_var_ap::find()->where(['id_conjunto_respuesta' => $id_conj_rpta,'id_capitulo' =>$_capitulobasico,'id_junta' =>$idjunta ])->one())){                      
+                   $_modelcomunitarioap_ubicacion  = $_findsearch;
+                    
+                   if(!empty($_modelcomunitarioap_ubicacion->cod_canton)){
+                       $cantonesPost=Cantones::find()
+                        ->where(['=', 'cantones.cod_provincia', $_modelcomunitarioap_ubicacion->cod_provincia])
+                        ->all(); 
+                       
+                   }else{
+                       $cantonesPost="";
+                   }
+                   
+                   if(!empty($_modelcomunitarioap_ubicacion->cod_parroquia)){
+                       $parroquiasPost=Parroquias::find()
+                        ->where(['=', 'parroquias.cod_provincia', $_modelcomunitarioap_ubicacion->cod_provincia])
+                        ->andwhere(['=','parroquias.cod_canton', $_modelcomunitarioap_ubicacion->cod_canton])
+                        ->all(); 
+                   }else{
+                       $parroquiasPost="";
+                   }                  
+                   
+                   
+               }else{
+                   /*$_modelcomunitarioap_ubicacion = new FdUbicacion_var_ap();
+                   $cantonesPost="";
+                   $parroquiasPost="";*/
+                   
+                   /*$_modelriego_ubicacion = new FdUbicacion_var();
+                   $cantonesPost="";
+                   $parroquiasPost="";
+                   $DemarcacionPost="";*/
+                   $_modelcomunitarioap_ubicacion=  new FdUbicacion_var_ap();
+                   $_select_cjresp = \common\models\poc\FdConjuntoRespuesta::find()
+                        ->where(['id_conjunto_respuesta'=>$id_conj_rpta])
+                        ->one();
+                    $valor_cjresp= $_select_cjresp->id_entidad;
+
+                    $_select_entidad = \common\models\autenticacion\Entidades::find()
+                                   ->where(['id_entidad'=>$valor_cjresp])
+                        ->one();
+                    $valor_prov= $_select_entidad->cod_provincia_p;           
+                    $valor_canton= $_select_entidad->cod_canton_p;  
+                    
+                    
+                    $demarcacion="";
+                    if(empty($_modelcomunitarioap_ubicacion->cod_canton)){
+                       $cantonesPost=Cantones::find()
+                        ->where(['=', 'cantones.cod_provincia', $valor_prov])
+                        ->all();                         
+                   }
+                   if(empty($_modelcomunitarioap_ubicacion->cod_parroquia)){
+                       $parroquiasPost=Parroquias::find()
+                        ->where(['=', 'parroquias.cod_provincia', $valor_prov])
+                        ->andwhere(['=','parroquias.cod_canton', $valor_canton])
+                        ->all(); 
+                   }
+               }
+               
+           }else{
+               $_modelgeneralescomunitarioap="";
+               $_modelcomunitarioap_ubicacion="";              
+               //$parroquiasPost="";               
+           }
+           
+           
+           
+           if($inc_datos_generales_publicos == TRUE){               
+               if(!empty($_findsearch= FdDatosGeneralesPublicos::find()->where(['id_conjunto_respuesta' => $id_conj_rpta])->one())){
+                   $_modelgeneralespublicos  = $_findsearch;
+               }else{
+                   $_modelgeneralespublicos = new FdDatosGeneralesPublicos();
+               }                              
+                  if(!empty($_findsearch= FdUbicacion_var::find()->where(['id_conjunto_respuesta' => $id_conj_rpta,'id_capitulo' =>$_capitulobasico ])->one())){
+                   $_modelpublicos_ubicacion  = $_findsearch;
+                    
+                   if(!empty($_modelpublicos_ubicacion->cod_canton)){
+                       $cantonesPost=Cantones::find()
+                        ->where(['=', 'cantones.cod_provincia', $_modelpublicos_ubicacion->cod_provincia])
+                        ->all(); 
+                       
+                   }else{
+                       $cantonesPost="";
+                   }
+                   
+                   if(!empty($_modelpublicos_ubicacion->id_demarcacion)){
+                        $DemarcacionPost= Demarcaciones::find()
+                                        ->leftJoin('cantones', 'cantones.id_demarcacion=demarcaciones.id_demarcacion')
+                                        ->where(['=', 'cantones.cod_canton', $_modelpublicos_ubicacion->cod_canton])
+                                        ->all();
+                   }else{
+                       $DemarcacionPost="";
+                   }            
+                   
+                   
+               }else{
+                   $_modelpublicos_ubicacion = new FdUbicacion_var();
+                   $cantonesPost="";
+                  // $parroquiasPost="";
+                   
+               }
+               
+           }else{
+               $_modelgeneralespublicos="";
+               $_modelpublicos_ubicacion="";              
+               //$parroquiasPost="";               
+           }           
+           
+           
+           
+           //-----------------------------------
+           
+           
+           
+           
            
         /*4.2)creando la vista*/
            
@@ -503,6 +792,7 @@ class DetcapituloController extends Controller
             $_helperHTML->cantones = $cantones;
             $_helperHTML->parroquias = $parroquias;
             $_helperHTML->provincia = $provincia;
+            $_helperHTML->idjunta = $idjunta;
            
             
             if($antvista=='gestorformatos/index'){
@@ -512,7 +802,7 @@ class DetcapituloController extends Controller
             }    
 
             
-            $_helperHTML->gen_detacapituloview($_capitulos,$r_pnoseccion,$r_secciones,$r_pseccion,$_numeracionpreg,$_permisos,$_modelgenerales,$_modelbasicos,$_modelbasicos_coordenadas,$_modelbasicos_ubicacion);
+            $_helperHTML->gen_detacapituloview($_capitulos,$r_pnoseccion,$r_secciones,$r_pseccion,$_numeracionpreg,$_permisos,$_modelgenerales,$_modelbasicos,$_modelbasicos_coordenadas,$_modelbasicos_ubicacion,$_modelgeneralesriego,$_modelriego_ubicacion,$_modelgeneralescomunitarioap,$_modelcomunitarioap_ubicacion,$_modelgeneralespublicos,$_modelpublicos_ubicacion);
             $_string=$_helperHTML->_stringhtml; 
             
             /*$_string1= implode('***',$_helperHTML->_stringhtml);
@@ -523,11 +813,12 @@ class DetcapituloController extends Controller
             
             
             
-            if(!empty(Yii::$app->request->post())){
+            if(!empty(Yii::$app->request->post())){                
                 
                 $_filesup=array();                      //Array que lleva la relacion rptaNo. -> nombre de archivo solo para tipo 11
                 $_saveerror=0;
                 $_variablespost=Yii::$app->request->post();
+                //Yii::trace($_POST,'DEBUG');
                 
                if ($inc_datos_generales == TRUE) {
                    
@@ -547,8 +838,122 @@ class DetcapituloController extends Controller
                        $_saveerror=1;
                    }else{
                        return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus]);
-                   }
-               }
+                   } 
+              }              
+              if ($inc_datos_generales_riego == TRUE) {
+                   
+                   $_modelgeneralesriego->id_conjunto_respuesta = $id_conj_rpta;
+                   $_modelgeneralesriego->nombres_prestador_servicio = $_variablespost['FdDatosGeneralesRiego']['nombres_prestador_servicio'];
+                   $_modelgeneralesriego->direccion_oficinas = $_variablespost['FdDatosGeneralesRiego']['direccion_oficinas'];
+                   $_modelgeneralesriego->nombres_apellidos_replegal = $_variablespost['FdDatosGeneralesRiego']['nombres_apellidos_replegal'];
+                   $_modelgeneralesriego->posee_convencional = $_variablespost['FdDatosGeneralesRiego']['posee_convencional'];
+                   $_modelgeneralesriego->num_convencional = @$_variablespost['FdDatosGeneralesRiego']['num_convencional'];
+                   $_modelgeneralesriego->num_celular = $_variablespost['FdDatosGeneralesRiego']['num_celular'];
+                   $_modelgeneralesriego->num_celular_otro = $_variablespost['FdDatosGeneralesRiego']['num_celular_otro'];
+                   $_modelgeneralesriego->posee_email = $_variablespost['FdDatosGeneralesRiego']['posee_email'];
+                   $_modelgeneralesriego->correo_electronico = @$_variablespost['FdDatosGeneralesRiego']['correo_electronico'];
+                            
+                   $_modelriego_ubicacion->cod_provincia = $_variablespost['FdUbicacion_var']['cod_provincia'];
+                   $_modelriego_ubicacion->cod_canton = $_variablespost['FdUbicacion_var']['cod_canton'];
+                   $_modelriego_ubicacion->cod_parroquia = $_variablespost['FdUbicacion_var']['cod_parroquia'];
+                   $_modelriego_ubicacion->id_demarcacion = $_variablespost['FdUbicacion_var']['id_demarcacion'];
+                   $_modelriego_ubicacion->id_conjunto_respuesta = $id_conj_rpta;
+                   $_modelriego_ubicacion->id_capitulo = $_capitulobasico;
+                   
+                             
+                   if($_modelgeneralesriego->save()){
+                       $_saveerror=1;
+                           if($_modelriego_ubicacion->save()){                               
+                                $_saveerror=1;                                
+                           }else{
+                               
+                                return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus]);
+                           }
+                   }else{
+                       return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus]);
+                   } 
+              }
+              //------------------------------------------
+              if ($inc_datos_generales_comunitario_ap == TRUE) {
+                   
+                  
+                   $_modelgeneralescomunitarioap->id_conjunto_respuesta = $id_conj_rpta;
+                   $_modelgeneralescomunitarioap->nombres_prestador = $_variablespost['FdDatosGeneralesComunitarioAp']['nombres_prestador'];
+                   $_modelgeneralescomunitarioap->nombre_comunidad = $_variablespost['FdDatosGeneralesComunitarioAp']['nombre_comunidad'];
+                   $_modelgeneralescomunitarioap->numero_personas_servicio = $_variablespost['FdDatosGeneralesComunitarioAp']['numero_personas_servicio'];
+                   $_modelgeneralescomunitarioap->tipo_prestador_comunitario = $_variablespost['FdDatosGeneralesComunitarioAp']['tipo_prestador_comunitario'];
+                   $_modelgeneralescomunitarioap->especifique = $_variablespost['FdDatosGeneralesComunitarioAp']['especifique'];
+                   $_modelgeneralescomunitarioap->id_junta = $idjunta;
+                   
+                            
+                   $_modelcomunitarioap_ubicacion->cod_provincia = $_variablespost['FdUbicacion_var_ap']['cod_provincia'];
+                   $_modelcomunitarioap_ubicacion->cod_canton = $_variablespost['FdUbicacion_var_ap']['cod_canton'];
+                   $_modelcomunitarioap_ubicacion->cod_parroquia = $_variablespost['FdUbicacion_var_ap']['cod_parroquia'];                   
+                   $_modelcomunitarioap_ubicacion->id_conjunto_respuesta = $id_conj_rpta;
+                   $_modelcomunitarioap_ubicacion->id_capitulo = $_capitulobasico;
+                   $_modelcomunitarioap_ubicacion->id_junta = $idjunta;
+                   
+                             
+                   if($_modelgeneralescomunitarioap->save()){
+                       $_saveerror=1;
+                           if($_modelcomunitarioap_ubicacion->save()){                               
+                                $_saveerror=1;                                
+                           }else{
+                               
+                                return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus,'id_junta'=>$idjunta]);
+                           }
+                   }else{
+                       return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus,'id_junta'=>$idjunta]);
+                   } 
+              }
+              
+              
+              if ($inc_datos_generales_publicos == TRUE) {
+                   
+                   $dt =  $_variablespost['FdDatosGeneralesPublicos']['fecha_llenado_fichas'];                  
+
+                   $fecha= Yii::$app->formatter->asDate($dt);
+                   
+                   $_modelgeneralespublicos->id_conjunto_respuesta = $id_conj_rpta;
+                   $_modelgeneralespublicos->pagina_web_prestador = $_variablespost['FdDatosGeneralesPublicos']['pagina_web_prestador'];
+                   $_modelgeneralespublicos->correo_electronico_prestador = $_variablespost['FdDatosGeneralesPublicos']['correo_electronico_prestador'];
+                   $_modelgeneralespublicos->fecha_llenado_fichas = $fecha;
+                   $_modelgeneralespublicos->nombres_responsable_informacion = $_variablespost['FdDatosGeneralesPublicos']['nombres_responsable_informacion'];
+                   $_modelgeneralespublicos->cargo_desempenia = $_variablespost['FdDatosGeneralesPublicos']['cargo_desempenia'];
+                   $_modelgeneralespublicos->correo_electronico = $_variablespost['FdDatosGeneralesPublicos']['correo_electronico'];
+                   $_modelgeneralespublicos->num_celular = $_variablespost['FdDatosGeneralesPublicos']['num_celular'];
+                   
+                            
+                   $_modelpublicos_ubicacion->cod_provincia = $_variablespost['FdUbicacion_var']['cod_provincia'];
+                   $_modelpublicos_ubicacion->cod_canton = $_variablespost['FdUbicacion_var']['cod_canton'];
+                   $_modelpublicos_ubicacion->id_demarcacion = $_variablespost['FdUbicacion_var']['id_demarcacion'];                 
+                   $_modelpublicos_ubicacion->id_conjunto_respuesta = $id_conj_rpta;
+                   $_modelpublicos_ubicacion->id_capitulo = $_capitulobasico;
+                   
+                             
+                   if($_modelgeneralespublicos->save()){
+                       $_saveerror=1;
+                           if($_modelpublicos_ubicacion->save()){                               
+                                $_saveerror=1;                                
+                           }else{
+                               
+                                return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus]);
+                           }
+                   }else{
+                       return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus]);
+                   } 
+              }
+              
+              
+              //-----------------------------------------
+              
+              
+              
+              
+              
+              
+              
+              
                
                
                if($inc_basicos_coorubicacion == TRUE){
@@ -598,11 +1003,12 @@ class DetcapituloController extends Controller
                    
                }
                 
+               
                 if(!empty($_helperHTML->_tiposoporte)){
                     foreach($_helperHTML->_tiposoporte as $_tpsoporte){
 
                         $model->$_tpsoporte = UploadedFile::getInstances($model, $_tpsoporte); 
-                        $resultado=$model->upload($_tpsoporte,$_rutaformato,$id_conj_rpta); 
+                        $resultado=$model->upload($_tpsoporte,$_rutaformato,$_nameformato); 
 
                         if($resultado[0] === TRUE){
 
@@ -611,7 +1017,7 @@ class DetcapituloController extends Controller
                             }
 
                         }else{
-                            return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus]);
+                            return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus,'idjunta'=>$idjunta]);
                         }
                     }
                 }
@@ -623,21 +1029,19 @@ class DetcapituloController extends Controller
                 $_savecapitulo->_idconjrpta = $id_conj_rpta;
                 $_savecapitulo->_idformato = $id_fmt;
                 $_savecapitulo->_idversion = $last;
+                $_savecapitulo->_idjunta = $idjunta;
                 $_savecapitulo->_relaciones = $_helperHTML->_varpass;
                 $_savecapitulo->_tipo11 = $_filesup;
                 $_savecapitulo->_agrupadas = $_helperHTML->agrupadas;
-                
-                
-                
-               
-                
+                $_savecapitulo->multiples = $_ismultiple;
+                                              
                 if($_savecapitulo->guardar()){
                     
                     $_saveerror=1;
                     if($_saveerror==1){
                     Yii::$app->getSession()->setFlash('success', [
                            'type' => 'success',
-                           'message' => 'Capitulo Guardado con Exito',
+                           'message' => 'Capítulo Guardado con Éxito',
                        ]);
                     }
                     
@@ -666,33 +1070,39 @@ class DetcapituloController extends Controller
                                 $id_capitulop = $capitulo;
                             }
                             
-                            return $this->redirect([$_tiposubpantalla[1],"id_prta"=>$_tiposubpantalla[2],"id_rpta"=>$_tiposubpantalla[3],"numerar"=>$_tiposubpantalla[4],"nom_prta"=>$_tiposubpantalla[5],'id_capitulo'=>$id_capitulop,'capitulo'=>$capitulo,'id_cnj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'antvista'=>$antvista,'id_fmt'=>$id_fmt,'id_version'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'migadepan'=>$_tiposubpantalla[6],'focus'=>$_tiposubpantalla[8]]); 
+                            
+
+                            //exit;
+//<<<<<<< .mine
+ //                           return $this->redirect([$_tiposubpantalla[1],"id_prta"=>$_tiposubpantalla[2],"id_rpta"=>$_tiposubpantalla[3],"numerar"=>$_tiposubpantalla[4],"nom_prta"=>$_tiposubpantalla[5],'id_capitulo'=>$id_capitulop,'capitulo'=>$capitulo,'id_cnj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'antvista'=>$antvista,'id_fmt'=>$id_fmt,'id_version'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'migadepan'=>$_tiposubpantalla[6],'focus'=>$_tiposubpantalla[8],'fuentes'=>$fuentes,'idjunta'=>$idjunta]);                             
+//||||||| .r211
+//                            return $this->redirect([$_tiposubpantalla[1],"id_prta"=>$_tiposubpantalla[2],"id_rpta"=>$_tiposubpantalla[3],"numerar"=>$_tiposubpantalla[4],"nom_prta"=>$_tiposubpantalla[5],'id_capitulo'=>$id_capitulop,'capitulo'=>$capitulo,'id_cnj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'antvista'=>$antvista,'id_fmt'=>$id_fmt,'id_version'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'migadepan'=>$_tiposubpantalla[6],'focus'=>$_tiposubpantalla[8],'fuentes'=>$fuentes]);                             
+//=======
+                            return $this->redirect([$_tiposubpantalla[1],"id_prta"=>$_tiposubpantalla[2],"id_rpta"=>$_tiposubpantalla[3],"numerar"=>$_tiposubpantalla[4],"nom_prta"=>$_tiposubpantalla[5],'id_capitulo'=>$id_capitulop,'capitulo'=>$capitulo,'id_cnj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'antvista'=>$antvista,'id_fmt'=>$id_fmt,'id_version'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'migadepan'=>$_tiposubpantalla[6],'focus'=>$_tiposubpantalla[8],'idjunta'=>$idjunta]);                             
                         
                         }
                        
                         
                     }else{
                      
-                        return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus]);
+                        return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus,'idjunta'=>$idjunta]);
                     
                         
                     }
                     
                 }else{
                     
-                    return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus]);
-                }
-                
-                
-                
-        }else{ 
-
+                    return $this->redirect(['genvistaformato','capitulo'=>$capitulo,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'provincia'=>$provincia,'cantones'=>$cantones,'parroquias'=>$parroquias,'periodos'=>$periodos,'antvista'=>$antvista,'focus'=>$focus,'idjunta'=>$idjunta]);
+                }                                              
+        }else{             
             return $this->render('create_all', [
-                    'model' => $model,'vista'=>$_string,'dinamicjavascript'=>$_helperHTML->_stringjavascriptcond,'permisos'=>$_permisos,'migadepan'=>$_migadepan,'modelgenerales' => $_modelgenerales,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'id_capitulo'=>$capitulo,'_modelbasicos'=>$_modelbasicos,'_modelbasicos_coordenadas'=>$_modelbasicos_coordenadas,'_modelbasicos_ubicacion'=>$_modelbasicos_ubicacion,'cantonesPost'=>$cantonesPost,'DemarcacionPost'=>$DemarcacionPost,'focus'=>$focus
+                    'model' => $model,'vista'=>$_string,'dinamicjavascript'=>$_helperHTML->_stringjavascriptcond,'permisos'=>$_permisos,'migadepan'=>$_migadepan,'modelgenerales' => $_modelgenerales,
+                    'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'id_capitulo'=>$capitulo,'_modelbasicos'=>$_modelbasicos,
+                    '_modelbasicos_coordenadas'=>$_modelbasicos_coordenadas,'_modelbasicos_ubicacion'=>$_modelbasicos_ubicacion,'cantonesPost'=>$cantonesPost,'DemarcacionPost'=>$DemarcacionPost,'focus'=>$focus,
+                   'modelgeneralesriego' => $_modelgeneralesriego,'_modelriego_ubicacion' => $_modelriego_ubicacion,'parroquiasPost'=>$parroquiasPost,'modelgeneralescomunitarioap'=>$_modelgeneralescomunitarioap,'_modelcomunitarioap_ubicacion'=>$_modelcomunitarioap_ubicacion,
+                   'modelgeneralespublicos'=>$_modelgeneralespublicos,'_modelpublicos_ubicacion'=>$_modelpublicos_ubicacion,'idjunta'=>$idjunta
             ]);
-        }
-        
-        
+        }                
     }
     
     
@@ -863,7 +1273,7 @@ class DetcapituloController extends Controller
         $_comandos=new TrComando();
         $_vcomandos=$_comandos->help_comandos($id_prta);
         
-        Yii::trace('Obteniendo Comandos'.$_vcomandos['id_comando'], 'DEBUG');
+        ///Yii::trace('Obteniendo Comandos'.$_vcomandos['id_comando'], 'DEBUG');
         
         /*Variablas que pide ejecutar
          * String $className, array $preguntas, int $idConjuntoPregunta, FdPregunta $pregunta
@@ -924,9 +1334,7 @@ class DetcapituloController extends Controller
             
         }        
                 
-    }
-    
-    
+    }    
     public function actionDeletrpta(){
        $_idrpta = Yii::$app->request->post()['id_rpta'];
        
@@ -937,14 +1345,12 @@ class DetcapituloController extends Controller
       
     }
     
-    
     protected function getOpcion($_valor){
         
         $_nombrevalor = FdOpcionSelect::find()
                         ->where(['id_opcion_select'=>$_valor])
                         ->one();
         return $_nombrevalor->nom_opcion_select;
-    }
-    
+    }    
 }
 

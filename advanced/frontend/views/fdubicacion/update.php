@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = 'Update';
 <div class="fd-ubicacion-update">
 
     <?= $this->render('_form', [
-        'model' => $model,'numerar'=>$numerar,'nom_prta'=>$nom_prta,'botton'=>$botton,'demarcacionespost'=>$demarcacionespost,'cantonesPost'=>$cantonesPost,'parroquiasPost' => $parroquiasPost
+        'model' => $model,'centrosPost'=>$centrosPost,'numerar'=>$numerar,'nom_prta'=>$nom_prta,'botton'=>$botton,'demarcacionespost'=>$demarcacionespost,'cantonesPost'=>$cantonesPost,'parroquiasPost' => $parroquiasPost
     ]) ?>
 
 </div>

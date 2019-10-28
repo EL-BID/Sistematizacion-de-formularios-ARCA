@@ -9,7 +9,9 @@ use yii\jui\DatePicker;
 /* @var $model common\models\hidricos\CdaSolicitudInformacion */
 
 $this->title = $model->id_solicitud_info;
-$this->params['breadcrumbs'][] = ['label' => 'Cda Solicitud Informacions', 'url' => ['index']];
+
+$this->params['breadcrumbs'][] = ['label' => 'CDA Solicitud Información', 'url' => ['index']];
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cda-solicitud-informacion-view">

@@ -1,0 +1,65 @@
+    public function requiredTemplates()
+    {
+        // @todo make 'query.php' to be required before 2.1 release
+        return ['entidadmodel.php','modelpry.php'/*, 'query.php'*/];
+    }
+
+
+  /**
+     * @inheritdoc
+     */
+    public function generate()
+    {
+        $files = [];
+        $relations = $this->generateRelations();
+        $db = $this->getDbConnection();
+        foreach ($this->getTableNames() as $tableName) {
+            // model :
+            $modelClassName = $this->generateClassName($tableName);
+            $this->baseClassPry =  $modelClassName.'Pry';
+            $this->testClassPry =  $modelClassName.'Test';
+            $queryClassName = ($this->generateQuery) ? $this->generateQueryClassName($modelClassName) : false;
+            $tableSchema = $db->getTableSchema($tableName);
+            $params = [
+                'tableName' => $tableName,
+                'className' => $modelClassName,
+                'queryClassName' => $queryClassName,
+                'tableSchema' => $tableSchema,
+                'labels' => $this->generateLabels($tableSchema),
+                'rules' => $this->generateRules($tableSchema),
+                'relations' => isset($relations[$tableName]) ? $relations[$tableName] : [],
+            ];
+            // 
+            
+            $whole_length = strlen($this->ns); 
+            $right_length = (strlen(strrchr($this->ns, '\\')) - 1); 
+            $left_length = ($whole_length - $right_length - 1); 
+            $start = (0 - ($right_length + 1)); 
+            $this->nsa=substr($this->ns, 0, ($left_length + 1)).'tests\unit'.substr($this->ns, $start); 
+            
+            $files[] = new CodeFile(
+                Yii::getAlias('@' . str_replace('\\', '/', $this->ns)) . '/' . $this->baseClassPry . '.php',
+                $this->render('modelpry.php', $params)
+            );
+            $files[] = new CodeFile(
+                Yii::getAlias('@' . str_replace('\\', '/', $this->ns)) . '/' . $modelClassName . '.php',
+                $this->render('entidadmodel.php', $params)
+            );
+            $files[] = new CodeFile(
+                Yii::getAlias('@' . str_replace('\\', '/', $this->nsa)) . '/' . $this->testClassPry . '.php',
+                $this->render('entidadmodeltest.php', $params)
+            );
+            
+            // query :
+            if ($queryClassName) {
+                $params['className'] = $queryClassName;
+                $params['modelClassName'] = $modelClassName;
+                $files[] = new CodeFile(
+                    Yii::getAlias('@' . str_replace('\\', '/', $this->queryNs)) . '/' . $queryClassName . '.php',
+                    $this->render('query.php', $params)
+                );
+            }
+        }
+
+        return $files;
+    }

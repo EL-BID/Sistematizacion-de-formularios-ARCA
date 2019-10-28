@@ -37,7 +37,7 @@ class FdInvolucrado extends ModelPry
     public function rules()
     {
         return [
-            [['id_involucrado', 'telefono_convencional', 'celular', 'id_conjunto_respuesta', 'id_pregunta', 'id_respuesta'], 'integer'],
+            [['telefono_convencional', 'celular', 'id_conjunto_respuesta', 'id_pregunta', 'id_respuesta'], 'integer'],
             [['nombre', 'correo_electronico'], 'string', 'max' => 50],
             [['id_conjunto_respuesta'], 'exist', 'skipOnError' => true, 'targetClass' => FdConjuntoRespuesta::className(), 'targetAttribute' => ['id_conjunto_respuesta' => 'id_conjunto_respuesta']],
             [['id_pregunta'], 'exist', 'skipOnError' => true, 'targetClass' => FdPregunta::className(), 'targetAttribute' => ['id_pregunta' => 'id_pregunta']],

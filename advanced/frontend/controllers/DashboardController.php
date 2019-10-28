@@ -15,6 +15,9 @@ use common\models\poc\FdElementoCondicion;
 use common\models\poc\FdPregunta;
 use common\models\poc\FdRespuesta;
 use common\models\poc\FdDatosGenerales;
+use common\models\poc\FdDatosGeneralesRiego;
+use common\models\poc\FdDatosGeneralesPublicos;
+use common\models\poc\FdDatosGeneralesComunitarioAp;
 
 /**
  * Clase que controla las acciones del dashboard
@@ -46,7 +49,7 @@ class DashboardController extends Controller
      */
    
     
-    public function actionIndex($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado)
+    public function actionIndex($id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,$idjunta)
     {
        /*1) Buscando Permisos del usuario===============================================
         * Esto permite evaluar si un usuario tienes permisos de actualizar, crea, borrar o ejecutar, se deja ver los capitulos
@@ -73,7 +76,7 @@ class DashboardController extends Controller
        $_positions = array();
        $_conteo= "0";
        
-       foreach($_arraycapitulos as $_clave){
+       foreach($_arraycapitulos as $llave => $_clave){
            
           
            
@@ -85,6 +88,14 @@ class DashboardController extends Controller
                if($_eliminar === FALSE){
                    $_positions[] = $_conteo;
                }
+           }
+           
+            /*Se verifica si todas las preguntas obligatorias estan respodidas*/
+           $_totalResObl = $_dashboardPost->noObligatoria($id_conj_rpta,$id_conj_prta, $_clave['id_capitulo']);
+           if($_totalResObl>0){
+               $_arraycapitulos[$llave]['clase']= 'title';
+           }else if($_totalResObl<=0){
+               $_arraycapitulos[$llave]['clase']= 'finish';
            }
            
            
@@ -111,7 +122,42 @@ class DashboardController extends Controller
                ->andWhere(['not', ['nom_sistema' => null]])
                ->andWhere(['not', ['fecha' => null]])->one();
            }
-           
+           if($_clave['url'] == 'poc/datosgeneralesriego.php'){
+               $_dil_DatosGenerales_riego= FdDatosGeneralesRiego::find()
+               ->where(['id_conjunto_respuesta' => $id_conj_rpta])
+               ->andWhere(['not', ['id_junta' => $idjunta]])
+               ->andWhere(['not', ['nombres_prestador_servicio' => null]])
+               ->andWhere(['not', ['direccion_oficinas' => null]])
+               ->andWhere(['not', ['nombres_apellidos_replegal' => null]])
+               ->andWhere(['not', ['num_convencional' => null]])
+               ->andWhere(['not', ['num_celular' => null]])
+               ->andWhere(['not', ['correo_electronico' => null]])->one();
+           }
+           //-------------------------------------------------
+           if($_clave['url'] == 'poc/datosgeneralescomunitarioap.php'){ 
+               $_dil_DatosGeneralescomunitario_ap=  FdDatosGeneralesComunitarioAp::find()
+               ->where(['id_conjunto_respuesta' => $id_conj_rpta])
+               ->andWhere(['not', ['id_junta' => $idjunta]])
+               ->andWhere(['not', ['nombres_prestador' => null]])
+               ->andWhere(['not', ['nombre_comunidad' => null]])
+               ->andWhere(['not', ['numero_personas_servicio' => null]])
+               ->andWhere(['not', ['tipo_prestador_comunitario' => null]])
+               ->andWhere(['not', ['especifique' => null]])->one();
+           }
+           //-------------------------------------------------
+           if($_clave['url'] == 'poc/datosgeneralespublicos.php'){ 
+               $_dil_DatosGeneralespublicos= FdDatosGeneralesPublicos::find()
+               ->where(['id_conjunto_respuesta' => $id_conj_rpta])
+               ->andWhere(['not', ['pagina_web_prestador' => null]])
+               ->andWhere(['not', ['correo_electronico_prestador' => null]])
+               ->andWhere(['not', ['fecha_llenado_fichas' => null]])
+               ->andWhere(['not', ['nombres_responsable_informacion' => null]])
+               ->andWhere(['not', ['cargo_desempenia' => null]])
+               ->andWhere(['not', ['correo_electronico' => null]])
+               ->andWhere(['not', ['num_celular' => null]])->one();
+           }
+
+           //-------------------------------------------------
            $_conteo+=1;
        }
        
@@ -130,9 +176,20 @@ class DashboardController extends Controller
        if(empty($_dil_DatosGenerales_var->id_datos_generales)){
            $_dil_DatosGenerales_var='';
        }
+       if(empty($_dil_DatosGenerales_riego->id_datos_generales_riego)){
+           $_dil_DatosGenerales_riego='';
+       }
+       
+       if(empty($_dil_DatosGeneralescomunitario_ap->id_datos_generales_cumunitario_ap)){
+           $_dil_DatosGeneralescomunitario_ap='';
+       }
+       
+       if(empty($_dil_DatosGeneralespublicos->id_datos_generales_publicos)){
+           $_dil_DatosGeneralespublicos='';
+       }
        
        $_helperHTML = new helperHTML();
-       $_HTMLdashboard = $_helperHTML->gen_dashboardview($_arraycapitulos,$id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,'dashboard/index',$_vpermisosuser,$_dil_DatosGenerales,$_dil_DatosGenerales_var);
+       $_HTMLdashboard = $_helperHTML->gen_dashboardview($_arraycapitulos,$id_conj_rpta,$id_conj_prta,$id_fmt,$last,$estado,'dashboard/index',$_vpermisosuser,$_dil_DatosGenerales,$_dil_DatosGenerales_var,$_dil_DatosGenerales_riego,$_dil_DatosGeneralescomunitario_ap,$_dil_DatosGeneralespublicos,$idjunta);
        
        if($_HTMLdashboard[0] === FALSE){
            

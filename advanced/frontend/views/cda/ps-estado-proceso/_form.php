@@ -37,7 +37,7 @@ SweetSubmitAsset::register($this)
     <?= $form->field($model, 'id_proceso')->dropDownList(\yii\helpers\ArrayHelper::map(ps_proceso::find()->all(),'id_proceso','id_proceso'),['prompt'=>'Indique el valor para id_proceso']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Nuevo' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

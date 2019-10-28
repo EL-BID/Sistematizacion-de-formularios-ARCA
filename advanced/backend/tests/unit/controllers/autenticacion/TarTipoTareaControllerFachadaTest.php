@@ -3,7 +3,7 @@
 namespace backend\tests\unit\controllers\autenticacion;
 
 use Yii;
-use backend\controllers\autenticacion\TarTipoTareaControllerFachada;
+use backend\controllers\notificaciones\TarTipoTareaControllerFachada;
 /**
  * TarTipoTareaControllerFachadaTest implementa la verificaicon de los valores, consulta información para aplicar reglas de negocio, y transacciones conforme las acciones para el modelo TarTipoTarea.
  */

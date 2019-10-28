@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\cda\CdaSearch */
+/* @var $model common\models\CdaSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -15,31 +15,21 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'fecha_ingreso') ?>
+    <?= $form->field($model, 'id_cda') ?>
 
-    <?= $form->field($model, 'fecha_solicitud') ?>
+    <?= $form->field($model, 'fecha_ingreso_quipux') ?>
 
-    <?= $form->field($model, 'tramite_administrativo') ?>
+    <?= $form->field($model, 'institucion_solicitante') ?>
 
-    <?= $form->field($model, 'id_cproceso_arca') ?>
+    <?= $form->field($model, 'solicitante') ?>
 
-    <?= $form->field($model, 'id_cproceso_senagua') ?>
-
-    <?php // echo $form->field($model, 'rol_en_calidad') ?>
-
-    <?php // echo $form->field($model, 'numero_tramites') ?>
-
-    <?php // echo $form->field($model, 'id_cda') ?>
-
-    <?php // echo $form->field($model, 'id_usuario_enviado_por') ?>
-
-    <?php // echo $form->field($model, 'institucion_solicitante') ?>
-
-    <?php // echo $form->field($model, 'solicitante') ?>
-
-    <?php // echo $form->field($model, 'cod_centro_atencion_ciudadano') ?>
+    <?= $form->field($model, 'cod_centro_atencion_ciudadano') ?>
 
     <?php // echo $form->field($model, 'id_demarcacion') ?>
+
+    <?php // echo $form->field($model, 'cod_cda') ?>
+
+    <?php // echo $form->field($model, 'id_cda_tramite') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -35,10 +35,9 @@ class PsResponsablesProceso extends ModelPry
     public function rules()
     {
         return [
-            [['observacion'],'default', 'value' => null],
             [['id_usuario', 'id_cproceso', 'id_tresponsabilidad'], 'integer'],
             [['fecha'], 'string'],
-            [['observacion'], 'string', 'max' => 1000],
+            [['observacion'], 'string', 'max' => 1000,'skipOnEmpty' => true],
             [['id_cproceso'], 'exist', 'skipOnError' => true, 'targetClass' => PsCproceso::className(), 'targetAttribute' => ['id_cproceso' => 'id_cproceso']],
             [['id_tresponsabilidad'], 'exist', 'skipOnError' => true, 'targetClass' => PsTipoResponsabilidad::className(), 'targetAttribute' => ['id_tresponsabilidad' => 'id_tresponsabilidad']],
             [['id_usuario'], 'exist', 'skipOnError' => true, 'targetClass' => \common\models\autenticacion\UsuariosAp::className(), 'targetAttribute' => ['id_usuario' => 'id_usuario']],

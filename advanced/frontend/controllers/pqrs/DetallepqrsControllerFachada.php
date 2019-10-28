@@ -9,7 +9,7 @@ use common\models\cda\PsResponsablesProceso;
 use common\models\cda\PsCactividadProceso;
 use common\models\cda\PsCproceso;
 use common\models\cda\PsProceso;
-use common\models\cda\PsActvidadRuta;
+use common\models\cda\PsActividadRuta;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Html;	//Para presentar la barra de espera
@@ -115,7 +115,6 @@ class DetallepqrsControllerFachada extends FachadaPry
         $actividades = PsCactividadProceso::find()
                        ->leftJoin('ps_actividad','ps_actividad.id_actividad = ps_cactividad_proceso.id_actividad')
                        ->where(['=','id_cproceso',$id_cproceso])
-                       ->andwhere(['=','id_tactividad','2'])
                        ->orderBy(['orden'=>SORT_DESC,'fecha_creacion'=>SORT_ASC])
                        ->all();
                 
@@ -123,6 +122,41 @@ class DetallepqrsControllerFachada extends FachadaPry
     }
     
     
+    /*
+     * Se crea funcio nueva para correccion de pqrs
+     * SELECT max(ps_cactividad_proceso.fecha_creacion) as fecha, ps_actividad.nom_actividad 
+FROM "ps_cactividad_proceso" 
+LEFT JOIN "ps_actividad" ON ps_actividad.id_actividad = ps_cactividad_proceso.id_actividad 
+WHERE "id_cproceso" = 448 
+GROUP BY ps_cactividad_proceso.id_actividad,ps_actividad.nom_actividad,ps_actividad.orden,ps_cactividad_proceso.fecha_creacion
+ORDER BY "fecha_creacion" DESC
+     */
+    
+    
+    public function findActividad2($id_cproceso){
+        
+        $actividades = PsCactividadProceso::find()
+                       ->select(['max(ps_cactividad_proceso.fecha_creacion) as fecha_creacion','ps_actividad.nom_actividad as nombreactividad','ps_cactividad_proceso.id_actividad'])
+                       ->leftJoin('ps_actividad','ps_actividad.id_actividad = ps_cactividad_proceso.id_actividad')
+                       ->where(['=','id_cproceso',$id_cproceso])
+                       ->groupBy(['ps_cactividad_proceso.id_actividad','ps_actividad.nom_actividad','ps_actividad.orden','ps_cactividad_proceso.fecha_creacion'])
+                       ->orderBy(['fecha_creacion'=>SORT_DESC,'orden'=>SORT_DESC])
+                       ->all();
+        
+		$_actividad = "0";
+		
+		foreach($actividades as $_clave){
+			
+				if($_clave->id_actividad != $_actividad){
+					$actividad_r[] = $_clave;
+				}
+				
+				$_actividad = $_clave->id_actividad;
+		}
+		
+        return $actividad_r;
+        
+    }
     
     /*Obteniendo registro de ultima actividad registrada*/
     
@@ -130,7 +164,7 @@ class DetallepqrsControllerFachada extends FachadaPry
         $asignado_actividad = PsCactividadProceso::find()
                        ->select(['id_usuario','id_cactividad_proceso'])
                        ->where(['=','id_cproceso',$id_cproceso])
-                       ->orderBy(['fecha_creacion'=>SORT_DESC])
+                       ->orderBy(['id_cactividad_proceso'=>SORT_DESC,'fecha_creacion'=>SORT_DESC])
                        ->limit('1')
                        ->one();
       
@@ -156,12 +190,12 @@ class DetallepqrsControllerFachada extends FachadaPry
                     FROM
                                     ps_cactividad_proceso
                     LEFT JOIN ps_actividad as actorigen ON actorigen.id_actividad = ps_cactividad_proceso.id_actividad
-                    LEFT JOIN ps_actvidad_ruta as ruta_origen ON ruta_origen.id_actividad_origen = actorigen.id_actividad
+                    LEFT JOIN ps_actividad_ruta as ruta_origen ON ruta_origen.id_actividad_origen = actorigen.id_actividad
                     LEFT JOIN ps_actividad as actdestino ON actdestino.id_actividad = ruta_origen.id_actividad_destino
                     LEFT JOIN ps_clasif_actividad ON ps_clasif_actividad.id_clasif_actividad = actdestino.id_clasif_actividad
-                    WHERE ps_cactividad_proceso.id_cactividad_proceso = :id_cactividad_proceso and ruta_origen.estado = 'A' ORDER BY actorigen.orden DESC LIMIT 1 ";
+                    WHERE ps_cactividad_proceso.id_cactividad_proceso = :id_cactividad_proceso and ruta_origen.estado = 'A' ORDER BY actorigen.orden DESC ";
         
-        $resultado = Yii::$app->db->createCommand($query)->bindValue(':id_cactividad_proceso',$id_cactividad_proceso)->queryOne();
+        $resultado = Yii::$app->db->createCommand($query)->bindValue(':id_cactividad_proceso',$id_cactividad_proceso)->queryAll();
 
         
         return $resultado; 

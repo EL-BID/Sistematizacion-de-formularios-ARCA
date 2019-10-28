@@ -41,8 +41,7 @@ class GestorformatosController extends Controller
      * @return mixed
      */
     public function actionIndex($provincia=null,$cantones=null,$parroquias=null,$periodos=null,$id_fmt=null,$estado=null,$hashbutton=null)
-    {
-            
+    {            
             /*En yii normal antes del cambio de andres la identidad del usuario venia de user_name, 
              * con el nuevo login es "usuario" */
         
@@ -82,11 +81,24 @@ class GestorformatosController extends Controller
             
             //Sacando listado de Formatos asociados al usuario=====================================================================
             $list_formato= $this->getFormatos();
+            $list_juntas="";
+            
+            $filtros_search="";
+            $url_acceso="";
+            $valores = array_values($list_formato);
+            $separa_form = explode("-",$valores[0]);
+            if(!empty($separa_form[3]))
+              $filtros_search =$separa_form[3];
+            if(!empty($separa_form[2]))
+              $url_acceso =$separa_form[2];
+            
+            if(key($list_formato)==6)
+              $list_juntas= $this->getJuntas();                    
            
             
             //Generando modelo de busqueda================================================================================================
             $_modelsearch = new \common\models\poc\Gestorformato();
-            
+                        
             
             $_modelsearch->provincia = (!empty($provincia))? $provincia:NULL;
             $_modelsearch->cantones = (!empty($cantones))? $cantones:NULL;
@@ -121,7 +133,10 @@ class GestorformatosController extends Controller
                 'periodos'=>$periodos,'id_fmt'=>$id_fmt,'initcantones'=>$_initCantones,
                 'initparroquias'=>$_initParroquias,
                 'initestados'=>$_initEstados,
-                'initperiodos'=>$_initPeriodos,'estado'=>$estado
+                'initperiodos'=>$_initPeriodos,'estado'=>$estado,
+                'list_juntas'=>$list_juntas,
+                'filtros_search'=>$filtros_search,
+                'url_acceso'=>$url_acceso,
              ]);
             
            
@@ -158,7 +173,7 @@ class GestorformatosController extends Controller
     public function getFormatos(){
         
          $user_login=(isset(Yii::$app->user->identity->usuario))? Yii::$app->user->identity->usuario:'';
-         $formatoPOST = Yii::$app->db->createCommand('SELECT DISTINCT fd_formato.id_formato,CONCAT(fd_formato.num_formato,\'-\',fd_formato.nom_formato) as fullformato '
+         $formatoPOST = Yii::$app->db->createCommand('SELECT DISTINCT fd_formato.id_formato,CONCAT(fd_formato.num_formato,\'-\',fd_formato.nom_formato,\'-\',fd_formato.url_acceso,\'-\',fd_formato.filtros_search) as fullformato '
                                 . 'FROM fd_formato '
                                 . 'INNER JOIN fd_conjunto_respuesta ON fd_conjunto_respuesta.id_formato=fd_formato.id_formato '
                                 . 'INNER JOIN entidades ON entidades.id_entidad=fd_conjunto_respuesta.id_entidad '
@@ -175,6 +190,25 @@ class GestorformatosController extends Controller
           return $list_formato;
     }
     
+    public function getJuntas()
+    {
+         $user_login=(isset(Yii::$app->user->identity->usuario))? Yii::$app->user->identity->usuario:'';
+         $juntasPOST = Yii::$app->db->createCommand('SELECT DISTINCT juntas_gad.*'
+                                . 'FROM juntas_gad '
+                                . 'INNER JOIN fd_conjunto_respuesta ON fd_conjunto_respuesta.id_conjunto_respuesta=juntas_gad.id_conjunto_respuesta '
+                                . 'INNER JOIN entidades ON entidades.id_entidad=fd_conjunto_respuesta.id_entidad '
+                                . 'INNER JOIN regionentidades ON regionentidades.id_entidad=entidades.id_entidad '
+                                . 'INNER JOIN region ON region.cod_region=regionentidades.cod_region '
+                                . 'INNER JOIN perfil_region ON perfil_region.cod_region=region.cod_region '
+                                . 'INNER JOIN usuarios_ap ON usuarios_ap.id_usuario=perfil_region.id_usuario '
+                                . 'WHERE usuarios_ap."usuario"=:usuario ')
+                                ->bindValue(':usuario',$user_login)           
+                                ->queryAll();
+            
+          $list_juntas   = ArrayHelper::map($juntasPOST,'id_junta','nombre_junta');
+          
+          return $list_juntas;
+    }
     
     //Accion que llena el listado de cantones con la provincia
     /*Listado de cantones segun provincia seleccionada => Este ejemplo se hace con find()

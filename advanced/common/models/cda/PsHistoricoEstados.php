@@ -39,11 +39,10 @@ class PsHistoricoEstados extends ModelPry
     public function rules()
     {
         return [
-            [['id_eproceso', 'id_cproceso', 'id_usuario', 'id_actividad', 'id_tgestion','observaciones'], 'default', 'value' => null],
             [['fecha_estado'], 'required'],
-            [['id_hisotrico_cproceso', 'id_eproceso', 'id_cproceso', 'id_usuario', 'id_actividad', 'id_tgestion'], 'integer'],
+            [['id_eproceso', 'id_cproceso', 'id_usuario', 'id_actividad', 'id_tgestion'], 'integer','skipOnEmpty'=>true],
             [['fecha_estado'], 'string'],
-            [['observaciones'], 'string', 'max' => 1000],
+            [['observaciones'], 'string', 'max' => 1000,'skipOnEmpty'=>true],
             [['id_actividad'], 'exist', 'skipOnError' => true, 'targetClass' => PsActividad::className(), 'targetAttribute' => ['id_actividad' => 'id_actividad']],
             [['id_cproceso'], 'exist', 'skipOnError' => true, 'targetClass' => PsCproceso::className(), 'targetAttribute' => ['id_cproceso' => 'id_cproceso']],
             [['id_eproceso'], 'exist', 'skipOnError' => true, 'targetClass' => PsEstadoProceso::className(), 'targetAttribute' => ['id_eproceso' => 'id_eproceso']],

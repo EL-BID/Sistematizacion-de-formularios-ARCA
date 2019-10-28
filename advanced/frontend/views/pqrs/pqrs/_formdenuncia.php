@@ -3,21 +3,20 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use light\widgets\SweetSubmitAsset;			/* Para la confirmacion, ver archivo web/js/yiioverride*/
-use yii\jui\DatePicker;					/*Libreria para el modulo de fechas*/
+/*Libreria para el modulo de fechas*/
 
 /* @var $this yii\web\View */
 /* @var $model common\models\pqrs\Pqrs */
 /* @var $form yii\widgets\ActiveForm */
 
-
-SweetSubmitAsset::register($this)
+SweetSubmitAsset::register($this);
 ?>
 
 <div class="pqrs-form">
 
     <?php $form = ActiveForm::begin(['options' => [
-                    'id' => 'create-form'
-					]
+                    'id' => 'create-form',
+                    ],
                 ]); ?>
 <!------------------------------------IDENTIFICACIONES DEL FORMATO------------------------------------------->
      <table style="text-align:center" width="100%">
@@ -30,16 +29,16 @@ SweetSubmitAsset::register($this)
         </tr>
         <!------------------------------------IDENTIFICACIONES DEL FORMATO------------------------------------------->
         <tr>
-            <td class='campopqr'>Fecha de Recepcion</td>
-            <td><?= $form->field($model, 'fecha_recepcion')->textInput(['disabled' => true])->label(false) ?></td>
+            <td class='campopqr'>Fecha de Recepci&oacute;n</td>
+            <td><?= $form->field($model, 'fecha_recepcion')->textInput(['disabled' => true])->label(false); ?></td>
             <td class='campopqr'>No. Consecutivo</td>
             <td><?= $form->field($model, 'num_consecutivo')->textInput([
                                         'maxlength' => true,
                                         'title' => 'Indique Num Consecutivo',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Num Consecutivo',
-                                        'disabled' => true
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Num Consecutivo',
+                                        'disabled' => true,
+                                         ])->label(false); ?>
             </td>
         </tr>
 
@@ -54,8 +53,8 @@ SweetSubmitAsset::register($this)
                                         'maxlength' => true,
                                         'title' => 'Indique Sol Nombres',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Sol Nombres'
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Sol Nombres',
+                                         ])->label(false); ?>
             </td>
         <tr>
             <td class='campopqr'>Documento de Identificación</td>    
@@ -63,8 +62,8 @@ SweetSubmitAsset::register($this)
                                         'maxlength' => true,
                                         'title' => 'Indique Sol Doc Identificacion',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Sol Doc Identificacion'
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Sol Doc Identificacion',
+                                         ])->label(false); ?>
             </td>
         </tr>
         
@@ -74,8 +73,8 @@ SweetSubmitAsset::register($this)
                                         'maxlength' => true,
                                         'title' => 'Indique Sol Direccion',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Sol Direccion'
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Sol Direccion',
+                                         ])->label(false); ?>
             </td>
         </tr>
         
@@ -85,8 +84,8 @@ SweetSubmitAsset::register($this)
                                         'maxlength' => true,
                                         'title' => 'Indique Sol Email',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Sol Email'        
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Sol Email',
+                                         ])->label(false); ?>
             </td>
         </tr>
         
@@ -96,23 +95,23 @@ SweetSubmitAsset::register($this)
                                         'maxlength' => true,
                                         'title' => 'Indique Sol Telefono',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Sol Telefono'        
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Sol Telefono',
+                                         ])->label(false); ?>
             </td>
         </tr>
         
         <tr>
             <td class='campopqr'>Provincia</td>
             <td>
-                 <?= $form->field($model, 'sol_cod_provincia')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\autenticacion\Provincias::find()->all(),'cod_provincia','nombre_provincia'),
-                                    ['prompt'=>'Seleccione una provincia',
-                                    'onchange'=>'$.post("index.php?r=pqrs/pqrs/listadocantones&id='.'"+$(this).val(),function(data){
+                 <?= $form->field($model, 'sol_cod_provincia')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\autenticacion\Provincias::find()->all(), 'cod_provincia', 'nombre_provincia'),
+                                    ['prompt' => 'Seleccione una provincia',
+                                    'onchange' => '$.post("index.php?r=pqrs/pqrs/listadocantones&id='.'"+$(this).val(),function(data){
                                         $("#pqrs-sol_cod_canton").html(data);
-                                    });'])->label(false) ?>
+                                    });', ])->label(false); ?>
             </td>
             <td class='campopqr'>Canton</td>
             <td>
-                <?= $form->field($model, 'sol_cod_canton')->dropDownList([],['prompt'=>'Seleccione un Canton'])->label(false) ?>
+                <?= $form->field($model, 'sol_cod_canton')->dropDownList([], ['prompt' => 'Seleccione un Canton'])->label(false); ?>
             </td>
         </tr>
         
@@ -129,8 +128,8 @@ SweetSubmitAsset::register($this)
                                             'maxlength' => true,
                                             'title' => 'Indique En Nom Nombres',
                                             'data-toggle' => 'tooltip',
-                                            'placeholder'=>'Indique En Nom Nombres'        
-                                             ])->label(false) ?>
+                                            'placeholder' => 'Indique En Nom Nombres',
+                                             ])->label(false); ?>
             </td>
         </tr>
 
@@ -140,8 +139,8 @@ SweetSubmitAsset::register($this)
                                             'maxlength' => true,
                                             'title' => 'Indique En Nom Ruc',
                                             'data-toggle' => 'tooltip',
-                                            'placeholder'=>'Indique En Nom Ruc'        
-                                             ])->label(false) ?>
+                                            'placeholder' => 'Indique En Nom Ruc',
+                                             ])->label(false); ?>
             </td>
         </tr>
 
@@ -151,8 +150,8 @@ SweetSubmitAsset::register($this)
                                             'maxlength' => true,
                                             'title' => 'Indique En Nom Direccion',
                                             'data-toggle' => 'tooltip',
-                                            'placeholder'=>'Indique En Nom Direccion'        
-                                             ])->label(false) ?>
+                                            'placeholder' => 'Indique En Nom Direccion',
+                                             ])->label(false); ?>
             </td>
         </tr>
 
@@ -163,8 +162,8 @@ SweetSubmitAsset::register($this)
                                             'maxlength' => true,
                                             'title' => 'Indique En Nom Email',
                                             'data-toggle' => 'tooltip',
-                                            'placeholder'=>'Indique En Nom Email'        
-                                             ])->label(false) ?>
+                                            'placeholder' => 'Indique En Nom Email',
+                                             ])->label(false); ?>
             </td>
         </tr> 
 
@@ -174,8 +173,8 @@ SweetSubmitAsset::register($this)
                                             'maxlength' => true,
                                             'title' => 'Indique En Nom Telefono',
                                             'data-toggle' => 'tooltip',
-                                            'placeholder'=>'Indique En Nom Telefono'        
-                                             ])->label(false) ?>
+                                            'placeholder' => 'Indique En Nom Telefono',
+                                             ])->label(false); ?>
             </td>
         </tr> 
 
@@ -183,15 +182,15 @@ SweetSubmitAsset::register($this)
         <tr>
               <td class='campopqr'>Provincia</td>
               <td>
-                   <?= $form->field($model, 'en_nom_cod_provincia')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\autenticacion\Provincias::find()->all(),'cod_provincia','nombre_provincia'),
-                                        ['prompt'=>'Seleccione una provincia',
-                                        'onchange'=>'$.post("index.php?r=pqrs/pqrs/listadocantones&id='.'"+$(this).val(),function(data){
+                   <?= $form->field($model, 'en_nom_cod_provincia')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\autenticacion\Provincias::find()->all(), 'cod_provincia', 'nombre_provincia'),
+                                        ['prompt' => 'Seleccione una provincia',
+                                        'onchange' => '$.post("index.php?r=pqrs/pqrs/listadocantones&id='.'"+$(this).val(),function(data){
                                             $("#pqrs-en_nom_cod_canton").html(data);
-                                        });'])->label(false) ?>
+                                        });', ])->label(false); ?>
               </td>
               <td class='campopqr'>Canton</td>
               <td>
-                  <?= $form->field($model, 'en_nom_cod_canton')->dropDownList([],['prompt'=>'Seleccione un Canton'])->label(false) ?>
+                  <?= $form->field($model, 'en_nom_cod_canton')->dropDownList([], ['prompt' => 'Seleccione un Canton'])->label(false); ?>
               </td>
         </tr>
 
@@ -210,8 +209,8 @@ SweetSubmitAsset::register($this)
                                         'maxlength' => true,
                                         'title' => 'Indique Denunc Nombre',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Denunc Nombre'        
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Denunc Nombre',
+                                         ])->label(false); ?>
             </td>
         </tr> 
         
@@ -222,8 +221,8 @@ SweetSubmitAsset::register($this)
                                         'maxlength' => true,
                                         'title' => 'Indique Denunc Direccion',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Denunc Direccion'        
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Denunc Direccion',
+                                         ])->label(false); ?>
               </td>
               <td class='campopqr'>Teléfono</td>
               <td>
@@ -231,8 +230,8 @@ SweetSubmitAsset::register($this)
                                         'maxlength' => true,
                                         'title' => 'Indique Denunc Telefono',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Denunc Telefono'        
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Denunc Telefono',
+                                         ])->label(false); ?>
               </td>
         </tr>
         
@@ -243,19 +242,20 @@ SweetSubmitAsset::register($this)
                                         'maxlength' => true,
                                         'title' => 'Indique Lugar Hechos',
                                         'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Lugar Hechos'        
-                                         ])->label(false) ?>
+                                        'placeholder' => 'Indique Lugar Hechos',
+                                         ])->label(false); ?>
               </td>
               <td class='campopqr'>Fecha</td>
               <td>
                   <?= $form->field($model, 'fecha_hechos')->
-                            widget(\yii\jui\DatePicker::className(),[
-                               'dateFormat' => 'dd/MM/yyyy',        //Formato de la fecha
+                            widget(\yii\jui\DatePicker::className(), [
+                               'dateFormat' => Yii::$app->fmtfechasql,        //Formato de la fecha
+                                'options' => ['readOnly' => 'readOnly'],
                                'clientOptions' => [
-                                   'yearRange' => '-90:+0',        //Años habilitados 90 años atras hasta el actual        
+                                   'yearRange' => '-90:+0',        //Años habilitados 90 años atras hasta el actual
                                    'changeYear' => true,            //Permitir cambio de año
-                                   'changeMonth' => true]            //Permitir cambio de Mes
-                           ])->label(false) ?>
+                                   'changeMonth' => true, ],            //Permitir cambio de Mes
+                           ])->label(false); ?>
               </td>
         </tr>
         
@@ -264,9 +264,10 @@ SweetSubmitAsset::register($this)
             <td colspan='3'> <?=  $form->field($model, 'naracion_hechos')->widget(\yii\redactor\widgets\Redactor::className(), [
                                     'clientOptions' => [
                                         'lang' => 'es',
-                                        'plugins' => ['clips', 'fontcolor']
-                                    ]
-                                  ])->label(false) ?>
+                                        'plugins' => ['bold', 'italic', 'orderedlist'],
+                                        'buttonsHide' => ['image', 'file', 'html', 'formatting', 'deleted', 'outdent', 'indent', 'link', 'alignment', 'horizontalrule'],
+                                    ],
+                                  ])->label(false); ?>
             </td>
         </tr> 
         
@@ -274,10 +275,11 @@ SweetSubmitAsset::register($this)
             <td class='campopqr'>Elementos Probatorios</td>    
             <td colspan='3'> <?=  $form->field($model, 'elementos_probatorios')->widget(\yii\redactor\widgets\Redactor::className(), [
                                 'clientOptions' => [
-                                    'lang' => 'es',
-                                    'plugins' => ['clips', 'fontcolor','imagemanager']
-                                ]
-                              ])->label(false) ?>
+                                   'lang' => 'es',
+                                   'plugins' => ['bold', 'italic', 'orderedlist'],
+                                   'buttonsHide' => ['image', 'file', 'html', 'formatting', 'deleted', 'outdent', 'indent', 'link', 'alignment', 'horizontalrule'],
+                                ],
+                              ])->label(false); ?>
             </td>
         </tr> 
      </table>    
@@ -285,7 +287,7 @@ SweetSubmitAsset::register($this)
 
    
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']); ?>
     </div>
 
     <?php ActiveForm::end(); ?>

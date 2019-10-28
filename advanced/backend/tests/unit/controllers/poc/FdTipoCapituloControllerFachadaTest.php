@@ -83,8 +83,8 @@ class FdTipoCapituloControllerFachadaTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar
             $queryParams = ['FdTipoCapituloSearch' => [
-                                             'id_tcapitulo' => "Ingresar valor de pruebas para el campo id_tcapitulo de tipo int4",       
-                                              'nom_tcapitulo' => "Ingresar valor de pruebas para el campo nom_tcapitulo de tipo varchar",       
+                                             'id_tcapitulo' => "1",       
+                                              'nom_tcapitulo' => "Preguntas",       
                               ]];
              
        
@@ -115,7 +115,7 @@ class FdTipoCapituloControllerFachadaTest extends \Codeception\Test\Unit
         $this->assertInstanceOf('backend\controllers\poc\FdTipoCapituloControllerFachada', $tester);
     
         // se deben declarar los valores de $id        
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
               
         
              // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
@@ -143,8 +143,8 @@ class FdTipoCapituloControllerFachadaTest extends \Codeception\Test\Unit
              
             // Se declaran el rquest
               $request =  ['FdTipoCapituloControllerFachada' => [
-                                'id_tcapitulo' => 'Ingresar valor de pruebas para el campo id_tcapitulo de tipo int4',
-                             'nom_tcapitulo' => 'Ingresar valor de pruebas para el campo nom_tcapitulo de tipo varchar',
+                                'id_tcapitulo' => "4",       
+                                              'nom_tcapitulo' => "Prueba", 
                           ]];
             
                 $actionCreate = $tester->actionCreate($request,false);
@@ -179,8 +179,8 @@ class FdTipoCapituloControllerFachadaTest extends \Codeception\Test\Unit
         
          // Se declaran el rquest
               $request =  ['FdTipoCapituloControllerFachada' => [
-                                'id_tcapitulo' => 'Ingresar valor de pruebas para el campo id_tcapitulo de tipo int4',
-                             'nom_tcapitulo' => 'Ingresar valor de pruebas para el campo nom_tcapitulo de tipo varchar',
+                                'id_tcapitulo' => "4",       
+                                              'nom_tcapitulo' => "Prueba", 
                           ]];
         
         
@@ -217,7 +217,7 @@ class FdTipoCapituloControllerFachadaTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '4';
                 
         // se valida que se pueda realizar el borrado del registro
         expect($tester->actionDeletep($id));

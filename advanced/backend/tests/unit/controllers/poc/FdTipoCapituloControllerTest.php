@@ -79,8 +79,8 @@ class FdTipoCapituloControllerTest extends \Codeception\Test\Unit
         
             // Se declaran los $queryParams a enviar los filtros
             $queryParams = ['FdTipoCapituloSearch' => [
-                                             'id_tcapitulo' => "Ingresar valor de pruebas para el campo id_tcapitulo de tipo int4",       
-                                              'nom_tcapitulo' => "Ingresar valor de pruebas para el campo nom_tcapitulo de tipo varchar",       
+                                             'id_tcapitulo' => "1",       
+                                              'nom_tcapitulo' => "Preguntas",       
                               ]];
              
        
@@ -105,12 +105,12 @@ class FdTipoCapituloControllerTest extends \Codeception\Test\Unit
         
         // se deben declarar los valores de $id para enviar la llave
         
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
                                      // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
             $actionView=Yii::$app->runAction('FdTipoCapituloController/view',['id' => $id]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -128,15 +128,15 @@ class FdTipoCapituloControllerTest extends \Codeception\Test\Unit
           
             // Se declaran los $queryParams a enviar los datos a crear
             $queryParams = ['FdTipoCapituloController' => [
-                                             'id_tcapitulo' => "Ingresar valor de pruebas para el campo id_tcapitulo de tipo int4",       
-                                              'nom_tcapitulo' => "Ingresar valor de pruebas para el campo nom_tcapitulo de tipo varchar",       
+                                             'id_tcapitulo' => "4",       
+                                              'nom_tcapitulo' => "Prueba",       
                               ]];
                             
        //       Se declaran el post1
             Yii::$app->request->queryParams =  $queryParams;
                             
             // se valida que se pueda realizar la insercion del registro
-            $actionCreate=Yii::$app->runAction('FdTipoCapituloController/create');
+            $actionCreate=Yii::$app->runAction('poc/fd-tipo-capitulo/create');
              
             // se evalua el caso exitoso
             $this->assertNotNull($actionCreate,
@@ -157,13 +157,13 @@ class FdTipoCapituloControllerTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar los datos a actualizar
           $queryParams = ['FdTipoCapituloController' => [
-                                         'id_tcapitulo' => "Ingresar valor de pruebas para el campo id_tcapitulo de tipo int4",       
-                                          'nom_tcapitulo' => "Ingresar valor de pruebas para el campo nom_tcapitulo de tipo varchar",       
+                                         'id_tcapitulo' => "4",       
+                                          'nom_tcapitulo' => "Prueba capítulo",       
                           ]];
         
         
          // se deben declarar los valores de $id para enviar la llave
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '4';
                                 
         
          // se valida que se pueda realizar el update del registro
@@ -190,10 +190,10 @@ class FdTipoCapituloControllerTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores para indicar el registro a borrar
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '4';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(FdTipoCapituloController/update',['id' => $id]);
+         $actionDelete=Yii::$app->runAction('FdTipoCapituloController/update',['id' => $id]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

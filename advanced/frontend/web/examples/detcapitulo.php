@@ -72,7 +72,7 @@
                                         
                                         <blockquote>
                                                     return $this->render('create_all', [
-                                                        'model' => $model,'vista'=>$_string,'permisos'=>$_permisos,'migadepan'=>$_migadepan,'modelgenerales' => $_modelgenerales,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado
+                                                        'model' => $model,'vista'=>$_string,'permisos'=>$_permisos,'migadepan'=>$_migadepan,'modelgenerales' => $_modelgenerales,'id_conj_rpta'=>$id_conj_rpta,'id_conj_prta'=>$id_conj_prta,'id_fmt'=>$id_fmt,'last'=>$last,'estado'=>$estado,'modelgeneralesriego' => $_modelgeneralesriego,'modelriego_ubicacion' => $_modelriego_ubicacion,'parroquiasPost'=>$parroquiasPost
                                                     ]);
                                         </blockquote>
                                         
@@ -83,6 +83,8 @@
                                             <li> Permisos: es un vector con la informacion de los permisos del usuario, las columnas que se encuentran en fd_adm_estado, ej: $permisos['p_actualizar']</li>
                                             <li> Miga de Pan: en un vector con la informacion asociada para regresar a la vista anterior</li>
                                             <li> Modelgenerales: es el modelo de asociacion que lleva los datos del capitulo INFORMACION GENERAL SOLICITANDO si es solicitado</li>
+                                            <li> Modelgeneralesriego: es el modelo de asociacion que lleva los datos del capitulo FICHA TÉCNICA PARA EL LEVANTAMIENTO DE INFORMACIÓN si es solicitado</li>
+                                            <li> Modelriego_ubicacion: es el modelo de asociacion para los datos de la ubicación </li>
                                             <li> Las variables mencionadas anteriormente que entregan el formato</li>
                                         </ul>
 
@@ -117,6 +119,8 @@
                                         $_numeracionpreg: 'S' si el formato tiene numeracion, 'N' sino se saca de la tabla fd_formato.
                                         $_permisos: array con la informacion de los permisos de la tabla fd_adm_estado del cliente que se encuentra en session.
                                         $_modelgenerales: informacion del modelo asociado a la tabla FdDatosGenerales con el id conjunto respuesta asociado al capitulo.
+                                        $_modelgeneralesriego: informacion del modelo asociado a la tabla FdDatosGeneralesRiego con el id conjunto respuesta asociado al capitulo.
+                                        $_modelriego_ubicacion: informacion para crear los valores de ubicacion
                                         
                                     </ol>
                                     

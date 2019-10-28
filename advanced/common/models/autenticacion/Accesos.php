@@ -2,6 +2,7 @@
 
 namespace common\models\autenticacion;
 use common\models\modelpry\ModelPry;
+use common\models\autenticacion\Menus;
 use Yii;
 
 /**
@@ -19,6 +20,8 @@ use Yii;
  */
 class Accesos extends ModelPry
 {
+    public $tipo_usuario;
+    
     /**
      * @inheritdoc
      */
@@ -33,8 +36,8 @@ class Accesos extends ModelPry
     public function rules()
     {
         return [
-            [['id__acceso', 'nombre_acceso'], 'required'],
-            [['id__acceso', 'id_pagina', 'id_tipo_acceso'], 'number'],
+            [['nombre_acceso'], 'required'],
+            [['id_pagina', 'id_tipo_acceso'], 'number'],
             [['nombre_acceso'], 'string', 'max' => 50],
             [['cod_rol'], 'string', 'max' => 10],
             [['id_pagina'], 'exist', 'skipOnError' => true, 'targetClass' => Pagina::className(), 'targetAttribute' => ['id_pagina' => 'id_pagina']],
@@ -49,7 +52,6 @@ class Accesos extends ModelPry
     public function attributeLabels()
     {
         return [
-            'id__acceso' => 'Id  Acceso',
             'nombre_acceso' => 'Nombre Acceso',
             'id_pagina' => 'Id Pagina',
             'id_tipo_acceso' => 'Id Tipo Acceso',
@@ -60,7 +62,7 @@ class Accesos extends ModelPry
     /**
      * @return \yii\db\ActiveQuery -> Relaciones que presenta la tabla
      */
-    public function getIdPagina()
+    public function getPagina()
     {
         return $this->hasOne(Pagina::className(), ['id_pagina' => 'id_pagina']);
     }
@@ -79,5 +81,11 @@ class Accesos extends ModelPry
     public function getIdTipoAcceso()
     {
         return $this->hasOne(TipoAcceso::className(), ['id_tipo_acceso' => 'id_tipo_acceso']);
+    }
+    
+    
+    public function getMenus()
+    {
+        return $this->hasMany(Menus::className(), ['id_pagina' => 'id_pagina'])->viaTable('pagina', ['id_pagina' => 'id_pagina']);
     }
 }

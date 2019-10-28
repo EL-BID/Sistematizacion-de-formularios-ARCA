@@ -3,7 +3,7 @@
 namespace frontend\tests\unit\controllers\hidricos;
 
 use Yii;
-use frontend\controllers\hidricos\PscprocesoController;
+use frontend\controllers\cda\PscprocesoController;
 
 
 /**
@@ -122,7 +122,7 @@ class PscprocesoControllerTest extends \Codeception\Test\Unit
             $actionView=Yii::$app->runAction('PscprocesoController/view',['id' => $id]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -229,7 +229,7 @@ class PscprocesoControllerTest extends \Codeception\Test\Unit
                          $id = 'valor adecuado para el tipo de dato del paramtero $id';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(PscprocesoController/update',['id' => $id]);
+         $actionDelete=Yii::$app->runAction('PscprocesoController/update',['id' => $id]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

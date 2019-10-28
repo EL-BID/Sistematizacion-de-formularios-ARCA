@@ -29,23 +29,9 @@ SweetSubmitAsset::register($this)
         </tr>
         <tr>
             <td class='campopqr'>Sugerencia</td>
-            <td>
-                 <?= $form->field($model, 'subtipo_sugerencia')->textInput([
-                                        'maxlength' => true,
-                                        'title' => 'Indique Subtipo Sugerencia',
-                                        'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Subtipo Sugerencia'        
-                                         ])->label(false) ?>
-            </td>     
+            <td><?= $form->field($model, 'subtipo_sugerencia')->checkbox(array('label' => '')); ?></td>  
             <td class='campopqr'>Felicitación</td>
-            <td>
-            <?= $form->field($model, 'subtipo_felicitacion')->textInput([
-                                        'maxlength' => true,
-                                        'title' => 'Indique Subtipo Felicitacion',
-                                        'data-toggle' => 'tooltip',
-                                        'placeholder'=>'Indique Subtipo Felicitacion'        
-                                         ])->label(false) ?>
-            </td>
+            <td><?= $form->field($model, 'subtipo_felicitacion')->checkbox(array('label' => '')); ?></td>
         </tr>
         <tr>
             <td colspan="2">
@@ -59,8 +45,8 @@ SweetSubmitAsset::register($this)
         </tr>
         
         <tr>
-            <td class='campopqr'>Fecha de Recepcion</td>
-            <td><?= $form->field($model, 'fecha_recepcion')->textInput(['disabled' => true])->label(false) ?></td>
+            <td class='campopqr'>Fecha de Recepción</td>
+            <td><?= $form->field($model, 'fecha_recepcion')->textInput(['disabled' => true])->label(false); ?></td>
             <td class='campopqr'>No. Consecutivo</td>
             <td><?= $form->field($model, 'num_consecutivo')->textInput([
                                         'maxlength' => true,
@@ -91,7 +77,7 @@ SweetSubmitAsset::register($this)
                                          ])->label(false) ?>
             </td>
         <tr>
-            <td class='campopqr'>Documento de Identificacion</td>    
+            <td class='campopqr'>Documento de Identificación</td>    
             <td colspan='3'><?= $form->field($model, 'sol_doc_identificacion')->textInput([
                                         'maxlength' => true,
                                         'title' => 'Indique Sol Doc Identificacion',
@@ -102,7 +88,7 @@ SweetSubmitAsset::register($this)
         </tr>
         
         <tr>
-            <td class='campopqr'>Direccion</td>    
+            <td class='campopqr'>Dirección</td>    
             <td colspan='3'> <?= $form->field($model, 'sol_direccion')->textInput([
                                         'maxlength' => true,
                                         'title' => 'Indique Sol Direccion',
@@ -124,7 +110,7 @@ SweetSubmitAsset::register($this)
         </tr>
         
         <tr>
-            <td class='campopqr'>Telefono</td>    
+            <td class='campopqr'>Teléfono</td>    
             <td colspan='3'> <?= $form->field($model, 'sol_telefono')->textInput([
                                         'maxlength' => true,
                                         'title' => 'Indique Sol Telefono',
@@ -248,7 +234,8 @@ SweetSubmitAsset::register($this)
             <td colspan='3'> <?= $form->field($model, 'descripcion_sugerencia')->widget(\yii\redactor\widgets\Redactor::className(), [
                             'clientOptions' => [
                                 'lang' => 'es',
-                                'plugins' => ['fontcolor']
+                                'plugins' => ['bold','italic','orderedlist'],
+                                'buttonsHide' => ['image','file','html','formatting','deleted','outdent','indent','link','alignment','horizontalrule'],
                             ]
                           ])->label(false) ?>
             </td>
@@ -260,9 +247,35 @@ SweetSubmitAsset::register($this)
     
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
 
 </div>
+<script>
+    
+$(document).ready(function() {
+    //set initial state.
+    $('#pqrs-subtipo_sugerencia').prop('checked', true);
+    
+    $('#pqrs-subtipo_felicitacion').val($(this).is(':checked'));
+    $('#pqrs-subtipo_sugerencia').val($(this).is(':checked'));
+    //$('#pqrs-subtipo_controversia').val($(this).is(':checked'));
+
+    $('#pqrs-subtipo_sugerencia').change(function() {
+        if($(this).is(":checked")) {
+            $('#pqrs-subtipo_felicitacion').prop('checked', false);
+            //$('#pqrs-subtipo_controversia').prop('checked', false);
+        }
+    });
+    
+    $('#pqrs-subtipo_felicitacion').change(function() {
+        if($(this).is(":checked")) {
+            $('#pqrs-subtipo_sugerencia').prop('checked', false);
+            //$('#pqrs-subtipo_controversia').prop('checked', false);
+        }
+    });
+      
+});    
+</script>

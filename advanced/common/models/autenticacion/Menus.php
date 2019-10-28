@@ -37,10 +37,11 @@ class Menus extends ModelPry
     public function rules()
     {
         return [
-            [['id_menu', 'nom_menu'], 'required'],
-            [['id_menu', 'nivel', 'id_menu_padre', 'orden'], 'integer'],
+            [['nom_menu'], 'required'],
+            [['nivel', 'id_menu_padre', 'orden'], 'integer'],
             [['id_pagina'], 'number'],
             [['nom_menu', 'parametros'], 'string', 'max' => 50],
+            [['estilos'], 'string', 'max' => 255],
             [['tipo_menu'], 'string', 'max' => 1],
             [['id_menu_padre'], 'exist', 'skipOnError' => true, 'targetClass' => Menus::className(), 'targetAttribute' => ['id_menu_padre' => 'id_menu']],
             [['id_pagina'], 'exist', 'skipOnError' => true, 'targetClass' => Pagina::className(), 'targetAttribute' => ['id_pagina' => 'id_pagina']],
@@ -53,7 +54,6 @@ class Menus extends ModelPry
     public function attributeLabels()
     {
         return [
-            'id_menu' => 'Id Menu',
             'nom_menu' => 'Nom Menu',
             'nivel' => 'Nivel',
             'id_pagina' => 'Id Pagina',

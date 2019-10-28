@@ -214,7 +214,8 @@ SweetSubmitAsset::register($this)
             <td colspan='3'> <?= $form->field($model, 'objeto_peticion')->widget(\yii\redactor\widgets\Redactor::className(), [
                                 'clientOptions' => [
                                  'lang' => 'es',
-                                 'plugins' => ['clips', 'fontcolor','imagemanager']
+                                 'plugins' => ['bold','italic','orderedlist'],
+                                 'buttonsHide' => ['image','file','html','formatting','deleted','outdent','indent','link','alignment','horizontalrule'],
                                 ]
                               ])->label(false) ?>
             </td>
@@ -225,7 +226,8 @@ SweetSubmitAsset::register($this)
             <td colspan='3'> <?= $form->field($model, 'descripcion_peticion')->widget(\yii\redactor\widgets\Redactor::className(), [
                                 'clientOptions' => [
                                     'lang' => 'es',
-                                    'plugins' => ['clips', 'fontcolor','imagemanager']
+                                    'plugins' => ['bold','italic','orderedlist'],
+                                    'buttonsHide' => ['image','file','html','formatting','deleted','outdent','indent','link','alignment','horizontalrule'],
                                 ]
                               ])->label(false) ?>
             </td>

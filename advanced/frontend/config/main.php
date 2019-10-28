@@ -47,13 +47,32 @@ return [
         'documentoexcel' => 'frontend\controllers\wiki\DocumentoexcelController',
         'documentoword' => 'frontend\controllers\wiki\DocumentowordController',
         
-        //Controller Map apra la POC
+        //Controller Map para la POC
         'fdubicacion' => 'frontend\controllers\poc\FdUbicacionController',
         'fdcoordenada' => 'frontend\controllers\poc\FdCoordenadaController',
         'fdinvolucrado' => 'frontend\controllers\poc\FdInvolucradoController',
         'fdrespuestaxmes' => 'frontend\controllers\poc\FdRespuestaxmesController',
         'fdbasicosubicacioncoordenadas' => 'frontend\controllers\poc\FdBasicosubicacioncoordenadasController',
-        
+        'fdinformacioncomunidad' => 'frontend\controllers\poc\FdInformacionComunidadController',
+        'fdrepresentantesprestador' => 'frontend\controllers\poc\FdRepresentantesPrestadorController',
+        'fddatosaguapotable' => 'frontend\controllers\poc\FdDatosAguaPotableController',
+        'fddatossaneamientoambiental' => 'frontend\controllers\poc\FdDatosSaneamientoAmbientalController',
+        'fddetallesfuente' => 'frontend\controllers\poc\FdDetallesFuenteController',
+        'fddetallescaptacion' => 'frontend\controllers\poc\FdDetallesCaptacionController',
+        'fdbombascaptacion' => 'frontend\controllers\poc\FdBombasCaptacionController',
+        'fdfuenteshidricas' => 'frontend\controllers\poc\FdFuentesHidricasController',
+        'fdubicaciongeografica' => 'frontend\controllers\poc\FdUbicacionGeograficaController',
+        'fdobrascaptacionriego' => 'frontend\controllers\poc\FdObrasCaptacionriegoController',
+        'fdcaudalaguapublicos' => 'frontend\controllers\poc\FdCaudalAguaPublicosController',
+        'fddetallevalorespublicos' => 'frontend\controllers\poc\FdDetalleValoresPublicosController',  
+        'fdconducciongravedadap' => 'frontend\controllers\poc\FdConduccionGravedadApController',
+        'fdoperacionplantaapscom' => 'frontend\controllers\poc\FdOperacionplantaApscomController',    
+        'fdtanquesalmacenaapscom' => 'frontend\controllers\poc\FdTanquesAlmacenaApscomController', 
+        'fdconducciongravedadap' => 'frontend\controllers\poc\FdConduccionGravedadApController',
+        'fdconduccionimpulsionapscom' => 'frontend\controllers\poc\FdConduccionImpulsionApscomController',
+        'fdtrataguadesinfeccionapscom' => 'frontend\controllers\poc\FdTrataguaDesinfeccionApscomController',
+        'fdpotabilizplantatraapscom' => 'frontend\controllers\poc\FdPotabilizPlantatraApscomController',
+        'fdparamevaluaciones' => 'frontend\controllers\poc\FdParamEvaluacionesController',
         
         //Controller MAP para hidricos
         /*'modulocda' => 'frontend\controllers\hidricos\ModulocdaController',

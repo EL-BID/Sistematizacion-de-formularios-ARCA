@@ -1,0 +1,36 @@
+{
+    "name": "uran1980/yii2-pace-widget",
+    "description": "An Yii2 widget for automatic web page progress bar.",
+    "version": "0.0.2",
+    "type": "yii2-extension",
+    "keywords": [
+        "yii2-pace-widget",
+        "yii2",
+        "pace",
+        "widgets"
+    ],
+    "homepage": "https://github.com/uran1980/yii2-pace-widget",
+    "time": "2015-03-07",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Yakovlev",
+            "email": "uran1980@gmail.com",
+            "homepage": "https://github.com/uran1980",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/uran1980/yii2-pace-widget/issues",
+        "source": "https://github.com/uran1980/yii2-pace-widget"
+    },
+    "require": {
+        "yiisoft/yii2": "~2",
+        "bower-asset/pace": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "uran1980\\yii\\widgets\\pace\\": ""
+        }
+    }
+}

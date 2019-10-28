@@ -120,6 +120,13 @@ class FdInvolucradoController extends ControllerPry
                 if($_modelrpta->save()){
                     $id_rpta = $_modelrpta->id_respuesta;
                 }else{
+                    
+                    $errores = $_modelrpta->getErrors();
+                        foreach($errores as $clave){
+                            $_revisando = implode(",",$clave);
+                            Yii::trace("sera que asi si: ".$_revisando,"DEBUG");
+                        }
+                    
                     throw new \yii\web\HttpException(404, 'No se pudo crear la respuesta asociada.');
                 }
             }    

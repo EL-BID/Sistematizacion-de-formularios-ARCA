@@ -3,7 +3,7 @@
 namespace frontend\controllers\cda;
 
 use Yii;
-use frontend\controllers\cda\PsHistoricoestadosControllerFachada;
+use frontend\controllers\cda\PsHistoricoEstadosControllerFachada;
 use common\controllers\controllerspry\ControllerPry;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -22,7 +22,7 @@ class PsHistoricoEstadosController extends ControllerPry
      */
     public function behaviors()
     {
-        $facade =  new  PsHistoricoestadosControllerFachada;
+        $facade =  new  PsHistoricoEstadosControllerFachada;
         return $facade->behaviors();
     }
 	
@@ -32,7 +32,7 @@ class PsHistoricoEstadosController extends ControllerPry
     Ubicación: @web = frontend\web....*/
 
     public function actionProgress($urlroute=null,$id=null){
-            $facade =  new  PsHistoricoestadosControllerFachada;
+            $facade =  new  PsHistoricoEstadosControllerFachada;
             echo $facade->actionProgress($urlroute,$id);
     }
 
@@ -44,7 +44,7 @@ class PsHistoricoEstadosController extends ControllerPry
      */
     public function actionIndex()
     {
-        $facade =  new  PsHistoricoestadosControllerFachada;
+        $facade =  new  PsHistoricoEstadosControllerFachada;
         $dataAndModel= $facade->actionIndex(Yii::$app->request->queryParams);
         
         return $this->render('index', [
@@ -99,7 +99,7 @@ class PsHistoricoEstadosController extends ControllerPry
      */
     public function actionView($id)
     {
-        $facade =  new  PsHistoricoestadosControllerFachada;
+        $facade =  new  PsHistoricoEstadosControllerFachada;
         return $this->render('view', [
             'model' => $facade->actionView($id),
         ]);
@@ -112,7 +112,7 @@ class PsHistoricoEstadosController extends ControllerPry
      */
     public function actionCreate()
     {
-       $facade =  new  PsHistoricoestadosControllerFachada;
+       $facade =  new  PsHistoricoEstadosControllerFachada;
        $modelE= $facade->actionCreate(Yii::$app->request->post(),Yii::$app->request->isAjax);
        $model = $modelE['model'];
         if ($modelE['create'] == 'True') {
@@ -140,7 +140,7 @@ class PsHistoricoEstadosController extends ControllerPry
      */
     public function actionUpdate($id)
     {
-        $facade =  new  PsHistoricoestadosControllerFachada;
+        $facade =  new  PsHistoricoEstadosControllerFachada;
         $modelE= $facade->actionUpdate($id,Yii::$app->request->post(),Yii::$app->request->isAjax);
         $model = $modelE['model'];
 
@@ -169,7 +169,7 @@ class PsHistoricoEstadosController extends ControllerPry
      */
     public function actionDeletep($id)
     {
-        $facade =  new  PsHistoricoestadosControllerFachada;
+        $facade =  new  PsHistoricoEstadosControllerFachada;
         $facade->actionDeletep($id);
 
         return $this->redirect(['index']);

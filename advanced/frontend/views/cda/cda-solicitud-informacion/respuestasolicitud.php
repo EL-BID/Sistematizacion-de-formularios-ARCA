@@ -7,6 +7,17 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\hidricos\CdaSolicitudInformacionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+$this->params['breadcrumbs'][] = ['label' => 'Cda', 'url' => ['cda/cda/pantallaprincipal']];
+
+if($_labelmiga == 'cda/detalleproceso/index' or $_labelmiga == 'cda/cda/pantallaprincipal'){
+    
+     $_urlregresar = \Yii::$app->urlManager->createUrl(['cda/detalleproceso/index', 'id_cda' => $id_cda, '_labelmiga' => $_labelmiga]);
+    $this->params['breadcrumbs'][] = ['label' => 'Detalle Proceso', 'url' => ['cda/detalleproceso/index', 'id_cda' => $id_cda, '_labelmiga' => $_labelmiga]];
+   
+}else{
+    $this->params['breadcrumbs'][] = ['label' => 'Gestor de Actividades', 'url' => ['cda/ps-cproceso/index_gestor', 'tipo' => '1']];
+    $_urlregresar = \Yii::$app->urlManager->createUrl(['cda/ps-cproceso/index_gestor', 'tipo' => '1']);
+}
 
 $this->title = 'Respuesta Solicitud';
 $this->params['breadcrumbs'][] = $this->title;
@@ -24,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <td>
                        <?php echo Html::button("Regresar",
                             ['class'=>'btn btn-default btn-xs',
-                                'onclick'=>"window.location.href = '" . \Yii::$app->urlManager->createUrl(['cda/detalleproceso/index','id_cda'=>$id_cda]) . "';",
+                                'onclick'=>"window.location.href = '" .$_urlregresar . "';",
                                 'data-toggle'=>'Regresar'
                             ]
                         ); ?>
@@ -62,8 +73,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr>
                 <td class="datosbasicos1"> Numero de Quipux Senagua </td>
                 <td class="datosbasicos2"><?= $encabezado[0]['senagua']; ?></td>
-                <td class="datosbasicos1"> En calidad de: </td>
-                <td class="datosbasicos2"><?= $encabezado[0]['encalidade']; ?></td>
+                <td class="datosbasicos1"> Rol: </td>
+                <td class="datosbasicos2"><?= $encabezado[0]['nom_cda_rol']; ?></td>
             </tr>
             
             <tr>
@@ -85,7 +96,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'dataProvider' => $dataProvider,
                 //'filterModel' => $searchModel,
                 'columns' => [
-                    ['class' => 'yii\grid\SerialColumn'],
+                    //['class' => 'yii\grid\SerialColumn'],
                     
                     [
                     'header' => 'Informacion Faltante',
@@ -143,10 +154,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                             'data-method' => 'post',
                                     ]);
                             },*/
-                            'update' => function ($url, $model) use ($id_cda,$id_cactividad_proceso) {
-                                    $url2 = Url::toRoute(['cda/cda-solicitud-informacion/update','id' => $model['id_solicitud_info'],'id_cda'=>$id_cda,'id_cactividad_proceso'=>$id_cactividad_proceso],true);
+                            'update' => function ($url, $model) use ($id_cda,$id_cactividad_proceso,$_labelmiga) {
+                                    $url2 = Url::toRoute(['cda/cda-solicitud-informacion/update','id' => $model['id_solicitud_info'],'id_cda'=>$id_cda,'id_cactividad_proceso'=>$id_cactividad_proceso,'_labelmiga'=>$_labelmiga],true);
                                     return Html::button('<span class="glyphicon glyphicon-pencil" />',  ['value'=>$url2,
                                                  'class' => 'btn btn-default btn-xs showModalButton',
+                                                 'title' => 'Respuesta Solicitud',
                                     ]);
                             }, //Primera columna encontrada id_solicitud_info                   
                            /* 'delete' => function($url, $model) use ($id_cda,$id_cactividad_proceso){

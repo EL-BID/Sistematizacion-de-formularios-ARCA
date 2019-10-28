@@ -14,7 +14,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="clientesprueba-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="headSection">
+    <h1 class="titSection"><?= Html::encode($this->title) ?></h1>
+    </div>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->Id], ['class' => 'btn btn-primary']) ?>

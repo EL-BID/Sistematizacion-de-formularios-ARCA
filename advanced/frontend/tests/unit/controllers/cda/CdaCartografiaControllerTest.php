@@ -110,7 +110,7 @@ class CdaCartografiaControllerTest extends \Codeception\Test\Unit
             $actionView=Yii::$app->runAction('CdaCartografiaController/view',['id' => $id]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -193,7 +193,7 @@ class CdaCartografiaControllerTest extends \Codeception\Test\Unit
                          $id = 'valor adecuado para el tipo de dato del paramtero $id';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(CdaCartografiaController/update',['id' => $id]);
+         $actionDelete=Yii::$app->runAction('CdaCartografiaController/update',['id' => $id]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

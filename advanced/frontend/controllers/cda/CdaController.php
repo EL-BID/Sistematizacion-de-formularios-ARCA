@@ -4,19 +4,12 @@ namespace frontend\controllers\cda;
 
 use Yii;
 use frontend\controllers\cda\CdaControllerFachada;
-use frontend\controllers\cda\CdaSolicitudInformacionControllerFachada;
-use frontend\controllers\cda\CdaReporteInformacionControllerFachada;
-use common\models\cda\Cda;
 use common\controllers\controllerspry\ControllerPry;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Html;	//Para presentar la barra de espera
 use yii\helpers\Url;	//Para presentar la barra de espera
 use yii\jui\ProgressBar;
-use frontend\helpers\helperHTML;
-use yii\data\ArrayDataProvider;
-use common\general\documents\genPDF;
-
 
 /**
  * CdaController implementa las acciones a través del sistema CRUD para el modelo Cda.
@@ -29,7 +22,8 @@ class CdaController extends ControllerPry
      */
     public function behaviors()
     {
-        $facade =  new  CdaControllerFachada;
+        $facade = new  CdaControllerFachada();
+
         return $facade->behaviors();
     }
 	
@@ -59,92 +53,6 @@ class CdaController extends ControllerPry
             'dataProvider' => $dataAndModel['dataProvider'],
         ]);
     }
-    
-    
-    
-    /**
-     * Funcion Indes de CDA utilizada para la presentacion de la pantalla principal de CDA
-     * Fecha Modificado: 2018-03-17
-     * DBA
-     */
-    
-     public function actionPantallaprincipal()
-    {
-        
-        if(empty(Yii::$app->user->identity->usuario)){
-             return $this->redirect(['site/index']);
-        }        
-        
-        $facade =  new  CdaControllerFachada;
-        $dataAndModel= $facade->actionPantallaprincipal(Yii::$app->request->queryParams);
-        
-              
-        $datos = new ArrayDataProvider([
-                   'allModels' => $dataAndModel['dataProvider'],
-                   'pagination' => [
-                       'pageSize' => 10,
-                   ],
-                   'sort' => [
-                       'attributes' => ['id_cda','numero', 'nom_actividad','nom_eproceso','nombres','ult_fecha_actividad','ult_fecha_estado','id_cproceso','ult_id_actividad','fecha_solicitud'],
-                   ],
-               ]);
-        
-       
-        //Habilitando Boton de CREAR CDA==================================================================
-        $_botoncrear= in_array(Yii::$app->user->identity->codRols[0]->cod_rol,[2,25,26]);
-        
-        //Estado para CDA=================================================================================
-        $_listestados=  $facade->list_estados_cda();
-        
-        //Listado de Usuarios============================================================================
-        $_listusuarios = $facade->findUsuarios(Yii::$app->user->identity->id_usuario);
-        
-        //Listado de Actividades=========================================================================
-        $_listactividades = $facade->findActividades();
-        
-        
-        
-        return $this->render('pantallaprincipal', [
-            'searchModel' => $dataAndModel['searchModel'],
-            'dataProvider' => $datos,'botoncrear' => $_botoncrear,'listestados' => $_listestados,'listresponsables'=>$_listusuarios,'listactividades'=>$_listactividades
-        ]);
-    }
-    
-    
-     /**
-     * Funcion que habilita la pantalla registrar datos solicitantes
-     */
-    public function actionRegistrardatos($id_cda,$id_cproceso)
-    {
-        $facade =  new  CdaControllerFachada;
-        $modelE= $facade->actionRegistrardatos($id_cda,$id_cproceso);
-        $model = $modelE['model'];
-      
-        
-        //Traiendo datos del encabezado=====================================================
-        $dataEncabezado = $facade->findEncabezado($id_cda);
-
-        if($modelE['update'] == 'True') {
-	
-            Yii::$app->session->setFlash('FormSubmitted','1');		
-            return  $this->redirect(['cda/detalleproceso/index', 'id_cda' => $id_cda]);
-            
-        }elseif($modelE['update']=='Ajax'){
-            return $this->renderAjax('registrar_datos_solicitante', [
-                        'ajax'=>'1','model' => $model,'_editararca'=>$modelE['_editarca'],'id_cda'=>$id_cda,
-                        'encabezado'=>$dataEncabezado,'listadocentro'=>$modelE['listadocentro'], 'listadodemarcacion' => $modelE['listadodemarcacion'],'ajax'=>'1'
-            ]);
-        } 
-        else {
-            return $this->render('registrar_datos_solicitante', [
-                'model' => $model,'_editararca'=>$modelE['_editarca'],'id_cda'=>$id_cda,
-                'encabezado'=>$dataEncabezado,'listadocentro'=>$modelE['listadocentro'], 
-                'listadodemarcacion' => $modelE['listadodemarcacion']
-            ]);
-        }
-        
-    }
-    
 
     /**
      * Presenta un dato unico en el modelo Cda.
@@ -158,69 +66,184 @@ class CdaController extends ControllerPry
             'model' => $facade->actionView($id),
         ]);
     }
+    
+    
+    /*
+     * Esta es la fncion raiz si existe ya un detalle actividad diligenciados
+     * para el ps_cactividad_proceso envia a update, sino envia a create
+     */
+    public function actionPoc($labelmiga,$id_cda_solicitud=null,$actividadactual,$id_cda_tramite=null,$tipo){
+        
+        
+        //Llamando a basicas ============================================================================
+        $basicas = New BasicController();
+        
+        //Id del procso realizado puede ser un tramite o una solicitud ==================================
+        $id_tipoproceso = (is_null($id_cda_solicitud))? $id_cda_tramite:$id_cda_solicitud;
+        
+        $validateinformation = $this->datanedPoc($id_tipoproceso,$actividadactual,$tipo);
+        $pscactividaproceso = $validateinformation[1];
+        
+      
+        //3) Si el valor en diligenciado es igual a 'S' se envia editar activdad
+        if($pscactividaproceso->diligenciado == 'S'){
+            
+            $retornaupdate = $this->actionUpdatepoc($labelmiga,$id_tipoproceso,$actividadactual,TRUE,$validateinformation[1],Yii::$app->request->post(),$tipo);
+            $encabezado = $validateinformation[0];
+            
+            //REtornando string html para el encabezado =============================================
+            if($tipo == '1'){
+                $retornaupdate['encabezado'] = $basicas->encabezadoSolicitud($encabezado);
+            }else{
+                $retornaupdate['encabezado'] = $basicas->encabezadoTramite($encabezado);
+            }
+            
+            if($retornaupdate['_ajax'] == '1'){
+                return $this->renderAjax('update', $retornaupdate);
+           }else{
+               $basicas->retornoPantalla($id_cda_solicitud, $id_cda_tramite, $labelmiga, $tipo);
+           }
+            
+        }else{          //Aqui entra si aun no se ha diligenciado el detalle actividad ================================
+          
+            
+           $retornacreate = $this->actionCreate($labelmiga,$id_tipoproceso,$actividadactual,TRUE,$validateinformation[1],Yii::$app->request->post(),$tipo);          
+           $encabezado = $validateinformation[0];
+          
+           //REtornando string html para el encabezado =============================================
+            if($tipo == '1'){
+                $retornacreate['encabezado'] = $basicas->encabezadoSolicitud($encabezado);
+            }else{
+                $retornacreate['encabezado'] = $basicas->encabezadoTramite($encabezado);
+            }
+           
+           if($retornacreate['_ajax'] == '1'){
+               
+                return $this->renderAjax('create', $retornacreate);
+           }else{
+               
+                $basicas->retornoPantalla($id_cda_solicitud, $id_cda_tramite, $labelmiga, $tipo);
+           }
+            
+        }
+    }
 
+    /*
+     * id_cda_tipo = puedes ser el id_cda_solicitud o el id_cda_tramite
+     * tipo => tipo '1' solicitud, '2' tramite
+     * 
+     */
+    protected function datanedPoc($id_tipoproceso,$actividadactual,$tipo){
+        
+        //1) Trayendo informacion del id_cda_solicitud ===================================
+        if($tipo == '1'){
+            $searchModel = new \common\models\cda\PantallaprincipalSearch();
+            $searchModel->id_cda_solicitud = $id_tipoproceso;
+            $params=array();
+            $encabezado = $searchModel->search($params);
+        }else{
+            $searchModel = new \common\models\cda\PantallaprincipalSearch();
+            $encabezado = $searchModel->searchT($id_tipoproceso);
+        }
+        
+        
+        //2) Buscando el ps_cactividad_proceso en el cual va el proceso
+        $basicas = New BasicController();
+        $pscactividaproceso = $basicas->actualPsCactividadProceso($encabezado[0]['id_cproceso']);
+        
+        $nombreactividad = $basicas->findActividades(null,$actividadactual);
+        
+        return[$encabezado[0],$pscactividaproceso,$nombreactividad['nom_actividad']];
+    }
     /**
      * Crea un nuevo dato sobre el modelo Cda .
      * Si se crea correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado.
      * @return mixed
+     * Mod: Diana B 2018-03-08
+     * var1 => labelmiga
+     * var2 => id_cda_solicitud o id_cda_tramite
+     * var3 => actividad actual
+     * var4 => retorno de todo sin abrir ventana
+     * var5 => modelo de la pscactiviproceso actual
+     * var6 => Yii::$app->request->post()
      */
-    public function actionCreate()
-    {
-       $facade =  new  CdaControllerFachada;
-       $modelE= $facade->actionCreate(Yii::$app->request->post(),Yii::$app->request->isAjax);
-       $model = $modelE['model'];
-        if ($modelE['create'] == 'True') {
-			
-            Yii::$app->session->setFlash('FormSubmitted','2');
-            return  $this->redirect(['progress', 'urlroute' => 'view', 'id' => $model->id_cda]);		
-			
-        }elseif($modelE['create']=='Ajax'){
-             return $this->renderAjax('create', [
-                        'model' => $model
-            ]);
-        } 
-        else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+    
+    public function actionCreate($var1,$var2,$var3,$var4=null,$var5=null,$var6=null,$tipo)
+    {        
+            $facade =  new  CdaControllerFachada;
+            $modelE= $facade->actionCreate($var2,$var5,$var6,'true',$tipo);
+            $model = $modelE['model'];
+            
+            if ($modelE['create'] == 'True') {
+
+               return  ['_ajax'=>'0'];
+                
+            }elseif($modelE['create']=='Ajax'){
+                
+                return [         'model' => $model,
+                                 'labelmiga'=>$var1,
+                                 'id_cda_solicitud'=>$var2,
+                                 '_ajax'=>'1',
+                                 'tipo'=>$tipo,
+                                 'listadodemarcacion'=>$modelE['demarcaciones'],
+                                 'stringClasificacion'=>$modelE['stringClasificacion'],
+                                 'modelpsactividad'=>$modelE['modelpsactividad'],
+                                 'listadocentro'=>$modelE['centros'],
+                     ];
+            }   
     }
     
     
-    /**
-     * Crea un nuevo dato sobre el modelo Cda .
-     * Si se crea correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado.
-     * @return mixed
+    /*
+     * Modifica registro de la POC
+      * Mod: Diana B 2018-03-08
+     * var1 => labelmiga
+     * var2 => id_cda_solicitud
+     * var3 => actividad actual
+     * var4 => retorno de todo sin abrir ventana
+     * var5 => modelo de la pscactiviproceso actual
+     * var6 => Yii::$app->request->post()
+     * tipo =< '1' solicitud , '2' tramite
      */
-    public function actionCreate_cda()
-    {
-       if(empty(Yii::$app->user->identity->usuario)){
-             return $this->redirect(['site/index']);
+    
+    
+    public function actionUpdatepoc($var1,$var2,$var3,$var4=null,$var5=null,$var6=null,$tipo){
+        
+        $facade =  new  CdaControllerFachada;
+        $modelE= $facade->actionUpdate($var2,$var5,$var6,'true',$tipo);
+        $model = $modelE['model'];
+        
+        if ($modelE['update'] == 'True') {
+
+            return  ['_ajax'=>'0'];
+        }else{
+            
+            if($tipo == '1'){
+                return [        'model' => $model,
+                                'labelmiga'=>$var1,
+                                'id_cda_solicitud'=>$var2,
+                                '_ajax'=>'1',
+                                'tipo'=>$tipo,
+                                'listadodemarcacion'=>$modelE['demarcaciones'],
+                                'stringClasificacion'=>$modelE['stringClasificacion'],
+                                'listadocentro'=>$modelE['centros'],
+                                'modelpsactividad'=>$modelE['modelpsactividad']
+                    ];
+            }else{
+                return [        'model' => $model,
+                                'labelmiga'=>$var1,
+                                'id_cda_solicitud'=>$var2,
+                                '_ajax'=>'1',
+                                 'tipo'=>$tipo,
+                                'listadodemarcacion'=>$modelE['demarcaciones'],
+                                'listadocentro'=>$modelE['centros'],
+                                'stringClasificacion'=>$modelE['stringClasificacion'],
+                                'modelpsactividad'=>$modelE['modelpsactividad']
+                              
+                    ];
+            }
         }
         
-       //Creando variable en modelo solo para cambio de validaciones===================================
-       $facade =  new  CdaControllerFachada;
-       $modelE= $facade->actionCreate_cda();
-       $model = $modelE['model'];
-       $modelpscproceso = $modelE['modelpscproceso'];
-       
-        if ($modelE['create'] == 'True') {
-			
-            return  $this->redirect(['progress', 'urlroute' => 'pantallaprincipal']);		
-			
-        }elseif($modelE['create']=='Ajax'){
-            
-            
-             return $this->renderAjax('create_cda', [
-                        'model' => $model,'modelpscproceso'=>$modelpscproceso,'_ajax'=>TRUE
-            ]);
-        } 
-        else {
-             
-            return $this->render('create_cda', [
-                'model' => $model,'modelpscproceso'=>$modelpscproceso
-            ]);
-        }
     }
 
     /**
@@ -251,89 +274,6 @@ class CdaController extends ControllerPry
             ]);
         }
     }
-    
-    /**
-     * Modifica los parametros del formulario del cproceso y parametros de la ps_cactividad
-     * botton ver en la pantalla de detalle proceso
-     */
-    /**
-     * Modifica un dato existente en el modelo Cda.
-     * Si se modifica correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado..
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdateproceso($id_cda,$tipo,$ult_id_actividad)
-    {
-        $facade =  new  CdaControllerFachada;
-        
-        //Traiendo datos del encabezado=====================================================
-        $dataEncabezado = $facade->findEncabezado($id_cda);
-        
-
-        //Habilitando boton para actualizar ================================================
-        if($dataEncabezado[0]['ult_id_usuario'] == Yii::$app->user->identity->id_usuario){
-            $boleanbotton = TRUE;
-        }else{
-            $boleanbotton = FALSE;
-        }
-        
-        //Obteniendo modelos de datos========================================================
-        $modelE= $facade->actionUpdatecda($id_cda,$ult_id_actividad);
-        $model = $modelE['model'];
-        $modelpscproceso = $modelE['modelpscproceso'];
-       
-        if ($modelE['update'] == 'True') {
-	
-            if($tipo==1){
-                return $this->redirect(['progress', 'urlroute' => 'index']);
-            }else if($tipo==2){
-                Yii::$app->session->setFlash('FormSubmitted','1');		
-                return  $this->redirect(['cda/detalleproceso/index', 'id_cda' => $id_cda]);
-            }
-        }elseif($modelE['update']=='Ajax'){
-            return $this->renderAjax('updatepantallaprincipal', [
-                        'ajax'=>'1','model' => $model,'modelpscproceso'=>$modelpscproceso,'_editararca' => $modelE['editarca'], '_editarsenagua' =>  $modelE['editsenagua'],'encabezado'=>$dataEncabezado,'boleanbotton'=>$boleanbotton,'id_cda'=>$id_cda
-            ]);
-        } 
-        else {
-            return $this->render('updatepantallaprincipal', [
-                'model' => $model,'modelpscproceso'=>$modelpscproceso,'_editararca' => $modelE['editarca'], '_editarsenagua' =>  $modelE['editsenagua'],'encabezado'=>$dataEncabezado,'boleanbotton'=>$boleanbotton,'id_cda'=>$id_cda
-            ]);
-        }
-    }
-    
-    
-     /**
-     * Funcion que habilita la pantalla analizar informacion
-     */
-    public function actionAnalisis($id_cda,$id_cproceso)
-    {
-        $facade =  new  CdaControllerFachada;
-        $modelE= $facade->actionAnalizarinformacion($id_cda,$id_cproceso);
-        $model = $modelE['model'];
-      
-        
-        //Traiendo datos del encabezado=====================================================
-        $dataEncabezado = $facade->findEncabezado($id_cda);
-
-        if($modelE['update'] == 'True') {
-	
-            Yii::$app->session->setFlash('FormSubmitted','1');		
-            return  $this->redirect(['cda/detalleproceso/index', 'id_cda' => $id_cda]);
-            
-        }elseif($modelE['update']=='Ajax'){
-            return $this->renderAjax('analisis', [
-                        'model' => $model,'_editararca'=>$modelE['_editarca'],'id_cda'=>$id_cda,'encabezado'=>$dataEncabezado,'ajax'=>'1'
-            ]);
-        } 
-        else {
-            return $this->render('analisis', [
-                'model' => $model,'_editararca'=>$modelE['_editarca'],'id_cda'=>$id_cda,'encabezado'=>$dataEncabezado
-            ]);
-        }
-        
-    }
-    
 
     /**
      * Deletes an existing Cda model.
@@ -350,79 +290,15 @@ class CdaController extends ControllerPry
     }
 
     
-    public function actionPdf($id_cda){
-        
-        //Obteniendo ultima id_cactividad_proceso registrada=================================================================================
-        if (($model = Cda::findOne($id_cda)) !== null) {
-            $id_cactividad_proceso = $model->obtenerultidcactividaproceso['id_cactividad_proceso'];
-        }
-              
-        //========================Buscando Encabezado================================================================================//
-        
-        $facade =  new  CdaControllerFachada;
-        $encabezado = $facade->findEncabezado($id_cda);
-        
-        //=====================Puntos solicitados y Codigo solicitud Tecnico=========================================================//
-        $analizar_informacion=$facade->findModelAnalisis($id_cda);
-        $registrar_datos_solicitante=$facade->findModelRegistrarDatos($id_cda);
+    
+    public function actionCentrociudadano($id=null){
         
         
+        $basicas = New BasicController();
+        $centrociudadano = $basicas ->centrociudadano($id);
         
-        //==========================Solicitud Informacion ==============================================================================
-        $facade2 = new CdaSolicitudInformacionControllerFachada();
-        $solicitar_informacion = $facade2->getSolicitudes($id_cda,$id_cactividad_proceso);
+        return $centrociudadano;
         
-        //====================Respuesta soliicitud informacion ==========================================================================
-        $facade2 = new CdaSolicitudInformacionControllerFachada();
-        $respuesta_informacion = $facade2->getSolicitudes2($id_cda,$id_cactividad_proceso);
-        
-        
-        //=======================FALTA REGISTRO $datos_tecnicos de la solicitud ===========================================================================
-        //puede ser un objeto o un array
-        $facade2=new CdaReporteInformacionControllerFachada();
-        $datos_tecnicos= $facade2->actiongetDatosTecnicos($id_cda, $id_cactividad_proceso);
-        
-        
-        //=======================FALTA DATOS SENAGUA======================================================================================
-        $datos_senagua= $facade2->actiongetDatosSenagua($id_cda, $id_cactividad_proceso);
-       
-        
-         //=======================FALTA DATOS EPA======================================================================================
-        $datos_epa=$facade2->actiongetDatosEpa($id_cda, $id_cactividad_proceso);
-        
-         //=======================FALTA ERRORES======================================================================================
-        $error_pres=$facade2->actiongetErrores($id_cda);
-        
-        //=======================FALTA DATOS_VISTA======================================================================================
-        $datos_visita=$facade2->actiongetVisita($id_cda, $id_cactividad_proceso);
-        
-        //=======================FALTA REGISTRO CDA======================================================================================
-        $registro_cda=$facade2->actiongetDatosRegistroCDApdf($id_cda, $id_cactividad_proceso);
-        
-        //==========================ANALISIS HIDROLOGICOS===========================================================================
-        $analisis_hidrologico=$facade2->actiongetAnalisisHidrologico($id_cda);
-        
-        
-        //======================ULTIMA LINEA DE PUNTOS===================================================================================
-        $puntos=array();
-        
-        $_callhelper = New helperHTML();
-        $_stringhtml = $_callhelper->gen_htmlCDA($encabezado, $analizar_informacion, $registrar_datos_solicitante, $solicitar_informacion,$respuesta_informacion,$datos_tecnicos,$datos_senagua,$datos_epa,$error_pres,$datos_visita,$registro_cda,$puntos,$analisis_hidrologico);
-        $nombre_formato = 'CDA '.$encabezado[0]['numero'];
-        
-        //Iniciando array de retorno
-        $datos=[];
-        
-        //Declarando Metodos header and footer
-        $methods = [ 
-            'SetHeader'=>['CDA'], 
-            'SetFooter'=>['{PAGENO}'],
-        ];
-        
-        $GeneraPdf = new genPDF();
-        $propiedades=array('formato'=>$GeneraPdf::FORMATO_A4,'destino'=>$GeneraPdf::DESTINO_NAVEGADOR,'orientation'=>$GeneraPdf::ORIENTACION_HORIZONTAL);
-        $retorno=$GeneraPdf->generadorPDF($_stringhtml,$nombre_formato,$propiedades,null,$methods,null,'@vendor/kartik-v/yii2-mpdf/assets/cda.css');
-        $datos['pdf']=$retorno; 
     }
     
 }

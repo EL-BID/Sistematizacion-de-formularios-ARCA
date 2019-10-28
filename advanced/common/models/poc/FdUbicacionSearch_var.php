@@ -18,7 +18,7 @@ class FdUbicacionSearch_var extends FdUbicacion_var
     public function rules()
     {
         return [
-            [['id_ubicacion', 'cod_centro_atencion_ciudadano', 'id_conjunto_respuesta', 'id_pregunta', 'id_respuesta','id_capitulo'], 'integer'],
+            [['id_ubicacion', 'cod_centro_atencion_ciudadano', 'id_conjunto_respuesta', 'id_pregunta', 'id_respuesta','id_capitulo'], 'integer'],            
             [['cod_parroquia', 'cod_canton', 'cod_provincia', 'descripcion_ubicacion'], 'safe'],
             [['id_demarcacion'], 'number'],
         ];

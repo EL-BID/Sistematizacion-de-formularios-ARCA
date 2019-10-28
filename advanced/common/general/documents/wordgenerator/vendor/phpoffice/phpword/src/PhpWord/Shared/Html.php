@@ -20,6 +20,7 @@ namespace PhpOffice\PhpWord\Shared;
 use PhpOffice\PhpWord\Element\AbstractContainer;
 use PhpOffice\PhpWord\Element\Table;
 use PhpOffice\PhpWord\Element\Row;
+use Yii;
 
 /**
  * Common Html functions
@@ -68,12 +69,16 @@ class Html
 
         // Preprocess: remove all line ends, decode HTML entity,
         // fix ampersand and angle brackets and add body tag for HTML fragments
-        $html = str_replace(array("\n", "\r"), '', $html);
+       
+        
+        $html = str_replace(array("\n", "\r",'"=""'), '', $html);
         $html = str_replace(array('&lt;', '&gt;', '&amp;'), array('_lt_', '_gt_', '_amp_'), $html);
         $html = html_entity_decode($html, ENT_QUOTES, 'UTF-8');
         $html = str_replace('&', '&amp;', $html);
         $html = str_replace(array('_lt_', '_gt_', '_amp_'), array('&lt;', '&gt;', '&amp;'), $html);
 
+        Yii::trace("que llega en html: ".$html,"DEBUG");
+        
         if (false === $fullHTML) {
             $html = '<body>' . $html . '</body>';
         }

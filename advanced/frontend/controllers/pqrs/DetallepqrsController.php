@@ -67,7 +67,7 @@ class DetallepqrsController extends ControllerPry
         
         
         //Recogiendo actividades para presentar en pantalla =============================================================//
-        $actividades = $facade->findActividades($_encabezado->id_cproceso);
+        $actividades = $facade->findActividad2($_encabezado->id_cproceso);
         
         
         //Permisos para ver el boton de edicion de actividad=============================================================//
@@ -89,38 +89,40 @@ class DetallepqrsController extends ControllerPry
         $acciones=array();
         $facade =  new DetallepqrsControllerFachada;
         $_tipopantallaruta = $facade->findrutadinamina($_ultimaactividadCproceso);
+        $_a=0;
         
-        
-        if(!empty($_tipopantallaruta) and $_tipopantallaruta['tipo_pantalla_ruta'] == -1){
-       
-           $acciones['dinamicaguardar'] = TRUE;
-           $acciones['dinamicaactividad'] = FALSE;
-           $acciones['nom_actividad'] =  $_tipopantallaruta['nom_destino'];
-           $acciones['id_actividad_destino'] = $_tipopantallaruta['id_actividad_destino'];
-           $acciones['id_actividad_origen'] = $_tipopantallaruta['id_actividad_origen'];
-           $acciones['id_clasif_actividad'] = $_tipopantallaruta['clas_destino'];
-           $acciones['id_eproceso'] = $_tipopantallaruta['id_eproceso'];
+        foreach($_tipopantallaruta as $_claveruta){
+            
+            if(!empty($_claveruta) and $_claveruta['tipo_pantalla_ruta'] == -1){
+                
+                $acciones[$_a]['dinamicaguardar'] = TRUE;
+                $acciones[$_a]['dinamicaactividad'] = FALSE;
+                $acciones[$_a]['nom_actividad'] =  $_claveruta['nom_destino'];
+                $acciones[$_a]['id_actividad_destino'] = $_claveruta['id_actividad_destino'];
+                $acciones[$_a]['id_actividad_origen'] = $_claveruta['id_actividad_origen'];
+                $acciones[$_a]['id_clasif_actividad'] = $_claveruta['clas_destino'];
+                $acciones[$_a]['id_eproceso'] = $_claveruta['id_eproceso'];
+                
+            }else if(!empty($_claveruta) and $_claveruta['tipo_pantalla_ruta']==0){
+           
+                $acciones[$_a]['dinamicaguardar'] = FALSE;
+                $acciones[$_a]['dinamicaactividad'] = TRUE;
+                $acciones[$_a]['nom_actividad'] = $_claveruta['nom_destino'];
+                $acciones[$_a]['id_actividad_destino'] = $_claveruta['id_actividad_destino'];
+                $acciones[$_a]['id_actividad_origen'] = $_claveruta['id_actividad_origen'];
+                $acciones[$_a]['id_clasif_actividad'] = $_claveruta['clas_destino'];
+                $acciones[$_a]['id_eproceso'] = $_claveruta['id_eproceso'];
+           
+            }else{
 
-          
-           
-       }else if(!empty($_tipopantallaruta) and $_tipopantallaruta['tipo_pantalla_ruta']==0){
-           
-           $acciones['dinamicaguardar'] = FALSE;
-           $acciones['dinamicaactividad'] = TRUE;
-           $acciones['nom_actividad'] = $_tipopantallaruta['nom_destino'];
-           $acciones['id_actividad_destino'] = $_tipopantallaruta['id_actividad_destino'];
-           $acciones['id_actividad_origen'] = $_tipopantallaruta['id_actividad_origen'];
-           $acciones['id_clasif_actividad'] = $_tipopantallaruta['clas_destino'];
-           $acciones['id_eproceso'] = $_tipopantallaruta['id_eproceso'];
-           
-       }else{
-           
-           $acciones['dinamicaguardar'] = FALSE;
-           $acciones['dinamicaactividad'] = FALSE;
-         //  $acciones['nom_actividad'] = $_tipopantallaruta->idActividadDestino->nom_actividad;
-           
-       }
-       
+                $acciones[$_a]['dinamicaguardar'] = FALSE;
+                $acciones[$_a]['dinamicaactividad'] = FALSE;
+              //  $acciones['nom_actividad'] = $_tipopantallaruta->idActividadDestino->nom_actividad;
+
+            }
+            
+            $_a+=1;
+        }
        
        return $acciones;
     }
@@ -155,17 +157,13 @@ class DetallepqrsController extends ControllerPry
             }else if(!empty($_encabezado->subtipo_controversia)){
                 $_tipopqr = 'Controversia';
             }
-            
-        }else if($_encabezado->tipo_pqrs == 3){
-            
-           $_tipopqr = 'Denuncia'; 
-           
-        }else if($_encabezado->tipo_pqrs == 4){
-            
-            if(!empty($_encabezado->subtipo_sugerencia)){
+        } elseif ($_encabezado->tipo_pqrs == 3) {
+            $_tipopqr = 'Denuncia';
+        } elseif ($_encabezado->tipo_pqrs == 4) {
+            if (!empty($_encabezado->subtipo_sugerencia)) {
                 $_tipopqr = 'Sugerencia';
-            }else if(!empty($_encabezado->subtipo_reclamo)){
-                $_tipopqr = 'Felicitacion';
+            } elseif (!empty($_encabezado->subtipo_felicitacion)) {
+                $_tipopqr = 'Felicitación';
             }
             
         }
@@ -180,12 +178,12 @@ class DetallepqrsController extends ControllerPry
         }
         
         elseif($_returnmodel['update']=='Ajax'){
-            return $this->renderAjax('updatedaosbasicos', ['_ajax'=>TRUE,'model'=>$_model,'numero'=>$_encabezado->idCproceso['numero'],'pqr'=>$_encabezado->id_pqrs,'tipo_pqr'=>'pendiente programar','fecha_recepcion'=>$_encabezado->fecha_recepcion,'disabled_responsable'=>$_responsable,'tipopqr'=>$_tipopqr]);
+            return $this->renderAjax('updatedaosbasicos', ['_ajax'=>TRUE,'model'=>$_model,'numero'=>$_encabezado->idCproceso['numero'],'pqr'=>$_encabezado->id_pqrs,'tipo_pqr'=>$_tipopqr,'fecha_recepcion'=>$_encabezado->fecha_recepcion,'disabled_responsable'=>$_responsable,'tipopqr'=>$_tipopqr]);
         } 
         
         else {
             
-             return $this->render('updatedaosbasicos',['model'=>$_model,'numero'=>$_encabezado->idCproceso['numero'],'pqr'=>$_encabezado->id_pqrs,'tipo_pqr'=>'pendiente programar','fecha_recepcion'=>$_encabezado->fecha_recepcion,'disabled_responsable'=>$_responsable,'tipopqr'=>$_tipopqr]);
+             return $this->render('updatedaosbasicos',['model'=>$_model,'numero'=>$_encabezado->idCproceso['numero'],'pqr'=>$_encabezado->id_pqrs,'tipo_pqr'=>$_tipopqr,'fecha_recepcion'=>$_encabezado->fecha_recepcion,'disabled_responsable'=>$_responsable,'tipopqr'=>$_tipopqr]);
         }
        
     }
@@ -217,7 +215,7 @@ class DetallepqrsController extends ControllerPry
     
     protected function showEdicionactividad($usuario_id,$id_cproceso){
         
-         $_responsableproceso = ($usuario_id == Yii::$app->user->identity->id_usuario) ? TRUE:FALSE;
+         //$_responsableproceso = ($usuario_id == Yii::$app->user->identity->id_usuario) ? TRUE:FALSE;
          
          
          $facade =  new DetallepqrsControllerFachada;
@@ -225,7 +223,7 @@ class DetallepqrsController extends ControllerPry
          $_responsableactividad = ($_getresponsable == Yii::$app->user->identity->id_usuario) ? TRUE:FALSE;
          
          
-         if($_responsableproceso === TRUE or $_responsableactividad === TRUE){
+         if($_responsableactividad === TRUE){
              
              return TRUE;
          }else{

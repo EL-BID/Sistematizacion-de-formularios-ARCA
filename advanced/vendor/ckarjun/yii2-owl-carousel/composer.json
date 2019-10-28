@@ -1,0 +1,22 @@
+{
+    "name": "ckarjun/yii2-owl-carousel",
+    "description": "A Yii2 wrapper for owl carousel",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","carousel","owlcarousel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arjun C K",
+            "email": "ckarjun5@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "minimum-stability" : "dev",
+    "autoload": {
+        "psr-4": {
+            "ckarjun\\owlcarousel\\": ""
+        }
+    }
+}

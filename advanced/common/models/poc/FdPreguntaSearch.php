@@ -101,9 +101,10 @@ class FdPreguntaSearch extends FdPregunta
      * var2->id_conjunto_pregunta
      * var3->id_conjunto_respuesta
      */
-    public function buscar($var1,$var2,$var3){
+    public function buscar($var1,$var2,$var3,$var4){
         
-         
+         if(empty($var4))$var4="is null or fd_respuesta.id_junta = 0";
+         else $var4 = "=".$var4;
          $_findpreguntas = Yii::$app->db->createCommand('SELECT fd_pregunta.id_pregunta,
                             fd_respuesta.id_respuesta,
                             fd_pregunta.id_conjunto_pregunta,
@@ -148,6 +149,7 @@ class FdPreguntaSearch extends FdPregunta
                             fd_respuesta.ra_moneda,
                             fd_respuesta.ra_porcentaje,
                             fd_respuesta.cantidad_registros,
+                            fd_respuesta.ra_otros,
                             fd_elemento_condicion.id_pregunta_habilitadora,
                             fd_elemento_condicion.operacion,
                             fd_elemento_condicion.valor,
@@ -155,9 +157,13 @@ class FdPreguntaSearch extends FdPregunta
                             fd_cond_1.id_pregunta_condicionada,
                             fd_cond_1.operacion as opercond,
                             fd_cond_1.valor as valorcond,
-                            fd_cond_1.id_tcondicion as tcond
+                            fd_cond_1.id_tcondicion as tcond,
+                            fd_pregunta.max_files,
+                            fd_respuesta.id_junta,
+                            fd_pregunta.max_registros,
+                            fd_pregunta.id_pregunta_anidada
                             FROM fd_pregunta
-                            LEFT JOIN fd_respuesta ON fd_respuesta.id_pregunta=fd_pregunta.id_pregunta and fd_respuesta.id_conjunto_respuesta=:id_conjunto_rpta
+                            LEFT JOIN fd_respuesta ON fd_respuesta.id_pregunta=fd_pregunta.id_pregunta and fd_respuesta.id_conjunto_respuesta=:id_conjunto_rpta and (fd_respuesta.id_junta '.$var4.')
                             LEFT JOIN fd_agrupacion ON fd_agrupacion.id_agrupacion=fd_pregunta.id_agrupacion
                             LEFT JOIN fd_tipo_pregunta ON fd_tipo_pregunta.id_tpregunta=fd_pregunta.id_tpregunta
                             LEFT JOIN fd_elemento_condicion ON fd_elemento_condicion.id_pregunta_condicionada=fd_pregunta.id_pregunta and fd_elemento_condicion.id_tcondicion = 2
@@ -168,10 +174,10 @@ class FdPreguntaSearch extends FdPregunta
                             ORDER BY fd_pregunta.id_seccion,fd_pregunta.orden')
                             ->bindValue(':idcapitulo',$var1)
                             ->bindValue(':id_conjunto_prta', $var2)
-                            ->bindValue(':id_conjunto_rpta', $var3)
+                            ->bindValue(':id_conjunto_rpta', $var3)                            
                             ->bindValue(':estado', 'S')   
                             ->queryAll();
 
          return $_findpreguntas;
-    }
+    }        
 }

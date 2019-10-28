@@ -14,7 +14,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="clientesauto-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="headSection">
+    <h1 class="titSection"><?= Html::encode($this->title) ?></h1>
+    </div>
 
     <?= $this->render('_form', [
         'model' => $model,'autocomplete'=>$autocomplete,'autocomplete2'=>$autcomplete2,

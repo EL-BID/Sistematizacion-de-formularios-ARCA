@@ -13,6 +13,7 @@ use kartik\sidenav\SideNav;					//Para separacion Menu Vertical
 use kartik\popover\PopoverX;
 use yii\widgets\Pjax;
 use ckarjun\owlcarousel\OwlCarouselWidget;
+use common\models\autenticacion\AutoUser;
 
 
 AppAsset::register($this);
@@ -23,10 +24,11 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:200,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:200,300,400,700" rel="stylesheet">
+    <link href="css/jquery-uisajax.css" rel="stylesheet" type="text/css"/>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
+    <?php $this->head(); ?>
     
     <script>
     function startTime() {
@@ -47,7 +49,7 @@ AppAsset::register($this);
    
     </script>
 </head>
-<body onload="startTime()">
+<body onload="startTime()" onpaste="return false">
 <?php $this->beginBody() ?>
 <div class="wrap">
     <div id="hourtime" class="showTime"></div>
@@ -120,81 +122,20 @@ AppAsset::register($this);
     //INICIO NAVBAR LINKS MENU ================================================================================================================/
     /*$menuItems[] =  '<li><div id="hourtime" class="showTime"></div></li>';*/
     
-    $menuItems=array();                     //No borrar OJO!!!!!!!!!!!!!!!!!!!!!============================================================
-    $menus=array();
-   
     
-    $menus['0']=['label' =>'<span class="icMenuTop"><img src="images/customskin/ic_mod4.svg"/><span/> Bandeja de Entrada',
-				'items' => [
-							['label' => 'Formatos', 'url' => ['/gestorformatos/index','provincia'=>'','cantones'=>'','parroquias'=>'','periodos'=>'','id_fmt'=>'','estado'=>'']],
-							],	
-				];
-    
-    $menus['1']=['label' =>'<span class="icMenuTop"><img src="images/customskin/ic_mod0.svg"/><span/> Wiki',
-                               'items' => [
-                                       ['label' => 'Manual', 'url' => "@web/manual.php"],
-                                       ],	
-                               ];
-    
-    /*$menus['2']=['label' =>'<span class="icMenuTop"><img src="images/customskin/ic_mod3.svg"/><span/> R. Hídricos',
-                                  'items' => [
-
-                                                          ['label' => 'CDA', 'url' => ['/cda/cda/pantallaprincipal']],
-                                                          ],	
-                                 ];
-    
-    $menus['3']=['label' =>'<span class="icMenuTop"><img src="images/customskin/ic_mod6.svg"/><span/> PQRS',
-                                        'items' => [
-
-                                                ['label' => 'PQRS', 'url' => ['/pqrs/pqrs/index']],
-                                                ],	
-                                 ];
-    
-    $menus['4']=['label' =>'<span class="icMenuTop"><img src="images/customskin/ic_mod5.svg"/><span/> Administración',
-				'items' => [
-							['label' => 'Usuario', 'url' => ['#']],
-							['label' => 'Cantones', 'url' => ['#']],
-							['label' => 'Provincias', 'url' => ['#']],
-							['label' => 'Demarcaciones', 'url' => ['#']],
-					       ],	
-                                ];*/
-    
-    if(empty(Yii::$app->user->isGuest) and in_array(Yii::$app->user->identity->codRols[0]->cod_rol,[28,29,27,21,30,31,32])){
-        $_urlpqr = '/pqrs/pqrs/index';
-    }else if(!empty(Yii::$app->user->isGuest)){
-         $_urlpqr = '/pqrs/pqrs/create';
-    }
-    
-    if(!empty($_urlpqr)){
-        
-    $menus['5']=['label' =>'<span class="icMenuTop"><img src="images/customskin/ic_mod6.svg"/><span/> PQRS',
-                                'items' => [
-                                        ['label' => 'PQRS', 'url' => [$_urlpqr]],
-                                        ],	
-                               ];
-    }
+    $_accesos = New AutoUser();
+    $menuItems = $_accesos->accessUser();
     
     
-    
-    if (empty(Yii::$app->user->isGuest)){
-        
-        NavBar::begin([
+    	NavBar::begin([
             //'brandLabel' => 'Inicio',
             //'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar-default',
             ],
         ]);
-        
-        //Aqui va Hidricos ==============================================================
-        if(in_array(Yii::$app->user->identity->codRols[0]->cod_rol,[1,2,25,26,27])){
-          $menuItems = $menus;
-        }else{
-           unset($menus['2']);
-           $menuItems = array_values($menus);
-        }
-        
-        	
+		
+		
         echo Nav::widget([
                 'encodeLabels' => false,
                 'options' => ['class' => 'navbar-nav navbar-left'],
@@ -202,8 +143,8 @@ AppAsset::register($this);
         ]);
         
         NavBar::end();
-    
-    }
+		
+
     
     
 
@@ -256,7 +197,7 @@ AppAsset::register($this);
                            if($message['type'] == 'success'){
                           
                                $this->registerJs( '$("document").ready(function(){ swal({
-                                                title: "Datos Guardados con Exito",
+                                                title: "Datos Guardados con Éxito",
                                                 type: "warning",
                                                 showCancelButton: false,
                                                 closeOnConfirm: true,
@@ -270,7 +211,32 @@ AppAsset::register($this);
 
                                                     }
                                             }); });' ); 
-                            }else if($message['type'] == 'error'){
+                            }else if($message['type'] == 'url'){
+                            
+                                $_value = yii\helpers\Url::toRoute([$message['urlgo'],
+                                                                    'var1'=>$message['var1'],
+                                                                    'var2'=>$message['var2'],
+                                                                    'var3'=>$message['var3'],
+                                                                    'var4'=>$message['var4'],
+                                                                    'var5'=>$message['var5']],true);
+                                
+                               $this->registerJs( '$("document").ready(function(){ swal({
+                                                title: "'.$message['message'].'",
+                                                type: "warning",
+                                                showCancelButton: true,
+                                                closeOnConfirm: true,
+                                                allowOutsideClick: true,
+                                            }, function(isConfirm){
+                                                    if (isConfirm) {
+                                                           eventClick("'.$_value.'","'.$message['message2'].'");
+                                                    } else {
+
+                                                            swal.close();
+
+                                                    }
+                                            }); });' ); 
+                                
+                            }else if($message['type'] == 'error' or $message['type'] == 'pqrs'){
                                 
                                 $this->registerJs( '$("document").ready(function(){ swal({
                                                 title: "'.$message['message'].'",
@@ -298,6 +264,8 @@ AppAsset::register($this);
 		<!------------------------------------------------------------------------------------------>
 		<!------------------------------------------------------------------------------------------>
 		
+             
+                
 		<!------------------------------------------------------------------------------------------>
 		<!--ACTIVA LA VENTANA MODAL PARA LOS FORMULARIOS-------------------------------------------->
 		<!------------------------------------------------------------------------------------------>

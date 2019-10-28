@@ -20,9 +20,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php
             }
         ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]);?>
 
-    <div class="aplicativo table-responsive">
+    <div class="aplicativo table-responsive" style="overflow:auto;">
         
                 
         <!---------------------------------Grilla-------------------------------------->
@@ -33,8 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
 
-                ['attribute'=>'Nombre','value'=>'idEproceso.nom_eproceso'],
-                ['attribute'=>'Usuario','value'=>'idUsuario.nombres'],
+                ['attribute' => 'Nombre', 'value' => 'idEproceso.nom_eproceso'],
+                ['attribute' => 'Usuario', 'value' => 'idUsuario.nombres'],
                 'fecha_estado',
                 'observaciones',
                // 'id_eproceso',
@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 return Html::button('<span class="glyphicon glyphicon-pencil">Editar</span>',  ['value'=>$url,
                                              'class' => 'btn btn-default btn-xs showModalButton',
                                 ]);
-                        }, //Primera columna encontrada id_hisotrico_cproceso                    
+                        }, //Primera columna encontrada id_hisotrico_cproceso
                         'delete' => function($url, $model){
                                 $url2 = Url::toRoute(['ps-historico-estados/deletep','id' => $model->id_hisotrico_cproceso],true);
                                 return Html::a('<span class="glyphicon glyphicon-trash">Borrar</span>',$url2,[

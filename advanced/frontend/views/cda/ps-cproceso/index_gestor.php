@@ -8,7 +8,11 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\hidricos\PsCprocesoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Gestion de Actividades';
+$_labelmiga = "Cda";
+$_urlmiga = array('cda/cda/pantallaprincipal') ;
+       
+$this->title = 'Gestión de Actividades';
+$this->params['breadcrumbs'][] = ['label' => $_labelmiga, 'url' => $_urlmiga];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ps-cproceso-index">
@@ -27,84 +31,57 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+         //   ['class' => 'yii\grid\SerialColumn'],
             
             [
-                'attribute'=>'numero',
-                'label'=>'Numero CDA'
+                'attribute'=>'num_solicitud',
+                'label'=>'Número Solicitud'
             ],
             [
-                'attribute'=>'ult_id_actividad',
-                'value'=>'ultIdActividad.nom_actividad',
-                'label' => 'Actividad Pendiente',
-             ],
-//            'id_cproceso',
-//            'ult_id_eproceso',
-//            'id_proceso',
-//            'id_usuario',
-//            'id_modulo',
-            // 'num_quipux',
-            // 'fecha_registro_quipux',
-            // 'asunto_quipux',
-            // 'tipo_documento_quipux',
-            // 'ult_id_actividad',
-            // 'ult_id_usuario',
-            // 'ult_fecha_actividad',
-            // 'ult_fecha_estado',
-            // 'numero',
+                'attribute'=>'num_tramite',
+                'label'=>'Número Trámite'
+            ],
+            [
+                'attribute'=>'cod_solicitud_tecnico',
+                'label'=>'Cod. Solicitud Técnico'
+            ],
+            [
+                'attribute'=>'nom_actividad',
+                'label'=>'Nombre Actividad'
+            ],
+            [
+                'attribute'=>'fecha',
+                'label'=>'Fecha Adjudicada'
+            ],
+           
 
             [
 			
                 'class' => 'yii\grid\ActionColumn',
-                'header' => 'Action',
-                'template' => ' {subpantalla} {proceso}',
+                'header' => 'Acción',
+                'template' => ' {proceso}',
                 'buttons' => [
-                    'subpantalla' => function($url, $model){
-                            
-                                   $_url2 =  $model->ultIdActividad['subpantalla'];
-                                   $_idcda = $model->cdas[0]['id_cda'];
-                                   $_id_cactividad_proceso = $model->obtenerultidcactividaproceso['id_cactividad_proceso'];
-                                   
-                                   if($model->ultIdActividad['subpantalla'] == 'cda/cda/updateproceso'){
-                                       
-                                       $link =  \Yii::$app->urlManager->createUrl([$_url2,'id_cda' => $_idcda, 'id_cproceso' =>$model['id_cproceso'],'tipo'=>1,'ult_id_actividad'=>$model['ult_id_actividad'] ]);
-                                       
-                                   }else if($model->ultIdActividad['subpantalla'] == 'cda/cda/analisis'){
-                                       
-                                       $link =  \Yii::$app->urlManager->createUrl([$_url2,'id_cda' => $_idcda, 'id_cproceso' =>$model['id_cproceso'] ]);
-                                       
-                                   }else if($model->ultIdActividad['subpantalla'] == 'cda/cda/registrardatos'){
-                                       
-                                       $link =  \Yii::$app->urlManager->createUrl([$_url2,'id_cda' => $_idcda, 'id_cproceso' =>$model['id_cproceso'] ]);
-                                       
-                                   }else if($model->ultIdActividad['subpantalla'] == 'cda/cdasolicitudinformacion/index&tipo=1'){
-                                       
-                                       $link =  \Yii::$app->urlManager->createUrl(['cda/cdasolicitudinformacion/index','id_cda' => $_idcda, 'id_cactividad_proceso' =>$_id_cactividad_proceso,'tipo' => '1' ]);
-                                       
-                                   }else if($model->ultIdActividad['subpantalla'] == 'cda/cdasolicitudinformacion/index&tipo=2'){
-                                       
-                                        $link =  \Yii::$app->urlManager->createUrl(['cda/cdasolicitudinformacion/index','id_cda' => $_idcda, 'id_cactividad_proceso' =>$_id_cactividad_proceso,'tipo' => '2' ]);
-                                   } 
-        
-                                  
-                                   return Html::button("<span> Subpantalla</span>",
-                                               ['class'=>'btn btn-default btn-xs',
-                                                   'onclick'=>"window.location.href = '" .$link . "';",
-                                                   'data-toggle'=>'Detalle Proceso',
-                                               ]
-                                           );
-
-                    },
-                            
                     'proceso' => function($url, $model){
+                   
+                        if($model['tipo']=='Tramite'){
+                            
+                             return Html::button("<span class='glyphicon glyphicon-eye-open' />",
+                                                ['class' => 'btn btn-default btn-xs',
+                                                    'onclick' => "window.location.href = '".\Yii::$app->urlManager->createUrl(['cda/cdatramite/subproceso', 'id_cda_tramite' => $model['idinicial'], 'labelmiga' => 'cda/ps-cproceso/gestor'])."';",
+                                                    'title' => 'Ver Proceso',
+                                                ]
+                                            );
+                            
+                        }else{
+                            
+                             return Html::button("<span class='glyphicon glyphicon-eye-open' />",
+                                                ['class' => 'btn btn-default btn-xs',
+                                                    'onclick' => "window.location.href = '".\Yii::$app->urlManager->createUrl(['cda/cdasolicitud/subproceso', 'id_cda_solicitud' => $model['idinicial'], 'labelmiga' => 'cda/ps-cproceso/gestor'])."';",
+                                                    'title' => 'Ver Proceso',
+                                                ]
+                                            );
+                        }
                         
-                        $_idcda = $model->cdas[0]['id_cda'];
-                        return Html::button("<span> Proceso </span>",
-                                               ['class'=>'btn btn-default btn-xs',
-                                                   'onclick'=>"window.location.href = '" .\Yii::$app->urlManager->createUrl(['cda/detalleproceso/index','id_cda' => $_idcda]) . "';",
-                                                   'data-toggle'=>'Detalle Proceso',
-                                               ]
-                                           );
                         
                     }        
                                         

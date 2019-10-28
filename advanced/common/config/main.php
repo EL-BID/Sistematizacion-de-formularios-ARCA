@@ -8,6 +8,8 @@ return [
         'formatter' => [
         'class' => 'yii\i18n\Formatter',
         'nullDisplay' => '',
+        'thousandSeparator' => '',
+        'decimalSeparator' => '.'    
         ],
     ],
     'modules' => [

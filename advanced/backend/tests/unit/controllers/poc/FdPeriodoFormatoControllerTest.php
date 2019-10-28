@@ -112,7 +112,7 @@ class FdPeriodoFormatoControllerTest extends \Codeception\Test\Unit
             $actionView=Yii::$app->runAction('FdPeriodoFormatoController/view',['id_formato' => $id_formato, '$id_periodo' =>  $id_periodo]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -199,7 +199,7 @@ class FdPeriodoFormatoControllerTest extends \Codeception\Test\Unit
                          $id_periodo = 'valor adecuado para el tipo de dato del paramtero  $id_periodo';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(FdPeriodoFormatoController/update',['id_formato' => $id_formato, '$id_periodo' =>  $id_periodo]);
+         $actionDelete=Yii::$app->runAction('FdPeriodoFormatoController/update',['id_formato' => $id_formato, '$id_periodo' =>  $id_periodo]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

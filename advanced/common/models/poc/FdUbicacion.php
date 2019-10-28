@@ -44,6 +44,7 @@ class FdUbicacion extends ModelPry
         return [
             [['cod_parroquia','cod_canton','cod_provincia','id_demarcacion','cod_centro_atencion_ciudadano', 'descripcion_ubicacion','id_conjunto_respuesta','id_pregunta','id_respuesta'],'required'],
             [['id_conjunto_respuesta', 'id_pregunta', 'id_respuesta'], 'integer'],
+            [['cod_parroquia','cod_canton','cod_provincia'], 'required', 'on' => 'createubicacion'],
             [['id_demarcacion'], 'number'],
             [['cod_parroquia', 'cod_canton', 'cod_provincia','cod_centro_atencion_ciudadano'], 'string'],
             [['descripcion_ubicacion'], 'string', 'max' => 50],
@@ -56,7 +57,7 @@ class FdUbicacion extends ModelPry
             [['cod_parroquia'], 'exist', 'skipOnError' => true, 'targetClass' => \common\models\autenticacion\Parroquias::className(), 'targetAttribute' => ['cod_parroquia' => 'cod_parroquia']],
             [['cod_canton'], 'exist', 'skipOnError' => true, 'targetClass' => \common\models\autenticacion\Cantones::className(), 'targetAttribute' => ['cod_canton' => 'cod_canton']],
             [['cod_provincia'], 'exist', 'skipOnError' => true, 'targetClass' => \common\models\autenticacion\Provincias::className(), 'targetAttribute' => ['cod_provincia' => 'cod_provincia']],
-            
+
         ];
     }
 
@@ -66,9 +67,9 @@ class FdUbicacion extends ModelPry
     public function attributeLabels()
     {
         return [
-            'cod_parroquia' => 'Cod Parroquia',
-            'cod_canton' => 'Cod Canton',
-            'cod_provincia' => 'Cod Provincia',
+            'cod_parroquia' => 'Parroquia',
+            'cod_canton' => 'Canton',
+            'cod_provincia' => 'Provincia',
             'id_demarcacion' => 'Id Demarcacion',
             'cod_centro_atencion_ciudadano' => 'Cod Centro Atencion Ciudadano',
             'descripcion_ubicacion' => 'Descripcion Ubicacion',
@@ -78,6 +79,15 @@ class FdUbicacion extends ModelPry
         ];
     }
 
+    public function scenarios() {
+        $scenarios = parent::scenarios();
+        
+        //Scenario para analizar informacion================================================================================================
+        $scenarios['createubicacion'] = ['cod_parroquia','cod_canton','cod_provincia'];//Scenario Values Only Accepted
+
+	return $scenarios;
+    }
+    
     /**
      * @return \yii\db\ActiveQuery -> Relaciones que presenta la tabla
      */
@@ -125,12 +135,12 @@ class FdUbicacion extends ModelPry
     {
         return $this->hasOne(\common\models\autenticacion\Parroquias::className(), ['cod_parroquia' => 'cod_parroquia', 'cod_canton' => 'cod_canton', 'cod_provincia' => 'cod_provincia']);
     }
-    
+
     public function getCodCanton()
     {
-        return $this->hasOne(\common\models\autenticacion\Cantones::className(), ['cod_canton' => 'cod_canton']);
+        return $this->hasOne(\common\models\autenticacion\Cantones::className(), ['cod_canton' => 'cod_canton','cod_provincia' => 'cod_provincia']);
     }
-    
+
     public function getCodProvincia()
     {
         return $this->hasOne(\common\models\autenticacion\Provincias::className(), ['cod_provincia' => 'cod_provincia']);

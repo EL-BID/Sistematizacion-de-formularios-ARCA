@@ -1,0 +1,33 @@
+{
+  "name": "dimd4/yii2-redactor",
+  "description": "Extension redactor for Yii2.",
+  "keywords": [
+    "yii2",
+    "extension",
+    "redactor",
+    "WYSIWYG",
+    "html editor",
+    "imperavi"
+  ],
+  "type": "yii2-extension",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/dimd4/yii2-redactor/issues?state=close",
+    "source": "https://github.com/dimd4/yii2-redactor"
+  },
+  "authors": [
+    {
+      "name": "dimd4",
+      "email": "dimd4@mail.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "yii\\redactor\\": "/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "yiisoft/yii2": "*"
+  }
+}

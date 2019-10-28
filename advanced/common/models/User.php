@@ -491,6 +491,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function saveEntidad($nombre_entidad,$cod_canton, $cod_provincia, $cod_parroquia,$identificacion,$tipo_identidad){
      
         $Usuario = new FUsuariosAp;
+		
         $entidad=$Usuario->guardarEntidad($nombre_entidad,$cod_canton, $cod_provincia, $cod_parroquia,$identificacion,$tipo_identidad);
         return $entidad ? $entidad : null;
     }
@@ -526,6 +527,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function saveFdConjuntoRespuesta($id_conjunto_pregunta,$id_entidad,$id_formato,$id_adm_estado,$id_periodo,$fecha){
         $Usuario = new FUsuariosAp;
         $FdConjuntoRespuesta=$Usuario->guardarFdConjuntoRespuesta($id_conjunto_pregunta,$id_entidad,$id_formato,$id_adm_estado,$id_periodo,$fecha);
+		Yii::trace("paso por aqui 3","DEBUG");
         return $FdConjuntoRespuesta ? $FdConjuntoRespuesta : null;
     }  
     

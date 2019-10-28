@@ -12,7 +12,13 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cda-reporte-informacion-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+     <?php
+            if(empty($_ajax)){
+        ?>
+             <h1><?= Html::encode($this->title) ?></h1>
+        <?php
+            }
+        ?>
 
     <?= $this->render('_form', [
         'model' => $model,

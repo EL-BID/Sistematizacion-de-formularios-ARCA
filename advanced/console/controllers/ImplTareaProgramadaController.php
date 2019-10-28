@@ -3,13 +3,7 @@
 namespace console\controllers;
 
 use Yii;
-use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-use yii\helpers\Html;	
-use yii\helpers\Url;	
-use yii\jui\ProgressBar;
 
-use common\controllers\controllerspry\ControllerPry;
 use backend\controllers\notificaciones\TarTareaProgramadaControllerFachada;
 use backend\controllers\notificaciones\CorCorreoControllerFachada;
 use backend\controllers\notificaciones\CorParametroControllerFachada;
@@ -34,9 +28,15 @@ class ImplTareaProgramadaController extends \yii\console\Controller
      * @return type TarTareaProgramada
      * Consulta las tareas programadas que esten activas
      */
-    public function actionEjecutaTareas(){
+    public function actionEjecutaTareas($tipotarea=null){
+       
+        $tipot=1;
+        if($tipotarea){
+            $tipot=$tipotarea;
+        }
+       
         $facadeTareas =  new  TarTareaProgramadaControllerFachada();
-        $tarTareas = $facadeTareas->cargaTareas(['estado'=>'s']);
+        $tarTareas = $facadeTareas->cargaTareas(['estado'=>'s','id_ttarea'=>$tipot]);
         $hoy = date("d-m-Y",time());
         $proxima= date("d-m-Y",time());
        
@@ -67,7 +67,7 @@ class ImplTareaProgramadaController extends \yii\console\Controller
            // echo strtotime ( '+'.$tarea['intervalo_ejecucion']. ' second' , strtotime ($tarea['fecha_inicio']));
             if($ahora <= $fecha_termina && $ahora >= $fechaEjecucion ){
                 
-                $this->tareas($tarea);
+                $this->tareas($tarea,$tipot);
                 
             }
         }
@@ -84,19 +84,360 @@ class ImplTareaProgramadaController extends \yii\console\Controller
     }
     
     
-    private function tareas($tarea){
-        $facadeCorreos= new CorCorreoControllerFachada();
-        $corCorreos= $facadeCorreos->cargaCorreos(['id_tarea_programada' => $tarea['id_tarea_programada'], 'estado' => 's']);
-        
-        $parametros=array();
-        
-        foreach($corCorreos as $correo){
-           $parametros= $this->parametros($correo);
-           $destinatarios=$this->destinatarios($correo,$parametros);
-         //  echo "<br>".var_dump($destinatarios);
-          $this->envioCorreo($correo,$parametros,$destinatarios);
+    private function tareas($tarea,$tipot){
+
+        switch ($tipot) {
+                    case 1:
+                       // echo "1";
+                        $this->correo($tarea);
+                    break;
+                    case 2:
+                       // echo "1";
+                        $this->archivo();
+                    break;
+                    case 3:
+                       // echo "1";
+                        $this->alarma($tarea);
+                    break;
         }
         
+    }
+    
+    
+        
+    /***************************************************** FUNCIONES ALERTAS ***************************************************************/
+    private function alarma($tarea){
+        
+                      $facadeActividad = new \frontend\controllers\cda\PsActividadControllerFachada();
+                        $psActividades = $facadeActividad->cargaPsActividadAlerta();
+
+                        $fechaAlerta=NULL;
+                        $fechaAhora=strtotime(date("d-m-Y",time()));
+                        $envio=array();
+                        foreach($psActividades as $actividad){
+                          if($actividad['campo_fecha_alerta'] === "FECHA_CREACION"){
+                               $fechaAlerta=strtotime($actividad['fecha_creacion']);
+                          }
+                          if($actividad['campo_fecha_alerta'] === "FECHA_PREVISTA"){
+                               $fechaAlerta=strtotime($actividad['fecha_prevista']);
+                          }
+                          
+                          if($fechaAlerta && $actividad['plazo_alerta'] && $actividad['plazo_alerta']>0){
+                               $fechaAlerta=strtotime ( '+'.$actividad['plazo_alerta'].' second' ,  $fechaAlerta  ) ;
+                          }
+                          
+
+                          if($fechaAlerta){
+                            try{
+
+                                switch (trim($actividad['id_talerta'])) {
+                                  case '1':
+                                      
+                                      //ALarma tareas por terminar, fecha actual mayor a la esperada menos el tiempo del rango indicado para esta alerta en el campo seg_ejecucion de la tabla alerta
+                                      $fechaAlertaI=strtotime ( '-'.$actividad['seg_ejecucion'].' second' ,  $fechaAlerta  ) ;   
+                                      if ($fechaAhora>$fechaAlertaI && $fechaAhora<=$fechaAlerta){
+                                          //
+
+                                          $psCprocesoFacade= new \frontend\controllers\cda\PsCprocesoControllerFachada();
+                                          $psCproceso = $psCprocesoFacade->cargaPsCprocesoUsuario($actividad['id_cproceso']);
+
+                                          $proximas[]=['proximas0'=>$psCproceso['numero'],'proximas1'=>$actividad['nom_actividad']
+                                                  ,'proximas2'=> date('m/d/Y', $fechaAlerta),'proximas3'=>$actividad['mensaje']];
+                                            $alertaActividad=['fecha_envio'=> date('m/d/Y', $fechaAhora),'texto_enviado'=>'','id_usuario'=>$psCproceso[0]['ult_id_usuario']
+                                               ,'id_cproceso'=>$actividad['id_cproceso'],'id_cactividad_proceso'=>$actividad['id_cactividad_proceso']
+                                                   ,'id_actividad'=>$actividad['id_actividad'],'id_tarea_programada'=>$tarea['id_tarea_programada']];
+                                            
+                                             if(array_key_exists($psCproceso[0]['ult_id_usuario'], $envio)===false) {
+                                                $datos[]=['NombreUsuario'=>$psCproceso[0]['nombres'],'email'=>$psCproceso[0]['email']];
+                                                $envio[$psCproceso[0]['ult_id_usuario']]['datos']=$datos;
+                                            }
+                                           $envio[$psCproceso[0]['ult_id_usuario']]['proximas'][]=$proximas;
+                                           $envio[$psCproceso[0]['ult_id_usuario']]['alertaActividad'][]=$alertaActividad;
+
+                                      }
+                                  break;
+                                  case '2':
+                                      //Alarma paraactividades vencidas
+                                     
+                                       if ($fechaAhora>$fechaAlerta){
+                                          $psCprocesoFacade= new \frontend\controllers\cda\PsCprocesoControllerFachada();
+                                          $psCproceso = $psCprocesoFacade->cargaPsCprocesoUsuario($actividad['id_cproceso']); 
+                                          // echo var_dump($psCproceso);
+                                           $vencidas=['vencidas0'=>$psCproceso[0]['numero'],'vencidas1'=>$actividad['nom_actividad']
+                                                   ,'vencidas2'=>date('m/d/Y', $fechaAlerta),'vencidas3'=>$actividad['mensaje']];
+
+                                           $alertaActividad=['fecha_envio'=>date('m/d/Y', $fechaAhora),'texto_enviado'=>'','id_usuario'=>$psCproceso[0]['ult_id_usuario']
+                                               ,'id_cproceso'=>$actividad['id_cproceso'],'id_cactividad_proceso'=>$actividad['id_cactividad_proceso']
+                                                   ,'id_actividad'=>$actividad['id_actividad'],'id_tarea_programada'=>$tarea['id_tarea_programada']];
+//                                           echo var_dump($alertaActividad);  
+                                            if(array_key_exists($psCproceso[0]['ult_id_usuario'], $envio)===false) {
+                                                $datos[]=['NombreUsuario'=>$psCproceso[0]['nombres'],'email'=>$psCproceso[0]['email']];
+                                                $envio[$psCproceso[0]['ult_id_usuario']]['datos']=$datos;
+                                            }
+                                           $envio[$psCproceso[0]['ult_id_usuario']]['vencidas'][]=$vencidas;
+                                           $envio[$psCproceso[0]['ult_id_usuario']]['alertaActividad'][]=$alertaActividad;
+//                                           echo var_dump($envio); 
+                                      }  
+                                  break;
+                                }
+                            }catch(\yii\base\Exception $e){
+                               echo 'Caught exception cargando evaluando las alertas: ',  $e->getMessage(), "\n";
+                            }
+                          }
+                        }
+                        
+                        $facadeCorreos= new CorCorreoControllerFachada();
+                        $corCorreos= $facadeCorreos->cargaCorreos(['id_tarea_programada' => $tarea['id_tarea_programada'], 'estado' => 's']);
+                        
+                        $parametros=array();
+                        $destinatarios=array();
+                        foreach($corCorreos as $correo){
+                            foreach($envio as $env){
+                                $parametros["variable"]= $env['datos'];
+                                if(array_key_exists('vencidas', $env)) {
+                                    $parametros["ciclo"]['vencidas'] = $env['vencidas'];
+                                    
+                                }else{
+                                    $patternTabla='/\<table.*\>(.*)t#vencidas(.*)\<\/table\>/';
+                                    $correo['cuerpo']= preg_replace('[\n]', '', $correo['cuerpo']);
+                                    $correo['cuerpo']= preg_replace($patternTabla, '', $correo['cuerpo']);
+                                }
+                                if(array_key_exists('proximas', $env)) {
+                                    $parametros["ciclo"]['proximas'] = $env['proximas'];
+                                    
+                                }else{
+                                    $patternTabla='/Actividades por vencerse(.*?)\<(\s*table(.*?))\>(.*?)t#proximas(.*?)\<\/(\s*table(.*?))\>/';
+                                    $correo['cuerpo']= preg_replace('[\n]', '', $correo['cuerpo']);
+                                    $correo['cuerpo']= preg_replace($patternTabla, '', $correo['cuerpo']);
+                                    
+                                }
+                                
+                                 $destinatarios["PARA"][0]=$env['datos'][0]['email'];
+
+                            }
+                            
+                            $this->envioCorreo($correo,$parametros,$destinatarios);
+                        }
+                        
+    }
+    
+    /*******************************************************FUNCIONES  ARCHIVO*****************************************************************/
+    
+    private function archivo(){
+        
+         $facadeCargue = new \frontend\controllers\cargaquipux\PsCargueControllerFachada();
+         $psCargue= $facadeCargue->cargaPsCargue(['procesado' => 'N']);
+         $detArcCargue=array();
+               
+         foreach($psCargue as $cargue){
+             //se obtiene la configuracion de cada columna y hoja par el tipo de archivo cargador
+             $detArcCargue=$this->detalleCargue($cargue ->id_archivo_cargue);
+             //Se obtiene la configuracion del tipo de archivo cargado
+             $psArchivoCargue=$this->archivoCargue($cargue ->id_archivo_cargue);
+            
+             $hoja=array();
+
+             //Se agrupa la configuracion por cada hoja
+             foreach($detArcCargue as $detalle){
+                   
+                    $hoja[$detalle["num_nom_hoja"]][]=$detalle;
+
+             }
+             // se recorre la configuracion de cada hoja
+             foreach($hoja as $key => $sheet){
+                //echo "<br><br><br>".var_dump($key)."         ";
+                 //Se abre la hoja indicada del archivo de excel
+                  $genExcel=new \common\general\documents\genExcel();
+                  echo var_dump('CARGANDO ARCHIVO:  '.realpath(Yii::$app->basePath) . "/../frontend/web/".Yii::$app->params['routeQuipux'].$cargue['ruta']);
+                  $dataExcel=$genExcel->cargaExcelSheet(realpath(Yii::$app->basePath) . "/../frontend/web/".Yii::$app->params['routeQuipux'].$cargue['ruta'],$key);
+//                                 echo "<br><br>".$cargue['ruta'];
+//                                 echo "<r>".$key;
+////                                 echo var_dump($dataExcel);
+
+                   $columnasHoja=array(); //columnas para el comando
+                   $filasHoja=array();
+                  //Se recorren los datos de la hoja desde la fila indicada en la configuracion
+                  for($ii=$psArchivoCargue[0]['fila_inicio'];$ii<=count($dataExcel);$ii++){
+                      //se buscan en la fila los valores de las columnas configuradas
+
+                      $valores=array();
+                      $canCol=0;
+                      $nullos=0;
+
+                      //se itera por los campos de la hoja
+                      foreach($sheet as $columna){
+                          //se crea con la primera iteracion el array de nombres de columnas para mas adelante insertar en batch
+                          if($ii==$psArchivoCargue[0]['fila_inicio']){
+                               $columnasHoja[$canCol]=strtolower($columna["nom_columna_cargue"]);
+
+                          }
+                          // si el dato en la hoja de excel es nulo, se verifica si pertenece a un agrupador y se duplica el valor de la fila anterior
+                         if( $dataExcel[$ii][$genExcel->getLetterColumn($columna["num_columna_excel"])] === NULL){
+                           //  echo $columna["agr_columna_excel"];
+                             $nullos=$nullos+1;
+                             if($columna["agr_columna_excel"]=='S'){
+                                 try{
+                                   $valores[$canCol]=ltrim(rtrim(trim($filasHoja[count($filasHoja)-1][$canCol])));
+                                    // $valores[$canCol]=$dataExcel[$ii][$genExcel->getLetterColumn($columna["num_columna_excel"])];
+                                 }catch(\yii\base\Exception $e){
+                                     echo 'Caught exception: ',  $e->getMessage(), "\n Datos Nullos en la fila inicial y tiene indicado el campo agr_columna_excel en S";
+                                 }
+                             }else{
+                                  $valores[$canCol]=trim($dataExcel[$ii][$genExcel->getLetterColumn($columna["num_columna_excel"])]," ");
+                             }
+                         }
+                         else{
+                             // se normalizan las fechas, los campos en la tabla son date y vienen con horas o con GMT
+                             $textoins=$this->normalFecha(trim($dataExcel[$ii][$genExcel->getLetterColumn($columna["num_columna_excel"])]));
+                             // se normalizan los campos que sean de dias, horas, minutos y segundos
+                             if($textoins==$dataExcel[$ii][$genExcel->getLetterColumn($columna["num_columna_excel"])]){
+                                $textoins=$this->normalSegundos($dataExcel[$ii][$genExcel->getLetterColumn($columna["num_columna_excel"])]);
+                             }
+                             $valores[$canCol]=rtrim($textoins," ");
+                             //se limpian los caracteres extraños con los que vienen los valores al final de cada campo del excel, para evitar datos incorrectos y desbordamientos
+
+                                  $find = array( '&amp;', "\r\n", "\n",'\t','/[\x00-\x1F\x7F]/','/[\x00-\x1F\x7F\xA0]/u');
+                                  $valores[$canCol] = trim(str_replace($find, '', $valores[$canCol]));
+                                  if (ord(substr( $valores[$canCol],-1))===160){
+                                      $valores[$canCol]=trim(substr( $valores[$canCol],0, strlen($valores[$canCol])-2));
+                                  }
+
+                         }
+
+                        $canCol=$canCol+1;
+
+
+                      }
+                      $valores[$canCol]=$cargue->id_cargues;
+                      $valores[$canCol+1]=$cargue->id_archivo_cargue;
+                      $valores[$canCol+2]=date("Y-m-d");
+                      $valores[$canCol+3]=$cargue->fecha_cargue;
+                      $valores[$canCol+4]="NO";
+
+                      // si la cantidad de columnas es igual a las que son nulas ya se llego al final de los registros, se elimina el ultimo registro que en el excel muestra solo la cantidad de registros
+                     if($canCol==$nullos){
+                         array_pop($filasHoja);
+                         break;
+                     }
+                     $filasHoja[]=$valores;
+                      //echo "<br><br>".var_dump($valores);
+                     //echo  "<br><br>".var_dump($columnasHoja);
+                  } 
+                 // echo gmdate('D, d M Y H:i:s \G\M\T', time());
+                  $columnasHoja[]="id_cargues";
+                  $columnasHoja[]="id_archivo_cargue";  
+                  $columnasHoja[]="fecha_proceso";  
+                  $columnasHoja[]="fecha_cargue";  
+                  $columnasHoja[]="procesado";  
+                  // se cargan en la tabla temporal
+                 try{
+                     Yii::$app->db->createCommand()->batchInsert(strtolower($psArchivoCargue[0]['nom_tabla_cargue']), $columnasHoja, $filasHoja)->execute(false);
+                    // echo var_dump($resultados);
+                 }catch(\yii\base\Exception $e){
+                     //echo 'Caught exception cargando los datos en ps_tmp_quipux: ',  $e->getMessage(), "\n";
+                     echo $e->getTrace();
+                 }
+                 // se homologan en ps_Actividad_quipux
+                 try{
+                    $data= Yii::$app->db->createCommand("SELECT homologa_quipux()")->query();
+//                    echo var_dump($data);
+                 }catch(\yii\base\Exception $e){
+                     echo 'Caught exception homologando los datos en ps_Actividad_quipux: ',  $e->getMessage(), "\n";
+                 }
+             }
+
+             $facadeCargue->actualizaPscargueProcesado($cargue->id_cargues);
+             //echo "<br><br><br>".var_dump($cargue);
+
+         }
+    }
+    
+    private function detalleCargue($idArchivoCargue){
+        $facadeDetalle = new \frontend\controllers\cargaquipux\PsDetArcCargueControllerFachada();
+        return $facadeDetalle->cargaPsDetArcCargue(['id_archivo_cargue'=>$idArchivoCargue]);
+         
+    }
+    
+    private function archivoCargue($idArchivoCargue){
+        $facadeCargue = new \frontend\controllers\cargaquipux\PsArchivoCargueControllerFachada();
+        return $facadeCargue->cargaPsArchivoCargue(['id_archivo_cargue'=>$idArchivoCargue]);
+    }
+    
+    private function normalFecha($texto){
+        $patternDateTimeGMT="/(\d{4})-(\d{2})-(\d{2})\s*(\d{2}):(\d{2}):(\d{2})\s*\(GMT-\d{1,2}\)/";
+        $patternDate="/(\d{4})-(\d{2})-(\d{2})\s*\(GMT-\d{1,2}\)/";
+         $patternDateTime="/(\d{4})-(\d{2})-(\d{2})\s*(\d{2}):(\d{2}):(\d{2})/";
+        $retorno="";
+        if (preg_match($patternDateTimeGMT, $texto)){
+            $valores = preg_split("/[\s]+/",trim($texto));
+            $retorno=$valores[0];
+           // $retorno=preg_replace("/\(GMT-\d{1,2}\)/","",$texto);
+        }elseif (preg_match($patternDate, $texto)){
+             $valores = preg_split("/[\s]+/",trim($texto));
+            $retorno=$valores[0];
+            //$retorno=preg_replace("/\(GMT-\d{1,2}\)/","",$texto);
+        }elseif (preg_match($patternDateTime, $texto)){
+             $valores = preg_split("/[\s]+/",trim($texto));
+            $retorno=$valores[0];
+            //$retorno=preg_replace("/\(GMT-\d{1,2}\)/","",$texto);
+        }else{
+            $retorno=ltrim(rtrim(trim($texto)));
+        }
+        return ltrim(rtrim(trim($retorno)));
+    }
+    private function normalSegundos($texto){
+        $patternDiaHora="/\d\s*((\bdias\b)|(\bdías\b)|(\bdía\b)|(\bdía\b))\s*(\d{2}):(\d{2}):(\d{2})/";
+        $patternDia="/\d\s*((\bdias\b)|(\bdías\b)|(\bdía\b)|(\bdía\b))/";
+        $patternHoras="/(\d{2}):(\d{2}):(\d{2})/";
+        $retorno="";
+        if (preg_match($patternDiaHora, $texto)){
+            
+            $valores = preg_split("/[\s]+/",trim($texto));
+            $dias= (integer)$valores[0]*24*60*60;
+            $horas=preg_split("/\:/",trim($valores[2]));
+            $segundos=$dias+ (integer)$horas[0]*60*60 +(integer)$horas[1]*60 +(integer)$horas[2];
+            $retorno=$segundos;
+            
+        }elseif (preg_match($patternDia, $texto)){
+            $horas=preg_split("/[\s]+/",$texto);
+            if(is_numeric($horas[0])){
+                $segundos=(integer)$horas[0]*24*60*60;
+                $retorno=$segundos;
+            }else{$retorno=ltrim(rtrim(trim($texto)));}
+        }
+         elseif (preg_match($patternHoras, $texto)){
+            $horas=preg_split("/\:/",$texto);
+            if(is_numeric($horas[0])){
+                $segundos=(integer)$horas[0]*60*60 +(integer)$horas[1]*60 +(integer)$horas[2];
+                $retorno=$segundos;
+            }else{$retorno=ltrim(rtrim(trim($texto)));}
+        
+        }else{
+            $retorno=ltrim(rtrim(trim($texto)));
+        }
+        return ltrim(rtrim(trim($retorno)));
+    }
+//    private function hojasCargue($idArchivoCargue){
+//        $facadeDetalle = new \frontend\controllers\cargaquipux\PsDetArcCargueControllerFachada();
+//        return $facadeDetalle->cargaPsDetArcCargue(['id_archivo_cargue'=>$idArchivoCargue])->distinct()->all();
+//         
+//    }
+//    
+    
+    
+    /**************************************************FUNCIONES CORREOS***********************************************************************/
+    private function correo($tarea){
+        $facadeCorreos= new CorCorreoControllerFachada();
+                        $corCorreos= $facadeCorreos->cargaCorreos(['id_tarea_programada' => $tarea['id_tarea_programada'], 'estado' => 's']);
+
+                        $parametros=array();
+
+                        foreach($corCorreos as $correo){
+                           $parametros= $this->parametros($correo);
+                           $destinatarios=$this->destinatarios($correo,$parametros);
+                           //  echo "<br>".var_dump($destinatarios);
+                           $this->envioCorreo($correo,$parametros,$destinatarios);
+                        }
     }
     
     private function destinatarios($correo,$parametros){
@@ -108,7 +449,7 @@ class ImplTareaProgramadaController extends \yii\console\Controller
         foreach($corDestinatarios as $destinatario){
             $tipoDestinatario=$facadeDestinatarios->nombreDestinatario($destinatario['id_destinatario'])->one();
                         
-            //echo var_dump($tipoDestinatario);
+           
             //if (count($countTipo[$tipoDestinatario->nom_tdestinatario])>0) {
             if (\yii\helpers\ArrayHelper::keyExists($tipoDestinatario->nom_tdestinatario, $countTipo)) {
                 $countTipo[$tipoDestinatario->nom_tdestinatario]+=1;
@@ -118,6 +459,7 @@ class ImplTareaProgramadaController extends \yii\console\Controller
             
             if(trim($destinatario['val_defecto'])!==""){
                  $destinatarios[$tipoDestinatario->nom_tdestinatario][$countTipo[$tipoDestinatario->nom_tdestinatario]]=trim($destinatario['val_defecto']);
+                 
             }
             if(trim($destinatario['consulta_sql'])!==""){
                $patternIgual ='/=:\w*[\s]*/';// Si la consuta tiene un campo igual a un parametro ej select nombre, correo from usuarios where estado=:parametro
@@ -370,21 +712,19 @@ class ImplTareaProgramadaController extends \yii\console\Controller
     
     private function envioCorreo($correo,$parametros,$destinatarios){
         $patternIgual ='/=:\w*[\s]*/';  
+       // echo var_dump($destinatarios);
         $busqueda=array();
         $envioMultiple=array();
         if(! \yii\helpers\ArrayHelper::keyExists("PARA", $destinatarios, false) || count($destinatarios["PARA"])<=0){ 
-            //echo "<br>".var_dump($correo);
-           // return null;
-            throw new \yii\web\HttpException(500, 'NO se encontraron destinatarios configurados para el correo: '. $correo['nom_correo'].' Por favor verificar configuración de destinatarios, debe existir el PARA');
-            
+            throw new \yii\web\HttpException(500, 'NO se encontraron destinatarios configurados para el correo: '. $correo['asunto'].' Por favor verificar configuración de destinatarios, debe existir el PARA');         
         }
         else{
             $envioUnico=$destinatarios["PARA"];
-            
+           // echo var_dump($destinatarios["PARA"]);
             foreach($destinatarios["PARA"] as $key =>$destino)
             {
-                
-                if( preg_match($patternIgual, $destino,$busqueda)){
+             //   echo $destino;
+                if( preg_match($patternIgual, trim($destino,"[\n|\r|\n\r|\t|\0|\x0B]"),$busqueda)){
                    // echo var_dump($busqueda)." ".$destino;
                    foreach($busqueda as  $dato){
                         array_push($envioMultiple,$dato);
@@ -397,18 +737,18 @@ class ImplTareaProgramadaController extends \yii\console\Controller
             }
             $destinatarioM=$destinatarios;
             $destinatarios["PARA"]=$envioUnico;
-            
+             
+            //echo var_dump($envioMultiple);
             $correoFinal=array();
             if(count($envioMultiple)>0){
                  $correoFinal=$this->replaceEmail($correo,$parametros,$envioMultiple);
             }else{
                  $correoFinal=$this->replaceEmail($correo,$parametros);
             }
-
         }
         
         foreach($correoFinal as $envios){
-            
+          //  echo var_dump($envios);
             $correoEnviado=false;
             $facadeEnviado =  new CorMensajeEnviadoControllerFachada();
             $correos="";
@@ -427,7 +767,7 @@ class ImplTareaProgramadaController extends \yii\console\Controller
                     $correos=$destinos;
                 }
                 else{
-                   // echo var_dump($correoFinal[0]);
+                   // echo var_dump($destinatarios);
                     $existe=$facadeEnviado->exsiteParametro(var_export($envios['paraUsados'],true),var_export($destinatarios,true),$correo['asunto']);
                     if(count($existe)<=0){
                         $correoEnviado=\common\general\notificaciones\ImplNotificacion::Enviar($destinatarios, $envios['cuerpo'],$correo['asunto']);
@@ -767,4 +1107,13 @@ class ImplTareaProgramadaController extends \yii\console\Controller
 
         return['cuerpo'=>$nuevocorreo, 'paraUsados'=>$parametrosUsados];
    }
+   
+   
+   
+   
+   
+   
+   
+   
+   
 }

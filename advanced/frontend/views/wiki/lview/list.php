@@ -14,7 +14,7 @@ $this->params['itemsmn']=[
 							['label' => 'B', 'icon' => '', 'url' => Url::to(['/site/home'])],
 						 ];
 ?>
-
+<div class="aplicativo">
 <?= GridView::widget([
     'dataProvider' => $listDataProvider,			//Objeto de Datos
     'filterModel' => $searchModel,					//Objeto de Busqueda
@@ -33,5 +33,6 @@ $this->params['itemsmn']=[
 		],
     ],
 ]); ?>
+</div>
 
 

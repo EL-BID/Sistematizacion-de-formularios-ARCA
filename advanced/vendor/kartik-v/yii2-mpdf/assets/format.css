@@ -1,0 +1,109 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04-nov-2017, 14:12:05
+    Author     : diana bautista
+*/
+body{ font-family:Arial;}
+td{border: 1px solid #ccc; padding:5px}
+td table{ padding:0px}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+    .tbcapitulo{
+        margin: 0 auto;
+        width: 100%;
+        font-family:Arial;
+    }
+    
+    .nomcapitulo{
+        font-size: 1.3em!important;
+        color:#fff;
+        font-weight: bolder;
+		background-color:#00397F;
+		border:1px solid #00397F!important;
+		border-bottom:2px solid #00397F!important
+    }    
+    .nomcapitulopequeno{
+        font-size: 1.1em!important;
+        color:#fff;
+        font-weight: bolder;
+		background-color:#00397F;
+		border:1px solid #00397F!important;
+		border-bottom:2px solid #00397F!important
+
+    }
+    .nomcapitulooculto{font-size: 0.001em!important;}
+
+    
+    .tbseccion{
+       width: 100%; 
+	   border:none;
+    }
+    .titleseccion{
+       font-size: 1.2em;
+       font-weight: bold;
+       background-color: DarkGray;
+    }
+    .titleseccionpequeno{
+       font-size: 1em;
+       font-weight: bold;
+       background-color: DarkGray;
+    }
+    
+    .labelpregunta{
+		
+        font-size:1em;
+        width: 25%;
+        color:#000;
+        background-color:#f3f3f3;
+		font-weight:bold;
+    }
+    
+     .inputpregunta{
+        
+    }
+    .inputpreguntapequeno
+    {
+        width: 25%;
+        font-size:1em!important;
+    }
+    .labelpreguntapequeno
+    {
+        font-size:0.8em;
+        width: 25%;
+        color:#000;
+        background-color:#f3f3f3;
+		font-weight:bold;
+    }
+    .inputpreguntabloqueo
+    {
+        background-color:#dedede;
+        border: solid 2px #ccc;
+    }
+    
+    .labelpregunta2{
+        font-size:1em;
+        color:#000;
+        background-color:#f3f3f3;
+    }
+    .labelpregunta3
+    {
+        font-weight:bold;
+        font-size:0.9em;
+    }
+    
+    .tdtable_tipo{
+
+        font-size:1em;
+        color:#000;
+        background-color:#f3f3f3;
+        text-align: center;
+    }

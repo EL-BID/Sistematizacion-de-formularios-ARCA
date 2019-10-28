@@ -9,6 +9,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Gestion de Actividades';
+$this->params['breadcrumbs'][] = ['label' => 'PQRS', 'url' => array('pqrs/pqrs/index')];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ps-cproceso-index">
@@ -29,17 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+           // ['class' => 'yii\grid\SerialColumn'],
             
-            [
-                'attribute'=>'numero',
-                'label'=>'Numero PQRs'
-            ],
-            [
-                'attribute'=>'ult_id_actividad',
-                'value'=>'ultIdActividad.nom_actividad',
-                'label' => 'Actividad Pendiente',
-             ],
+            'numero',
+            'nom_actividad',
 //            'id_cproceso',
 //            'ult_id_eproceso',
 //            'id_proceso',
@@ -63,46 +57,23 @@ $this->params['breadcrumbs'][] = $this->title;
                 'buttons' => [
                     'subpantalla' => function($url, $model){
                             
-                                   $_url2 =  $model->ultIdActividad['subpantalla'];
-                                   $_id_cactividad_proceso = $model->obtenerultidcactividaproceso['id_cactividad_proceso'];
+                                   $_id_cactividad_proceso = $model['id_cactividad_proceso'];
+                                   $id_pqrs = $model['id_pqrs'];
+                                   $numero = $model['numero'];
                                    
-                                   $link='index.php';
+//                                   $link='index.php';
                                    
-//                                   if($model->ultIdActividad['subpantalla'] == 'cda/cda/updateproceso'){
-//                                       
-//                                       $link =  \Yii::$app->urlManager->createUrl([$_url2,'id_cda' => $_idcda, 'id_cproceso' =>$model['id_cproceso'],'tipo'=>1,'ult_id_actividad'=>$model['ult_id_actividad'] ]);
-//                                       
-//                                   }else if($model->ultIdActividad['subpantalla'] == 'cda/cda/analisis'){
-//                                       
-//                                       $link =  \Yii::$app->urlManager->createUrl([$_url2,'id_cda' => $_idcda, 'id_cproceso' =>$model['id_cproceso'] ]);
-//                                       
-//                                   }else if($model->ultIdActividad['subpantalla'] == 'cda/cda/registrardatos'){
-//                                       
-//                                       $link =  \Yii::$app->urlManager->createUrl([$_url2,'id_cda' => $_idcda, 'id_cproceso' =>$model['id_cproceso'] ]);
-//                                       
-//                                   }else if($model->ultIdActividad['subpantalla'] == 'cda/cdasolicitudinformacion/index&tipo=1'){
-//                                       
-//                                       $link =  \Yii::$app->urlManager->createUrl(['cda/cdasolicitudinformacion/index','id_cda' => $_idcda, 'id_cactividad_proceso' =>$_id_cactividad_proceso,'tipo' => '1' ]);
-//                                       
-//                                   }else if($model->ultIdActividad['subpantalla'] == 'cda/cdasolicitudinformacion/index&tipo=2'){
-//                                       
-//                                        $link =  \Yii::$app->urlManager->createUrl(['cda/cdasolicitudinformacion/index','id_cda' => $_idcda, 'id_cactividad_proceso' =>$_id_cactividad_proceso,'tipo' => '2' ]);
-//                                   } 
-//        
-                                  
-                                   return Html::button("<span> Subpantalla</span>",
-                                               ['class'=>'btn btn-default btn-xs',
-                                                   'onclick'=>"window.location.href = '" .$link . "';",
-                                                   'data-toggle'=>'Detalle Proceso',
-                                               ]
-                                           );
+                                    return yii\helpers\Html::button("EDITAR ACTIVIDAD", 
+                                    ["value"=>yii\helpers\Url::toRoute(["cda/ps-cactividad-proceso/updatepqrs",'id_cactividad_proceso'=>$_id_cactividad_proceso,'id_pqrs'=>$id_pqrs,'numero'=>$numero,'_labelmiga'=>'pqrs/pqrs/index','registro'=>'1'],true),
+                                     "class" => "btn btn-default btn-xs showModalButton","title"=>'Editar Actividad'
+                                    ]);
 
                     },
                             
                     'proceso' => function($url, $model){
                         
-                        $id_pqrs = $model->pqrs[0]['id_pqrs'];
-                        $numero = $model->numero;
+                        $id_pqrs = $model['id_pqrs'];
+                       $numero = $model['numero'];
                         return Html::button("<span> Proceso </span>",
                                                ['class'=>'btn btn-default btn-xs',
                                                    'onclick'=>"window.location.href = '" .\Yii::$app->urlManager->createUrl(['pqrs/detallepqrs/index','numero'=>$numero,'id_pqr' => $id_pqrs]) . "';",

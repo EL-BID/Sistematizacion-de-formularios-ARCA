@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\cda\CdaSearch */
+/* @var $searchModel common\models\CdaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'CDA';
@@ -26,21 +26,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
-            'fecha_ingreso',
-            'fecha_solicitud',
-            'tramite_administrativo',
-            'id_cproceso_arca',
-            'id_cproceso_senagua',
-            // 'rol_en_calidad',
-            // 'numero_tramites',
-            // 'id_cda',
-            // 'id_usuario_enviado_por',
-            // 'institucion_solicitante',
-            // 'solicitante',
-            // 'cod_centro_atencion_ciudadano',
+            'id_cda',
+            'fecha_ingreso_quipux',
+            'institucion_solicitante',
+            'solicitante',
+            'cod_centro_atencion_ciudadano',
             // 'id_demarcacion',
+            // 'cod_cda',
+            // 'id_cda_tramite',
 
             [
 			
@@ -58,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             return Html::button('<span class="glyphicon glyphicon-pencil">Editar</span>',  ['value'=>$url,
                                          'class' => 'btn btn-default btn-xs showModalButton',
                             ]);
-                    }, //Primera columna encontrada fecha_ingreso                    
+                    }, //Primera columna encontrada id_cda                    
                     'delete' => function($url, $model){
                             $url2 = Url::toRoute(['cda/deletep','id' => $model->id_cda],true);
                             return Html::a('<span class="glyphicon glyphicon-trash">Borrar</span>',$url2,[

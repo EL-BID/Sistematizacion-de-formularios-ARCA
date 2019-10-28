@@ -30,9 +30,9 @@ class CdaVisitaTecnicaController extends ControllerPry
     /**Accion para la barra de progreso y render de nuevo a la vista
     Ubicación: @web = frontend\web....*/
 
-    public function actionProgress($urlroute=null,$id=null){
+    public function actionProgress($urlroute=null,$id=null, $id_cda=null,$id_cactividad_proceso=null,$_labelmiga=null){
             $facade =  new  CdaReporteInformacionControllerFachada;
-            echo $facade->actionProgress($urlroute,$id);
+            echo $facade->actionProgress($urlroute,$id, $id_cda,$id_cactividad_proceso,$_labelmiga);
     }
 
 	
@@ -41,10 +41,16 @@ class CdaVisitaTecnicaController extends ControllerPry
      * Listado todos los datos del modelo CdaReporteInformacion que se encuentran en el tablename.
      * @return mixed
      */
-    public function actionIndex($id_cda,$id_cactividad_proceso)
+    public function actionIndex($id_cda,$id_cactividad_proceso,$_labelmiga)
     {
-        $facade =  new  CdaReporteInformacionControllerFachada;
-        $dataAndModel= $facade->actionIndexVisitaTecnica(Yii::$app->request->queryParams,$id_cda,$id_cactividad_proceso);
+        $facade =  new  CdareporteinformacionControllerFachada;
+    //$dataAndModel= $facade->actionIndexVisitaTecnica(Yii::$app->request->queryParams,$id_cda,$id_cactividad_proceso);
+
+		//Encabezado
+        $dataEncabezado = $facade->findEncabezado($id_cda);
+        //Fin encabezado        
+		$dataAndModel= $facade->actionIndexVisitaTecnica(Yii::$app->request->queryParams,$id_cda,$id_cactividad_proceso);
+
         $dataAndModel['dataProvider']->pagination->pageParam='datos_tecnicos_page';
         $dataAndModel['dataProvider']->sort->sortParam='datos_tecnicos_sort';
         $id_reporte_informacion=0;
@@ -94,11 +100,12 @@ class CdaVisitaTecnicaController extends ControllerPry
             'dataProviderVisitaTecnica' => $dataAndModel['dataProvider'],
             'searchModelCoordenadas' => $dataCoordenada['searchModel'],
             'dataProviderCoordenadas' => $dataCoordenada['dataProvider'],
-
-            'id_cda' =>$id_cda,
-            'id_cactividad_proceso'=>$id_cactividad_proceso,
-            'validaciones'=>$_validaciones,
-            'id_reporte_informacion'=>$id_reporte_informacion,
+            'encabezado' => $dataEncabezado,
+            'id_cda' => $id_cda,
+            'id_cactividad_proceso' => $id_cactividad_proceso,
+            'validaciones' => $_validaciones,
+            'id_reporte_informacion' => $id_reporte_informacion,
+            '_labelmiga' => $_labelmiga,
         ]);
     }
 
@@ -143,11 +150,11 @@ class CdaVisitaTecnicaController extends ControllerPry
         if ($modelE['create'] == 'True') {
 			
             Yii::$app->session->setFlash('FormSubmitted','2');
-            return  $this->redirect(['progress', 'urlroute' => 'cda/cda-visita-tecnica/index',  'id_cda'=>$id_cda,'id_cactividad_proceso'=>$id_cactividad_proceso]);		
+            return  $this->redirect(['progress', 'urlroute' => 'cda/cda-visita-tecnica/index',  'id_cda'=>$id_cda,'id_cactividad_proceso'=>$id_cactividad_proceso,'_labelmiga'=>null]);		
 			
         }elseif($modelE['create']=='Ajax'){
              return $this->renderAjax('create', [
-                        'model' => $model,
+                        'model' => $model,'_ajax'=>true
                         
             ]);
         } 
@@ -164,25 +171,28 @@ class CdaVisitaTecnicaController extends ControllerPry
      * Si se crea correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado.
      * @return mixed
      */
-    public function actionCreatecoordenadas($id_cda,$id_cactividad_proceso,$id_reporte_informacion)//ReporteInformacion
+    public function actionCreatecoordenadas($id_cda,$id_cactividad_proceso,$id_reporte_informacion,$_labelmiga)//ReporteInformacion
     {
         $facade =  new  CdaReporteInformacionControllerFachada;
+        
         $modelE= $facade->actionCreateCoordenadas(Yii::$app->request->post(),Yii::$app->request->isAjax,$id_cda,$id_cactividad_proceso,$id_reporte_informacion);
         $model = $modelE['model'];
         $modelCoordenada=$modelE['modelCoordenada'];
+        
+
         if ($modelE['create'] == 'True') {
 			
             Yii::$app->session->setFlash('FormSubmitted','2');
-            return  $this->redirect(['progress', 'urlroute' => 'cda/cda-visita-tecnica/index', 'id_cda'=>$id_cda,'id_cactividad_proceso'=>$id_cactividad_proceso]);		
+            return  $this->redirect(['progress', 'urlroute' => 'cda/cda-visita-tecnica/index', 'id_cda'=>$id_cda,'id_cactividad_proceso'=>$id_cactividad_proceso,'_labelmiga'=>$_labelmiga]);		
 			
         }elseif($modelE['create']=='Ajax'){
-             return $this->renderAjax('../cda-coordenadas-visita/create', [
+             return $this->renderAjax('create_coordenadas_visita', [
                         'model' => $model,
-                        'modelCoordenada' => $modelCoordenada,
+                        'modelCoordenada' => $modelCoordenada,'_ajax'=>true
             ]);
         } 
         else {
-            return $this->render('../cda-coordenadas-visita/create', [
+            return $this->render('create_coordenadas_visita', [
                 'model' => $model,
                 'modelCoordenada' => $modelCoordenada,
             ]);
@@ -196,7 +206,7 @@ class CdaVisitaTecnicaController extends ControllerPry
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate($id,$_labelmiga)
     {
         $facade =  new  CdaReporteInformacionControllerFachada;
         $modelE= $facade->actionUpdateVisitaTecnica($id,Yii::$app->request->post(),Yii::$app->request->isAjax);
@@ -205,11 +215,11 @@ class CdaVisitaTecnicaController extends ControllerPry
         if ($modelE['update'] == 'True') {
             
             Yii::$app->session->setFlash('FormSubmitted','1');		
-            return  $this->redirect(['progress', 'urlroute' => 'cda/cda-visita-tecnica/index',  'id_cda'=>$model['id_cda'],'id_cactividad_proceso'=>$model['id_cactividad_proceso']]);	
+            return  $this->redirect(['progress', 'urlroute' => 'cda/cda-visita-tecnica/index',  'id_cda'=>$model['id_cda'],'id_cactividad_proceso'=>$model['id_cactividad_proceso'],'_labelmiga'=>$_labelmiga]);	
             
         }elseif($modelE['update']=='Ajax'){
             return $this->renderAjax('update', [
-                        'model' => $model,
+                        'model' => $model,'_ajax'=>true
             ]);
         } 
         else {

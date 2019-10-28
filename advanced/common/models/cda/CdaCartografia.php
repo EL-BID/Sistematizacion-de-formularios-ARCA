@@ -41,7 +41,7 @@ class CdaCartografia extends ModelPry
     public function attributeLabels()
     {
         return [
-            'id_cartografia' => 'Id Cartografia',
+            'id_cartografia' => 'Cartografia',
             'nom_cartografia' => 'Nom Cartografia',
         ];
     }

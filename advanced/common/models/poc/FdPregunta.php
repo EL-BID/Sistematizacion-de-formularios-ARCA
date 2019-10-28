@@ -77,7 +77,7 @@ class FdPregunta extends ModelPry
             [['nom_pregunta', 'obligatorio', 'orden', 'estado'], 'required'],
             [['max_largo', 'min_largo', 'orden', 'id_tpregunta', 'id_capitulo', 'id_seccion', 'id_agrupacion', 'id_tselect', 'id_conjunto_pregunta', 'num_col_label', 'num_col_input'], 'integer'],
             [['max_date', 'min_date', 'ini_fecha', 'fin_fecha'], 'date'],
-            [['min_number', 'max_number'], 'number'],
+            [['min_number', 'max_number','max_registros','id_pregunta_anidada'], 'number'],
             [['nom_pregunta'], 'string', 'max' => 500],
             [['ayuda_pregunta', 'reg_exp'], 'string', 'max' => 1000],
             [['obligatorio', 'estado', 'caracteristica_preg', 'visible', 'visible_desc_preg', 'numerada'], 'string', 'max' => 1],

@@ -115,7 +115,7 @@ class FdPreguntaDescendienteControllerTest extends \Codeception\Test\Unit
             $actionView=Yii::$app->runAction('FdPreguntaDescendienteController/view',['id_pregunta_padre' => $id_pregunta_padre, '$id_pregunta_descendiente' =>  $id_pregunta_descendiente, '$id_version_descendiente' =>  $id_version_descendiente, '$id_version_padre' =>  $id_version_padre]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -208,7 +208,7 @@ class FdPreguntaDescendienteControllerTest extends \Codeception\Test\Unit
                          $id_version_padre = 'valor adecuado para el tipo de dato del paramtero  $id_version_padre';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(FdPreguntaDescendienteController/update',['id_pregunta_padre' => $id_pregunta_padre, '$id_pregunta_descendiente' =>  $id_pregunta_descendiente, '$id_version_descendiente' =>  $id_version_descendiente, '$id_version_padre' =>  $id_version_padre]);
+         $actionDelete=Yii::$app->runAction('FdPreguntaDescendienteController/update',['id_pregunta_padre' => $id_pregunta_padre, '$id_pregunta_descendiente' =>  $id_pregunta_descendiente, '$id_version_descendiente' =>  $id_version_descendiente, '$id_version_padre' =>  $id_version_padre]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

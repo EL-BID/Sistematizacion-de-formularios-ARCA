@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+           // ['class' => 'yii\grid\SerialColumn'],
 
             //'id_actividad_quipux',
             ['label'=>'Fecha','attribute'=>'fecha_actividad_quipux','value'=>'fecha_actividad_quipux'],

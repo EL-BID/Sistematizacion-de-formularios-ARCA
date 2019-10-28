@@ -3,7 +3,7 @@
 namespace frontend\tests\unit\controllers\hidricos;
 
 use Yii;
-use frontend\controllers\hidricos\PsactividadquipuxControllerFachada;
+use frontend\controllers\cda\PsactividadquipuxControllerFachada;
 /**
  * PsactividadquipuxControllerFachadaTest implementa la verificaicon de los valores, consulta información para aplicar reglas de negocio, y transacciones conforme las acciones para el modelo PsActividadQuipux.
  */

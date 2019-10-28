@@ -23,6 +23,7 @@ class CreateUserForm extends Model
     public $cod_canton;
     public $cod_provincia;
     public $cod_parroquia;
+	public $POC;
 
 /**
  *  <?= $form->field($model, 'id_correo')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\notificaciones\CorCorreo::find()->all(),'id_correo','nom_correo'),['prompt'=>'Indique la configuracion del correo']) ?>
@@ -48,6 +49,7 @@ class CreateUserForm extends Model
             [['cod_canton','cod_provincia','cod_parroquia'], 'string'],
             // [['id_correo'], 'number'],
             [['id_formato'], 'number'],
+			[['POC'],'safe'],
         ];
     }
     
@@ -246,45 +248,51 @@ class CreateUserForm extends Model
             } 
        // }
         
- 
-        $Formato=$user->getFormato($this->id_formato);
-        $FdAdmEstado=$user->getFdAdmEstado($this->cod_rol,$Formato['id_modulo']);
-        
-        if(count($FdAdmEstado)<=0){
-            $estado=$user->saveFdAdmEstado('Edición', $this->cod_rol, $Formato['id_modulo']);
-            if($this->cargaErrores($estado['estado'])!=""){ 
-               $this->addError('cod_rol', "NO fue posible insertar el fd adm estado del rol, verifique los datos: ".$errores);
-               $transaction->rollBack();
-               return null;
-           }
-           $FdAdmEstado=$estado['data'];
-           
-              
-        }
-        
-        $FdCOnjuntoPregunta=$user->getConjuntoPreguntaFormato($this->id_formato,$this->cod_rol);
-        if(count($FdCOnjuntoPregunta)<=0){
-            $this->addError('id_formato', "NO fue posible encontrar el conjunto de preguntas para el formato y el rol       ".$this->id_formato."   ".$this->cod_rol);
-            $transaction->rollBack();
-            return null;
-        }
-        
-        $FdPeriodoFormato=$user->getPeriodoFormato($this->id_formato);
-        if(count($FdPeriodoFormato)<=0){
-            $this->addError('id_formato', "NO fue posible buscar el periodo mas reciente del formato");
-            $transaction->rollBack();
-            return null;
-        }
-        
-        $FdConjuntoRespuesta=$user->saveFdConjuntoRespuesta($FdCOnjuntoPregunta['id_conjunto_pregunta'], $Entidad['id_entidad'] , $this->id_formato, $FdAdmEstado['id_adm_estado'], $FdPeriodoFormato['id_periodo'], date('Y-m-d'));
-        if($this->cargaErrores($FdConjuntoRespuesta)!=""){ 
-               $this->addError('id_formato', "NO fue posible insertar el el conjunto respuesta del formato, verifique los datos: ".$this->cargaErrores($FdConjuntoRespuesta));
-               $transaction->rollBack();
-               return null;
-        }
-        
-        $FdHistoricoRespuesta=$user->saveFdHistoricoRespuesta("Resgistro creado automaticamente desde CreateUserForm", date('Y-m-d'), 
-                $usuario, $FdConjuntoRespuesta->id_conjunto_respuesta, $FdAdmEstado['id_adm_estado']);
+		if($this->POC == TRUE){
+			
+                       
+			Yii::trace("aqui si crea consjunto respuesta","DEBUG");
+			$Formato=$user->getFormato($this->id_formato);
+			$FdAdmEstado=$user->getFdAdmEstado($this->cod_rol,$Formato['id_modulo']);
+			
+			if(count($FdAdmEstado)<=0){
+				$estado=$user->saveFdAdmEstado('Edición', $this->cod_rol, $Formato['id_modulo']);
+				if($this->cargaErrores($estado['estado'])!=""){ 
+				   $this->addError('cod_rol', "NO fue posible insertar el fd adm estado del rol, verifique los datos: ".$this->cargaErrores($estado['estado']));
+				   $transaction->rollBack();
+				   return null;
+			   }
+			   $FdAdmEstado=$estado['data'];
+			}
+			
+			$FdCOnjuntoPregunta=$user->getConjuntoPreguntaFormato($this->id_formato,$this->cod_rol);
+			if(count($FdCOnjuntoPregunta)<=0){
+				$this->addError('id_formato', "No fue posible encontrar el conjunto de preguntas para el formato y el rol       ".$this->id_formato."   ".$this->cod_rol);
+				$transaction->rollBack();
+				return null;
+			}
+			
+			$FdPeriodoFormato=$user->getPeriodoFormato($this->id_formato);
+			if(count($FdPeriodoFormato)<=0){
+				$this->addError('id_formato', "No fue posible buscar el periodo mas reciente del formato");
+				$transaction->rollBack();
+				return null;
+			}
+			
+			$FdConjuntoRespuesta=$user->saveFdConjuntoRespuesta($FdCOnjuntoPregunta['id_conjunto_pregunta'], $Entidad['id_entidad'] , $this->id_formato, $FdAdmEstado['id_adm_estado'], $FdPeriodoFormato['id_periodo'], date('Y-m-d'));
+		
+			Yii::trace("aqui si crea consjunto respuesta 2 ","DEBUG");
+			
+			if($this->cargaErrores($FdConjuntoRespuesta)!=""){ 
+				   $this->addError('id_formato', "NO fue posible insertar el el conjunto respuesta del formato, verifique los datos: ".$this->cargaErrores($FdConjuntoRespuesta));
+				   $transaction->rollBack();
+				   return null;
+			}
+			$this->guardarUsuarioDigitador($this->id_formato,$Entidad['nombre_entidad'],$UsuarioAp->id_usuario);
+			$FdHistoricoRespuesta=$user->saveFdHistoricoRespuesta("Resgistro creado automaticamente desde CreateUserForm", date('Y-m-d'), 
+					$usuario, $FdConjuntoRespuesta->id_conjunto_respuesta, $FdAdmEstado['id_adm_estado']);
+		}
+		
         $transaction->commit();
         return $UsuarioAp ? $UsuarioAp : null;
         
@@ -377,6 +385,16 @@ class CreateUserForm extends Model
         }
         return $errores;
     }
-    
+ 
+    public function guardarUsuarioDigitador($formato,$usuario,$id_usuario){
+        if($formato ==7)
+        {
+                      //createCommand($sql1)->execute();
+          Yii::$app->db->createCommand('UPDATE usuarios_ap SET usuario_digitador=:usuario  WHERE  id_usuario =:id_usuario')                    
+                        ->bindValue(':usuario', $usuario)                        
+                        ->bindValue(':id_usuario', $id_usuario)        
+                        ->execute();            
+        }
+     }
 
 }

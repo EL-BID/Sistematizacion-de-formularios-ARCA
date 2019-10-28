@@ -83,11 +83,11 @@ class FdAgrupacionControllerFachadaTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar
             $queryParams = ['FdAgrupacionSearch' => [
-                                             'id_agrupacion' => "Ingresar valor de pruebas para el campo id_agrupacion de tipo int4",       
-                                              'nom_agrupacion' => "Ingresar valor de pruebas para el campo nom_agrupacion de tipo varchar",       
-                                              'id_tagrupacion' => "Ingresar valor de pruebas para el campo id_tagrupacion de tipo int4",       
-                                              'num_col' => "Ingresar valor de pruebas para el campo num_col de tipo int4",       
-                                              'num_row' => "Ingresar valor de pruebas para el campo num_row de tipo int4",       
+                                              'id_agrupacion' => "1",       
+                                              'nom_agrupacion' => "Opciones técnicas de saneamiento utilizadas",       
+                                              'id_tagrupacion' => "2",       
+                                              'num_col' => "1",       
+                                              'num_row' => "1",   
                               ]];
              
        
@@ -118,7 +118,7 @@ class FdAgrupacionControllerFachadaTest extends \Codeception\Test\Unit
         $this->assertInstanceOf('backend\controllers\poc\FdAgrupacionControllerFachada', $tester);
     
         // se deben declarar los valores de $id        
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
               
         
              // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
@@ -146,11 +146,11 @@ class FdAgrupacionControllerFachadaTest extends \Codeception\Test\Unit
              
             // Se declaran el rquest
               $request =  ['FdAgrupacionControllerFachada' => [
-                                'id_agrupacion' => 'Ingresar valor de pruebas para el campo id_agrupacion de tipo int4',
-                             'nom_agrupacion' => 'Ingresar valor de pruebas para el campo nom_agrupacion de tipo varchar',
-                             'id_tagrupacion' => 'Ingresar valor de pruebas para el campo id_tagrupacion de tipo int4',
-                             'num_col' => 'Ingresar valor de pruebas para el campo num_col de tipo int4',
-                             'num_row' => 'Ingresar valor de pruebas para el campo num_row de tipo int4',
+                            'id_agrupacion' => "72",       
+                                              'nom_agrupacion' => "Agrupación prueba",       
+                                              'id_tagrupacion' => "2",       
+                                              'num_col' => "1",       
+                                              'num_row' => "1", 
                           ]];
             
                 $actionCreate = $tester->actionCreate($request,false);
@@ -185,11 +185,11 @@ class FdAgrupacionControllerFachadaTest extends \Codeception\Test\Unit
         
          // Se declaran el rquest
               $request =  ['FdAgrupacionControllerFachada' => [
-                                'id_agrupacion' => 'Ingresar valor de pruebas para el campo id_agrupacion de tipo int4',
-                             'nom_agrupacion' => 'Ingresar valor de pruebas para el campo nom_agrupacion de tipo varchar',
-                             'id_tagrupacion' => 'Ingresar valor de pruebas para el campo id_tagrupacion de tipo int4',
-                             'num_col' => 'Ingresar valor de pruebas para el campo num_col de tipo int4',
-                             'num_row' => 'Ingresar valor de pruebas para el campo num_row de tipo int4',
+										'id_agrupacion' => "72",       
+                                          'nom_agrupacion' => "Agrupación de prueba",       
+                                          'id_tagrupacion' => "2",       
+                                          'num_col' => "1",       
+                                          'num_row' => "1",  
                           ]];
         
         
@@ -226,7 +226,7 @@ class FdAgrupacionControllerFachadaTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '72';
                 
         // se valida que se pueda realizar el borrado del registro
         expect($tester->actionDeletep($id));

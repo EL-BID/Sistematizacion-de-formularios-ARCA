@@ -83,10 +83,48 @@ class AccesosController extends Controller
     {
         $model = new Accesos();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			
-			Yii::$app->session->setFlash('FormSubmitted','2');
-            return	$this->redirect(['progress', 'urlroute' => 'view', 'id' => $model->id__acceso]);
+        $tipo_usuario = Yii::$app->request->post('Accesos')['tipo_usuario'];
+      
+        
+        if ($model->load(Yii::$app->request->post())) {
+
+            
+            if($tipo_usuario == 0){
+                
+                $_todosroles = \common\models\autenticacion\Rol::find()->all();
+                $_nombre = $model->nombre_acceso;
+                $_idpagina = $model->id_pagina;
+                $_idtipo = $model->id_tipo_acceso;
+                
+                foreach($_todosroles as $_clrol){
+                    
+                    $model = new Accesos();
+                    $model->nombre_acceso = $_nombre;
+                    $model->id_pagina = $_idpagina;
+                    $model->id_tipo_acceso = $_idtipo;
+                    $model->cod_rol = $_clrol->cod_rol;
+                    $model->save();
+                    
+                }
+                
+                return $this->redirect(['index']);
+                
+                
+            }else if($tipo_usuario == 1){
+                $model->cod_rol = null;
+                $model->save();
+                 
+                return	$this->redirect(['progress', 'urlroute' => 'view', 'id' => $model->id_acceso]);
+            
+                
+            }else if($tipo_usuario == 2){
+                $model->save();
+                Yii::$app->session->setFlash('FormSubmitted','2');
+                return	$this->redirect(['progress', 'urlroute' => 'view', 'id' => $model->id_acceso]);
+            }
+            
+            
+	    
 			
 			
         } else {

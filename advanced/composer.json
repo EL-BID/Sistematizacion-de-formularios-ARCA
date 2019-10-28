@@ -12,51 +12,62 @@
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+	"prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "light/yii2-sweet-submit": "*",
-        "dmstr/yii2-adminlte-asset": "2.*",
+        "light/yii2-sweet-submit": "~1.0.0",
+        "dmstr/yii2-adminlte-asset": "~2.0",
         "leoshtika/yii2-nav-sidebar": "^1.0",
-        "codeception/verify": "*",
-        "codeception/specify": "*",
         "ckarjun/yii2-owl-carousel": "*",
         "kartik-v/yii2-mpdf": "*",
         "moonlandsoft/yii2-phpexcel": "*",
-		"phpclasses/vsword": "^1.0",
-        "kartik-v/yii2-widget-fileinput": "@dev"
+		"phpclasses/vsword": "^1.0"
     },
-    "require-dev": {
+        "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
-
-        "codeception/codeception": "^2.2.3",
-		"yiisoft/yii2-jui": "~2.0.0",
-		"sjaakp/yii2-gcharts": "*",
-		"dimd4/yii2-redactor": "*",
-		"bower-asset/sweetalert": "1.1.*",
-		"host33/yii2-multilevel-horizontal-menu": "dev-master",
-		"kartik-v/yii2-widgets": "*",
-		"kartik-v/yii2-popover-x": "*",
+        "yiisoft/yii2-jui": "~2.0.0",
+		"phpunit/phpunit": "*",
+        "codeception/codeception": "*",
+		"codeception/verify": "*",
+        "codeception/specify": "*",
+        "sjaakp/yii2-gcharts": "*",
+        "dimd4/yii2-redactor": "*",
+        "bower-asset/sweetalert": "1.1.*",
+        "host33/yii2-multilevel-horizontal-menu": "dev-master",
+        "kartik-v/yii2-widgets": "*",
+        "kartik-v/yii2-popover-x": "*",
+        "kartik-v/yii2-widget-fileinput": "@dev",
+        "kartik-v/yii2-widget-datetimepicker" : "@dev",
         "uran1980/yii2-pace-widget": "dev-master"
     },
     "config": {
-        "process-timeout": 1800
+       "fxp-asset": {
+			  "installer-paths": {
+				"npm-asset-library": "vendor/npm",
+				"bower-asset-library": "vendor/bower"
+			  }
+			},
+        "process-timeout": 1800,
+		"http-basic": {
+            "www.phpclasses.org": {
+                "username": "andrsfelipev",
+                "password": "b07d39bfa854294a1448a4479b53ad45"
+            }
+        }
     },
     "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
-        }
+
     },
     "scripts": {
         "post-install-cmd": "php init --env=Development --overwrite=n"
     },
-	    "repositories":[
+    "repositories":[
     {
       "type": "composer",
       "url": "https:\/\/www.phpclasses.org\/"

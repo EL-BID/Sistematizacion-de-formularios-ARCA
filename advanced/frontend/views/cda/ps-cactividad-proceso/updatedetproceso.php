@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = 'Update';
         ?>
 
     <?= $this->render('_formdetproceso', [
-        'model' => $model,'listusuarios'=>$listusuarios,'listcausal' => $listcausal,'visible' =>$visibles, 'disabled' => $disabled
+        'model' => $model,'listcausal' => $listcausal,'visible' =>$visibles, 'disabled' => $disabled
     ]) ?>
 
 </div>

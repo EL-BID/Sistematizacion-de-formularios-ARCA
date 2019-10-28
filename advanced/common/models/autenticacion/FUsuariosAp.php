@@ -106,7 +106,11 @@ class FUsuariosAp extends FUsuarioFachadaPry
      }
      
     public function guardarEntidad($nombre_entidad,$cod_canton, $cod_provincia, $cod_parroquia,$identificacion){
-         $entidad = new Entidades();
+		
+	    $entidad = new Entidades();
+		$cod_canton = strval($cod_canton);
+		$cod_provincia = strval($cod_provincia);
+		
          $entidad->nombre_entidad=$nombre_entidad;
          if($cod_parroquia==="" || $cod_parroquia===null ){
             

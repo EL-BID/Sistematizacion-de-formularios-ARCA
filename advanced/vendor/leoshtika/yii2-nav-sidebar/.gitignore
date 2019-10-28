@@ -1,0 +1,5 @@
+# netbeans project files
+nbproject
+
+# composer vendor dir
+/vendor

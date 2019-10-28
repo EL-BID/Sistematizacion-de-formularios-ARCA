@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models\cda;
+namespace common\models;
 
 use Yii;
 use yii\base\Model;
@@ -18,9 +18,9 @@ class CdaSearch extends Cda
     public function rules()
     {
         return [
-            [['fecha_ingreso', 'fecha_solicitud', 'tramite_administrativo', 'rol_en_calidad', 'institucion_solicitante', 'solicitante'], 'safe'],
-            [['id_cproceso_arca', 'id_cproceso_senagua', 'numero_tramites', 'id_cda', 'cod_centro_atencion_ciudadano'], 'integer'],
-            [['id_usuario_enviado_por', 'id_demarcacion'], 'number'],
+            [['id_cda', 'cod_centro_atencion_ciudadano', 'id_cactividad_proceso'], 'integer'],
+            [['fecha_ingreso_quipux', 'institucion_solicitante', 'solicitante', 'cod_cda'], 'safe'],
+            [['id_demarcacion'], 'number'],
         ];
     }
 
@@ -60,21 +60,16 @@ class CdaSearch extends Cda
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'fecha_ingreso' => $this->fecha_ingreso,
-            'fecha_solicitud' => $this->fecha_solicitud,
-            'id_cproceso_arca' => $this->id_cproceso_arca,
-            'id_cproceso_senagua' => $this->id_cproceso_senagua,
-            'numero_tramites' => $this->numero_tramites,
             'id_cda' => $this->id_cda,
-            'id_usuario_enviado_por' => $this->id_usuario_enviado_por,
+            'fecha_ingreso_quipux' => $this->fecha_ingreso_quipux,
             'cod_centro_atencion_ciudadano' => $this->cod_centro_atencion_ciudadano,
             'id_demarcacion' => $this->id_demarcacion,
+            'id_cactividad_proceso' => $this->id_cactividad_proceso,
         ]);
 
-        $query->andFilterWhere(['like', 'tramite_administrativo', $this->tramite_administrativo])
-            ->andFilterWhere(['like', 'rol_en_calidad', $this->rol_en_calidad])
-            ->andFilterWhere(['like', 'institucion_solicitante', $this->institucion_solicitante])
-            ->andFilterWhere(['like', 'solicitante', $this->solicitante]);
+        $query->andFilterWhere(['like', 'institucion_solicitante', $this->institucion_solicitante])
+            ->andFilterWhere(['like', 'solicitante', $this->solicitante])
+            ->andFilterWhere(['like', 'cod_cda', $this->cod_cda]);
 
         return $dataProvider;
     }

@@ -29,9 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'nombre_pagina',
 
             [
-			
-				'class' => 'yii\grid\ActionColumn',
-				 'header' => 'Action',
+		'class' => 'yii\grid\ActionColumn',
+                 'header' => 'Action',
                 'template' => ' {update} {delete}',
                 'buttons' => [
                     'update' => function ($url, $model) {
@@ -40,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ]);
                     },
 					'delete' => function($url, $model){
-						$url2 = Url::toRoute(['paginacontroller/deletep','id' => $model->Id],true);
+						$url2 = Url::toRoute(['paginacontroller/deletep','id' => $model->id_pagina],true);
 						return Html::a('<span class="btn-xs btn-primary">Borrar</span>',$url,[
 							'title' => Yii::t('app', 'Delete'),
 							'data-confirm' => Yii::t('yii', 'Desea Eliminar el Regitro?::'.$url2),

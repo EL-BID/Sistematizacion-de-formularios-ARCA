@@ -18,7 +18,7 @@ class CdaErroresSearch extends CdaErrores
     public function rules()
     {
         return [
-            [['id_error', 'id_terror', 'id_cda'], 'integer'],
+            [['id_error',  'id_cod_cda','id_cactividad_proceso'], 'integer'],
             [['observaciones'], 'safe'],
         ];
     }
@@ -39,57 +39,39 @@ class CdaErroresSearch extends CdaErrores
      *
      * @return ActiveDataProvider
      */
-    public function search($params,$join=null)
+    public function search($params)
     {
-        if($join===null){ 
-            $query = CdaErrores::find();
+        $query = CdaErrores::find();
 
-            // add conditions that should always apply here
+        // add conditions that should always apply here
 
-            $dataProvider = new ActiveDataProvider([
-                'query' => $query,
-            ]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
 
-            $this->load($params);
-
-            if (!$this->validate()) {
-                // uncomment the following line if you do not want to return any records when validation fails
-                // $query->where('0=1');
-                return $dataProvider;
-            }
-
-            // grid filtering conditions
-            $query->andFilterWhere([
-                'id_error' => $this->id_error,
-                'id_terror' => $this->id_terror,
-                'id_cda' => $this->id_cda,
-            ]);
-
-            $query->andFilterWhere(['like', 'observaciones', $this->observaciones]);
-        } elseif($join=='reporte'){
+        $this->load($params);
+        
+        if(!empty($this->id_cactividad_proceso)){
             
-             $query = CdaErrores::find();
-
-            // add conditions that should always apply here
-
-            $dataProvider = new ActiveDataProvider([
-                'query' => $query,
-            ]);
-
-            $this->load($params);
-
-            if (!$this->validate()) {
-                return $dataProvider;
-            }
-
-            // grid filtering conditions
             $query->andFilterWhere([
-                'id_terror' => $this->id_terror,
-                'id_cda' => $this->id_cda,
+                'id_cactividad_proceso' => $this->id_cactividad_proceso,
             ]);
-
-            $query->andFilterWhere(['like', 'observaciones', $this->observaciones]);
         }
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'id_error' => $this->id_error,
+            'id_cod_cda' => $this->id_cod_cda,
+        ]);
+
+        $query->andFilterWhere(['like', 'observaciones', $this->observaciones]);
+
         return $dataProvider;
     }
 }

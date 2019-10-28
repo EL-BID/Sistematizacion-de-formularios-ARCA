@@ -112,7 +112,7 @@ class FdClasificacionPreguntaControllerTest extends \Codeception\Test\Unit
             $actionView=Yii::$app->runAction('FdClasificacionPreguntaController/view',['id_clasificacion' => $id_clasificacion, '$id_pregunta' =>  $id_pregunta]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -199,7 +199,7 @@ class FdClasificacionPreguntaControllerTest extends \Codeception\Test\Unit
                          $id_pregunta = 'valor adecuado para el tipo de dato del paramtero  $id_pregunta';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(FdClasificacionPreguntaController/update',['id_clasificacion' => $id_clasificacion, '$id_pregunta' =>  $id_pregunta]);
+         $actionDelete=Yii::$app->runAction('FdClasificacionPreguntaController/update',['id_clasificacion' => $id_clasificacion, '$id_pregunta' =>  $id_pregunta]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

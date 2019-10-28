@@ -3,7 +3,7 @@
 namespace frontend\tests\unit\controllers\hidricos;
 
 use Yii;
-use frontend\controllers\hidricos\CdasolicitudinformacionControllerFachada;
+use frontend\controllers\cda\CdasolicitudinformacionControllerFachada;
 /**
  * CdasolicitudinformacionControllerFachadaTest implementa la verificaicon de los valores, consulta información para aplicar reglas de negocio, y transacciones conforme las acciones para el modelo CdaSolicitudInformacion.
  */

@@ -13,9 +13,9 @@ use yii\helpers\Url;	//Para presentar la barra de espera
 use yii\jui\ProgressBar;
 
 /**
- * CdaReporteInformacionControllerFachada implementa la verificaicon de los valores, consulta información para aplicar reglas de negocio, y transacciones conforme las acciones para el modelo CdaReporteInformacion.
+ * CdareporteinformacionControllerFachada implementa la verificaicon de los valores, consulta información para aplicar reglas de negocio, y transacciones conforme las acciones para el modelo CdaReporteInformacion.
  */
-class CdaReporteInformacionControllerFachada extends FachadaPry
+class CdareporteinformacionControllerFachada extends FachadaPry
 {
     /**
      * @inheritdoc
@@ -36,19 +36,12 @@ class CdaReporteInformacionControllerFachada extends FachadaPry
 	/**Accion para la barra de progreso y render de nuevo a la vista
 	Ubicación: @web = frontend\web....*/
 	
-	public function actionProgress($urlroute=null,$id_cda=null,$id_cactividad_proceso=null,$id=null){
+	public function actionProgress($urlroute=null,$id=null,$labelmiga=null,$id_cda_tramite=null,$id_cproceso=null,$actividadactual=null,$tipo=null){
 		
 	
-            $progressbar = "<div style='margin-top:20%;text-align:center'>".Html::img('@web/images/lazul.gif')."</div>"; 
-            $progressbar = $progressbar . "<div style='text-align:center'>Guardando</div>";
-            
-            if(!is_null($id_cda) and !is_null($id_cactividad_proceso)){
-                $_ruta = Url::toRoute([$urlroute, 'id_cda' => $id_cda,'id_cactividad_proceso'=>$id_cactividad_proceso]);
-            }else{
-                $_ruta = Url::toRoute([$urlroute, 'id' => $id]);
-            }
-            
-            $progressbar = $progressbar .  "<meta http-equiv='refresh' content='3;".$_ruta."'>";
+            $progressbar = "<div style='margin-top:20%;text-align:center'>".Html::img('@web/images/lazul.gif').'</div>';
+            $progressbar = $progressbar."<div style='text-align:center'>Guardando</div>"; 	
+            $progressbar = $progressbar .  "<meta http-equiv='refresh' content='3;".Url::toRoute([$urlroute, 'id' => $id,'labelmiga'=>$labelmiga,'actividadactual'=>$actividadactual,'id_cda_tramite'=>$id_cda_tramite,'id_cproceso'=>$id_cproceso,'tipo'=>$tipo])."'>";
             return $progressbar;
 	}
 
@@ -58,84 +51,51 @@ class CdaReporteInformacionControllerFachada extends FachadaPry
      * Listado todos los datos del modelo CdaReporteInformacion que se encuentran en el tablename.
      * @return mixed
      */
-    public function actionIndex($queryParams)
+    public function actionIndex($queryParams,$id_cda_tramite,$actividadactual,$id_cproceso)
     {
-                $searchModel = new CdaReporteInformacionSearch();
-                $dataProvider = $searchModel->search($queryParams);
-           
-                return [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider
-                ];
-    }
-    
-    
-    public function actionIndexDatosTecnicos($queryParams,$id_cda,$id_cactividad_proceso)
-    {
-                $searchModel = new CdaReporteInformacionSearch();
-                $queryParams['CdaReporteInformacionSearch']['id_cda'] = $id_cda;
-                $queryParams['CdaReporteInformacionSearch']['id_cactividad_proceso'] = $id_cactividad_proceso;
-                $dataProvider = $searchModel->search($queryParams,'datos');
+        
+        //Obteniendo la informacion del encabezado =====================================================
+        $searchModel = new \common\models\cda\PantallaprincipalSearch();
+        $encabezado = $searchModel->searchT($id_cda_tramite);
+        
+        //Sacando el html para el encabezado ===========================================================
+        $basicas = New BasicController();
+        $encabezado = $basicas->encabezadoTramite($encabezado[0]);
+        
+        //Averiguando id_cactividad_proceso actual ====================================================
+        $ps_cactividad_proceso = $basicas->actualPsCactividadProceso($id_cproceso,$id_cda_tramite);
+        
+        //Nombre de la actividad actual =======================================================
+        $nameactividad = $basicas->findActividades(null,$actividadactual);
+        
+        //Averiguando cantidad de codigos CDA asociados al tramite ====================================
+        $_totalcodcda = \common\models\cda\PsCodCda::find()
+                ->leftJoin('cda','cda.id_cda=ps_cod_cda.id_cda')
+                ->leftJoin('ps_cactividad_proceso','ps_cactividad_proceso.id_cactividad_proceso =  cda.id_cactividad_proceso')
+                ->where(['ps_cactividad_proceso.id_cproceso'=>$id_cproceso])
+                ->count();
+         
+        $searchModel = new CdaReporteInformacionSearch();
+        $queryParams['CdaReporteInformacionSearch']['id_cactividad_proceso'] = $ps_cactividad_proceso->id_cactividad_proceso;
+        $dataProvider = $searchModel->search($queryParams);
+        
+       // Yii::trace("que llega por aqui ".count($dataProvider)."::".$_totalcodcda,"DEBUG");
+        if ($dataProvider->getTotalCount()<$_totalcodcda) {
+              $enableCreate=true;
+         }else{
+              $enableCreate=false;
+         }
 
-                return [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider
-                ];
+        return [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'encabezado' => $encabezado,
+            'pscactividadproceso' => $ps_cactividad_proceso,
+            'enableCreate'=>$enableCreate,
+            'nombreactividad'=>$nameactividad['nom_actividad']
+            
+        ];
     }
-    
-    public function actionIndexInformacionSenagua($queryParams,$id_cda,$id_cactividad_proceso)
-    {
-                $searchModel = new CdaReporteInformacionSearch();
-                $queryParams['CdaReporteInformacionSearch']['id_cda'] = $id_cda;
-                $queryParams['CdaReporteInformacionSearch']['id_cactividad_proceso'] = $id_cactividad_proceso;
-                $dataProvider = $searchModel->search($queryParams,'senagua');
-
-                return [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider
-                ];
-    }
-    
-    public function actionIndexInformacionEpa($queryParams,$id_cda,$id_cactividad_proceso)
-    {
-                $searchModel = new CdaReporteInformacionSearch();
-                $queryParams['CdaReporteInformacionSearch']['id_cda'] = $id_cda;
-                $queryParams['CdaReporteInformacionSearch']['id_cactividad_proceso'] = $id_cactividad_proceso;
-                $dataProvider = $searchModel->search($queryParams,'epa');
-
-                return [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider
-                ];
-    }
-    
-    public function actionIndexVisitaTecnica($queryParams,$id_cda,$id_cactividad_proceso)
-    {
-                $searchModel = new CdaReporteInformacionSearch();
-                $queryParams['CdaReporteInformacionSearch']['id_cda'] = $id_cda;
-                $queryParams['CdaReporteInformacionSearch']['id_cactividad_proceso'] = $id_cactividad_proceso;
-                $dataProvider = $searchModel->search($queryParams,'visita');
-
-                return [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider
-                ];
-    }
-    
-    public function actionIndexCoordenadas($queryParams,$id_cda,$id_cactividad_proceso,$id_reporte_informacion)
-    {
-                $searchModel = new CdaReporteInformacionSearch();
-                $queryParams['CdaReporteInformacionSearch']['id_cda'] = $id_cda;
-                $queryParams['CdaReporteInformacionSearch']['id_cactividad_proceso'] = $id_cactividad_proceso;
-                $queryParams['CdaReporteInformacionSearch']['id_reporte_informacion'] = $id_reporte_informacion;
-                $dataProvider = $searchModel->search($queryParams,'coordenadas');
-
-                return [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider
-                ];
-    }
-
 
     /**
      * Presenta un dato unico en el modelo CdaReporteInformacion.
@@ -153,159 +113,123 @@ class CdaReporteInformacionControllerFachada extends FachadaPry
      * Si se crea correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado.
      * @return mixed
      */
-    public function actionCreate($request,$isAjax)
+    public function actionCreate($request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso,$tipo,$id_cda_tramite)
     {
+        $basicas = New BasicController();
+        $fechaactual = date(Yii::$app->fmtfechahoraphp);
+        
+        
         $model = new CdaReporteInformacion();
         
-        if ($model->load($request) && $model->save()) {
-			
-                return [
-                    'model' => $model,
-                    'create' => 'True'
-                ];	
-
-        }
-        elseif ($isAjax) {
+        $model2 = new \common\models\poc\FdCoordenada();
+        $model2->setScenario('createcoordenada');
         
-                return [
-                    'model' => $model,
-                    'create' => 'Ajax'
-                ];	
-           
-        }  
+        $model3 = new \common\models\poc\FdUbicacion();
+        $model3->setScenario('createubicacion');
         
-        else {
         
-                 return [
-                    'model' => $model,
-                    'create' => 'False'
-                ];
+         //Agregando el detalle actividad ====================================================
+         
+          $facade_ps =  new PsCactividadProcesoControllerFachada();
+          $model_ps= $facade_ps->actionUpdatedetproceso($pscactividad_proceso,'',TRUE,$tipo,$id_cda_tramite);
+          $model_psc = $model_ps['model'];
+          $model_psc->fecha_realizacion = $fechaactual;
+          $listcausal = (!empty($model_ps['listcausal']))? $model_ps['listcausal']:'';
+          $visibles = $model_ps['visibles'];
+          $disabled = $model_ps['disabled'];
 
-        }
-    }
 
-     /**
-     * Crea un nuevo dato sobre el modelo CdaReporteInformacion .
-     * Si se crea correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado.
-     * @return mixed
-     */
-    public function actionCreateReporteInformacion($request,$isAjax,$id_cda,$id_cactividad_proceso)
-    {
+          $string_detalle = $basicas->genHtmlClasificacion($visibles,$listcausal,$disabled);
+
+          //================================================================================
         
-        $model = new CdaReporteInformacion();
-        $modelUbicacion = New \common\models\poc\FdUbicacion();
-        $modelCoordenada = new \common\models\poc\FdCoordenada();
-
         
-        if ($model->load($request) && $modelUbicacion->load($request) && $modelCoordenada->load($request)) {
-            $transaction = Yii::$app->db->beginTransaction();
+        
+        
+        if ($model->load($request) && $model2->load($request) && $model3->load($request) && $model_psc->load($request)) {
+		
+             $transaction = Yii::$app->db->beginTransaction();
+             
+             $model->id_tipo = '2';
+             $model->id_actividad = $actividadactual;
+             $model->id_cactividad_proceso = $pscactividad_proceso;
+             
+            $model2->id_tcoordenada = 1;
 
-            try  {
-                    $model->id_actividad=8;
-                    $model->id_cda = $id_cda;
-                    $model->id_cactividad_proceso = $id_cactividad_proceso;
+            if($model2->save()){
+
+                if($model3->save()){
+
+                    $model->id_ubicacion = $model3->id_ubicacion;
+                    $model->id_coordenada = $model2->id_coordenada;
+                    
                     if($model->save()){
-                        $modelCoordenada->id_tcoordenada=1;
-                        $modelCoordenada->id_reporte_informacion=$model->id_reporte_informacion;
-                        if($modelCoordenada->save(false)){
-                          //  $model->id_ubicacion=$modelUbicacion->id_ubicacion;
-                            $modelUbicacion->id_reporte_informacion=$model->id_reporte_informacion;
-                          //  $model->id_coordenada=$modelCoordenada->id_coordenada;
-                            if($modelUbicacion->save(false)){
+
+                        //Averiguando si el numero de cod_cda asociados al tramite es igual a los reportes de informacion creados ==================
+                        $crear_pscactividadproceso = $this->pasardiligenciada($id_cproceso, $pscactividad_proceso);
+                        
+                        if($crear_pscactividadproceso == TRUE){
+                            
+                            $model4 = $this->findPscactividadProceso($pscactividad_proceso);
+                            $model4->diligenciado = 'S';
+                            
+                            if($model4->save()){
+                                
                                 $transaction->commit();
+
+                                return [
+                                    'model' => $model,
+                                    'model2' => $model2,
+                                    'model3'=>$model3,
+                                    'create' => 'True'
+                                ];
+                            
                             }else{
-                                echo var_dump($modelCoordenada->getErrors());
-                                $transaction->rollBack();
+                                
+                                $transaction->rollBack(); 
+                                throw new \yii\web\HttpException(404, 'Error al diligenciar ACTIVIDAD');
+                                
                             }
-                            
                         }else{
-                            echo var_dump($model->getErrors());
-                            $transaction->rollBack();
-                            
-                        }
-                    }else{
-                         echo var_dump($modelUbicacion->getErrors());
-                        $transaction->rollBack();
-                    }
-                } catch (Exception $e) {
-                    $transaction->rollBack();
-                    echo $e->message;
-                }
-
-                return [
-                    'model' => $model,
-                    'modelUbicacion' => $modelUbicacion,
-                    'modelCoordenada' => $modelCoordenada,
-                    'create' => 'True'
-                ];	
-
-        }
-        elseif ($isAjax) {
-        
-                return [
-                    'model' => $model,
-                    'modelUbicacion' => $modelUbicacion,
-                    'modelCoordenada' => $modelCoordenada,
-                    'create' => 'Ajax'
-                ];	
-           
-        }  
-        
-        else {
-        
-                 return [
-                    'model' => $model,
-                     'modelUbicacion' => $modelUbicacion,
-                     'modelCoordenada' => $modelCoordenada,
-                    'create' => 'False'
-                ];
-
-        }
-    }
-    
-    
-      /**
-     * Crea un nuevo dato sobre el modelo CdaReporteInformacion .
-     * Si se crea correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado.
-     * @return mixed
-     */
-    public function actionCreateVisitaTecnica($request,$isAjax,$id_cda,$id_cactividad_proceso)
-    {
-        
-        $model = new CdaReporteInformacion();
-
-        
-        if ($model->load($request)) {
-            $transaction = Yii::$app->db->beginTransaction();
-
-            try  {
-                    $model->id_actividad=9;
-                    $model->id_cda = $id_cda;
-                    $model->id_cactividad_proceso = $id_cactividad_proceso;
-                    if($model->save(false)){
-
+                        
                             $transaction->commit();
 
+                            return [
+                                'model' => $model,
+                                'model2' => $model2,
+                                'model3'=>$model3,
+                                'create' => 'True'
+                            ];
+                        }
                     }else{
-                            echo var_dump($model->getErrors());
-                            $transaction->rollBack();
-
+                        
+                        $transaction->rollBack(); 
+                        throw new \yii\web\HttpException(404, 'Error en Reporte Informacion');
                     }
-                } catch (Exception $e) {
-                    $transaction->rollBack();
-                    echo $e->message;
+
+
+                }else{
+
+                    $transaction->rollBack(); 
+                    throw new \yii\web\HttpException(404, 'Error guardando Ubicacion');
+
                 }
 
-                return [
-                    'model' => $model,
-                    'create' => 'True'
-                ];	
+            }else{
+               $transaction->rollBack(); 
+               throw new \yii\web\HttpException(404, 'Error guardando Coordenada');
+            }
+
 
         }
         elseif ($isAjax) {
         
                 return [
                     'model' => $model,
+                    'model2' => $model2,
+                    'model3' => $model3,
+                    'stringClasificacion'=>$string_detalle,
+                    'modelpsactividad' => $model_psc,
                     'create' => 'Ajax'
                 ];	
            
@@ -314,204 +238,118 @@ class CdaReporteInformacionControllerFachada extends FachadaPry
         else {
         
                  return [
-                    'model' => $model,
+                    'model' => $model, 'model2' => $model2,
+                    'model3' => $model3,
                     'create' => 'False'
                 ];
 
         }
     }
     
-    
-
-     /**
-     * Crea un nuevo dato sobre el modelo CdaReporteInformacion .
-     * Si se crea correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado.
-     * @return mixed
+    /*
+     * Funcion para modificar la informacion para la actividad de verificar datos
      */
-    public function actionCreateInformacionSenagua($request,$isAjax,$id_cda,$id_cactividad_proceso)
-    {
-        
-        $model = new CdaReporteInformacion();
-        $modelCoordenada = new \common\models\poc\FdCoordenada();
-        
-        if ($model->load($request) && $modelCoordenada->load($request)) {
-            $transaction = Yii::$app->db->beginTransaction();
-
-            try  {      
-                $model->id_actividad=12;
-                $model->id_cda = $id_cda;
-                $model->id_cactividad_proceso = $id_cactividad_proceso;        
-                        if($model->save(false)){
-                            
-                            $modelCoordenada->id_tcoordenada=1;
-                            $modelCoordenada->id_reporte_informacion=$model->id_reporte_informacion;
-                            if($modelCoordenada->save(false)){
-                                $transaction->commit();
-                            }else{
-                                echo var_dump($modelCoordenada->getErrors());
-                                $transaction->rollBack();
-                            }
-                            
-                        }else{
-                            echo var_dump($model->getErrors());
-                            $transaction->rollBack();
-                            
-                        }
-
-                } catch (Exception $e) {
-                    $transaction->rollBack();
-                    echo $e->message;
-                }
-
-                return [
-                    'model' => $model,
-                    'modelCoordenada' => $modelCoordenada,
-                    'create' => 'True'
-                ];	
-
-        }
-        elseif ($isAjax) {
-        
-                return [
-                    'model' => $model,
-                    'modelCoordenada' => $modelCoordenada,
-                    'create' => 'Ajax'
-                ];	
-           
-        }  
-        
-        else {
-        
-                 return [
-                    'model' => $model,
-                     'modelCoordenada' => $modelCoordenada,
-                    'create' => 'False'
-                ];
-
-        }
-    }
     
-    
-    public function actionCreateInformacionEpa($request,$isAjax,$id_cda,$id_cactividad_proceso)
-    {
+    public function actionUpdateverificar($id,$request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso){
         
-        $model = new CdaReporteInformacion();
-        $modelCoordenada = new \common\models\poc\FdCoordenada();
+        $model=$this->findModel($id);
         
-        if ($model->load($request) && $modelCoordenada->load($request)) {
+        if ($model->load($request)) {
+            
             $transaction = Yii::$app->db->beginTransaction();
-
-            try  {     
-                    $model->id_actividad=13;
-                    $model->id_cda = $id_cda;
-                    $model->id_cactividad_proceso = $id_cactividad_proceso;    
-                        if($model->save(false)){
-                            $modelCoordenada->id_tcoordenada=1;
-                            $modelCoordenada->id_reporte_informacion=$model->id_reporte_informacion;
-                            if($modelCoordenada->save(false)){
-                                $transaction->commit();
-                            }else{
-                                echo var_dump($modelCoordenada->getErrors());
-                                $transaction->rollBack();
-                            }
-                            
-                        }else{
-                            echo var_dump($model->getErrors());
-                            $transaction->rollBack();
-                            
-                        }
-
-                } catch (Exception $e) {
-                    $transaction->rollBack();
-                    echo $e->message;
-                }
-
-                return [
-                    'model' => $model,
-                    'modelCoordenada' => $modelCoordenada,
-                    'create' => 'True'
-                ];	
-
-        }
-        elseif ($isAjax) {
-        
-                return [
-                    'model' => $model,
-                    'modelCoordenada' => $modelCoordenada,
-                    'create' => 'Ajax'
-                ];	
-           
-        }  
-        
-        else {
-        
-                 return [
-                    'model' => $model,
-                     'modelCoordenada' => $modelCoordenada,
-                    'create' => 'False'
-                ];
-
-        }
-    }
-    
-    public function actionCreateCoordenadas($request,$isAjax,$id_cda,$id_cactividad_proceso,$id_reporte_infromacion)
-    {
-        
-        $model = new CdaReporteInformacion();
-        $modelCoordenada = new \common\models\poc\FdCoordenada();
-        
-        if ($model->load($request) && $modelCoordenada->load($request)) {
-            $transaction = Yii::$app->db->beginTransaction();
-
-            try  {  
-                    if ($id_reporte_infromacion==0){ 
-                        
-                        $model->id_actividad=9;
-                        $model->id_cda = $id_cda;
-                        $model->id_cactividad_proceso = $id_cactividad_proceso;  
-                        
-                        if($model->save(false)){
-                            $modelCoordenada->id_tcoordenada=1;
-                            $modelCoordenada->id_reporte_informacion=$model->id_reporte_informacion;
-                            if($modelCoordenada->save(false)){
-                                $transaction->commit();
-                            }else{
-                                echo var_dump($modelCoordenada->getErrors());
-                                $transaction->rollBack();
-                            } 
-                        }else{
-                            echo var_dump($model->getErrors());
-                            $transaction->rollBack();   
-                        } 
-                    }else{
-                            $modelCoordenada->id_tcoordenada=1;
-                            $modelCoordenada->id_reporte_informacion=$id_reporte_infromacion;
-                            if($modelCoordenada->save(false)){
-                                $transaction->commit();
-                            }else{
-                                echo var_dump($modelCoordenada->getErrors());
-                                $transaction->rollBack();
-                            }
-                    }
+             
+             
+            if($model->save()){
+                
+                    $transaction->commit();
+                    return [
+                        'model' => $model,
+                        'update' => 'True'
+                    ];
                    
-
-                } catch (Exception $e) {
-                    $transaction->rollBack();
-                    echo $e->message;
-                }
-
+            }else{
+               $transaction->rollBack(); 
+               throw new \yii\web\HttpException(404, 'Error guardando Verificacion de Datos');
+            }
+            
+            
+        }elseif ($isAjax) {
+        
                 return [
                     'model' => $model,
-                    'modelCoordenada' => $modelCoordenada,
-                    'create' => 'True'
+                    'update' => 'Ajax'
                 ];	
+           
+        }  
+        
+        else {
+        
+                 return [
+                    'model' => $model,
+                    'update' => 'False'
+                ];
 
+        }
+    }
+    
+    /*
+     * Funcion que guarda en reporte informacion para la actividad verificar datos 
+     */
+    public function actionCreateverificar($request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso)
+    {
+        $model = new CdaReporteInformacion();
+        
+        if ($model->load($request)) {
+		
+             $transaction = Yii::$app->db->beginTransaction();
+             
+             $model->id_tipo = '2';                         //Se guarda para tramite tipo '2', si fuera solicitud seria '1'
+             $model->id_actividad = $actividadactual;
+             $model->id_cactividad_proceso = $pscactividad_proceso;
+             
+            if($model->save()){
+
+                //Averiguando si el numero de cod_cda asociados al tramite es igual a los reportes de informacion creados ==================
+                $crear_pscactividadproceso = $this->pasardiligenciada($id_cproceso, $pscactividad_proceso);
+                        
+                if($crear_pscactividadproceso == TRUE){
+                    $model4 = $this->findPscactividadProceso($pscactividad_proceso);
+                    $model4->diligenciado = 'S';
+
+                    if($model4->save()){
+
+                        $transaction->commit();
+
+                        return [
+                            'model' => $model,
+                            'create' => 'True'
+                        ];
+
+                    }else{
+
+                        $transaction->rollBack(); 
+                        throw new \yii\web\HttpException(404, 'Error al diligenciar ACTIVIDAD');
+
+                    }
+                }else{
+
+                    $transaction->commit();
+
+                    return [
+                        'model' => $model,
+                        'create' => 'True'
+                    ];
+                }
+                   
+            }else{
+               $transaction->rollBack(); 
+               throw new \yii\web\HttpException(404, 'Error guardando Verificacion de Datos');
+            }
         }
         elseif ($isAjax) {
         
                 return [
                     'model' => $model,
-                    'modelCoordenada' => $modelCoordenada,
                     'create' => 'Ajax'
                 ];	
            
@@ -521,280 +359,618 @@ class CdaReporteInformacionControllerFachada extends FachadaPry
         
                  return [
                     'model' => $model,
-                     'modelCoordenada' => $modelCoordenada,
                     'create' => 'False'
                 ];
 
         }
     }
+    
+    
+    /*
+     * Funcion para registrar senagua y epa
+     */
+    public function actionCreateinstitucionapoyo($request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso)
+    {
+        $model = new CdaReporteInformacion();
+        
+        $model2 = new \common\models\poc\FdCoordenada();
+        $model2->setScenario('createcoordenada');
+        
+        
+        if ($model->load($request) && $model2->load($request) ) {
+		
+             $transaction = Yii::$app->db->beginTransaction();
+             
+             $model->id_tipo = '2';
+             $model->id_actividad = $actividadactual;
+             $model->id_cactividad_proceso = $pscactividad_proceso;
+             
+            $model2->id_tcoordenada = 1;
+
+            if($model2->save()){
+
+                    $model->id_coordenada = $model2->id_coordenada;
+                    
+                    if($model->save()){
+
+                        //Averiguando si el numero de cod_cda asociados al tramite es igual a los reportes de informacion creados ==================
+                        $crear_pscactividadproceso = $this->pasardiligenciada($id_cproceso, $pscactividad_proceso);
+                        
+                        if($crear_pscactividadproceso == TRUE){
+                            $model4 = $this->findPscactividadProceso($pscactividad_proceso);
+                            $model4->diligenciado = 'S';
+                            
+                            if($model4->save()){
+                                
+                                $transaction->commit();
+
+                                return [
+                                    'model' => $model,
+                                    'model2' => $model2,
+                                    'create' => 'True'
+                                ];
+                            
+                            }else{
+                                
+                                $transaction->rollBack(); 
+                                throw new \yii\web\HttpException(404, 'Error al diligenciar ACTIVIDAD');
+                                
+                            }
+                        }else{
+                        
+                            $transaction->commit();
+
+                            return [
+                                'model' => $model,
+                                'model2' => $model2,
+                                'create' => 'True'
+                            ];
+                        }
+                    }else{
+                        
+                        $transaction->rollBack(); 
+                        throw new \yii\web\HttpException(404, 'Error en Reporte Informacion');
+                    }
+
+
+                } else{
+                    $transaction->rollBack(); 
+                    throw new \yii\web\HttpException(404, 'Error guardando Coordenada');
+               }
+
+
+        }
+        elseif ($isAjax) {
+        
+                return [
+                    'model' => $model,
+                    'model2' => $model2,
+                    'create' => 'Ajax'
+                ];	
+           
+        }  
+        
+        else {
+        
+                 return [
+                    'model' => $model, 'model2' => $model2,
+                    'create' => 'False'
+                ];
+
+        }
+    }
+    
+    
+    /*
+     * Funcion para registrar visita
+     */
+    public function actionCreatevisita($request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso)
+    {
+        $model = new CdaReporteInformacion();
+        $model->setScenario('registravisita');
+        
+        $model2 = new \common\models\poc\FdCoordenada();
+        $model2->setScenario('createcoordenada');
+        
+        
+        if ($model->load($request) && $model2->load($request) ) {
+		
+             $transaction = Yii::$app->db->beginTransaction();
+             
+             $model->id_tipo = '2';
+             $model->id_actividad = $actividadactual;
+             $model->id_cactividad_proceso = $pscactividad_proceso;
+             
+            $model2->id_tcoordenada = 1;
+
+            if($model2->save()){
+
+                    $model->id_coordenada = $model2->id_coordenada;
+                    
+                    if($model->save()){
+
+                        //Averiguando si el numero de cod_cda asociados al tramite es igual a los reportes de informacion creados ==================
+                        $crear_pscactividadproceso = $this->pasardiligenciada($id_cproceso, $pscactividad_proceso);
+                        
+                        if($crear_pscactividadproceso == TRUE){
+                            $model4 = $this->findPscactividadProceso($pscactividad_proceso);
+                            $model4->diligenciado = 'S';
+                            
+                            if($model4->save()){
+                                
+                                $transaction->commit();
+
+                                return [
+                                    'model' => $model,
+                                    'model2' => $model2,
+                                    'create' => 'True'
+                                ];
+                            
+                            }else{
+                                
+                                $transaction->rollBack(); 
+                                throw new \yii\web\HttpException(404, 'Error al diligenciar ACTIVIDAD');
+                                
+                            }
+                        }else{
+                        
+                            $transaction->commit();
+
+                            return [
+                                'model' => $model,
+                                'model2' => $model2,
+                                'create' => 'True'
+                            ];
+                        }
+                    }else{
+                        
+                        $transaction->rollBack(); 
+                        throw new \yii\web\HttpException(404, 'Error en Reporte Informacion');
+                    }
+
+
+                } else{
+                    $transaction->rollBack(); 
+                    throw new \yii\web\HttpException(404, 'Error guardando Coordenada');
+               }
+
+
+        }
+        elseif ($isAjax) {
+        
+                return [
+                    'model' => $model,
+                    'model2' => $model2,
+                    'create' => 'Ajax'
+                ];	
+           
+        }  
+        
+        else {
+        
+                 return [
+                    'model' => $model, 'model2' => $model2,
+                    'create' => 'False'
+                ];
+
+        }
+    }
+    
+    
+    /*
+     * Create para Registrar Datos Certificados
+     * Mod: 20190504
+     */
+    
+     public function actionCreateRegistrar($request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso,$tipo,$id_cda_tramite)
+    {
+        $basicas = New BasicController();
+        $fechaactual = date(Yii::$app->fmtfechahoraphp);
+        
+        
+        $model = new CdaReporteInformacion();
+        $model->setScenario('registrardatoscertificados');
+        
+        $model2 = new \common\models\poc\FdCoordenada();
+        $model2->setScenario('createcoordenada');
+        
+        $model3 = new \common\models\poc\FdUbicacion();
+        $model3->setScenario('createubicacion');
+        
+        
+        
+        if ($model->load($request) && $model2->load($request) && $model3->load($request)) {
+		
+             $transaction = Yii::$app->db->beginTransaction();
+             
+             $model->id_tipo = '2';
+             $model->id_actividad = $actividadactual;
+             $model->id_cactividad_proceso = $pscactividad_proceso;
+             
+            $model2->id_tcoordenada = 1;
+
+            if($model2->save()){
+
+                if($model3->save()){
+
+                    $model->id_ubicacion = $model3->id_ubicacion;
+                    $model->id_coordenada = $model2->id_coordenada;
+                    
+                    if($model->save()){
+
+                        //Averiguando si el numero de cod_cda asociados al tramite es igual a los reportes de informacion creados ==================
+                        $crear_pscactividadproceso = $this->pasardiligenciada($id_cproceso, $pscactividad_proceso);
+                        
+                        if($crear_pscactividadproceso == TRUE){
+                            
+                            $model4 = $this->findPscactividadProceso($pscactividad_proceso);
+                            $model4->diligenciado = 'S';
+                            
+                            if($model4->save()){
+                                
+                                $transaction->commit();
+
+                                return [
+                                    'model' => $model,
+                                    'model2' => $model2,
+                                    'model3'=>$model3,
+                                    'create' => 'True'
+                                ];
+                            
+                            }else{
+                                
+                                $transaction->rollBack(); 
+                                throw new \yii\web\HttpException(404, 'Error al diligenciar ACTIVIDAD');
+                                
+                            }
+                        }else{
+                        
+                            $transaction->commit();
+
+                            return [
+                                'model' => $model,
+                                'model2' => $model2,
+                                'model3'=>$model3,
+                                'create' => 'True'
+                            ];
+                        }
+                    }else{
+                        
+                        $transaction->rollBack(); 
+                        throw new \yii\web\HttpException(404, 'Error en Reporte Informacion');
+                    }
+
+
+                }else{
+
+                    $transaction->rollBack(); 
+                    throw new \yii\web\HttpException(404, 'Error guardando Ubicacion');
+
+                }
+
+            }else{
+               $transaction->rollBack(); 
+               throw new \yii\web\HttpException(404, 'Error guardando Coordenada');
+            }
+
+
+        }
+        elseif ($isAjax) {
+        
+                return [
+                    'model' => $model,
+                    'model2' => $model2,
+                    'model3' => $model3,
+                    'create' => 'Ajax'
+                ];	
+           
+        }  
+        
+        else {
+        
+                 return [
+                    'model' => $model, 'model2' => $model2,
+                    'model3' => $model3,
+                    'create' => 'False'
+                ];
+
+        }
+    }
+    
     
     /**
      * Modifica un dato existente en el modelo CdaReporteInformacion.
      * Si se modifica correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado..
      * @param integer $id
      * @return mixed
+     * $request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso,$tipo,$id_cda_tramite
      */
-    public function actionUpdate($id,$request,$isAjax)
+    public function actionUpdate($id,$request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso,$tipo,$id_cda_tramite)
     {
+        
+        $basicas = New BasicController();
+        $fechaactual = date(Yii::$app->fmtfechahoraphp);
+        
         $model = $this->findModel($id);
 
-        if ($model->load($request) && $model->save()) {
-			
-			
-			return [
+        $model2 = $this->findModelcoordenada($model->id_coordenada);
+        $model2->setScenario('createcoordenada');
+        
+        $model3 = $this->findModelubicacion($model->id_ubicacion);
+        $model3->setScenario('createubicacion');
+        
+         
+        if ($model->load($request) && $model2->load($request) && $model3->load($request)) {
+		
+            $transaction = Yii::$app->db->beginTransaction();
+             
+            if($model2->save()){
+
+                if($model3->save()){
+
+                    if($model->save()){
+
+                        
+                        $transaction->commit();
+
+                        return [
                             'model' => $model,
+                            'model2' => $model2,
+                            'model3'=>$model3,
                             'update' => 'True'
                         ];
-        } 
-         elseif ($isAjax) {
+
+                    }else{
+                        
+                        $transaction->rollBack(); 
+                        throw new \yii\web\HttpException(404, 'Error en Reporte Informacion');
+                    }
+
+
+                }else{
+
+                    $transaction->rollBack(); 
+                    throw new \yii\web\HttpException(404, 'Error guardando Ubicacion');
+
+                }
+
+            }else{
+               $transaction->rollBack(); 
+               throw new \yii\web\HttpException(404, 'Error guardando Coordenada');
+            }
+
+
+        }
+        elseif ($isAjax) {
         
                 return [
                     'model' => $model,
+                    'model2' => $model2,
+                    'model3' => $model3,
                     'update' => 'Ajax'
                 ];	
            
         }  
+        
         else {
-                         return [
-                            'model' => $model,
-                            'update' => 'False'
-                        ];
+        
+                 return [
+                    'model' => $model, 'model2' => $model2,
+                    'model3' => $model3,
+                    'update' => 'False'
+                ];
+
         }
     }
     
-        /**
-     * Modifica un dato existente en el modelo CdaReporteInformacion.
-     * Si se modifica correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado..
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdateReporteInformacion($id,$request,$isAjax)
+    public function actionUpdateregistrar($id,$request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso,$tipo,$id_cda_tramite)
     {
+        
+        $basicas = New BasicController();
+        $fechaactual = date(Yii::$app->fmtfechahoraphp);
+        
         $model = $this->findModel($id);
-        $ubicacion = New \frontend\controllers\poc\FdUbicacionControllerFachada();
-        $coordenada = new \frontend\controllers\poc\FdCoordenadaControllerFachada();
+        $model->setScenario('registrardatoscertificados');
         
-        $modelUbicacion=$ubicacion->cargaUbicacion(['id_reporte_informacion'=>$id]);
-        $modelCoordenada=$coordenada->cargaCoordenada(['id_reporte_informacion'=>$id]);
+        $model2 = $this->findModelcoordenada($model->id_coordenada);
+        $model2->setScenario('createcoordenada');
+        
+        $model3 = $this->findModelubicacion($model->id_ubicacion);
+        $model3->setScenario('createubicacion');
+        
+         
+        if ($model->load($request) && $model2->load($request) && $model3->load($request)) {
+		
+            $transaction = Yii::$app->db->beginTransaction();
+             
+            if($model2->save()){
 
-        
-        if ($model->load($request) && $modelUbicacion->load($request) && $modelCoordenada->load($request) && $model->save() && $modelUbicacion->save(false) && $modelCoordenada->save(false)) {
-			
-			return [
+                if($model3->save()){
+
+                    if($model->save()){
+
+                        
+                        $transaction->commit();
+
+                        return [
                             'model' => $model,
-                            'modelUbicacion' => $modelUbicacion,
-                            'modelCoordenada' => $modelCoordenada,
+                            'model2' => $model2,
+                            'model3'=>$model3,
                             'update' => 'True'
                         ];
-        } 
-         elseif ($isAjax) {
-        
-                return [
-                    'model' => $model,
-                    'modelUbicacion' => $modelUbicacion,
-                    'modelCoordenada' => $modelCoordenada,
-                    'update' => 'Ajax'
-                ];	
-           
-        }  
-        else {
-                         return [
-                            'model' => $model,
-                            'modelUbicacion' => $modelUbicacion,
-                            'modelCoordenada' => $modelCoordenada,
-                            'update' => 'False'
-                        ];
+
+                    }else{
+                        
+                        $transaction->rollBack(); 
+                        throw new \yii\web\HttpException(404, 'Error en Reporte Informacion');
+                    }
+
+
+                }else{
+
+                    $transaction->rollBack(); 
+                    throw new \yii\web\HttpException(404, 'Error guardando Ubicacion');
+
+                }
+
+            }else{
+               $transaction->rollBack(); 
+               throw new \yii\web\HttpException(404, 'Error guardando Coordenada');
+            }
+
+
         }
-    }
-    
-         /**
-     * Modifica un dato existente en el modelo CdaReporteInformacion.
-     * Si se modifica correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado..
-     * @param integer $id
-     * @return mixed
-     */
-     public function actionUpdateVisitaTecnica($id,$request,$isAjax)
-    {
-        $model = $this->findModel($id);
-        if ($model->load($request) && $model->save(false)) {
-			
-			return [
-                            'model' => $model,
-                            
-                            'update' => 'True'
-                        ];
-        } 
-         elseif ($isAjax) {
+        elseif ($isAjax) {
         
                 return [
                     'model' => $model,
-                    
+                    'model2' => $model2,
+                    'model3' => $model3,
                     'update' => 'Ajax'
                 ];	
            
         }  
+        
         else {
-                         return [
-                            'model' => $model,
-                          
-                            'update' => 'False'
-                        ];
-        }
-    }
-    
-            /**
-     * Modifica un dato existente en el modelo CdaReporteInformacion.
-     * Si se modifica correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado..
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdateSenagua($id,$request,$isAjax)
-    {
-        $model = $this->findModel($id);
-        $coordenada = new \frontend\controllers\poc\FdCoordenadaControllerFachada();
-        $modelCoordenada=$coordenada->cargaCoordenada(['id_reporte_informacion'=>$id]);
+        
+                 return [
+                    'model' => $model, 'model2' => $model2,
+                    'model3' => $model3,
+                    'update' => 'False'
+                ];
 
-        
-        if ($model->load($request) && $modelCoordenada->load($request) && $model->save(false) && $modelCoordenada->save(false)) {
-			
-			return [
-                            'model' => $model,
-                            'modelCoordenada' => $modelCoordenada,
-                            'update' => 'True'
-                        ];
-        } 
-         elseif ($isAjax) {
-        
-                return [
-                    'model' => $model,
-                    'modelCoordenada' => $modelCoordenada,
-                    'update' => 'Ajax'
-                ];	
-           
-        }  
-        else {
-                         return [
-                            'model' => $model,
-                            'modelCoordenada' => $modelCoordenada,
-                            'update' => 'False'
-                        ];
-        }
-    }
-    
-             /**
-     * Modifica un dato existente en el modelo CdaReporteInformacion.
-     * Si se modifica correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado..
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdateEpa($id,$request,$isAjax)
-    {
-        $model = $this->findModel($id);
-        $coordenada = new \frontend\controllers\poc\FdCoordenadaControllerFachada();
-        $modelCoordenada=$coordenada->cargaCoordenada(['id_reporte_informacion'=>$id]);
-
-        
-        if ($model->load($request) && $modelCoordenada->load($request) && $model->save(false) && $modelCoordenada->save(false)) {
-			
-			return [
-                            'model' => $model,
-                            'modelCoordenada' => $modelCoordenada,
-                            'update' => 'True'
-                        ];
-        } 
-         elseif ($isAjax) {
-        
-                return [
-                    'model' => $model,
-                    'modelCoordenada' => $modelCoordenada,
-                    'update' => 'Ajax'
-                ];	
-           
-        }  
-        else {
-                         return [
-                            'model' => $model,
-                            'modelCoordenada' => $modelCoordenada,
-                            'update' => 'False'
-                        ];
-        }
-    }
-
-
-             /**
-     * Modifica un dato existente en el modelo CdaReporteInformacion.
-     * Si se modifica correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado..
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdateCoordenadas($id,$request,$isAjax)
-    {
-        $model = $this->findModel($id);
-        $coordenada = new \frontend\controllers\poc\FdCoordenadaControllerFachada();
-        $modelCoordenada=$coordenada->cargaCoordenada(['id_reporte_informacion'=>$id]);
-
-        
-        if ($model->load($request) && $modelCoordenada->load($request) && $model->save(false) && $modelCoordenada->save(false)) {
-			
-			return [
-                            'model' => $model,
-                            'modelCoordenada' => $modelCoordenada,
-                            'update' => 'True'
-                        ];
-        } 
-         elseif ($isAjax) {
-        
-                return [
-                    'model' => $model,
-                    'modelCoordenada' => $modelCoordenada,
-                    'update' => 'Ajax'
-                ];	
-           
-        }  
-        else {
-                         return [
-                            'model' => $model,
-                            'modelCoordenada' => $modelCoordenada,
-                            'update' => 'False'
-                        ];
-        }
-    }
-
-            /**
-     * Modifica un dato existente en el modelo CdaReporteInformacion.
-     * Si se modifica correctamente guarda setFlash, presenta la barra de progreso y envia a view con la confirmación de guardado..
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdateDecision($id,$request,$isAjax)
-    {
-        $model = $this->findModel($id);
-      
-        
-        if ($model->load($request) &&  $model->save(false) ) {
-			
-			return [
-                            'model' => $model,
-                            'update' => 'True'
-                        ];
-        } 
-         elseif ($isAjax) {
-        
-                return [
-                    'model' => $model,
-                    'update' => 'Ajax'
-                ];	
-           
-        }  
-        else {
-                         return [
-                            'model' => $model,
-                            'update' => 'False'
-                        ];
         }
     }
     
     
+    
+    public function actionUpdateinstitucionapoyo($id,$request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso,$tipo,$id_cda_tramite)
+    {
+        
+        $basicas = New BasicController();
+        $fechaactual = date(Yii::$app->fmtfechahoraphp);
+          
+        $model = $this->findModel($id);
+
+        
+        $model2 = $this->findModelcoordenada($model->id_coordenada);
+        $model2->setScenario('createcoordenada');
+        
+        if ($model->load($request) && $model2->load($request)) {
+		
+            $transaction = Yii::$app->db->beginTransaction();
+             
+            if($model2->save()){
+
+                $model->id_coordenada = $model2->id_coordenada;
+
+                if($model->save()){
+                 
+                        $transaction->commit();
+
+                        return [
+                            'model' => $model,
+                            'model2' => $model2,
+                            'update' => 'True'
+                        ];
+
+                }else{
+
+                    $transaction->rollBack(); 
+                    throw new \yii\web\HttpException(404, 'Error guardando institucion apoyo');
+
+                }
+
+            }else{
+               $transaction->rollBack(); 
+               throw new \yii\web\HttpException(404, 'Error guardando Coordenada');
+            }
+        }
+        elseif ($isAjax) {
+        
+                return [
+                    'model' => $model,
+                    'model2' => $model2,
+                    'update' => 'Ajax'
+                ];	
+           
+        }  
+        
+        else {
+        
+                 return [
+                    'model' => $model, 'model2' => $model2,
+                    'update' => 'False'
+                ];
+
+        }
+    }
+    
+    
+    
+     public function actionUpdatevisita($id,$request,$isAjax,$actividadactual,$id_cproceso,$pscactividad_proceso,$tipo,$id_cda_tramite)
+    {
+        
+        $basicas = New BasicController();
+        $fechaactual = date(Yii::$app->fmtfechahoraphp);
+          
+        $model = $this->findModel($id);
+        $model->setScenario('registravisita');
+        
+        $model2 = $this->findModelcoordenada($model->id_coordenada);
+        $model2->setScenario('createcoordenada');
+        
+        if ($model->load($request) && $model2->load($request)) {
+		
+            $transaction = Yii::$app->db->beginTransaction();
+             
+            if($model2->save()){
+
+                $model->id_coordenada = $model2->id_coordenada;
+
+                if($model->save()){
+                 
+                        $transaction->commit();
+
+                        return [
+                            'model' => $model,
+                            'model2' => $model2,
+                            'update' => 'True'
+                        ];
+
+                }else{
+
+                    $transaction->rollBack(); 
+                    throw new \yii\web\HttpException(404, 'Error guardando institucion apoyo');
+
+                }
+
+            }else{
+               $transaction->rollBack(); 
+               throw new \yii\web\HttpException(404, 'Error guardando Coordenada');
+            }
+        }
+        elseif ($isAjax) {
+        
+                return [
+                    'model' => $model,
+                    'model2' => $model2,
+                    'update' => 'Ajax'
+                ];	
+           
+        }  
+        
+        else {
+        
+                 return [
+                    'model' => $model, 'model2' => $model2,
+                    'update' => 'False'
+                ];
+
+        }
+    }
+    
+
     /**
      * Deletes an existing CdaReporteInformacion model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -823,6 +999,27 @@ class CdaReporteInformacionControllerFachada extends FachadaPry
                     }
     }
     
+    
+    
+    protected function findModelcoordenada($id_coordenada)
+    {
+        if (($model = \common\models\poc\FdCoordenada::findOne($id_coordenada)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+    
+    
+    protected function findModelubicacion($id_ubicacion)
+    {
+        if (($model = \common\models\poc\FdUbicacion::findOne($id_ubicacion)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+    
     /**
      * Funcion generica para la consulta por parametros, debe ser llamada por la funcion publica
      * @param type $params contiene array con valores de query a columnas de la tabla
@@ -845,123 +1042,36 @@ class CdaReporteInformacionControllerFachada extends FachadaPry
         return $this->findModelByParams($params);
     }
     
+    /*
+     * Funcion que pasa la solicitud a diligenciada
+     */
+    protected function pasardiligenciada($id_cproceso,$id_cactividad_proceso){
+        
+        $_totalcodcda = \common\models\cda\PsCodCda::find()
+                ->leftJoin('cda','cda.id_cda=ps_cod_cda.id_cda')
+                ->leftJoin('ps_cactividad_proceso','ps_cactividad_proceso.id_cactividad_proceso =  cda.id_cactividad_proceso')
+                ->where(['ps_cactividad_proceso.id_cproceso'=>$id_cproceso])
+                ->count();
+        
+        $_totalreporte = CdaReporteInformacion::find()->where(['id_cactividad_proceso'=>$id_cactividad_proceso])->count();
+        
+        
+        if($_totalcodcda == $_totalreporte){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+        
+    }
     
-    /*Informacion para PDF organizada*/
-    
-    public function actiongetDatosTecnicos($id_cda,$id_cactividad_proceso)
-    {
-            $arrayData =    CdaReporteInformacion::find()
-                             ->where(['id_cda'=>$id_cda])
-                             ->andwhere(['id_actividad'=>8])
-                             ->andwhere(['id_cactividad_proceso'=>$id_cactividad_proceso])
-                             ->with('fdCoordenadas')
-                             ->with('idUbicacion')
-                             ->with('idCda')
-                             ->with('idTfuente')
-                             ->with('idSubtfuente')
-                             ->with('idCaracteristica')
-                             ->with('idUsoSolicitado')
-                             ->with('idDestino')
-                             ->all();
-            
-            return $arrayData;
+    public function findPscactividadProceso($id_cactividad_cproceso){
+       
+        if (($model = \common\models\cda\PsCactividadProceso::findOne($id_cactividad_cproceso)) !== null) {
+              return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
     
     
-    public function actiongetDatosSenagua($id_cda,$id_cactividad_proceso)
-    {
-            $arrayData =    CdaReporteInformacion::find()
-                             ->where(['id_cda'=>$id_cda])
-                             ->andwhere(['id_actividad'=>12])
-                             ->andwhere(['id_cactividad_proceso'=>$id_cactividad_proceso])
-                             ->with('fdCoordenadas')
-                             ->with('idUbicacion')
-                             ->with('idCda')
-                             ->with('idTfuente')
-                             ->with('idSubtfuente')
-                             ->with('idCaracteristica')
-                             ->with('idUsoSolicitado')
-                             ->with('idDestino')
-                             ->all();
-            
-            return $arrayData;
-    }
-    
-    
-    public function actiongetDatosEpa($id_cda,$id_cactividad_proceso)
-    {
-            $arrayData =    CdaReporteInformacion::find()
-                             ->where(['id_cda'=>$id_cda])
-                             ->andwhere(['id_actividad'=>13])
-                             ->andwhere(['id_cactividad_proceso'=>$id_cactividad_proceso])
-                             ->with('fdCoordenadas')
-                             ->with('idUbicacion')
-                             ->with('idCda')
-                             ->with('idTfuente')
-                             ->with('idSubtfuente')
-                             ->with('idCaracteristica')
-                             ->with('idUsoSolicitado')
-                             ->with('idDestino')
-                             ->all();
-            
-            return $arrayData;
-    }
-    
-    
-    public function actiongetErrores($id_cda)
-    {
-            $arrayData = \common\models\cda\CdaErrores::find()
-                             ->where(['id_cda'=>$id_cda])
-                             ->with('idTerror')
-                             ->all();
-            
-            return $arrayData;
-    }
-    
-    
-    public function actiongetVisita($id_cda,$id_cactividad_proceso)
-    {
-            $arrayData = CdaReporteInformacion::find()
-                         ->where(['id_cda'=>$id_cda])
-                         ->andwhere(['id_cactividad_proceso'=>$id_cactividad_proceso])
-                         ->with('fdCoordenadasvista')
-                         ->all();
-            
-            return $arrayData;
-    }
-    
-    
-     public function actiongetDatosRegistroCDApdf($id_cda,$id_cactividad_proceso)
-    {
-            $arrayData =    CdaReporteInformacion::find()
-                             ->where(['id_cda'=>$id_cda])
-                             ->andwhere(['id_actividad'=>15])
-                             ->andwhere(['id_cactividad_proceso'=>$id_cactividad_proceso])
-                             ->with('fdCoordenadas')
-                             ->with('idUbicacion')
-                             ->with('idCda')
-                             ->with('idTfuente')
-                             ->with('idSubtfuente')
-                             ->with('idCaracteristica')
-                             ->with('idUsoSolicitado')
-                             ->with('idDestino')
-                             ->all();
-            
-            return $arrayData;
-    }
-    
-    
-    public function actiongetAnalisisHidrologico($id_cda)
-    {
-            $arrayData = \common\models\cda\CdaAnalisisHidrologico::find()
-                             ->where(['id_cda'=>$id_cda])
-                             ->with('idCda')
-                             ->with('idCartografia')
-                             ->with('idEhidrografica')
-                             ->with('idEmeteorologica')
-                             ->with('idMetodologia')
-                             ->all();
-            
-            return $arrayData;
-    }
 }

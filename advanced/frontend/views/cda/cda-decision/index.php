@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProviderReporteInformacion,
         'filterModel' => $searchModelReporteInformacion,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+          //  ['class' => 'yii\grid\SerialColumn'],
             'longitud',
             'latitud',
             'altura',

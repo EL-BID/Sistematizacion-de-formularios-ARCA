@@ -25,6 +25,8 @@ use Yii;
  */
 class Entidades extends ModelPry
 {
+    public $nombre_provincia;
+    
     /**
      * @inheritdoc
      */
@@ -40,10 +42,9 @@ class Entidades extends ModelPry
     {
         return [
             [['nombre_entidad'], 'required'],
-            [['id_tipo_entidad'], 'number'],
-            [['id_entidad'], 'string', 'max' => 10],
+            [['id_tipo_entidad'], 'number','skipOnEmpty'=>true],
             [['nombre_entidad'], 'string', 'max' => 100],
-            [['cod_canton', 'cod_canton_p', 'cod_provincia', 'cod_provincia_p', 'cod_parroquia'], 'string', 'max' => 4],
+            [['cod_canton', 'cod_canton_p', 'cod_provincia', 'cod_provincia_p', 'cod_parroquia'], 'safe'],
             [['cod_canton', 'cod_provincia'], 'exist', 'skipOnError' => true, 'targetClass' => Cantones::className(), 'targetAttribute' => ['cod_canton' => 'cod_canton', 'cod_provincia' => 'cod_provincia']],
             [['cod_canton_p', 'cod_provincia_p', 'cod_parroquia'], 'exist', 'skipOnError' => true, 'targetClass' => Parroquias::className(), 'targetAttribute' => ['cod_canton_p' => 'cod_canton', 'cod_provincia_p' => 'cod_provincia', 'cod_parroquia' => 'cod_parroquia']],
             [['id_tipo_entidad'], 'exist', 'skipOnError' => true, 'targetClass' => TipoEntidad::className(), 'targetAttribute' => ['id_tipo_entidad' => 'id_tipo_entidad']],
@@ -67,6 +68,11 @@ class Entidades extends ModelPry
         ];
     }
 
+    public function getCodprovincia()
+    {
+        return $this->hasOne(Provincias::className(), ['cod_provincia' => 'cod_provincia_p']);
+    }
+    
     /**
      * @return \yii\db\ActiveQuery -> Relaciones que presenta la tabla
      */
@@ -74,6 +80,11 @@ class Entidades extends ModelPry
     {
         return $this->hasOne(Cantones::className(), ['cod_canton' => 'cod_canton', 'cod_provincia' => 'cod_provincia']);
     }
+    
+    public function getCodCanton2(){
+        return $this->hasOne(Cantones::className(), ['cod_canton' => 'cod_canton_p', 'cod_provincia' => 'cod_provincia_p']);
+    }
+   
 
     /**
      * @return \yii\db\ActiveQuery -> Relaciones que presenta la tabla
@@ -105,5 +116,9 @@ class Entidades extends ModelPry
     public function getCodRegions()
     {
         return $this->hasMany(Region::className(), ['cod_region' => 'cod_region'])->viaTable('regionentidades', ['id_entidad' => 'id_entidad']);
+    }
+    
+    public function getPerfilregion(){
+        return $this->hasMany(PerfilRegion::className(), ['cod_region' => 'cod_region'])->viaTable('regionentidades', ['id_entidad' => 'id_entidad']);
     }
 }

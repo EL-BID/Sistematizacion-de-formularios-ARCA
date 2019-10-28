@@ -42,6 +42,7 @@ class FdCoordenada extends ModelPry
     {
         return [
             [['id_tcoordenada','id_conjunto_respuesta', 'id_pregunta', 'id_respuesta','x', 'y', 'altura', 'longitud', 'latitud'], 'required'],
+            [['id_tcoordenada','altura','x','y'], 'required', 'on' => 'createcoordenada'],
             [['id_tcoordenada', 'id_conjunto_respuesta', 'id_pregunta', 'id_respuesta'], 'integer'],
             [['longitud', 'latitud'], formatnumber::className(),"params"=>["format"=>"##.#####"]],
             [['x'], formatnumber::className(),"params"=>["format"=>"######.##"]],
@@ -70,7 +71,17 @@ class FdCoordenada extends ModelPry
             'id_conjunto_respuesta' => 'Id Conjunto Respuesta',
             'id_pregunta' => 'Id Pregunta',
             'id_respuesta' => 'Id Respuesta',
+            'id_reporte_informacion'=>'Reporte Informacion'
         ];
+    }
+    
+    public function scenarios() {
+        $scenarios = parent::scenarios();
+        
+        //Scenario para analizar informacion================================================================================================
+        $scenarios['createcoordenada'] = ['id_tcoordenada','altura','x','y'];//Scenario Values Only Accepted
+
+	return $scenarios;
     }
 
     /**

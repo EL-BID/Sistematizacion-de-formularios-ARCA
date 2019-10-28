@@ -28,9 +28,8 @@ class Pagina extends ModelPry
     public function rules()
     {
         return [
-            [['id_pagina', 'nombre_pagina'], 'required'],
-            [['id_pagina'], 'number'],
-            [['nombre_pagina'], 'string', 'max' => 50],
+            [['nombre_pagina'], 'required'],
+            [['nombre_pagina','modulo'], 'string', 'max' => 50],
         ];
     }
 

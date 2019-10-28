@@ -14,8 +14,11 @@ use common\models\modelpry\ModelPry;
  * @property integer $id_tipo_view_formato
  * @property integer $id_modulo
  * @property integer $ult_id_version
- * @property string $cod_rol
+ * @property integer $cod_rol
  * @property string $numeracion
+ * @property string $sop_ruta
+ * @property string $url_acceso
+ * @property string $filtros_search
  *
  * @property FdConjuntoPregunta[] $fdConjuntoPreguntas
  * @property FdConjuntoRespuesta[] $fdConjuntoRespuestas
@@ -43,21 +46,19 @@ class FdFormato extends ModelPry
     public function rules()
     {
         return [
-            [['id_formato'], 'required'],
-            [['id_formato', 'id_tipo_view_formato', 'id_modulo', 'ult_id_version'], 'integer'],
+            [['id_tipo_view_formato', 'id_modulo', 'ult_id_version', 'cod_rol'], 'integer'],
             [['nom_formato', 'num_formato'], 'string', 'max' => 50],
-            [['cod_rol'], 'string', 'max' => 10],
-            [['sop_ruta'], 'string', 'max' => 100],
-            [['numeracion'], 'string', 'max' => 1],
+            [['numeracion', 'filtros_search'], 'string', 'max' => 1],
+            [['sop_ruta', 'url_acceso'], 'string', 'max' => 100],
             [['id_modulo'], 'exist', 'skipOnError' => true, 'targetClass' => FdModulo::className(), 'targetAttribute' => ['id_modulo' => 'id_modulo']],
             [['id_tipo_view_formato'], 'exist', 'skipOnError' => true, 'targetClass' => FdTipoViewFormato::className(), 'targetAttribute' => ['id_tipo_view_formato' => 'id_tipo_view_formato']],
             [['ult_id_version'], 'exist', 'skipOnError' => true, 'targetClass' => FdVersion::className(), 'targetAttribute' => ['ult_id_version' => 'id_version']],
-            [['cod_rol'], 'exist', 'skipOnError' => true, 'targetClass' => \common\models\autenticacion\Rol::className(), 'targetAttribute' => ['cod_rol' => 'cod_rol']],
+            [['cod_rol'], 'exist', 'skipOnError' => true, 'targetClass' => Rol::className(), 'targetAttribute' => ['cod_rol' => 'cod_rol']],
         ];
     }
 
     /**
-     * @inheritdoc Atributos para los labes del formulario CAMPO -> Label
+     * @inheritdoc Atributos para los labels del formulario CAMPO -> Label
      */
     public function attributeLabels()
     {
@@ -70,6 +71,9 @@ class FdFormato extends ModelPry
             'ult_id_version' => 'Ult Id Version',
             'cod_rol' => 'Cod Rol',
             'numeracion' => 'Numeracion',
+            'sop_ruta' => 'Sop Ruta',
+            'url_acceso' => 'Url Acceso',
+            'filtros_search' => 'Filtros Search',
         ];
     }
 
@@ -143,10 +147,5 @@ class FdFormato extends ModelPry
     public function getFdRespuestas()
     {
         return $this->hasMany(FdRespuesta::className(), ['id_formato' => 'id_formato']);
-    }
-    
-    public function getFullFormat()
-    {
-            return $this->num_formato.'->'.$this->nom_formato;
     }
 }

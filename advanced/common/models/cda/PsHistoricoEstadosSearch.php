@@ -18,8 +18,8 @@ class PsHistoricoEstadosSearch extends PsHistoricoEstados
     public function rules()
     {
         return [
-            [['id_hisotrico_cproceso', 'id_eproceso', 'id_cproceso', 'id_usuario', 'id_actividad', 'id_tgestion','observaciones'], 'default', 'value' => null],
-            [['id_hisotrico_cproceso', 'id_eproceso', 'id_cproceso', 'id_usuario', 'id_actividad', 'id_tgestion'], 'integer'],
+            [['id_historico_cproceso', 'id_eproceso', 'id_cproceso', 'id_usuario', 'id_actividad', 'id_tgestion','observaciones'], 'default', 'value' => null],
+            [['id_historico_cproceso', 'id_eproceso', 'id_cproceso', 'id_usuario', 'id_actividad', 'id_tgestion'], 'integer'],
             [['fecha_estado', 'observaciones'], 'safe'],
         ];
     }
@@ -60,7 +60,7 @@ class PsHistoricoEstadosSearch extends PsHistoricoEstados
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id_hisotrico_cproceso' => $this->id_hisotrico_cproceso,
+            'id_historico_cproceso' => $this->id_historico_cproceso,
             'fecha_estado' => $this->fecha_estado,
             'id_eproceso' => $this->id_eproceso,
             'id_cproceso' => $this->id_cproceso,

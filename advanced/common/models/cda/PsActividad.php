@@ -23,8 +23,8 @@ use common\models\modelpry\ModelPry;
  * @property PsProceso $idProceso
  * @property PsTipoActividad $idTactividad
  * @property PsTipoSelect $idTselect
- * @property PsActvidadRuta[] $psActvidadRutas
- * @property PsActvidadRuta[] $psActvidadRutas0
+ * @property PsActividadRuta[] $psActividadRutas
+ * @property PsActividadRuta[] $psActividadRutas0
  * @property PsAlerta[] $psAlertas
  * @property PsAlertaActividad[] $psAlertaActividads
  * @property PsCactividadProceso[] $psCactividadProcesos
@@ -114,17 +114,17 @@ class PsActividad extends ModelPry
     /**
      * @return \yii\db\ActiveQuery -> Relaciones que presenta la tabla
      */
-    public function getPsActvidadRutas()
+    public function getPsActividadRutas()
     {
-        return $this->hasMany(PsActvidadRuta::className(), ['id_actividad_origen' => 'id_actividad']);
+        return $this->hasMany(PsActividadRuta::className(), ['id_actividad_origen' => 'id_actividad']);
     }
 
     /**
      * @return \yii\db\ActiveQuery -> Relaciones que presenta la tabla
      */
-    public function getPsActvidadRutas0()
+    public function getPsActividadRutas0()
     {
-        return $this->hasMany(PsActvidadRuta::className(), ['id_actividad_destino' => 'id_actividad']);
+        return $this->hasMany(PsActividadRuta::className(), ['id_actividad_destino' => 'id_actividad']);
     }
 
     /**

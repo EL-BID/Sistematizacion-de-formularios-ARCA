@@ -63,8 +63,8 @@ class PsClasifActividad extends ModelPry
         return [
             [['id_clasif_actividad', 'nom_clasif_tactividad'], 'required'],
             [['id_clasif_actividad'], 'integer'],
-            [['nom_clasif_tactividad', 'nom_c_obs', 'nom_c_fec_rea', 'nom_c_fec_pre', 'nom_c_num_qpx', 'nom_c_usua', 'nom_c_dia_pau', 'nom_c_caus', 'nom_c_fec_qpx'], 'string', 'max' => 50],
-            [['vis_c_obs', 'obl_c_obs', 'hab_c_obs', 'vis_c_fec_rea', 'obl_c_fec_rea', 'hab_c_fec_rea', 'vis_c_fec_pre', 'obl_c_fec_pre', 'hab_c_fec_pre', 'vis_c_num_qpx', 'obl_c_num_qpx', 'hab_c_num_qpx', 'vis_c_usua', 'obl_c_usua', 'hab_c_usua', 'vis_c_dia_pau', 'obl_c_dia_pau', 'hab_c_dia_pau', 'vis_c_caus', 'obl_c_caus', 'hab_c_caus', 'vis_c_fec_qpx', 'obl_c_fec_qpx', 'hab_c_fec_qpx'], 'string', 'max' => 1],
+            [['nom_clasif_tactividad', 'nom_c_obs', 'nom_c_fec_rea', 'nom_c_fec_pre', 'nom_c_num_qpx', 'nom_c_usua', 'nom_c_dia_pau', 'nom_c_caus', 'nom_c_fec_qpx','nom_c_puntos'], 'string', 'max' => 50],
+            [['vis_c_obs', 'obl_c_obs', 'hab_c_obs', 'vis_c_fec_rea', 'obl_c_fec_rea', 'hab_c_fec_rea', 'vis_c_fec_pre', 'obl_c_fec_pre', 'hab_c_fec_pre', 'vis_c_num_qpx', 'obl_c_num_qpx', 'hab_c_num_qpx', 'vis_c_usua', 'obl_c_usua', 'hab_c_usua', 'vis_c_dia_pau', 'obl_c_dia_pau', 'hab_c_dia_pau', 'vis_c_caus', 'obl_c_caus', 'hab_c_caus', 'vis_c_fec_qpx', 'obl_c_fec_qpx', 'hab_c_fec_qpx','vis_c_puntos','obl_c_puntos','hab_c_puntos'], 'string', 'max' => 1],
         ];
     }
 

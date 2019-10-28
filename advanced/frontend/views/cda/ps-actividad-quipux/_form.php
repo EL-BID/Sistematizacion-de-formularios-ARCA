@@ -29,7 +29,7 @@ SweetSubmitAsset::register($this)
 
     <?= $form->field($model, 'fecha_actividad_quipux')->
              widget(\yii\jui\DatePicker::className(),[
-                'dateFormat' => 'dd/MM/yyyy',        //Formato de la fecha
+                'dateFormat' => Yii::$app->fmtfechasql,
                 'clientOptions' => [
                     'yearRange' => '-90:+0',        //Años habilitados 90 años atras hasta el actual        
                     'changeYear' => true,            //Permitir cambio de año
@@ -94,7 +94,7 @@ SweetSubmitAsset::register($this)
 
     <?= $form->field($model, 'fecha_carga')->
              widget(\yii\jui\DatePicker::className(),[
-                'dateFormat' => 'dd/MM/yyyy',        //Formato de la fecha
+                'dateFormat' => Yii::$app->fmtfechasql,        //Formato de la fecha
                 'clientOptions' => [
                     'yearRange' => '-90:+0',        //Años habilitados 90 años atras hasta el actual        
                     'changeYear' => true,            //Permitir cambio de año
@@ -104,7 +104,7 @@ SweetSubmitAsset::register($this)
     <?= $form->field($model, 'id_cproceso')->dropDownList(\yii\helpers\ArrayHelper::map(ps_cproceso::find()->all(),'id_cproceso','id_cproceso'),['prompt'=>'Indique el valor para id_cproceso']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

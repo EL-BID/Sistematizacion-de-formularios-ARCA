@@ -111,13 +111,18 @@ SweetSubmitAsset::register($this)
                 
             ?>
                 <td class="inputpregunta"><?= $form->field($model, 'id_demarcacion')
-                                          ->dropDownList([],['prompt'=>'Seleccione una Demarcación',"disabled" => $botton])->label(false) ?></td>
+                                          ->dropDownList([],['prompt'=>'Seleccione una Demarcación',"disabled" => $botton,'onchange'=>'$.post("index.php?r=fdubicacion/centrociudadano&id='.'"+$(this).val(),function(data){
+                                                $("#fdubicacion-cod_centro_atencion_ciudadano").html(data);
+                                            });'])->label(false) ?></td>
            <?php
             }else{
            ?>     
                 <td class="inputpregunta"><?= $form->field($model, 'id_demarcacion')
                                             ->dropDownList(\yii\helpers\ArrayHelper::map($demarcacionespost,'id_demarcacion','nombre_demarcacion'),
-                                            ['prompt'=>'Seleccione una Demarcación',"disabled" => $botton])->label(false) ?></td>
+                                            ['prompt'=>'Seleccione una Demarcación',"disabled" => $botton,
+                                            'onchange'=>'$.post("index.php?r=fdubicacion/centrociudadano&id='.'"+$(this).val(),function(data){
+                                                $("#fdubicacion-cod_centro_atencion_ciudadano").html(data);
+                                            });'])->label(false) ?></td>
       
                 
            <?php     
@@ -171,10 +176,24 @@ SweetSubmitAsset::register($this)
                                           "data-toggle" => "tooltip", 
                                         ] ); ?>   
             </td>
-            <td class="inputpregunta"><?= $form->field($model, 'cod_centro_atencion_ciudadano')
-                                                ->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\poc\CentroAtencionCiudadano::find()->all(),'cod_centro_atencion_ciudadano','nom_centro_atencion_ciudadano'),
-                                                        ['prompt'=>'Indique el centro de atención al ciudadano',"disabled" => $botton])->label(false) ?>
-            </td>                           
+            
+             <?php
+            if($model->isNewRecord){
+                
+            ?>
+                <td class="inputpregunta"><?= $form->field($model, 'cod_centro_atencion_ciudadano')
+                                          ->dropDownList([],['prompt'=>'Seleccione un Centro',"disabled" => $botton])->label(false) ?></td>
+           <?php
+            }else{
+           ?>     
+                <td class="inputpregunta"><?= $form->field($model, 'cod_centro_atencion_ciudadano')
+                                            ->dropDownList(\yii\helpers\ArrayHelper::map($centrosPost,'cod_centro_atencion_ciudadano','nom_centro_atencion_ciudadano'),
+                                            ['prompt'=>'Seleccione un centro',"disabled" => $botton])->label(false) ?></td>
+      
+                
+           <?php     
+            }
+           ?>                           
         </tr>
         
         <tr>

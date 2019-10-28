@@ -79,10 +79,10 @@ class FdVersionControllerTest extends \Codeception\Test\Unit
         
             // Se declaran los $queryParams a enviar los filtros
             $queryParams = ['FdVersionSearch' => [
-                                             'id_version' => "Ingresar valor de pruebas para el campo id_version de tipo int4",       
-                                              'desc_version' => "Ingresar valor de pruebas para el campo desc_version de tipo varchar",       
-                                              'num_version' => "Ingresar valor de pruebas para el campo num_version de tipo varchar",       
-                              ]];
+                                                 'id_version' => '1',
+												 'desc_version' => 'Versión 1',
+												 'num_version' => '1',    
+												]];
              
        
         // Se obtiene el resultado de action index     
@@ -106,12 +106,12 @@ class FdVersionControllerTest extends \Codeception\Test\Unit
         
         // se deben declarar los valores de $id para enviar la llave
         
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
                                      // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
             $actionView=Yii::$app->runAction('FdVersionController/view',['id' => $id]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -129,10 +129,10 @@ class FdVersionControllerTest extends \Codeception\Test\Unit
           
             // Se declaran los $queryParams a enviar los datos a crear
             $queryParams = ['FdVersionController' => [
-                                             'id_version' => "Ingresar valor de pruebas para el campo id_version de tipo int4",       
-                                              'desc_version' => "Ingresar valor de pruebas para el campo desc_version de tipo varchar",       
-                                              'num_version' => "Ingresar valor de pruebas para el campo num_version de tipo varchar",       
-                              ]];
+													'id_version' => '2',
+													'desc_version' => 'Versión 2',
+													'num_version' => '1',     
+													]];
                             
        //       Se declaran el post1
             Yii::$app->request->queryParams =  $queryParams;
@@ -159,14 +159,14 @@ class FdVersionControllerTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar los datos a actualizar
           $queryParams = ['FdVersionController' => [
-                                         'id_version' => "Ingresar valor de pruebas para el campo id_version de tipo int4",       
-                                          'desc_version' => "Ingresar valor de pruebas para el campo desc_version de tipo varchar",       
-                                          'num_version' => "Ingresar valor de pruebas para el campo num_version de tipo varchar",       
-                          ]];
+                                            'id_version' => '2',
+											 'desc_version' => 'Versión número 2',
+											 'num_version' => '1',
+											]];
         
         
          // se deben declarar los valores de $id para enviar la llave
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '2';
                                 
         
          // se valida que se pueda realizar el update del registro
@@ -193,10 +193,10 @@ class FdVersionControllerTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores para indicar el registro a borrar
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '2';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(FdVersionController/update',['id' => $id]);
+         $actionDelete=Yii::$app->runAction('FdVersionController/update',['id' => $id]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

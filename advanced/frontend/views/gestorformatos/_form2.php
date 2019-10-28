@@ -15,13 +15,19 @@ use yii\helpers\Url;
 /* @var $form yii\widgets\ActiveForm */
 
 
-SweetSubmitAsset::register($this)
+SweetSubmitAsset::register($this);
+
+
 ?>
 
 <div class="clientesdropdown-form">
   
     <!-- -----------------------------------------FORMULARIO CON FILTROS---------------------------------------------------- -->
-    <?= Html::beginForm(['gestorformatos/index'], 'get', ['class' => 'searchBoxForm']); ?>
+  <?= Html::beginForm(['gestorformatos/index'], 'get', ['class' => 'searchBoxForm']); ?>    
+    <?php
+    if($filtros_search!='N'){
+    ?>
+  
     <table class="table">
         <tr>
             <td>
@@ -100,20 +106,36 @@ SweetSubmitAsset::register($this)
         <tr>
             <td colspan="3" align="left"> 
                  <?= Html::submitButton('Buscar', ['class' => 'btn btn-lg btn-primary', 'name' => 'hashbutton', 'value'=>'submit']) ?>
-                
-                    <?php //Html::Button('Buscar', ['class' => 'btn btn-prueba btn-primary', 'name' => 'hash-button','onclick'=>'js:setTop()']) ?>
+                                    
             </td>
         </tr>
     </table>
-    <?= Html::endForm() ?>
+        
+   <?php
+    }
+    else
+    {
+    ?>
 
+<?= Html::submitButton('Acceder a Formato', ['class' => 'btn btn-lg btn-primary', 'name' => 'hashbutton', 'value'=>'submit']) ?>
+<br/><br/>
+<?php 
+    }?>
+<?= Html::endForm() ?>
     <div id="resultados">
-        
+      
      
-        <?php
-        
-        if(!empty($dataProvider)){
-            
+<?php  
+
+if(key($list_formato)==6 and !empty($_GET['hashbutton']))
+{
+     Yii::$app->getSession()->setFlash('error', [
+       'type' => 'error',
+       'message' => 'INFORMACIÓN IMPORTANTE: Al momento de registrar los datos recuerda que existen campos obligatorios de llenado en cada ficha, los datos se guardarán cuando se hayan llenado todos los campos obligatorios y presionado el botón GUARDAR',
+     ]);  
+}
+
+        if(!empty($dataProvider)){                         
             echo GridView::widget([ 
             'dataProvider' => $dataProvider,                       //Objeto de Datos 
             'layout'=>"{pager}\n{summary}\n{items}",        //Modelo de presentacion 
@@ -127,27 +149,33 @@ SweetSubmitAsset::register($this)
                     'class' => 'yii\grid\ActionColumn',
                     'template' => ' {download} {formatohtml} ',
                     'buttons' => [
-                            'download' => function ($url,$model) {
-
+                            'download' => function ($url,$model)use ($url_acceso) {
                                 //cREANDO URL PARA aceeso a Dashboard, detalle capitulo y listado capitulos
-                                if($model['id_tipo_view_formato']==2){
-                                    $url2 = Url::toRoute(['dashboard/index','id_conj_rpta' => $model['id_conjunto_respuesta'],'id_conj_prta'=>$model['id_conjunto_pregunta'],'id_fmt'=>$model['id_formato'],'last'=>$model['ult_id_version'],'estado'=>$model['id_adm_estado']],true);
-                                    $_mensaje = "Accediendo al Dashboard";
+                if(!empty($url_acceso))
+                {
+                    $url2 = Url::toRoute([$url_acceso,'capitulo'=>'','id_cnj_rpta' => $model['id_conjunto_respuesta'],'id_conj_prta'=>$model['id_conjunto_pregunta'],'id_fmt'=>$model['id_formato'],'last'=>$model['ult_id_version'],'estado'=>$model['id_adm_estado'],'migadepan'=>'', 'provincia'=>$model['provincia'],'cantones'=>$model['cantones'],'parroquias'=>$model['parroquias'],'periodos'=>$model['periodos'],'antvista'=>'gestorformatos/index','idjunta'=>'','hashbutton'=>''],true);
+                    $_mensaje="Accediendo a Información General de Prestadores";
+                }
+                else
+                {
+                                    if($model['id_tipo_view_formato']==2){
+                                        $url2 = Url::toRoute(['dashboard/index','id_conj_rpta' => $model['id_conjunto_respuesta'],'id_conj_prta'=>$model['id_conjunto_pregunta'],'id_fmt'=>$model['id_formato'],'last'=>$model['ult_id_version'],'estado'=>$model['id_adm_estado']],true);
+                                        $_mensaje = "Accediendo al Dashboard";
 
-                                }else if($model['id_tipo_view_formato']==1){
+                                    }else if($model['id_tipo_view_formato']==1){
 
-                                    $url2 = Url::toRoute(['detcapitulo/genvistaformato','capitulo'=>'','id_conj_rpta' => $model['id_conjunto_respuesta'],'id_conj_prta'=>$model['id_conjunto_pregunta'],'id_fmt'=>$model['id_formato'],'last'=>$model['ult_id_version'],'estado'=>$model['id_adm_estado'],'provincia'=>$model['provincia'],'cantones'=>$model['cantones'],'parroquias'=>$model['parroquias'],'periodos'=>$model['periodos'],'antvista'=>'gestorformatos/index'],true);
-                                    $_mensaje = "Accediendo a Detalle Formato";
+                                        $url2 = Url::toRoute(['detcapitulo/genvistaformato','capitulo'=>'','id_conj_rpta' => $model['id_conjunto_respuesta'],'id_conj_prta'=>$model['id_conjunto_pregunta'],'id_fmt'=>$model['id_formato'],'last'=>$model['ult_id_version'],'estado'=>$model['id_adm_estado'],'provincia'=>$model['provincia'],'cantones'=>$model['cantones'],'parroquias'=>$model['parroquias'],'periodos'=>$model['periodos'],'antvista'=>'gestorformatos/index','idjunta'=>'',],true);
+                                        $_mensaje = "Accediendo a Detalle Formato";
 
-                                }else if($model['id_tipo_view_formato']==3){
-                                    $url2 = Url::toRoute(['listcapitulos/index','id_conj_rpta' => $model['id_conjunto_respuesta'],'id_conj_prta'=>$model['id_conjunto_pregunta'],'id_fmt'=>$model['id_formato'],'last'=>$model['ult_id_version'],'estado'=>$model['id_adm_estado'],'provincia'=>$model['provincia'],'cantones'=>$model['cantones'],'parroquias'=>$model['parroquias'],'periodos'=>$model['periodos'],'antvista'=>'gestorformatos/index' ],true);
-                                    $_mensaje = "Accediendo a Listado Capitulo";
+                                    }else if($model['id_tipo_view_formato']==3){
+                                        $url2 = Url::toRoute(['listcapitulos/index','id_conj_rpta' => $model['id_conjunto_respuesta'],'id_conj_prta'=>$model['id_conjunto_pregunta'],'id_fmt'=>$model['id_formato'],'last'=>$model['ult_id_version'],'estado'=>$model['id_adm_estado'],'provincia'=>$model['provincia'],'cantones'=>$model['cantones'],'parroquias'=>$model['parroquias'],'periodos'=>$model['periodos'],'antvista'=>'gestorformatos/index','idjunta'=>'',],true);
+                                        $_mensaje = "Accediendo a Listado Capitulo";
 
-                                }
-
+                                    }
+                 }
                                 if($model['id_tipo_view_formato']<=3 and $model['p_ejecutar']=='S'){
                                     return Html::a(
-                                        '<span class="glyphicon glyphicon-chevron-right"></span> Diligenciar',
+                                        '<span class="glyphicon glyphicon-chevron-right"></span> Editar',
                                         $url2, 
                                         [
                                             'title' => 'Ver',
@@ -156,24 +184,24 @@ SweetSubmitAsset::register($this)
                                         ]
                                     );
                                 }
-
-
                             },
-
                             'formatohtml' => function($url,$model){
                                 //Creando url para acceso al formato HTML
-                                $_urlhtml = Url::toRoute(['detformato/genhtml','id_conj_rpta' => $model['id_conjunto_respuesta'],'id_conj_prta'=>$model['id_conjunto_pregunta'],'id_fmt'=>$model['id_formato'],'last'=>$model['ult_id_version'],'estado'=>$model['id_adm_estado']],true);
-                                $_mensaje = "Accediendo a la vista HTML";
-                                return Html::a(
-                                       '<span class="glyphicon glyphicon-file"></span> Reporte',
-                                       $_urlhtml, 
-                                       [
-                                           'title' => 'Formato',
-                                           'data-confirm' => Yii::t('yii', $_mensaje.'::'.$_urlhtml),
-                                           'data-method' => 'post',
-                                       ]
-                                   );
-
+                                $formato = $model['id_formato'];
+                                if($formato!=6 and $formato!=7 and $formato!=8)                                
+                                {
+                                    $_urlhtml = Url::toRoute(['detformato/genhtml','id_conj_rpta' => $model['id_conjunto_respuesta'],'id_conj_prta'=>$model['id_conjunto_pregunta'],'id_fmt'=>$model['id_formato'],'last'=>$model['ult_id_version'],'estado'=>$model['id_adm_estado']],true);
+                                    $_mensaje = "Accediendo a la vista HTML";
+                                    return Html::a(
+                                           '<span class="glyphicon glyphicon-file"></span> Reporte',
+                                           $_urlhtml, 
+                                           [
+                                               'title' => 'Formato',
+                                               'data-confirm' => Yii::t('yii', $_mensaje.'::'.$_urlhtml),
+                                               'data-method' => 'post',
+                                           ]
+                                       );
+                                }
                             }       
                         ],
                     ],

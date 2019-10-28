@@ -48,20 +48,23 @@ class PsCprocesoSearch extends PsCproceso
     {
         $query = PsCproceso::find();
         
-        if($this->tipo == 1){
-           $query->leftJoin('cda', 'cda.id_cproceso_arca=ps_cproceso.id_cproceso');
-        }else if($this->tipo == 2){
-           $query->leftJoin('pqrs', 'pqrs.id_cproceso=ps_cproceso.id_cproceso'); 
-        }
+//        if($this->tipo == 1){
+//           $query->leftJoin('cda', 'cda.id_cproceso_arca=ps_cproceso.id_cproceso');
+//        }else if($this->tipo == 2){
+//           $query->leftJoin('pqrs', 'pqrs.id_cproceso=ps_cproceso.id_cproceso'); 
+//        }
+        
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-
+        
+   
         $this->load($params);
-
+        
+        Yii::trace("que llega de ".$this->ult_id_usuario,"DEBUG");
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');

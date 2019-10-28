@@ -16,10 +16,12 @@ class savecapitulo{
     public $_idcapitulo;
     public $_idformato;
     public $_idversion;
+    public $_idjunta;
     public $_tablerpta = "fd_respuesta";
     public $_relaciones;
     public $_tipo11;
     public $_agrupadas;
+    public $multiples;
     
     /*Enviar id_conj_prta
      * id_conj_rpta
@@ -28,7 +30,7 @@ class savecapitulo{
     public function guardar(){
         
         $_vectorpost=$this->_vcapitulo;
-        $_programadas=[1,3,4,5,6,7,8,2,11,15];
+        $_programadas=[1,3,4,5,6,7,8,2,11,15,26];
        
         if(!empty($this->_relaciones)){
             
@@ -58,8 +60,11 @@ class savecapitulo{
                     $_nameq = 'rpta'.$_ldata[0];
                     
                     
+                    
                     if(!empty($_ldata[2]) and in_array($_ldata[2], $_programadas) === TRUE and isset($_vectorpost['Detcapitulo'][$_nameq])){
                         
+                        
+                        //Yii::trace("Llegan tipos de preguntas ".$_ldata[2]." Para idpregunta ".$_ldata[1],"DEBUG");
                        /*Recogiendo Id_respuesta si existe*/ 
                        $_idrespuesta=(!empty($_ldata[3]))? $_ldata[3]:'';
                        $id_pregunta= $_ldata[1];
@@ -68,6 +73,8 @@ class savecapitulo{
                       
                         /*Armando Trama SQL segun el tipo de pregunta*/
                         $_valor = $_vectorpost['Detcapitulo'][$_nameq];
+                        
+                        //Yii::trace("que respuestas llegan ".$_valor,"DEBUG");
                         
                         if(isset($this->_agrupadas[$id_pregunta])){
                             
@@ -99,26 +106,99 @@ class savecapitulo{
                             
                         }else{
                             
-                            $v_rpta= $this->{"gr_tipo".$_ldata[2]}($_idrespuesta,$_valor);
+                             //Averiguando si la pregunta es tipo multiple y si la respuesta es null si es asi 
+                            //Salta a la siguiente pregunta
+                            if(!empty($this->multiples[$id_pregunta]) and empty($_valor)){
+                                continue;
+                            }else if(!empty($this->multiples[$id_pregunta]) and !is_null($_valor)){
+                               $_idrespuesta=''; 
+                            } 
+                            
+                            /*Si la pregunta es tipo 3 se averigua si la respuesta es tipo especifique*/
+                            $_otros=null;
+                            if($_ldata[2]=='3' and isset($_vectorpost['Detcapitulo']['otros_'.$_ldata[0]])){
+                                
+                                $_otros = $_vectorpost['Detcapitulo']['otros_'.$_ldata[0]];
+                                $v_rpta= $this->{"gr_tipo".$_ldata[2]}($_idrespuesta,$_valor,$_otros);
+                                
+                            }else{
+                             
+                               if($_ldata[2]==11 and isset($this->_tipo11[$_nameq])){
+                                   $_valor=count($this->_tipo11[$_nameq]);
+                                   $v_rpta= $this->{"gr_tipo".$_ldata[2]}($_idrespuesta,$_valor);
+                               }else if ($_ldata[2]!=11 and !isset($this->_tipo11[$_nameq])){
+                                   $v_rpta= $this->{"gr_tipo".$_ldata[2]}($_idrespuesta,$_valor,$_otros,$id_pregunta);
+                               }else{
+                                   continue;
+                               }                               
+                            }
                         }    
                        
                        /*Asignando valor == null*/
-                       $v_rpta[1]=(empty($v_rpta[1]))? NULL:$v_rpta[1];
-                       
+                       $v_rpta[1]=(!isset($v_rpta[1]))? NULL:$v_rpta[1];
+                        
                        
                        /*Generado comando SQL*/
                        if(!empty($v_rpta[0])){
-                        Yii::$app->db->createCommand($v_rpta[0])
-                                ->bindValues([
-                                 ':valor' => $v_rpta[1],
-                                 ':idconjrpta' => $this->_idconjrpta,
-                                 ':idpregunta' => $_ldata[1],
-                                 ':idtpregunta' => $_ldata[2],
-                                 ':idcapitulo' =>$this->_idcapitulo,
-                                 ':idformato' =>$this->_idformato,
-                                 ':idconjprta' => $this->_idconjprta,
-                                 ':idversion' =>$this->_idversion,
-                               ])->execute();
+                           
+                        if(empty($this->_idjunta))$this->_idjunta=0;
+                        if(is_null($_otros)){   
+    
+                            if (strpos($v_rpta[0], ';') !== false) {
+                               $sep_qu = explode(";", $v_rpta[0]);
+                             
+                                  Yii::$app->db->createCommand($sep_qu[0])
+                                    ->bindValues([
+                                     ':valor' => $v_rpta[1],
+                                     ':idconjrpta' => $this->_idconjrpta,
+                                     ':idpregunta' => $_ldata[1],
+                                     ':idtpregunta' => $_ldata[2],
+                                     ':idcapitulo' =>$this->_idcapitulo,
+                                     ':idformato' =>$this->_idformato,
+                                     ':idconjprta' => $this->_idconjprta,
+                                     ':idversion' =>$this->_idversion,
+                                     ':idjunta' =>$this->_idjunta,
+                                   ])->execute();
+                                  
+                                   Yii::$app->db->createCommand($sep_qu[1])
+                                    ->bindValues([
+                                     ':valor' => $v_rpta[1],
+                                   ])->execute();
+                              
+                              
+                            }
+                            else
+                            {
+                                Yii::$app->db->createCommand($v_rpta[0])
+                                    ->bindValues([
+                                     ':valor' => $v_rpta[1],
+                                     ':idconjrpta' => $this->_idconjrpta,
+                                     ':idpregunta' => $_ldata[1],
+                                     ':idtpregunta' => $_ldata[2],
+                                     ':idcapitulo' =>$this->_idcapitulo,
+                                     ':idformato' =>$this->_idformato,
+                                     ':idconjprta' => $this->_idconjprta,
+                                     ':idversion' =>$this->_idversion,
+                                     ':idjunta' =>$this->_idjunta,
+                                   ])->execute();
+                            }
+                            
+                            
+                        }else{                            
+                            Yii::$app->db->createCommand($v_rpta[0])
+                                    ->bindValues([
+                                     ':valor' => $v_rpta[1],
+                                     ':idconjrpta' => $this->_idconjrpta,
+                                     ':idpregunta' => $_ldata[1],
+                                     ':idtpregunta' => $_ldata[2],
+                                     ':idcapitulo' =>$this->_idcapitulo,
+                                     ':idformato' =>$this->_idformato,
+                                     ':idconjprta' => $this->_idconjprta,
+                                     ':idversion' =>$this->_idversion,
+                                     ':idjunta' =>$this->_idjunta,
+                                     ':otros' =>$_otros,   
+                                   ])->execute();
+                        }
 
                         /*Se averigua con que id quedo guardada la respuesta si es tipo 11 -> guarda en SOP SOPORTE*/
                         if($_ldata[2]=='11' and !empty($this->_tipo11[$_nameq])){
@@ -190,6 +270,7 @@ class savecapitulo{
      */
     public function guardartipoM($tipo,$valor,$id_conjrpta,$id_prta,$id_capitulo,$id_fmt,$id_conj_prta,$id_version){
         
+
         $_sql = $this->{"gr_tipo".$tipo}('',$valor,$id_prta);
         $_transaction = Yii::$app->db->beginTransaction();
         try {
@@ -257,10 +338,21 @@ class savecapitulo{
         $tableRpta=$this->_tablerpta;
         $g_sql='';
         
-        if(empty($_idrespuesta) and !empty($valor)){
-            $g_sql="INSERT INTO $tableRpta ([[ra_fecha]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (TO_DATE(:valor,'dd/MM/yyyy'), :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
-        }else if(!empty($_idrespuesta) and !empty($valor)){
-            $g_sql="UPDATE $tableRpta SET [[ra_fecha]] = TO_DATE(:valor,'dd/MM/yyyy'),[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+        if(!empty($valor)){
+            $_datarespt="TO_DATE(:valor,'".Yii::$app->fmtfechasql."')";
+        }else{
+            $_datarespt=":valor";
+            $valor=null;
+        }
+        
+        if(empty($_idrespuesta) and isset($valor)){
+            $g_sql="INSERT INTO $tableRpta ([[ra_fecha]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]], [[id_junta]]) VALUES ($_datarespt, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion, :idjunta)";
+        }
+        else if(!empty($_idrespuesta) and isset($valor)){
+            $g_sql="UPDATE $tableRpta SET [[ra_fecha]] = $_datarespt,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion, [[id_junta]]= :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
+        }
+        else if(!empty($_idrespuesta) and empty($valor)){
+            $g_sql="UPDATE $tableRpta SET [[ra_fecha]] = $_datarespt,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion, [[id_junta]]= :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         }else{
             $g_sql="";
         }  
@@ -274,11 +366,11 @@ class savecapitulo{
         $tableRpta=$this->_tablerpta;
         
         if(empty($_idrespuesta)){
-            $g_sql="INSERT INTO $tableRpta ([[ra_check]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
+            $g_sql="INSERT INTO $tableRpta ([[ra_check]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
         }else{
-            $g_sql="UPDATE $tableRpta SET [[ra_check]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+            $g_sql="UPDATE $tableRpta SET [[ra_check]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion, [[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         }
-        
+        $_valor="";
         if($valor=='1'){
             $_valor = 'S';
         }else if($valor=='0'){
@@ -296,12 +388,12 @@ class savecapitulo{
         
         
         if(empty($_idrespuesta)){
-            $g_sql="INSERT INTO $tableRpta ([[ra_check]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
+            $g_sql="INSERT INTO $tableRpta ([[ra_check]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]], [[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion, :idjunta)";
         }else{
-            $g_sql="UPDATE $tableRpta SET [[ra_check]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+            $g_sql="UPDATE $tableRpta SET [[ra_check]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion, [[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         }
         
-        if(!empty($valor)){
+        if(isset($valor)){
             $_valor = 'S';
             $_idpregunta = $valor;
             return [$g_sql,$_valor,$_idpregunta];
@@ -317,19 +409,30 @@ class savecapitulo{
     * Se guarda o se modifica en la BD:
     * 
     */
-    function gr_tipo3($_idrespuesta,$valor){
+    function gr_tipo3($_idrespuesta,$valor,$_otros=null){
         $tableRpta=$this->_tablerpta;
         
-        if(empty($_idrespuesta) and !empty($valor)){
-            $g_sql="INSERT INTO $tableRpta ([[id_opcion_select]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
-        }else if(!empty($_idrespuesta) and !empty($valor)){
-            $g_sql="UPDATE $tableRpta SET [[id_opcion_select]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+        if(empty($_idrespuesta) and isset($valor) and !is_null($_otros)){
+             $g_sql="INSERT INTO $tableRpta ([[id_opcion_select]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[ra_otros]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:otros,:idjunta)";
+        }else if(empty($_idrespuesta) and isset($valor)){
+            $g_sql="INSERT INTO $tableRpta ([[id_opcion_select]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
+        }
+        else if(!empty($_idrespuesta)and isset($valor) and !is_null($_otros)){
+            $g_sql="UPDATE $tableRpta SET [[id_opcion_select]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion,[[ra_otros]] = :otros, [[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
+        }
+        else if(!empty($_idrespuesta) and isset($valor)){
+            $g_sql="UPDATE $tableRpta SET [[id_opcion_select]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion, [[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         }else{
             $g_sql="";
         }  
         
         $_valor = $valor;
-        return [$g_sql,$_valor];
+        
+         if (is_numeric($_valor)) { 
+         return [$g_sql,$_valor];
+        }else{
+         return [$g_sql,NULL];
+        } 
     }
     
     /*Funcion para guardar las respuestas
@@ -339,11 +442,12 @@ class savecapitulo{
     */
     function gr_tipo4($_idrespuesta,$valor){
         $tableRpta=$this->_tablerpta;
+        $valor = str_replace(array('"=""'), '', $valor);
         
         if(empty($_idrespuesta)){
-            $g_sql="INSERT INTO $tableRpta ([[ra_descripcion]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
+            $g_sql="INSERT INTO $tableRpta ([[ra_descripcion]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]], [[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
         }else{
-            $g_sql="UPDATE $tableRpta SET [[ra_descripcion]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+            $g_sql="UPDATE $tableRpta SET [[ra_descripcion]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion, [[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         }    
         
         $_valor = $valor;
@@ -359,10 +463,10 @@ class savecapitulo{
     function gr_tipo5($_idrespuesta,$valor){
         
         $tableRpta=$this->_tablerpta;
-        if(empty($_idrespuesta) and !empty($valor)){
-            $g_sql="INSERT INTO $tableRpta ([[ra_entero]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
-        }else if(!empty($_idrespuesta) and !empty($valor)){
-            $g_sql="UPDATE $tableRpta SET [[ra_entero]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+        if(empty($_idrespuesta) and isset($valor)){
+            $g_sql="INSERT INTO $tableRpta ([[ra_entero]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
+        }else if(!empty($_idrespuesta) and isset($valor)){
+            $g_sql="UPDATE $tableRpta SET [[ra_entero]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion, [[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         }else{
             $g_sql="";
         }      
@@ -372,7 +476,13 @@ class savecapitulo{
         $_valor=str_replace(",","",$valor);
         $_valor=str_replace(".","",$_valor);
         
-        return [$g_sql,$_valor];
+        if (is_numeric($_valor)) { 
+         return [$g_sql,$_valor];
+        }else{
+         return [$g_sql,NULL];
+        } 
+        
+       
     }
     
     /*Funcion para guardar las respuestas
@@ -383,17 +493,27 @@ class savecapitulo{
     function gr_tipo6($_idrespuesta,$valor){
         
         $tableRpta=$this->_tablerpta;
-        if(empty($_idrespuesta) and !empty($valor)){
-            $g_sql="INSERT INTO $tableRpta ([[ra_decimal]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
-        }else if(!empty($_idrespuesta) and !empty($valor)){
-            $g_sql="UPDATE $tableRpta SET [[ra_decimal]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+        
+        
+        
+        if(empty($_idrespuesta) and isset($valor)){
+            $g_sql="INSERT INTO $tableRpta ([[ra_decimal]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
+        }else if(!empty($_idrespuesta) and isset($valor)){
+            $g_sql="UPDATE $tableRpta SET [[ra_decimal]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion, [[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         }else{
             $g_sql="";
         }     
         
         /*Quitando separadores de miles ","*/
         $_valor=str_replace(",","",$valor);
-        return [$g_sql,$_valor];
+        
+        if (is_numeric($_valor)) { 
+         return [$g_sql,$_valor];
+        }else{
+         return [$g_sql,NULL];
+        } 
+        
+        
         
     }
     
@@ -406,17 +526,22 @@ class savecapitulo{
     function gr_tipo7($_idrespuesta,$valor){
         $tableRpta=$this->_tablerpta;
         
-        if(empty($_idrespuesta) and !empty($valor)){
-            $g_sql="INSERT INTO $tableRpta ([[ra_porcentaje]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
-        }else if(!empty($_idrespuesta) and !empty($valor)){
-            $g_sql="UPDATE $tableRpta SET [[ra_porcentaje]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+        if(empty($_idrespuesta) and isset($valor)){
+            $g_sql="INSERT INTO $tableRpta ([[ra_porcentaje]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
+        }else if(!empty($_idrespuesta) and isset($valor)){
+            $g_sql="UPDATE $tableRpta SET [[ra_porcentaje]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion,[[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         }else{
             $g_sql="";
         }       
         
         /*Quitando separadores de miles ","*/
         $_valor=str_replace(",","",$valor);
-        return [$g_sql,$_valor];
+        
+         if (is_numeric($_valor)) { 
+         return [$g_sql,$_valor];
+        }else{
+         return [$g_sql,NULL];
+        } 
     }
     
     /*Funcion para guardar las respuestas
@@ -428,16 +553,21 @@ class savecapitulo{
     function gr_tipo8($_idrespuesta,$valor){
         
         $tableRpta=$this->_tablerpta;
-        if(empty($_idrespuesta) and !empty($valor)){
-            $g_sql="INSERT INTO $tableRpta ([[ra_moneda]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
-         }else if(!empty($_idrespuesta) and !empty($valor)){
-            $g_sql="UPDATE $tableRpta SET [[ra_moneda]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+        if(empty($_idrespuesta) and isset($valor)){
+            $g_sql="INSERT INTO $tableRpta ([[ra_moneda]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
+         }else if(!empty($_idrespuesta) and isset($valor)){
+            $g_sql="UPDATE $tableRpta SET [[ra_moneda]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion,[[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         }else{
             $g_sql="";
         }       
         
         $_valor = $valor;
-        return [$g_sql,$_valor];
+        
+        if (is_numeric($_valor)) { 
+         return [$g_sql,$_valor];
+        }else{
+         return [$g_sql,NULL];
+        } 
     }
     
     function gr_tipo9(){
@@ -451,14 +581,15 @@ class savecapitulo{
     function gr_tipo11($_idrespuesta,$valor){
       
         $tableRpta=$this->_tablerpta;
+     
         
         if(empty($_idrespuesta)){
-            $g_sql="INSERT INTO $tableRpta ([[cantidad_registros]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
+            $g_sql="INSERT INTO $tableRpta ([[cantidad_registros]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
         }else{
-            $g_sql="UPDATE $tableRpta SET [[cantidad_registros]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+            $g_sql="UPDATE $tableRpta SET [[cantidad_registros]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion,[[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
         } 
         
-        $_valor = "";
+        $_valor = $valor;
          
         return [$g_sql,$_valor];
     }
@@ -480,16 +611,47 @@ class savecapitulo{
     * Se guarda o se modifica en la BD:
     * 
     */
-    function gr_tipo15($_idrespuesta,$valor){
+    function gr_tipo15($_idrespuesta,$valor,$_otros=null,$id_pregunta=""){
         $tableRpta=$this->_tablerpta;
-        
-        if(empty($_idrespuesta) and !empty($valor)){
-            $g_sql="INSERT INTO $tableRpta ([[ra_descripcion]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion)";
-        }else if(!empty($_idrespuesta) and !empty($valor)){
-            $g_sql="UPDATE $tableRpta SET [[ra_descripcion]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion WHERE [[id_respuesta]] = ".$_idrespuesta;
+        if(empty($_idrespuesta) and isset($valor)){
+            $g_sql="INSERT INTO $tableRpta ([[ra_descripcion]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
+            if($id_pregunta==1318)
+            {
+                        $id_conj_resp= $this->_idconjrpta;
+                        $enti = \common\models\autenticacion\Entidades::find()->where(['=', 'entidades.id_entidad', $id_conj_resp])->one();
+                        $iden= $enti['identificacion'];
+                        $g_sql.="; UPDATE USUARIOS_AP SET [[usuario_digitador]]=:valor WHERE [[identificacion]] ='$iden';";
+            }
+        }else if(!empty($_idrespuesta) and isset($valor)){
+            $g_sql="UPDATE $tableRpta SET [[ra_descripcion]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion, [[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
+            if($id_pregunta==1318)
+            {
+                        $id_conj_resp= $this->_idconjrpta;
+                        $enti = \common\models\autenticacion\Entidades::find()->where(['=', 'entidades.id_entidad', $id_conj_resp])->one();
+                        $iden= $enti['identificacion'];
+                        $g_sql.="; UPDATE USUARIOS_AP SET [[usuario_digitador]]=:valor WHERE [[identificacion]] ='$iden';";
+            }
         }else{
             $g_sql="";
         }   
+        
+        $_valor = $valor;
+        return [$g_sql,$_valor];
+    }
+    
+    /*Funcion para guardar las respuestas
+    * en la tabla FD_RESPUESTA PARA tipo TEXTAREA
+    * Se guarda o se modifica en la BD:
+    * 
+    */
+    function gr_tipo26($_idrespuesta,$valor){
+        $tableRpta=$this->_tablerpta;
+        
+        if(empty($_idrespuesta)){
+            $g_sql="INSERT INTO $tableRpta ([[ra_descripcion]],[[id_conjunto_respuesta]],[[id_pregunta]],[[id_tpregunta]],[[id_capitulo]],[[id_formato]],[[id_conjunto_pregunta]],[[id_version]],[[id_junta]]) VALUES (:valor, :idconjrpta, :idpregunta, :idtpregunta, :idcapitulo, :idformato,:idconjprta,:idversion,:idjunta)";
+        }else{
+            $g_sql="UPDATE $tableRpta SET [[ra_descripcion]] = :valor,[[id_conjunto_respuesta]] = :idconjrpta,[[id_pregunta]] = :idpregunta ,[[id_tpregunta]] = :idtpregunta,[[id_capitulo]] = :idcapitulo,[[id_formato]] = :idformato,[[id_conjunto_pregunta]] = :idconjprta,[[id_version]] = :idversion,[[id_junta]] = :idjunta WHERE [[id_respuesta]] = ".$_idrespuesta;
+        }    
         
         $_valor = $valor;
         return [$g_sql,$_valor];

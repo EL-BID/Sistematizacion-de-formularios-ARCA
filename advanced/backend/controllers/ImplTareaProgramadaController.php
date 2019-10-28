@@ -39,6 +39,8 @@ class ImplTareaProgramadaController extends ControllerPry
         $tarTareas = $facadeTareas->cargaTareas(['estado'=>'s']);
         $hoy = date("d-m-Y",time());
         $proxima= date("d-m-Y",time());
+        
+  
         foreach ($tarTareas as $tarea){
             
             $fechaEjecucion=date("d-m-Y",time());
@@ -62,7 +64,10 @@ class ImplTareaProgramadaController extends ControllerPry
             }else{
                 $fecha_termina=strtotime ($tarea['fecha_termina']);                 
             } 
-            
+//            echo "<br>termina ".$fecha_termina;
+//            echo "<br>ejecuta ".$fechaEjecucion;
+//            echo "<br>ahora ".$ahora;
+
             if($ahora <= $fecha_termina && $ahora >= $fechaEjecucion ){
                 
                 $this->tareas($tarea);
@@ -86,9 +91,9 @@ class ImplTareaProgramadaController extends ControllerPry
     
     
     private function tareas($tarea){
-  
+ 
         switch ($tarea->id_ttarea) {
-                    case 1:
+                    case '1':
                        // echo "1";
                         $facadeCorreos= new CorCorreoControllerFachada();
                         $corCorreos= $facadeCorreos->cargaCorreos(['id_tarea_programada' => $tarea['id_tarea_programada'], 'estado' => 's']);
@@ -98,11 +103,12 @@ class ImplTareaProgramadaController extends ControllerPry
                         foreach($corCorreos as $correo){
                            $parametros= $this->parametros($correo);
                            $destinatarios=$this->destinatarios($correo,$parametros);
-                            $this->envioCorreo($correo,$parametros,$destinatarios);
+                           
+                           $this->envioCorreo($correo,$parametros,$destinatarios);
                         }
                         break;
-                    case 2:
-                       // echo "2";
+                    case '2':
+                        //echo "2";
                         $facadeCargue = new \frontend\controllers\cargaquipux\PsCargueControllerFachada();
                         $psCargue= $facadeCargue->cargaPsCargue(['procesado' => 'N']);
                         $detArcCargue=array();
@@ -223,17 +229,136 @@ class ImplTareaProgramadaController extends ControllerPry
                                 }
                             }
                             
-                            $facadeCargue->actualizaPscargueProcesado($cargue->id_cargues);
+                        //    $facadeCargue->actualizaPscargueProcesado($cargue->id_cargues);
                             //echo "<br><br><br>".var_dump($cargue);
                            
                         }
                         
                         break;
+                        
+                    case '3':
+                        $facadeActividad = new \frontend\controllers\cda\PsActividadControllerFachada();
+                        $psActividades = $facadeActividad->cargaPsActividadAlerta();
+                        
+                        
+                        $fechaAlerta=NULL;
+                        $fechaAhora=strtotime(date("d-m-Y",time()));
+                        $envio=array();
+                        foreach($psActividades as $actividad){
+                          if($actividad['campo_fecha_alerta'] === "FECHA_CREACION"){
+                               $fechaAlerta=strtotime($actividad['fecha_creacion']);
+                          }
+                          if($actividad['campo_fecha_alerta'] === "FECHA_PREVISTA"){
+                               $fechaAlerta=strtotime($actividad['fecha_prevista']);
+                          }
+                          
+                          if($fechaAlerta && $actividad['plazo_alerta'] && $actividad['plazo_alerta']>0){
+                               $fechaAlerta=strtotime ( '+'.$actividad['plazo_alerta'].' second' ,  $fechaAlerta  ) ;
+                          }
+                          
+
+                          if($fechaAlerta){
+                              
+                            try{
+
+                                switch (trim($actividad['id_talerta'])) {
+                                  case '1':
+                                    
+                                      //ALarma tareas por terminar, fecha actual mayor a la esperada menos el tiempo del rango indicado para esta alerta en el campo seg_ejecucion de la tabla alerta
+                                      $fechaAlertaI=strtotime ( '-'.$actividad['seg_ejecucion'].' second' ,  $fechaAlerta  ) ;   
+                                      if ($fechaAhora>$fechaAlertaI && $fechaAhora<=$fechaAlerta){
+                                          //
+
+                                          $psCprocesoFacade= new \frontend\controllers\cda\PsCprocesoControllerFachada();
+                                          $psCproceso = $psCprocesoFacade->cargaPsCprocesoUsuario($actividad['id_cproceso']);
+
+                                          $proximas[]=['proximas0'=>$psCproceso['numero'],'proximas1'=>$actividad['nom_actividad']
+                                                  ,'proximas2'=> date('m/d/Y', $fechaAlerta),'proximas3'=>$actividad['mensaje']];
+                                            $alertaActividad=['fecha_envio'=> date('m/d/Y', $fechaAhora),'texto_enviado'=>'','id_usuario'=>$psCproceso[0]['ult_id_usuario']
+                                               ,'id_cproceso'=>$actividad['id_cproceso'],'id_cactividad_proceso'=>$actividad['id_cactividad_proceso']
+                                                   ,'id_actividad'=>$actividad['id_actividad'],'id_tarea_programada'=>$tarea['id_tarea_programada']];
+                                            
+                                             if(array_key_exists($psCproceso[0]['ult_id_usuario'], $envio)===false) {
+                                                $datos[]=['NombreUsuario'=>$psCproceso[0]['nombres'],'email'=>$psCproceso[0]['email']];
+                                                $envio[$psCproceso[0]['ult_id_usuario']]['datos']=$datos;
+                                            }
+                                           $envio[$psCproceso[0]['ult_id_usuario']]['proximas'][]=$proximas;
+                                           $envio[$psCproceso[0]['ult_id_usuario']]['alertaActividad'][]=$alertaActividad;
+
+                                      }
+                                  break;
+                                  case '2':
+                                      //Alarma paraactividades vencidas
+
+                                       if ($fechaAhora>$fechaAlerta){
+                                          $psCprocesoFacade= new \frontend\controllers\cda\PsCprocesoControllerFachada();
+                                          $psCproceso = $psCprocesoFacade->cargaPsCprocesoUsuario($actividad['id_cproceso']); 
+                                          // echo var_dump($psCproceso);
+                                           $vencidas=['vencidas0'=>$psCproceso[0]['numero'],'vencidas1'=>$actividad['nom_actividad']
+                                                   ,'vencidas2'=>date('m/d/Y', $fechaAlerta),'vencidas3'=>$actividad['mensaje']];
+
+                                           $alertaActividad=['fecha_envio'=>date('m/d/Y', $fechaAhora),'texto_enviado'=>'','id_usuario'=>$psCproceso[0]['ult_id_usuario']
+                                               ,'id_cproceso'=>$actividad['id_cproceso'],'id_cactividad_proceso'=>$actividad['id_cactividad_proceso']
+                                                   ,'id_actividad'=>$actividad['id_actividad'],'id_tarea_programada'=>$tarea['id_tarea_programada']];
+//                                           echo var_dump($alertaActividad);  
+                                            if(array_key_exists($psCproceso[0]['ult_id_usuario'], $envio)===false) {
+                                                $datos[]=['NombreUsuario'=>$psCproceso[0]['nombres'],'email'=>$psCproceso[0]['email']];
+                                                $envio[$psCproceso[0]['ult_id_usuario']]['datos']=$datos;
+                                            }
+                                           $envio[$psCproceso[0]['ult_id_usuario']]['vencidas'][]=$vencidas;
+                                           $envio[$psCproceso[0]['ult_id_usuario']]['alertaActividad'][]=$alertaActividad;
+//                                           echo var_dump($envio); 
+                                      }  
+                                  break;
+                                }
+                            }catch(\yii\base\Exception $e){
+                               echo 'Caught exception evaluando las alertas: ',  $e->getMessage(), "\n";
+                            }
+                          }
+                        }
+                        
+                        $facadeCorreos= new CorCorreoControllerFachada();
+                        $corCorreos= $facadeCorreos->cargaCorreos(['id_tarea_programada' => $tarea['id_tarea_programada'], 'estado' => 's']);
+                        
+                        $parametros=array();
+                        $destinatarios=array();
+                        foreach($corCorreos as $correo){
+                            foreach($envio as $env){
+                                $parametros["variable"]= $env['datos'];
+                                if(array_key_exists('vencidas', $env)) {
+                                    $parametros["ciclo"]['vencidas'] = $env['vencidas'];
+                                    
+                                }else{
+                                    $patternTabla='/\<table.*\>(.*)t#vencidas(.*)\<\/table\>/';
+                                    $correo['cuerpo']= preg_replace('[\n]', '', $correo['cuerpo']);
+                                    $correo['cuerpo']= preg_replace($patternTabla, '', $correo['cuerpo']);
+                                }
+                                if(array_key_exists('proximas', $env)) {
+                                    $parametros["ciclo"]['proximas'] = $env['proximas'];
+                                    
+                                }else{
+                                    $patternTabla='/Actividades por vencerse(.*?)\<(\s*table(.*?))\>(.*?)t#proximas(.*?)\<\/(\s*table(.*?))\>/';
+                                    $correo['cuerpo']= preg_replace('[\n]', '', $correo['cuerpo']);
+                                    $correo['cuerpo']= preg_replace($patternTabla, '', $correo['cuerpo']);
+                                    
+                                }
+                                
+                                 $destinatarios["PARA"][0]=$env['datos'][0]['email'];
+
+                            }
+                            //echo var_dump($destinatarios); 
+                            $this->envioCorreo($correo,$parametros,$destinatarios);
+                        }
+                        
                     }
         
 
         
     }
+    
+    
+    /***************************************************** FUNCIONES ALERTAS ***************************************************************/
+
     
     /*******************************************************FUNCIONES  EXCEL*****************************************************************/
     private function detalleCargue($idArchivoCargue){
@@ -398,7 +523,7 @@ class ImplTareaProgramadaController extends ControllerPry
                         break;
                     }
                 }
-                // echo var_dump($destinatarios);
+                 //echo var_dump($destinatarios);
                 
             }             
                
@@ -583,9 +708,10 @@ class ImplTareaProgramadaController extends ControllerPry
         $patternIgual ='/=:\w*[\s]*/';  
         $busqueda=array();
         $envioMultiple=array();
+
         if(! \yii\helpers\ArrayHelper::keyExists("PARA", $destinatarios, false) || count($destinatarios["PARA"])<=0){ 
-            //echo "<br>".var_dump($correo);
-           // return null;
+            //echo "<br>asasdasd".var_dump($destinatarios);
+            //return null;
             throw new \yii\web\HttpException(500, 'NO se encontraron destinatarios configurados para el correo: '. $correo['nom_correo'].' Por favor verificar configuración de destinatarios, debe existir el PARA');
             
         }
@@ -607,6 +733,7 @@ class ImplTareaProgramadaController extends ControllerPry
             }
             $destinatarioM=$destinatarios;
             $destinatarios["PARA"]=$envioUnico;
+
             $correoFinal=array();
             if(count($envioMultiple)>0){
                  $correoFinal=$this->replaceEmail($correo,$parametros,$destinatarios,$envioMultiple);
@@ -615,15 +742,14 @@ class ImplTareaProgramadaController extends ControllerPry
             }
 
         }
-        
+
         foreach($correoFinal as $envios){
             $correoEnviado=false;
             $facadeEnviado =  new CorMensajeEnviadoControllerFachada();
             $correos="";
             
                 if ( \yii\helpers\ArrayHelper::keyExists("correo", $envios, false)){
-                    //echo var_dump($destinatarios);
-                    // echo count($destinatarios["PARA"]);
+
                     $destinos=$destinatarios;
                     $destinos["PARA"][]=$envios['correo'];
                     //echo var_dump($envios['cuerpo']);
@@ -635,15 +761,15 @@ class ImplTareaProgramadaController extends ControllerPry
                     $correos=$destinos;
                 }
                 else{
-                   // echo var_dump($correoFinal[0]);
                     $existe=$facadeEnviado->exsiteParametro(var_export($parametros,true),var_export($destinatarios,true),$correo['asunto']);
                     if(count($existe)<=0){
                         $correoEnviado=\common\general\notificaciones\ImplNotificacion::Enviar($destinatarios, $envios['cuerpo'],$correo['asunto']);
                     }
                      $correos=$destinatarios;
                 }
+               // echo var_dump($correoEnviado);
                 if($correoEnviado){
-
+                    
                     $facadeEnviado->registraEnvio($correo['asunto'], var_export($parametros,true), $correo['id_correo'], var_export($correos,true));
                 }
            
@@ -924,6 +1050,7 @@ class ImplTareaProgramadaController extends ControllerPry
                          
                       }
                   }
+                  
                   if(trim($tabla) !== ""){
                     $nuevocorreo= preg_replace('/'.trim($dato).'/',$tabla,$nuevocorreo);
                   }

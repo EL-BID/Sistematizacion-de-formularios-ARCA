@@ -79,11 +79,11 @@ class FdAgrupacionControllerTest extends \Codeception\Test\Unit
         
             // Se declaran los $queryParams a enviar los filtros
             $queryParams = ['FdAgrupacionSearch' => [
-                                             'id_agrupacion' => "Ingresar valor de pruebas para el campo id_agrupacion de tipo int4",       
-                                              'nom_agrupacion' => "Ingresar valor de pruebas para el campo nom_agrupacion de tipo varchar",       
-                                              'id_tagrupacion' => "Ingresar valor de pruebas para el campo id_tagrupacion de tipo int4",       
-                                              'num_col' => "Ingresar valor de pruebas para el campo num_col de tipo int4",       
-                                              'num_row' => "Ingresar valor de pruebas para el campo num_row de tipo int4",       
+                                             'id_agrupacion' => "1",       
+                                              'nom_agrupacion' => "Opciones técnicas de saneamiento utilizadas",       
+                                              'id_tagrupacion' => "2",       
+                                              'num_col' => "1",       
+                                              'num_row' => "1",       
                               ]];
              
        
@@ -108,12 +108,12 @@ class FdAgrupacionControllerTest extends \Codeception\Test\Unit
         
         // se deben declarar los valores de $id para enviar la llave
         
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
                                      // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
             $actionView=Yii::$app->runAction('FdAgrupacionController/view',['id' => $id]);
              
              // se evalua el caso exitoso
-             $this->assertNotNull($actionView                  
+             $this->assertNotNull($actionView,                  
                     'Se devolvio nullo actionView ');  
  
     }
@@ -131,11 +131,11 @@ class FdAgrupacionControllerTest extends \Codeception\Test\Unit
           
             // Se declaran los $queryParams a enviar los datos a crear
             $queryParams = ['FdAgrupacionController' => [
-                                             'id_agrupacion' => "Ingresar valor de pruebas para el campo id_agrupacion de tipo int4",       
-                                              'nom_agrupacion' => "Ingresar valor de pruebas para el campo nom_agrupacion de tipo varchar",       
-                                              'id_tagrupacion' => "Ingresar valor de pruebas para el campo id_tagrupacion de tipo int4",       
-                                              'num_col' => "Ingresar valor de pruebas para el campo num_col de tipo int4",       
-                                              'num_row' => "Ingresar valor de pruebas para el campo num_row de tipo int4",       
+                                             'id_agrupacion' => "72",       
+                                              'nom_agrupacion' => "Agrupación prueba",       
+                                              'id_tagrupacion' => "2",       
+                                              'num_col' => "1",       
+                                              'num_row' => "1",       
                               ]];
                             
        //       Se declaran el post1
@@ -163,16 +163,16 @@ class FdAgrupacionControllerTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar los datos a actualizar
           $queryParams = ['FdAgrupacionController' => [
-                                         'id_agrupacion' => "Ingresar valor de pruebas para el campo id_agrupacion de tipo int4",       
-                                          'nom_agrupacion' => "Ingresar valor de pruebas para el campo nom_agrupacion de tipo varchar",       
-                                          'id_tagrupacion' => "Ingresar valor de pruebas para el campo id_tagrupacion de tipo int4",       
-                                          'num_col' => "Ingresar valor de pruebas para el campo num_col de tipo int4",       
-                                          'num_row' => "Ingresar valor de pruebas para el campo num_row de tipo int4",       
+                                         'id_agrupacion' => "72",       
+                                          'nom_agrupacion' => "Agrupación de prueba",       
+                                          'id_tagrupacion' => "2",       
+                                          'num_col' => "1",       
+                                          'num_row' => "1",       
                           ]];
         
         
          // se deben declarar los valores de $id para enviar la llave
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '72';
                                 
         
          // se valida que se pueda realizar el update del registro
@@ -199,10 +199,10 @@ class FdAgrupacionControllerTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores para indicar el registro a borrar
-                         $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                         $id = '72';
                                 
         // se valida que se pueda realizar el borrado del registro
-         $actionDelete=Yii::$app->runAction(FdAgrupacionController/update',['id' => $id]);
+         $actionDelete=Yii::$app->runAction('FdAgrupacionController/update',['id' => $id]);
              
              // se evalua el caso exitoso
              $this->assertNotNull($actionDelete,

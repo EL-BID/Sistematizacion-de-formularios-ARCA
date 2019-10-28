@@ -2,20 +2,26 @@
 
 use yii\helpers\Html;
 
-
-/* @var $this yii\web\View */
-/* @var $model common\models\cda\Cda */
-
-$this->title = 'Nuevo Cda';
-$this->params['breadcrumbs'][] = ['label' => 'Cdas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cda-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <?php
+    if(empty($_ajax)){
+
+        $this->params['breadcrumbs'][] = 'Modificar';
+        $this->params['breadcrumbs'][] = ['label' => 'AQUI VA EL TITULO', 'url' => [$labelmiga]];
+        $_urlregresar = \Yii::$app->urlManager->createUrl([$labelmiga, 'id_cda_solicitud' => $id_cda_solicitud, 'labelmiga' => $labelmiga]);
+    ?>
+           <h1><?= Html::encode($this->title) ?></h1>        
+    <?php    
+    }
+    ?>
+           
+    <!--IMPRIMIENDO ENCABEZADO DE SOLICITUD O TRAMITE       ---------------------------------------->
+    <?= $encabezado; ?>
 
     <?= $this->render('_form', [
-        'model' => $model,
+        'model' => $model,'listadodemarcacion'=>$listadodemarcacion,'listadocentro'=>$listadocentro,'tipo'=>$tipo,'stringClasificacion'=>$stringClasificacion,'modelpsactividad'=>$modelpsactividad
     ]) ?>
 
 </div>

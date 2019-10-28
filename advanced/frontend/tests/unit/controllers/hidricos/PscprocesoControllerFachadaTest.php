@@ -3,7 +3,7 @@
 namespace frontend\tests\unit\controllers\hidricos;
 
 use Yii;
-use frontend\controllers\hidricos\PscprocesoControllerFachada;
+use frontend\controllers\cda\PscprocesoControllerFachada;
 /**
  * PscprocesoControllerFachadaTest implementa la verificaicon de los valores, consulta información para aplicar reglas de negocio, y transacciones conforme las acciones para el modelo PsCproceso.
  */

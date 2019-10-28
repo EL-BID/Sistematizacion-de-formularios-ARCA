@@ -61,6 +61,25 @@ $('.not-active').click(function(e){
   })
 
 
+/*-------------------------Funcion sobre clic boton actividad---------------------------*/
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+function eventClick(value,title){
+
+    if ($('#modal').data('bs.modal').isShown){
+        $('#modal').find('#modalContent').load(''+value+'');
+    }else{
+        $('#modal').modal('show').find('#modalContent').load(''+value+'');
+        //document.getElementById('modalHeader').style.display = "none";
+
+        var headerHTML = '<h4>' + title+ '</h4>\n\
+                          <div class="butonclosemodal">\n\
+                                <button type="button" class="closebutton" data-dismiss="modal">x</button>\n\
+                          </div>'
+        document.getElementById('modalHeader').innerHTML = headerHTML;
+     }
+}
+
 
 /*------------------------------------------------------------------------------------------------*/
 /*--------------------------Funcion Confirmación Submit-------------------------------------------*/

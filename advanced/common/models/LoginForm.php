@@ -55,9 +55,11 @@ class LoginForm extends Model
      */
     public function login()
     {
+        
+        //$this->validarLog($this->username);
         if ($this->validate()) {
             
-            $login= Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+            $login= Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);            
             if ($login){
                 User::loadDataUserSession($this->username);
             }
@@ -89,6 +91,24 @@ class LoginForm extends Model
             'password' => 'Contraseña',
             'rememberMe' => 'Recordar',
         ];
+    }
+    
+    public function validarLog($usuario)
+    {
+        $respuesta = Yii::$app->db->createCommand('select id_formato from fd_conjunto_respuesta where id_entidad in(select id_entidad from entidades where identificacion  in (select identificacion from usuarios_ap where usuario =:usuario))')
+             ->bindValue(':usuario', $usuario)             
+             ->queryOne(); 
+        $formato = $respuesta['id_formato'];
+            
+        if($formato==5)
+        {
+            print "<center>";
+            print "<img src='../../frontend/web/images/mantenimiento.jpg' alt='Mantenimiento' width='878' height='627'/>";
+            print "<h1>Estimado usuario, en este momento no puede ingresar al sistema</h1>";
+            print "<h3>Disculpe las molestias</h3>";
+            print "</center>";   
+            exit;
+        }
     }
     
     

@@ -14,9 +14,9 @@ class PqrsSearch extends Pqrs
 {
     
     public $numero;
+    public $nombres;
     public $nom_eproceso;
     public $nom_actividad;
-    public $nombres;
     public $fecha_solicitud;
     public $ult_fecha_actividad;
     public $ult_fecha_estado;
@@ -29,7 +29,8 @@ class PqrsSearch extends Pqrs
         return [
             [['id_pqrs', 'num_consecutivo', 'sol_doc_identificacion', 'en_nom_ruc', 'id_cproceso'], 'integer'],
             [['fecha_recepcion', 'sol_nombres', 'sol_direccion', 'sol_email', 'sol_telefono', 'en_nom_nombres', 'en_nom_direccion', 'en_nom_email', 'en_nom_telefono', 'aquien_dirige', 'objeto_peticion', 'descripcion_peticion', 'subtipo_queja', 'subtipo_reclamo', 'subtipo_controversia', 'por_quien_qrc', 'lugar_hechos', 'fecha_hechos', 'naracion_hechos', 'elementos_probatorios', 'denunc_nombre', 'denunc_direccion', 'denunc_telefono', 'subtipo_sugerencia', 'subtipo_felicitacion', 'descripcion_sugerencia', 'sol_cod_provincia', 'sol_cod_canton', 'en_nom_cod_provincia', 'en_nom_cod_canton'], 'safe'],
-            [['numero','fecha_solicitud','ult_fecha_actividad','ult_fecha_estado'],'string']
+            [['numero','fecha_solicitud','ult_fecha_actividad','ult_fecha_estado'],'string'],
+            [['nombres','nom_eproceso','nom_actividad'],'safe'],
         ];
     }
 
@@ -114,7 +115,7 @@ class PqrsSearch extends Pqrs
     /*Search para index solicitado*/
     public function search_modify($params)
     {
-        $query = Pqrs::find();
+        $query = Pqrs::find()->JoinWith('usuario', true)->joinWith('idCproceso',true)->joinWith('estado',true)->joinWith('actividad',true);
 
         // add conditions that should always apply here
 
@@ -125,10 +126,40 @@ class PqrsSearch extends Pqrs
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
             return $dataProvider;
         }
+        
+        if(!empty($this->nombres)){
+            $query->andFilterWhere(['=', 'usuarios_ap.id_usuario', $this->nombres]);
+        }
+        
+        
+        //Agregando Filtros ============================================================================================
+        if(!empty($this->numero)){
+            $query->andFilterWhere(['like', 'ps_cproceso.numero', $this->numero]);
+        }
+        
+        
+        if(!empty($this->nom_eproceso[0])){
+            $query->andFilterWhere(['IN', 'ps_estado_proceso.id_eproceso', $this->nom_eproceso]);
+        }
+        
+        if(!empty($this->nom_actividad)){
+            $query->andFilterWhere(['=', 'ps_actividad.id_actividad', $this->nom_actividad]);
+        }
+        
+        if(!empty($this->fecha_solicitud)){
+            $query->andFilterWhere(['=', 'ps_cproceso.fecha_solicitud', $this->fecha_solicitud]);
+        }
+        
+        if(!empty($this->ult_fecha_actividad)){
+            $query->andFilterWhere(['=', 'ps_cproceso.ult_fecha_actividad', $this->ult_fecha_actividad]);
+        }
+        
+         if(!empty($this->ult_fecha_estado)){
+            $query->andFilterWhere(['=', 'ps_cproceso.ult_fecha_estado', $this->ult_fecha_estado]);
+        }
+      
         
         return $dataProvider;
     }

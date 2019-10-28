@@ -20,9 +20,10 @@ SweetSubmitAsset::register($this)
 					]
                 ]); ?>
 
-    <?= $form->field($model, 'id_pagina')->textInput() ?>
-
+   
     <?= $form->field($model, 'nombre_pagina')->textInput(['maxlength' => true]) ?>
+    
+     <?= $form->field($model, 'modulo')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

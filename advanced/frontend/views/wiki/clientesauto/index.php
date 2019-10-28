@@ -12,13 +12,15 @@ $this->title = 'Clientesautos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="clientesauto-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="headSection">
+    <h1 class="titSection"><?= Html::encode($this->title) ?></h1>
+    </div>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Clientesauto', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+    <div class="aplicativo">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -59,4 +61,5 @@ $this->params['breadcrumbs'][] = $this->title;
 			],
         ],
     ]); ?>
+    </div>
 </div>

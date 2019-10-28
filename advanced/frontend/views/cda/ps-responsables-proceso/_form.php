@@ -28,7 +28,7 @@ SweetSubmitAsset::register($this)
 
     <?= $form->field($model, 'fecha')->
              widget(\yii\jui\DatePicker::className(),[
-                'dateFormat' => 'dd/MM/yyyy',        //Formato de la fecha
+                'dateFormat' => Yii::$app->fmtfechasql,        //Formato de la fecha
                 'clientOptions' => [
                     'yearRange' => '-90:+0',        //Años habilitados 90 años atras hasta el actual        
                     'changeYear' => true,            //Permitir cambio de año
@@ -43,7 +43,7 @@ SweetSubmitAsset::register($this)
                                          ]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Nuevo' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

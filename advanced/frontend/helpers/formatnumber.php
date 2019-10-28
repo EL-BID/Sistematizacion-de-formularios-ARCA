@@ -2,6 +2,7 @@
 
 namespace frontend\helpers;
 use yii\validators\Validator;
+use Yii;
 
 /*Tener en cuenta que solo es para formato de numeros
  * valida solo "#" ,".","," -> los valores numericos en php no reciben espacios
@@ -25,6 +26,8 @@ class formatnumber extends Validator
        $value = $model->$attribute;
        $v_value = str_split($value);
        $v_format= str_split($this->params['format']);
+       
+       
        
        /*==================================Revisando Formato====================================================*/
        if(!empty($value) and count($v_value)==count($v_format)){
@@ -78,7 +81,7 @@ class formatnumber extends Validator
         $eval_min=0;
         $eval_max=0;
                 
-  
+               
         if(empty($this->params['min'])){
             $eval_min=1;
             $min=0;
@@ -115,12 +118,15 @@ var v_value = value.split("");
 if(v_formato.length ==  v_value.length && value!=''){
     for (i=0;i<v_formato.length;i++) { 
          
+         
         if(v_formato[i]=="#" && isNaN(v_value[i])){
             messages.push($_messageformat);
         }else if(v_formato[i]=="." && v_value[i]!="."){
             messages.push($_messageformat);
         }else if(v_formato[i]=="," && v_value[i]!=","){
             messages.push($_messageformat);
+        }else if(v_formato[i]=="9" && isNaN(v_value[i])){
+           messages.push($_messageformat);
         }
     }   
 }else if(v_formato.length !=  v_value.length && value!=''){

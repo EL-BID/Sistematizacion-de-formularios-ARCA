@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			'options' => [
 				'class' => 'alert-info',
 			],
-			'body' =>'Modificado con Ëxito',
+			'body' =>'Modificado con Éxito',
 		]);
 		
 		

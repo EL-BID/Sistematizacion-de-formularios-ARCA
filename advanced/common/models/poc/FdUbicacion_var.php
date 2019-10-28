@@ -135,4 +135,6 @@ class FdUbicacion_var extends ModelPry
     {
         return $this->hasOne(\common\models\autenticacion\Provincias::className(), ['cod_provincia' => 'cod_provincia']);
     }
+    
+    
 }

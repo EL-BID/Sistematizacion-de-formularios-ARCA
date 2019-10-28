@@ -27,7 +27,7 @@ SweetSubmitAsset::register($this)
     
     <?= $form->field($model, 'nom_tarea_programada')->textInput([
                                         'maxlength' => true,
-                                        'title' => 'Indique Nom Tarea Programada',
+                                        'title' => 'Indique Nombre para la Tarea Programada',
                                         'data-toggle' => 'tooltip',
                                         'placeholder'=>'Indique Nom Tarea Programada'        
                                          ]) ?>

@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Borrar', ['delete', 'id' => $model->id_cda], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Â¿Esta seguro que desea borrar este elemento?',
+                'confirm' => '¿Esta seguro que desea borrar este elemento?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			'options' => [
 				'class' => 'alert-info',
 			],
-			'body' =>'Guardado con Ã‰xito',
+			'body' =>'Guardado con Éxito',
 		]);
 		elseif (Yii::$app->session->getFlash('FormSubmitted')=='1'):
 		
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			'options' => [
 				'class' => 'alert-info',
 			],
-			'body' =>'Modificado con Ã‹xito',
+			'body' =>'Modificado con Éxito',
 		]);
 		
 		
@@ -52,19 +52,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'fecha_ingreso',
-            'fecha_solicitud',
-            'tramite_administrativo',
-            'id_cproceso_arca',
-            'id_cproceso_senagua',
-            'rol_en_calidad',
-            'numero_tramites',
             'id_cda',
-            'id_usuario_enviado_por',
+            'fecha_ingreso_quipux',
             'institucion_solicitante',
             'solicitante',
             'cod_centro_atencion_ciudadano',
             'id_demarcacion',
+            'cod_cda',
+            'id_cda_tramite',
         ],
     ]) ?>
 

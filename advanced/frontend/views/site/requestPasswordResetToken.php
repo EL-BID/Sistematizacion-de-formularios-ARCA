@@ -16,19 +16,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
     
     <div class="aplicativo">
-	<p>Por favor digite su correo electrónico. Allá sera enviado un enlace para continuar el proceso</p>
-    <div class="row">
-        <div class="col-md-5 center-block">
-            <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
+        
+        <img src="../../frontend/web/images/comuniquese.png">
+        Por favor comuníquese a los teléfonos:(593 2) 394 4440 / 394 4459 -ext. 151. <b>SOPORTE SARA</b>
 
-                <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
-        </div>
-    </div>
     </div>
 </div>

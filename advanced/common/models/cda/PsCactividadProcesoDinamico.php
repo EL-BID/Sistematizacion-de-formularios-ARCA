@@ -77,9 +77,9 @@ class PsCactividadProcesoDinamico extends ModelPry
 /*=================================Construyendo el modelo=====================================================================================*/
 /*===========================================================================================================================================*/ 
     
-   function __construct($_labels,$_required) {
+   function __construct($_labels,$_required,$_safedata) {
         $_vrules[]=[$_required,'required','message' => 'Campo requerido'];
-        
+        $_vrules[]=[$_safedata,'string'];
         
         $this->v_rules = $_vrules;
         $this->v_label = $_labels;

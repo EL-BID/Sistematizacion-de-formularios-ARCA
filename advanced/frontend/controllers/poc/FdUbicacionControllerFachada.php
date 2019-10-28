@@ -219,4 +219,14 @@ class FdUbicacionControllerFachada extends FachadaPry
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    
+    public function cargaUbicacion($id_reporte_informacion){
+        
+         if (($model = FdUbicacion::find()->where(['id_reporte_informacion'=>$id_reporte_informacion])->one()) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
 }

@@ -58,8 +58,12 @@ class genPDF {
     //A LA DEL FORMATO DE LA PAGINA///////
    public function generadorPDF($html,$nombre,$propiedadesPagina=null,$opciones=null,$metodos=null,$css=null,$cssDir=null){
         
-        //$contenido=preg_replace("<[\s]*script[\s]*>.+<[\s]*script[\s]*\/>","",$html);
-        $contenido=$html;
+
+        //Corrigiendo posibles errores html ============================================================
+        $html = str_replace('"=', '', $html);
+        
+        Yii::trace("que llega aqui de PDF ".$html,"DEBUG");
+        
         $Pdf=Array();
         
         /////////////Propiedades

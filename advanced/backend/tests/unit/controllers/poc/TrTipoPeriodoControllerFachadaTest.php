@@ -83,8 +83,8 @@ class TrTipoPeriodoControllerFachadaTest extends \Codeception\Test\Unit
         
         // Se declaran los $queryParams a enviar
             $queryParams = ['TrTipoPeriodoSearch' => [
-                                             'id_tperiodo' => "Ingresar valor de pruebas para el campo id_tperiodo de tipo int4",       
-                                              'nom_tperiodo' => "Ingresar valor de pruebas para el campo nom_tperiodo de tipo varchar",       
+                                             'id_tperiodo' => "1",       
+                                              'nom_tperiodo' => "Periodo 1",          
                               ]];
              
        
@@ -115,7 +115,7 @@ class TrTipoPeriodoControllerFachadaTest extends \Codeception\Test\Unit
         $this->assertInstanceOf('backend\controllers\poc\TrTipoPeriodoControllerFachada', $tester);
     
         // se deben declarar los valores de $id        
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '1';
               
         
              // se realiza el action view, intrernamente usa la funcion findModel, a su vez utiliza el findone de Yii realizando la consulta con todos los valores de los parametros $id             
@@ -143,8 +143,8 @@ class TrTipoPeriodoControllerFachadaTest extends \Codeception\Test\Unit
              
             // Se declaran el rquest
               $request =  ['TrTipoPeriodoControllerFachada' => [
-                                'id_tperiodo' => 'Ingresar valor de pruebas para el campo id_tperiodo de tipo int4',
-                             'nom_tperiodo' => 'Ingresar valor de pruebas para el campo nom_tperiodo de tipo varchar',
+                                'id_tperiodo' => "4",       
+                                              'nom_tperiodo' => "Periodo 4",     
                           ]];
             
                 $actionCreate = $tester->actionCreate($request,false);
@@ -179,8 +179,8 @@ class TrTipoPeriodoControllerFachadaTest extends \Codeception\Test\Unit
         
          // Se declaran el rquest
               $request =  ['TrTipoPeriodoControllerFachada' => [
-                                'id_tperiodo' => 'Ingresar valor de pruebas para el campo id_tperiodo de tipo int4',
-                             'nom_tperiodo' => 'Ingresar valor de pruebas para el campo nom_tperiodo de tipo varchar',
+                              'id_tperiodo' => "4",       
+                                              'nom_tperiodo' => "Periodo 4",     
                           ]];
         
         
@@ -217,7 +217,7 @@ class TrTipoPeriodoControllerFachadaTest extends \Codeception\Test\Unit
         
         
         // se deben llenar los siguientes valores
-                        $id = 'valor adecuado para el tipo de dato del paramtero $id';
+                        $id = '4';
                 
         // se valida que se pueda realizar el borrado del registro
         expect($tester->actionDeletep($id));

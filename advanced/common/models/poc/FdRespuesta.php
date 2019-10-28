@@ -56,11 +56,12 @@ class FdRespuesta extends ModelPry
     public function rules()
     {
         return [
-            [['ra_entero', 'id_conjunto_respuesta', 'id_pregunta', 'id_opcion_select', 'id_tpregunta', 'id_capitulo', 'id_formato', 'id_conjunto_pregunta', 'id_version', 'cantidad_registros'], 'integer'],
-            [['ra_fecha'], 'date'],
-            [['ra_descripcion'], 'string'],
-            [['ra_decimal', 'ra_porcentaje', 'ra_moneda'], 'number'],
-            [['ra_check'], 'string', 'max' => 1],
+            [['id_conjunto_respuesta', 'id_pregunta', 'id_tpregunta', 'id_capitulo', 'id_formato', 'id_conjunto_pregunta', 'id_version', 'cantidad_registros'], 'integer'],
+            [['ra_entero','id_opcion_select'],'integer','skipOnEmpty'=>true],
+            [['ra_fecha'], 'date','skipOnEmpty'=>true],
+            [['ra_descripcion'], 'string','skipOnEmpty'=>true],
+            [['ra_decimal', 'ra_porcentaje', 'ra_moneda'], 'number','skipOnEmpty'=>true],
+            [['ra_check'], 'string', 'max' => 1,'skipOnEmpty'=>true],
             [['id_capitulo'], 'exist', 'skipOnError' => true, 'targetClass' => FdCapitulo::className(), 'targetAttribute' => ['id_capitulo' => 'id_capitulo']],
             [['id_conjunto_pregunta'], 'exist', 'skipOnError' => true, 'targetClass' => FdConjuntoPregunta::className(), 'targetAttribute' => ['id_conjunto_pregunta' => 'id_conjunto_pregunta']],
             [['id_conjunto_respuesta'], 'exist', 'skipOnError' => true, 'targetClass' => FdConjuntoRespuesta::className(), 'targetAttribute' => ['id_conjunto_respuesta' => 'id_conjunto_respuesta']],

@@ -16,8 +16,11 @@ use common\models\poc\FdFormato;
  * @property int4 $id_tipo_view_formato
  * @property int4 $id_modulo
  * @property int4 $ult_id_version
- * @property varchar $cod_rol
+ * @property int4 $cod_rol
  * @property varchar $numeracion
+ * @property varchar $sop_ruta
+ * @property varchar $url_acceso
+ * @property varchar $filtros_search
  *
  * @property FdConjuntoPregunta[] $fdConjuntoPreguntas
  * @property FdConjuntoRespuesta[] $fdConjuntoRespuestas
@@ -57,8 +60,11 @@ class FdFormatoTest extends \Codeception\Test\Unit
         $tester->id_tipo_view_formato = "Ingresar valor de pruebas para el campo id_tipo_view_formato de tipo int4";
         $tester->id_modulo = "Ingresar valor de pruebas para el campo id_modulo de tipo int4";
         $tester->ult_id_version = "Ingresar valor de pruebas para el campo ult_id_version de tipo int4";
-        $tester->cod_rol = "Ingresar valor de pruebas para el campo cod_rol de tipo varchar";
+        $tester->cod_rol = "Ingresar valor de pruebas para el campo cod_rol de tipo int4";
         $tester->numeracion = "Ingresar valor de pruebas para el campo numeracion de tipo varchar";
+        $tester->sop_ruta = "Ingresar valor de pruebas para el campo sop_ruta de tipo varchar";
+        $tester->url_acceso = "Ingresar valor de pruebas para el campo url_acceso de tipo varchar";
+        $tester->filtros_search = "Ingresar valor de pruebas para el campo filtros_search de tipo varchar";
             
         expect_that($tester->validate());
         // en caso de incluir valores errados para el modelo: expect_not($model->validate());
@@ -74,8 +80,11 @@ class FdFormatoTest extends \Codeception\Test\Unit
         $tester->id_tipo_view_formato = "Ingresar valor de pruebas para el campo id_tipo_view_formato de tipo int4";
         $tester->id_modulo = "Ingresar valor de pruebas para el campo id_modulo de tipo int4";
         $tester->ult_id_version = "Ingresar valor de pruebas para el campo ult_id_version de tipo int4";
-        $tester->cod_rol = "Ingresar valor de pruebas para el campo cod_rol de tipo varchar";
+        $tester->cod_rol = "Ingresar valor de pruebas para el campo cod_rol de tipo int4";
         $tester->numeracion = "Ingresar valor de pruebas para el campo numeracion de tipo varchar";
+        $tester->sop_ruta = "Ingresar valor de pruebas para el campo sop_ruta de tipo varchar";
+        $tester->url_acceso = "Ingresar valor de pruebas para el campo url_acceso de tipo varchar";
+        $tester->filtros_search = "Ingresar valor de pruebas para el campo filtros_search de tipo varchar";
             
         expect_that($tester->save());
         
@@ -100,8 +109,11 @@ class FdFormatoTest extends \Codeception\Test\Unit
            'id_tipo_view_formato' => "Ingresar valor de pruebas para el campo id_tipo_view_formato de tipo int4",
            'id_modulo' => "Ingresar valor de pruebas para el campo id_modulo de tipo int4",
            'ult_id_version' => "Ingresar valor de pruebas para el campo ult_id_version de tipo int4",
-           'cod_rol' => "Ingresar valor de pruebas para el campo cod_rol de tipo varchar",
+           'cod_rol' => "Ingresar valor de pruebas para el campo cod_rol de tipo int4",
            'numeracion' => "Ingresar valor de pruebas para el campo numeracion de tipo varchar",
+           'sop_ruta' => "Ingresar valor de pruebas para el campo sop_ruta de tipo varchar",
+           'url_acceso' => "Ingresar valor de pruebas para el campo url_acceso de tipo varchar",
+           'filtros_search' => "Ingresar valor de pruebas para el campo filtros_search de tipo varchar",
           ]);                                                
         
         
@@ -128,8 +140,11 @@ class FdFormatoTest extends \Codeception\Test\Unit
            'id_tipo_view_formato' => "Ingresar valor de pruebas para el campo id_tipo_view_formato de tipo int4",
            'id_modulo' => "Ingresar valor de pruebas para el campo id_modulo de tipo int4",
            'ult_id_version' => "Ingresar valor de pruebas para el campo ult_id_version de tipo int4",
-           'cod_rol' => "Ingresar valor de pruebas para el campo cod_rol de tipo varchar",
+           'cod_rol' => "Ingresar valor de pruebas para el campo cod_rol de tipo int4",
            'numeracion' => "Ingresar valor de pruebas para el campo numeracion de tipo varchar",
+           'sop_ruta' => "Ingresar valor de pruebas para el campo sop_ruta de tipo varchar",
+           'url_acceso' => "Ingresar valor de pruebas para el campo url_acceso de tipo varchar",
+           'filtros_search' => "Ingresar valor de pruebas para el campo filtros_search de tipo varchar",
          ]);              
 
        expect_that($tester->delete());
@@ -182,8 +197,11 @@ class FdFormatoTest extends \Codeception\Test\Unit
          expect($tester->id_tipo_view_formato)->equals('Ingresar valor de pruebas para el campo id_tipo_view_formato de tipo int4');
          expect($tester->id_modulo)->equals('Ingresar valor de pruebas para el campo id_modulo de tipo int4');
          expect($tester->ult_id_version)->equals('Ingresar valor de pruebas para el campo ult_id_version de tipo int4');
-         expect($tester->cod_rol)->equals('Ingresar valor de pruebas para el campo cod_rol de tipo varchar');
+         expect($tester->cod_rol)->equals('Ingresar valor de pruebas para el campo cod_rol de tipo int4');
          expect($tester->numeracion)->equals('Ingresar valor de pruebas para el campo numeracion de tipo varchar');
+         expect($tester->sop_ruta)->equals('Ingresar valor de pruebas para el campo sop_ruta de tipo varchar');
+         expect($tester->url_acceso)->equals('Ingresar valor de pruebas para el campo url_acceso de tipo varchar');
+         expect($tester->filtros_search)->equals('Ingresar valor de pruebas para el campo filtros_search de tipo varchar');
       }
 
 }

@@ -150,6 +150,12 @@ class FdInvolucradoControllerFachada extends FachadaPry
         
         else {
         
+                $errores = $model->getErrors();
+                        foreach($errores as $clave){
+                            $_revisando = implode(",",$clave);
+                            Yii::trace("sera que asi si: ".$_revisando,"DEBUG");
+                        }
+
                  return [
                     'model' => $model,
                     'create' => 'False'
