@@ -28,4 +28,3 @@ script:
 - travis_wait composer validate
 - travis_wait composer outdated --direct
 - sudo chmod 777 vendor/bin/codecept
-- travis_wait codecept run -c backend
