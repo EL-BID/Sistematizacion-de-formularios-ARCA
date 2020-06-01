@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/EL-BID/Sistematizacion-de-formularios-ARCA.svg?branch=master)](https://travis-ci.com/EL-BID/Sistematizacion-de-formularios-ARCA)
 [![Analytics](https://gabeacon.irvinlim.com/UA-168064518-1/ARCA/readme?useReferer)](https://github.com/EL-BID/Sistematizacion-de-formularios-ARCA)
-<img src="http://ipbiter.rf.gd/?op=i&tid=df1caf97-2e78-4d5d-b11a-dcef3f842d91"/>
+
 
 ## Diseño de formularios - ARCA
 ---
